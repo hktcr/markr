@@ -17,6 +17,10 @@ body {
     height: 100vh; height: 100dvh; 
     display: flex; flex-direction: column; 
     overflow: hidden; 
+    transition: all 0.3s ease;
+}
+.skal.centrerad {
+    justify-content: center;
 }
 .header { padding: 1rem; flex-shrink: 0; }
 .sok-container { 

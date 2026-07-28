@@ -40,14 +40,26 @@ async function laddaData() {
         
         // Spar lyckad laddning
         localStorage.setItem('bokmarken-senast-ok', text);
-        data = json;
+        
+        // Stödjer både objekt-struktur och ren array
+        if (Array.isArray(json)) {
+            data = { bokmarken: json, uppdaterad: new Date().toLocaleDateString('sv-SE') };
+        } else {
+            data = json;
+        }
+        
         statusrad.textContent = `Totalt ${data.bokmarken.length} bokmärken (Uppdaterad ${data.uppdaterad})`;
     } catch (e) {
         console.warn("Laddning misslyckades, prövar localStorage.", e);
         const sparad = localStorage.getItem('bokmarken-senast-ok');
         if (sparad) {
             try {
-                data = JSON.parse(sparad);
+                const parsed = JSON.parse(sparad);
+                if (Array.isArray(parsed)) {
+                    data = { bokmarken: parsed, uppdaterad: 'Sparad kopia' };
+                } else {
+                    data = parsed;
+                }
                 statusrad.textContent = `Visar sparad kopia från ${data.uppdaterad}, senaste hämtning misslyckades.`;
             } catch (e2) {
                 statusrad.textContent = "Misslyckades att ladda data, och ingen giltig sparad kopia finns.";
@@ -173,16 +185,18 @@ function utforSokning() {
     if (isSokningAktiv) {
         kategorierContainer.classList.add('dold');
         statusrad.style.display = 'none';
+        document.querySelector('.skal').classList.remove('centrerad');
     } else {
         kategorierContainer.classList.remove('dold');
         statusrad.style.display = 'block';
+        document.querySelector('.skal').classList.add('centrerad');
     }
     
     let resultat = [];
     
     if (!isSokningAktiv) {
-        // Tom sökning -> senast tillagda 20
-        resultat = [...data.bokmarken].reverse().slice(0, 20); // (Förutsätter att tillagd gör att de ligger i ordning i json)
+        // Tom sökning -> visa inga resultat, låt rutan vara centrerad i mitten av sidan
+        resultat = [];
     } else {
         const kandidater = [];
         data.bokmarken.forEach(bm => {
