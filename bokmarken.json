@@ -1,0 +1,12 @@
+{
+  "uppdaterad": "2026-07-28",
+  "bokmarken": [
+    {
+      "url": "https://exempel.se/sida",
+      "titel": "Rubriken på sidan",
+      "beskrivning": "En eller två rader om varför den är sparad.",
+      "taggar": ["didaktik", "bedomning"],
+      "tillagd": "2026-07-28"
+    }
+  ]
+}

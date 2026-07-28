@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MärkR</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="apple-touch-icon" href="ikon-192.png">
+</head>
+<body>
+    <div class="skal">
+        <header class="header">
+            <div class="sok-container">
+                <div id="aktiva-filter" class="aktiva-filter"></div>
+                <input type="text" id="sok-input" placeholder="Sök eller klicka på kategori..." autocomplete="off">
+            </div>
+            <div id="statusrad" class="statusrad">Laddar...</div>
+        </header>
+
+        <nav id="kategorier" class="kategorier"></nav>
+
+        <main class="innehall">
+            <ul id="resultatlista" class="resultatlista"></ul>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
