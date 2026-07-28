@@ -1,82 +1,509 @@
+/* MärkR, stjärnkarta i sot, papper och mässing */
+
 :root {
-  --bg: #0a0a0c;
-  --panel: #141418;
-  --panel-hover: #1f1f25;
-  --text: #f2efe9;
-  --dim: #a09d96;
-  --accent: #c5a059;
-  --accent-hover: #d4b371;
-  --radius: 8px;
-}
-body { 
-    margin: 0; padding: 0; 
-    background: var(--bg); color: var(--text); 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-}
-.skal { 
-    height: 100vh; height: 100dvh; 
-    display: flex; flex-direction: column; 
-    overflow: hidden; 
-    transition: all 0.3s ease;
-}
-.skal.centrerad {
-    justify-content: center;
-}
-.header { padding: 1rem; flex-shrink: 0; }
-.sok-container { 
-    display: flex; flex-wrap: wrap; 
-    background: var(--panel); border: 1px solid var(--accent); 
-    border-radius: var(--radius); padding: 0.5rem; 
-    max-width: 700px; margin: 0 auto; align-items: center; 
-}
-.aktiva-filter { display: flex; gap: 4px; }
-.filter-etikett { 
-    background: var(--accent); color: var(--bg); 
-    padding: 4px 8px; border-radius: 4px; 
-    cursor: pointer; font-size: 0.9em; font-weight: 600; 
-}
-#sok-input { 
-    flex-grow: 1; min-width: 150px; 
-    background: transparent; border: none; 
-    color: var(--text); font-size: 1.1rem; 
-    padding: 0.5rem; outline: none; 
-}
-.statusrad { text-align: center; font-size: 0.85rem; color: var(--dim); margin-top: 0.75rem; }
+  --sot:        #0b0b0d;
+  --sot-2:      #131317;
+  --sot-3:      #1c1c21;
+  --papper:     #f2efe9;
+  --papper-dim: #9b978e;
+  --massing:    #c5a059;
+  --massing-lj: #dcc08a;
+  --harfin:     rgba(242, 239, 233, 0.10);
+  --harfin-2:   rgba(242, 239, 233, 0.18);
 
-.kategorier { 
-    display: flex; flex-wrap: wrap; gap: 8px; 
-    padding: 0 1rem 1rem 1rem; max-width: 700px; 
-    margin: 0 auto; flex-shrink: 0; 
-}
-.kategorier.dold { display: none; }
-.kat-etikett { 
-    background: var(--panel); border: 1px solid var(--dim); 
-    color: var(--text); padding: 0 16px; border-radius: 22px; 
-    cursor: pointer; font-size: 0.9rem; min-height: 44px; 
-    display: flex; align-items: center; 
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Charter, Georgia, serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono:  ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  --spalt: 46rem;
+  --r: 6px;
 }
 
-.innehall { flex-grow: 1; overflow-y: auto; padding: 0 1rem; }
-.resultatlista { list-style: none; margin: 0 auto; padding: 0 0 2rem 0; max-width: 700px; }
-.resultatrad { 
-    padding: 1rem; border-bottom: 1px solid var(--panel); 
-    cursor: pointer; display: flex; flex-direction: column; gap: 6px; 
-}
-.rad-titel { font-size: 1.15rem; color: var(--accent); font-weight: 500; margin: 0; }
-.rad-beskrivning { font-size: 0.95rem; line-height: 1.5; margin: 0; }
-.rad-meta { font-size: 0.85rem; color: var(--dim); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.rad-tagg { background: var(--panel); padding: 4px 8px; border-radius: 4px; color: var(--text); }
-mark { background: rgba(197, 160, 89, 0.3); color: var(--text); border-radius: 2px; }
-.rad-url { opacity: 0.7; }
+* { box-sizing: border-box; }
 
-/* Desktop hover effekter (endast datorer med mus) */
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--sot);
+  color: var(--papper);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--massing);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ---------- Himlen ---------- */
+
+#himmel {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  transition: opacity 0.4s ease;
+}
+
+#noder {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#himmel[data-dold], #noder[data-dold] { opacity: 0; pointer-events: none; }
+#noder[data-dold] .nod { visibility: hidden; }
+
+.nod {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 6px 8px;
+  justify-content: center;
+  background: none;
+  border: 0;
+  color: var(--papper-dim);
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  will-change: transform;
+  transition: color 0.15s ease;
+}
+
+.nod .prick {
+  display: block;
+  width: var(--d, 8px);
+  height: var(--d, 8px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--massing-lj), var(--massing) 65%);
+  box-shadow: 0 0 6px rgba(197, 160, 89, 0.35);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.nod .antal {
+  font-size: 0.6rem;
+  color: var(--massing);
+  opacity: 0.75;
+}
+
+.nod:hover, .nod:focus-visible, .nod.grann {
+  color: var(--papper);
+}
+
+.nod:hover .prick, .nod:focus-visible .prick {
+  box-shadow: 0 0 16px rgba(197, 160, 89, 0.75), 0 0 3px rgba(220, 192, 138, 0.9);
+  transform: scale(1.15);
+}
+
+.nod.grann .prick { box-shadow: 0 0 12px rgba(197, 160, 89, 0.55); }
+
+.nod.sarnod { color: var(--massing-lj); }
+.nod.sarnod .prick {
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+.nod.sarnod:hover .prick, .nod.sarnod:focus-visible .prick { transform: rotate(45deg) scale(1.15); }
+
+/* ---------- Skalet, två lägen ---------- */
+
+.skal {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.topp {
+  flex-shrink: 0;
+  padding: 1.25rem 1rem 0.75rem;
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+  pointer-events: none;
+  transition: padding-top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Rymdläget: sökrutan som okular mitt i himlen */
+.skal.rymd .topp {
+  padding-top: calc(50vh - 6.5rem);
+  padding-top: calc(50dvh - 6.5rem);
+}
+
+.skal.rymd .innehall, .skal.rymd .hjalp { visibility: hidden; }
+
+.sokfalt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  max-width: min(var(--spalt), 34rem);
+  margin: 0 auto;
+  padding: 0.35rem 0.75rem 0.35rem 0.6rem;
+  background: rgba(19, 19, 23, 0.88);
+  backdrop-filter: blur(3px);
+  border: 1px solid var(--harfin-2);
+  border-radius: var(--r);
+  pointer-events: auto;
+  transition: border-color 0.15s ease, box-shadow 0.3s ease;
+}
+
+.skal.rymd .sokfalt { box-shadow: 0 0 40px rgba(197, 160, 89, 0.08), 0 0 90px rgba(197, 160, 89, 0.05); }
+.sokfalt.aktivt { border-color: var(--massing); }
+
+.marke {
+  width: 3px;
+  align-self: stretch;
+  min-height: 1.9rem;
+  border-radius: 2px;
+  background: linear-gradient(var(--massing-lj), var(--massing));
+  opacity: 0.55;
+  transition: opacity 0.15s ease;
+}
+
+.sokfalt.aktivt .marke { opacity: 1; }
+
+.filterrad { display: flex; flex-wrap: wrap; gap: 6px; }
+
+#sok {
+  flex: 1 1 8rem;
+  min-width: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  color: var(--papper);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  padding: 0.55rem 0.25rem;
+}
+
+#sok::placeholder { color: var(--papper-dim); }
+#sok::-webkit-search-cancel-button { display: none; }
+
+.status {
+  max-width: var(--spalt);
+  margin: 0.6rem auto 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--papper-dim);
+  pointer-events: auto;
+}
+
+.skal.rymd .status { text-align: center; }
+.status.varning { color: var(--massing-lj); }
+
+.lankrad {
+  max-width: var(--spalt);
+  margin: 0.4rem auto 0;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.skal:not(.rymd) .lankrad { display: none; }
+
+.lank {
+  background: none;
+  border: 0;
+  padding: 0.4rem 0.2rem;
+  color: var(--papper-dim);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--harfin-2);
+  cursor: pointer;
+}
+
+.lank:hover { color: var(--massing-lj); text-decoration-color: var(--massing); }
+.lankskilje { color: var(--harfin-2); margin: 0 0.4rem; }
+
+/* ---------- Etiketter, taggar, filter ---------- */
+
+.etikett {
+  max-width: var(--spalt);
+  margin: 0 auto 0.75rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--papper-dim);
+}
+
+.katrad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: var(--spalt);
+  margin: 0 auto;
+}
+
+.tagg {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  min-height: 44px;
+  padding: 0 0.95rem;
+  background: var(--sot-2);
+  border: 1px solid var(--harfin-2);
+  border-radius: 22px;
+  color: var(--papper);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.tagg .antal {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--papper-dim);
+}
+
+.tagg-liten {
+  min-height: 28px;
+  padding: 0 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  color: var(--papper-dim);
+}
+
+.relaterat .tagg {
+  min-height: 36px;
+  font-size: 0.875rem;
+  padding: 0 0.8rem;
+}
+
+.relaterat { margin-bottom: 1.75rem; }
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 32px;
+  padding: 0 0.35rem 0 0.7rem;
+  background: var(--massing);
+  border: 0;
+  border-radius: 4px;
+  color: var(--sot);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter .kryss { font-size: 1.1em; line-height: 1; opacity: 0.7; padding: 0 0.25rem; }
+
+.mer {
+  display: block;
+  max-width: var(--spalt);
+  margin: 1rem auto 0;
+  min-height: 44px;
+  padding: 0 1rem;
+  background: none;
+  border: 1px dashed var(--harfin-2);
+  border-radius: var(--r);
+  color: var(--papper-dim);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ---------- Innehåll ---------- */
+
+.innehall {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 1.5rem 1rem 3rem;
+  pointer-events: auto;
+}
+
+.traffar {
+  list-style: none;
+  max-width: var(--spalt);
+  margin: 0 auto;
+  padding: 0;
+}
+
+.rad {
+  position: relative;
+  display: block;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  border-bottom: 1px solid var(--harfin);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.12s ease;
+}
+
+.rad::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--massing);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.16s ease;
+}
+
+.rad.vald { background: var(--sot-2); }
+.rad.vald::before { transform: scaleY(1); }
+
+.titel {
+  margin: 0 0 0.2rem;
+  font-family: var(--serif);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--massing-lj);
+}
+
+.besk {
+  margin: 0 0 0.45rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--papper);
+}
+
+.besk.saknas { color: var(--papper-dim); font-style: italic; }
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.vardnamn {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--papper-dim);
+  margin-right: 0.25rem;
+}
+
+mark {
+  background: none;
+  color: inherit;
+  border-bottom: 2px solid var(--massing);
+  border-radius: 0;
+}
+
+.titel mark { color: #fff; }
+
+.tomt {
+  max-width: var(--spalt);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.tomt p { margin: 0 0 1rem; color: var(--papper-dim); }
+
+/* ---------- Tangentbordsrad och brödrost ---------- */
+
+.hjalp {
+  flex-shrink: 0;
+  display: none;
+  gap: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--harfin);
+  background: var(--sot);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--papper-dim);
+  pointer-events: auto;
+}
+
+.hjalp kbd {
+  font-family: inherit;
+  padding: 2px 6px;
+  margin-right: 2px;
+  border: 1px solid var(--harfin-2);
+  border-radius: 3px;
+  color: var(--papper);
+}
+
+.skilje { width: 1px; height: 12px; background: var(--harfin-2); margin: 0 0.5rem; }
+
+.brodrost {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  z-index: 3;
+  transform: translate(-50%, 1rem);
+  padding: 0.7rem 1.1rem;
+  background: var(--massing);
+  color: var(--sot);
+  border-radius: var(--r);
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.brodrost.syns { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Brytpunkter ---------- */
+
+@media (max-width: 599px) {
+  .skal.rymd .topp {
+    padding-top: calc(42vh - 6.5rem);
+    padding-top: calc(42dvh - 6.5rem);
+  }
+  .nod { font-size: 0.625rem; letter-spacing: 0.06em; }
+}
+
+@media (min-width: 600px) {
+  .innehall { padding: 2rem 1.5rem 4rem; }
+}
+
+@media (min-width: 1000px) {
+  :root { --spalt: 48rem; }
+  .skal:not(.rymd) .hjalp { display: flex; }
+}
+
 @media (pointer: fine) {
-    .kat-etikett:hover { border-color: var(--accent); background: var(--panel-hover); }
-    .resultatrad:hover, .resultatrad.vald { background: var(--panel-hover); }
-    .filter-etikett:hover { background: var(--accent-hover); }
+  .tagg:hover { border-color: var(--massing); background: var(--sot-3); }
+  .rad:hover { background: var(--sot-2); }
+  .rad:hover::before { transform: scaleY(1); opacity: 0.5; }
+  .filter:hover { background: var(--massing-lj); }
+  .mer:hover { border-color: var(--massing); color: var(--papper); }
 }
 
-/* Touch active effekter */
-.kat-etikett:active { border-color: var(--accent); background: var(--panel-hover); }
-.resultatrad:active { background: var(--panel-hover); }
-.filter-etikett:active { background: var(--accent-hover); }
+.tagg:active { background: var(--sot-3); }
+.rad:active { background: var(--sot-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

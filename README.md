@@ -1,57 +1,130 @@
-# MärkR - gAIa Bokmärkessystem
+# MärkR
 
-MärkR är ett klientside-baserat, blixtsnabbt sökverktyg för bokmärken, skapat för att Håkan snabbt ska kunna hitta och navigera bland system, verktyg och kunskapsresurser.
+Bokmärkesarkiv med sökning och stjärnkarta. Statisk sida på GitHub Pages,
+inga beroenden, inget byggsteg.
 
-## 🏗️ Arkitektur (Spec v2.1)
-* **Ingen Backend:** All data laddas direkt från `bokmarken.json`.
-* **Zero Dependencies:** Byggd med vanilla HTML, CSS och JS. Ingen ramverks-overhead.
-* **Sökalgoritm i Klienten:** Prioriterar Titel (10), Taggar (5), Beskrivning (2) och URL (1). 
-* **Tolerans för diakritiker:** Funktionen `vik()` (vikning/normalisering) gör att "åäö" matchas korrekt oavsett om man skriver a/o.
-* **Offline/Cache:** Bokmärkena sparas i `localStorage` vid första laddning, vilket garanterar att sidan kan laddas och sökas även om nätverket är tillfälligt nere (och den tål GitHub Pages rate limits).
+## Idén
 
-## 🎭 Roller och Ansvar
+Tom sökning visar himlen: taggarna som stjärnor, dimensionerade efter antal
+bokmärken, sammanbundna med stjärnbildslinjer där linjerna är verklig
+samförekomst i datan. Sökrutan är okularet i mitten. Klick på en stjärna
+filtrerar på taggen. Så fort något söks viker himlen undan och träfflistan
+tar över, med ett band "I träffarna" som visar vilka taggar som finns i just
+den träffmängden, klickbara för att smalna av vidare. Det är samma nätverk i
+omformad gestalt: himlen för att bläddra, bandet för att navigera facetterat.
 
-### Håkan (Dirigenten)
-- Tillsätter nya strategiska bokmärken till repot (eller ber gAIa göra det).
-- Beslutar om nya funktioner eller ändringar i designen.
-- Använder systemet operativt.
+## Filer
 
-### gAIa (Utvecklare & Förvaltare)
-- **Underhållare:** Ansvarar för kodens hälsa. Alla ändringar i koden ska gå via gAIa för att säkerställa att inga buggar introduceras.
-- **Anrikare:** Vid mass-import av bokmärken ansvarar gAIa för att kategorisera, tagga och skriva beskrivningar.
-- **Väktare (RL-1):** Säkerställer att skalfusk inte förekommer. All söklogik ligger synlig i `app.js`.
+| Fil | Innehåll |
+|---|---|
+| `index.html` | Struktur: sökfält, himmel, nodlager, resultat, listläge |
+| `style.css` | Sot, papper och mässing. Alla färger som variabler i `:root` |
+| `app.js` | Sökmotor, kraftsimulering, canvasritning, tangentbord |
+| `bokmarken.json` | Datan, Single Source of Truth |
+| `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
+| `test.mjs` | Kör appen i jsdom, 30 kontroller. Kräver `npm install jsdom` |
 
-## 🔄 Underhållsrutiner (För gAIa)
+## Arkitektur för himlen
 
-1. **Lägga till ett nytt bokmärke:**
-   - Öppna `bokmarken.json`.
-   - Lägg till ett nytt JSON-objekt i arrayen.
-   - Ett bokmärke MÅSTE innehålla `url` och `titel`. Det BÖR innehålla `taggar` (array av strängar) och `beskrivning` för att underlätta sökning.
-   - **Exempel:**
-     ```json
-     {
-       "url": "https://exempel.se",
-       "titel": "Exempel Sida",
-       "beskrivning": "En bra sida för referens.",
-       "taggar": ["Test", "Referens"]
-     }
-     ```
+Stjärnfältet och kanterna ritas på en canvas som är rent dekorativ och
+`aria-hidden`. Varje tagg är däremot ett riktigt `<button>`-element som
+kraftsimuleringen flyttar med transform. Därför fungerar tab, skärmläsare
+och 44-pixelsytor utan extra arbete, och grafen är användbar, inte bara vacker.
 
-2. **Kvalitetssäkring innan Deploy:**
-   - Efter eventuell editering i `bokmarken.json` MÅSTE JSON-formatet valideras (t.ex. genom att parsa med Python/Node) så att appen inte kraschar.
-   - Eventuell JavaScript-kod som uppdateras måste syntaxkollas (`node --check app.js`).
+Simuleringen är egen, cirka nittio rader: parvis frånstötning, fjädrar längs
+samförekomstkanterna, svag dragning mot mitten, en undantagszon runt sökfältet
+som inget får skymma, och mjuka skärmkanter med plats för etiketterna. Den
+somnar när den är färdigräknad. På enheter med mus och utan
+`prefers-reduced-motion` ligger en svag drift kvar, annars står himlen still.
 
-3. **Deploy / Uppdatering:**
-   - Applikationen ligger på GitHub Pages via repot `hktcr/markr`.
-   - För att uppdatera, gör en standard commit och push till `main`-branchen:
-     ```bash
-     git add .
-     git commit -m "Beskrivande meddelande"
-     git push
-     ```
+Antalet synliga stjärnor skalar med skärmyta, cirka 10 på en telefon och upp
+till 24 på en stor skärm, alltid de största taggarna först. Rombnoden
+"Senast tillagda" är en genväg, och textlänkarna under statusraden når det
+senaste och en fullständig kategorilista även utan grafen.
 
-4. **Miljö och Rättigheter:**
-   - Om gAIa kör terminalkommandon (ex. `git push`) och får rättighetsproblem med `.git/objects/`, rekommenderas `sudo` (om lösenord ges) eller att commita via GitHub CLI (`gh api`) eller be användaren köra pushen.
+## Dataformat
 
-## 🎨 Design-principer
-Sidan använder en ren, mörk palett med neongröna accenter (`#4ade80`). Mobilgränssnittet ("mobile first") har sökfältet i botten för att det ska vara nåbart med tummen. Desktop-layouten kastar om ordningen via CSS `flex-direction: column-reverse`. Inga ändringar får förstöra detta beteende.
+```json
+{
+  "uppdaterad": "2026-07-28",
+  "bokmarken": [
+    {
+      "url": "https://exempel.se/sida",
+      "titel": "Rubriken på sidan",
+      "beskrivning": "En eller två rader om varför den är sparad.",
+      "taggar": ["Didaktik", "Bedömning"],
+      "tillagd": "2026-07-28"
+    }
+  ]
+}
+```
+
+Appen läser även en ren array utan omslag, men då saknas `uppdaterad` och
+statusraden säger det. `url` är identiteten, dubbletter döljs vid inläsning
+och räknas synligt i statusraden. Taggar får innehålla å ä ö, sökningen
+normaliserar ändå.
+
+## Sökningen
+
+Varje sökord måste träffa någonstans, orden kombineras med OCH så att fler
+ord smalnar av. Ord som börjar med `#` är kategorifilter. Delsträngsmatchning,
+`didakt` hittar `didaktik`. `vik()` fäller diakriter så att `bedomning` hittar
+`bedömning`, valet ligger bakom konstanten `FALL_DIAKRITER`.
+
+Poäng per ord, högsta värdet räknas, summeras över orden:
+
+| Träffen finns i | Poäng |
+|---|---|
+| Titeln börjar med ordet | 6 |
+| Tagg exakt lika med ordet | 5 |
+| Ordet finns i titeln | 4 |
+| Tagg börjar med ordet | 3 |
+| Beskrivningen | 2 |
+| Url:en | 1 |
+
+Konstanterna ligger överst i `app.js`. De är en bedömning, inte ett mätt resultat.
+
+## Tangentbord
+
+| Tangent | Handling |
+|---|---|
+| `/` | fokus i sökrutan |
+| `Ctrl+K`, `Cmd+K` | rensa allt och fokusera |
+| `↑` `↓` | flytta markeringen |
+| `Home`, `End` | första respektive sista träffen |
+| `Enter` | öppna i ny flik |
+| `Ctrl+Enter` | öppna i samma flik |
+| `Shift+Enter` | kopiera adressen |
+| `Esc` | rensa och tillbaka till himlen |
+
+Träffraderna är riktiga `<a>`-element, så mittenklick, högerklick och
+skärmläsare fungerar som på vilken länk som helst.
+
+## Underhåll
+
+Att lägga till ett bokmärke:
+
+1. Läs `bokmarken.json`, kontrollera att url:en inte redan finns.
+2. Ta bort spårparametrar ur url:en (`utm_*`, `gclid`, `fbclid`, `msclkid`, `igshid`, `mc_cid`, `mc_eid`).
+3. Skriv beskrivningen utifrån vad Håkan har sagt. Har du inte läst sidan och
+   han inte sagt något om innehållet: lämna fältet tomt. En påhittad
+   beskrivning är värre än ingen, eftersom han litar på den om ett år.
+4. Föreslå taggar ur den flora som redan finns. Ny tagg bara när ingen
+   befintlig fungerar, med motivering.
+5. Visa hela posten för Håkan innan något skrivs.
+
+Före varje push:
+
+```bash
+node -e "JSON.parse(require('fs').readFileSync('bokmarken.json','utf8'))"
+node --check app.js
+node test.mjs
+```
+
+## Design
+
+Sot som botten, papper som text, mässing som enda accent. Estetiken är
+stjärnkartans, inte neonens: ett astronomiskt instrument i mässing mot natthimmel.
+Serif i titlarna, systemets sans i brödtext, monospace i maskintext. Inget i
+gränssnittet kräver hover, alla träffytor är minst 44 px, fokusmarkeringen är
+synlig och `prefers-reduced-motion` stänger av all rörelse.
