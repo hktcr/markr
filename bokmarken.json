@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-07-29",
+  "uppdaterad": "2026-07-30",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2209,58 +2209,6 @@
       ],
       "tillagd": "2026-07-29",
       "id": 169
-    },
-    {
-      "url": "https://reflect.app/g/raven/22072024",
-      "titel": "Reflect",
-      "beskrivning": "",
-      "taggar": [
-        "Produktivitet",
-        "Dokumentation",
-        "Logistik",
-        "Synk"
-      ],
-      "tillagd": "2026-07-29",
-      "id": 170
-    },
-    {
-      "url": "https://reflect.app/g/raven/e2e3a002d1df4768b54f3117dd264940",
-      "titel": "Reflect",
-      "beskrivning": "",
-      "taggar": [
-        "Produktivitet",
-        "Dokumentation",
-        "Logistik",
-        "Synk"
-      ],
-      "tillagd": "2026-07-29",
-      "id": 171
-    },
-    {
-      "url": "https://reflect.app/g/raven/17042023",
-      "titel": "Reflect",
-      "beskrivning": "",
-      "taggar": [
-        "Produktivitet",
-        "Dokumentation",
-        "Logistik",
-        "Synk"
-      ],
-      "tillagd": "2026-07-29",
-      "id": 172
-    },
-    {
-      "url": "https://reflect.app/g/raven",
-      "titel": "Reflect",
-      "beskrivning": "",
-      "taggar": [
-        "Produktivitet",
-        "Dokumentation",
-        "Logistik",
-        "Synk"
-      ],
-      "tillagd": "2026-07-29",
-      "id": 173
     },
     {
       "url": "https://docs.google.com/presentation/d/1J1A__mMeaYLcoeTSbl7BtQJlVGxT9WK190FrllnREfI/edit#slide=id.p",
