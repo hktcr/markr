@@ -743,12 +743,12 @@ function saStjarnor() {
 }
 
 function undantagsrekt() {
-  const topp = document.querySelector('.topp');
-  if (!topp) return null;
-  const r = topp.getBoundingClientRect();
+  const r = el.sokfalt.getBoundingClientRect();
   if (!r.width) return null;
-  const marg = 40;
-  return { v: r.left - marg, t: r.top - marg, h: r.right + marg, b: r.bottom + marg + 20 };
+  const margX = 30;
+  const margBot = 30;
+  const margTop = 90; /* Täcker h1.ordmarke som ligger ovanför */
+  return { v: r.left - margX, t: r.top - margTop, h: r.right + margX, b: r.bottom + margBot };
 }
 
 function simulera(steg) {
