@@ -27,13 +27,27 @@ const dubbletter = [];
 const urlRensade = [];
 const osynliga = [];
 
+let maxId = 0;
+for (const post of lista) {
+  if (post.id && typeof post.id === 'number' && post.id > maxId) {
+    maxId = post.id;
+  }
+}
+
 for (const post of lista) {
   const titel = String(post.titel || '');
   if (OSYNLIGA.test(titel)) osynliga.push(titel);
   const t = tvattaUrl(String(post.url || '').trim());
   if (t.rensad) urlRensade.push(t.url);
 
+  let id = post.id;
+  if (!id) {
+    maxId++;
+    id = maxId;
+  }
+
   const ny = {
+    id: id,
     url: t.url,
     titel: titel.replace(OSYNLIGA, '').trim(),
     beskrivning: String(post.beskrivning || '').trim(),

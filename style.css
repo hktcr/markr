@@ -507,6 +507,16 @@ body {
   gap: 6px;
 }
 
+.bm-id {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-right: 0.25rem;
+  background: var(--rymd-ljus);
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
 .vardnamn {
   font-family: var(--mono);
   font-size: 0.75rem;

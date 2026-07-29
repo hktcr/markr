@@ -118,6 +118,7 @@ function normalisera(ra) {
     const taggar = Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : [];
 
     sedda.set(nyckel, {
+      id: post.id || '',
       url: nyckel,
       titel: titel,
       visningstitel: stadaTitel(titel),
@@ -461,6 +462,15 @@ function fyllLista(behallare, lista, ord) {
 
     const meta = document.createElement('div');
     meta.className = 'meta';
+    
+    if (bm.id) {
+      const idSpan = document.createElement('span');
+      idSpan.className = 'bm-id';
+      idSpan.textContent = '#' + bm.id;
+      idSpan.title = 'Unikt ID för detta bokmärke';
+      meta.append(idSpan);
+    }
+
     const vard = document.createElement('span');
     vard.className = 'vardnamn';
     try { vard.textContent = new URL(bm.url).hostname.replace(/^www\./, ''); }
@@ -685,7 +695,7 @@ function ritaNodknappar() {
     knapp.addEventListener('blur', () => lysGrannar(-1));
 
     nod.el = knapp;
-    nod.kollision = nod.d / 2 + Math.max(20, nod.namn.length * 3.4);
+    nod.kollision = nod.d / 2 + Math.max(26, nod.namn.length * 4.8);
     el.noder.append(knapp);
   });
   requestAnimationFrame(() => el.noder.classList.add('framme'));

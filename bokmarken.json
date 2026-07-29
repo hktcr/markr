@@ -10,7 +10,8 @@
         "Verktyg",
         "Åstorp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 1
     },
     {
       "url": "https://discord.com/channels/@me",
@@ -20,7 +21,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 2
     },
     {
       "url": "https://dashboard.mailerlite.com/campaigns/162523879366985147/reports/overview",
@@ -32,7 +34,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 3
     },
     {
       "url": "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
@@ -47,7 +50,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 4
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1E-krs2u-qGcOnHau4-2Og5U1ivXKdUwlL9LgoJTGMbM/edit?gid=0#gid=0",
@@ -61,7 +65,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 5
     },
     {
       "url": "https://aiecology.streamlit.app/",
@@ -73,7 +78,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 6
     },
     {
       "url": "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
@@ -88,7 +94,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 7
     },
     {
       "url": "https://docs.google.com/document/d/1761Jlvaz41dc1wLHwkK6CioGdhlVp17a__MHdTVQHKQ/edit#heading=h.wo72xwzmks5",
@@ -102,7 +109,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 8
     },
     {
       "url": "https://statusgator.com/services/google-antigravity",
@@ -112,7 +120,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 9
     },
     {
       "url": "https://agentgpt.reworkd.ai/",
@@ -122,7 +131,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 10
     },
     {
       "url": "https://www.agenthost.ai/workspace",
@@ -134,7 +144,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 11
     },
     {
       "url": "https://docs.google.com/document/d/1h4FB0dGQheNuDntG8RFvD3wZCaRa-RW_bTTMPRG02DU/edit",
@@ -148,7 +159,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 12
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/11xtfA2cAwqxWR4xUpFveq87aVUWInDpYe8Beu_1JVtg/edit?gid=0#gid=0",
@@ -162,7 +174,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 13
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1BNiTC6IYMZX5y2iclinP8Q_K_iJSI7UFVAA7SBvfEUY/edit?gid=0#gid=0",
@@ -176,7 +189,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 14
     },
     {
       "url": "https://aipolicy.streamlit.app/",
@@ -188,7 +202,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 15
     },
     {
       "url": "https://ai-ulf.discourse.group/latest",
@@ -198,7 +213,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 16
     },
     {
       "url": "https://sites.google.com/d/1C5YQzAQ0GbUgGtkWsGsfExMQH5CdIdEk/p/12cdGP5itUR6yIXYWbyVKXLyVQORcLVcu/edit",
@@ -208,7 +224,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 17
     },
     {
       "url": "https://sites.google.com/view/ainobjk/aino-start",
@@ -218,7 +235,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 18
     },
     {
       "url": "https://sites.google.com/view/ainobjk/home",
@@ -228,7 +246,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 19
     },
     {
       "url": "https://www.agenthost.ai/chat/aino",
@@ -240,7 +259,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 20
     },
     {
       "url": "https://docs.google.com/document/d/1XiGsrgziwjZNa8V5A206Kv4BRDoipuN_c-LfFouLff4/edit",
@@ -254,7 +274,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 21
     },
     {
       "url": "https://ainoapp.streamlit.app/",
@@ -269,7 +290,8 @@
         "Skola",
         "Lokal AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 22
     },
     {
       "url": "https://ainohyllinge.streamlit.app/",
@@ -284,7 +306,8 @@
         "Skola",
         "Lokal AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 23
     },
     {
       "url": "https://ainoai.streamlit.app/",
@@ -299,7 +322,8 @@
         "Skola",
         "Lokal AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 24
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit?gid=1884570747#gid=1884570747",
@@ -313,7 +337,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 25
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit#gid=1884570747",
@@ -327,7 +352,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 26
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1ZtyPmAla8FOjtTSDn8dcYD454KFMGC3iitTmjMIHwkg/edit?gid=0#gid=0",
@@ -345,7 +371,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 27
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/10kGjImnNMUx0_lCcUl0g3ScjcGJJZ0rfi2q9EH88nho/edit?gid=0#gid=0",
@@ -359,7 +386,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 28
     },
     {
       "url": "https://ainstein.streamlit.app/",
@@ -371,7 +399,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 29
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1ZSh3qciDCixkFg1vtnOCfK4jzsCrazN8i5IAMjrikYM/edit?gid=0#gid=0",
@@ -385,7 +414,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 30
     },
     {
       "url": "https://artportalen.se/",
@@ -400,7 +430,8 @@
         "Rapportering",
         "Biologi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 31
     },
     {
       "url": "https://api.screen9.com/preview/ADaAFTF3bojdUcNspR-RMCA4pZ20CUHtRfIkGQ4lVnS8F7nwapo6dQzxDkhvCkxz",
@@ -412,7 +443,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 32
     },
     {
       "url": "https://bard.google.com/chat",
@@ -422,7 +454,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 33
     },
     {
       "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
@@ -434,7 +467,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 34
     },
     {
       "url": "https://classroom.google.com/u/1/c/MTY1NzUyNjIxNlpa",
@@ -446,7 +480,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 35
     },
     {
       "url": "https://hktcr.github.io/StudentSelector/",
@@ -458,7 +493,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 36
     },
     {
       "url": "https://raw.githack.com/",
@@ -468,7 +504,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 37
     },
     {
       "url": "https://chatgpt.com/c/676bcd6c-fd10-800d-b196-42da9e0c8b31",
@@ -480,7 +517,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 38
     },
     {
       "url": "https://chatgpt.com/c/66fb8346-8c90-8002-a035-0b515405899d",
@@ -492,7 +530,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 39
     },
     {
       "url": "http://chatgpt.com/",
@@ -504,7 +543,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 40
     },
     {
       "url": "https://chat.openai.com/",
@@ -516,7 +556,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 41
     },
     {
       "url": "https://chat.openai.com/gpts/mine",
@@ -528,7 +569,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 42
     },
     {
       "url": "https://chat.openai.com/g/g-4AbSRgbZo-captain-s-log/c/92521ddd-44e5-4291-96d8-b8c741f7a84d",
@@ -540,7 +582,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 43
     },
     {
       "url": "https://chat.openai.com/g/g-HyHaRsGaK-hard-fork-bot",
@@ -552,7 +595,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 44
     },
     {
       "url": "https://chatgpt.com/g/g-FWHtzQpQw-policy-hanteraren",
@@ -564,7 +608,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 45
     },
     {
       "url": "https://chat.openai.com/g/g-H74PQcft4-taleswapper",
@@ -576,7 +621,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 46
     },
     {
       "url": "https://chat.openai.com/c/15f98a81-27f4-4602-b961-08c7dd034812",
@@ -588,7 +634,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 47
     },
     {
       "url": "https://claude.ai/new",
@@ -600,7 +647,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 48
     },
     {
       "url": "https://claude.ai/login?returnTo=%2F%3F",
@@ -612,7 +660,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 49
     },
     {
       "url": "https://communitas.substack.com/",
@@ -622,7 +671,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 50
     },
     {
       "url": "https://www.artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/%C3%85storp/Alla%20lokaler/Idag/Ingen/Status",
@@ -637,7 +687,8 @@
         "Rapportering",
         "Biologi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 51
     },
     {
       "url": "https://artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/Hela%20landet/Alla%20lokaler/Idag/Art/Status/1",
@@ -652,7 +703,8 @@
         "Rapportering",
         "Biologi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 52
     },
     {
       "url": "https://www.agenthost.ai/chat/utmaningen",
@@ -664,7 +716,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 53
     },
     {
       "url": "https://docs.google.com/document/d/1YTJXfmk8Vcd7t32U1Cj0p0-nt1Gm1CfZE5sa-6IljC0/edit",
@@ -678,7 +731,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 54
     },
     {
       "url": "https://roamresearch.com/#/app/Hive_1",
@@ -688,7 +742,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 55
     },
     {
       "url": "https://scisummary.com/dashboard",
@@ -698,7 +753,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 56
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1DjpHrz-1mZpnO_ZZkMUR1jEKU8u4W3m6YIhUru5U7Ao/edit#gid=86105119",
@@ -712,7 +768,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 57
     },
     {
       "url": "https://docs.google.com/document/d/1k2aGZDvyueUY0lLC0H8UA-ql7TMRl4abCri-g5kEgNc/edit#",
@@ -726,7 +783,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 58
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1a2JyzJEavsuiT_lrCBxdUDz7q18QUlkN7tIbSk59Vh4/edit?resourcekey#gid=1704747000",
@@ -740,7 +798,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 59
     },
     {
       "url": "https://docanalyzer.ai/app",
@@ -750,7 +809,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 60
     },
     {
       "url": "https://outlook.office.com/mail/",
@@ -762,7 +822,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 61
     },
     {
       "url": "https://www.tv2fyn.dk/artikel/efter-blodpropperne-nu-er-niels-blevet-vildmand",
@@ -772,7 +833,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 62
     },
     {
       "url": "https://elevenlabs.io/app/home",
@@ -787,7 +849,8 @@
         "Röst",
         "ElevenLabs"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 63
     },
     {
       "url": "https://docs.google.com/document/d/1wmC7R_FSqhlXdlmabl2g1SRtS7HlYFAy28thmaVOQzo/edit#heading=h.vcncddp2c8nu",
@@ -801,7 +864,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 64
     },
     {
       "url": "https://elicit.com/?workflow=table-of-papers",
@@ -816,7 +880,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 65
     },
     {
       "url": "https://elicit.com/",
@@ -831,7 +896,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 66
     },
     {
       "url": "https://hktcr.github.io/explorations/",
@@ -843,7 +909,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 67
     },
     {
       "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit#heading=h.3nb9ljm9mhak",
@@ -857,7 +924,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 68
     },
     {
       "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit",
@@ -871,7 +939,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 69
     },
     {
       "url": "https://bit.ly/timerF",
@@ -881,7 +950,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 70
     },
     {
       "url": "http://freemusicarchive.org/",
@@ -891,7 +961,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 71
     },
     {
       "url": "https://elevenlabs.io/text-to-speech",
@@ -906,7 +977,8 @@
         "Röst",
         "ElevenLabs"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 72
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1yNHQcN51seipxRU9CaTcLyOs9d7evh35Dqn01E21IXM/edit#gid=498198438",
@@ -920,7 +992,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 73
     },
     {
       "url": "https://chatgpt.com/c/675a8ae1-9b6c-800d-98fb-6f5400bedeb0",
@@ -932,7 +1005,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 74
     },
     {
       "url": "https://hktcr.github.io/birds_Astorp/",
@@ -948,7 +1022,8 @@
         "Fåglar",
         "Kartografi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 75
     },
     {
       "url": "https://hktcr.github.io/faltlistan/",
@@ -960,7 +1035,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 76
     },
     {
       "url": "https://hktcr.github.io/FaltPunkter/",
@@ -972,7 +1048,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 77
     },
     {
       "url": "https://hktcr.github.io/gaia-tools/",
@@ -984,7 +1061,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 78
     },
     {
       "url": "https://gamma.app/create",
@@ -994,7 +1072,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 79
     },
     {
       "url": "https://classroom.google.com/u/1/h",
@@ -1006,7 +1085,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 80
     },
     {
       "url": "https://gemini.google.com/gem/620bc24530ca",
@@ -1018,7 +1098,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 81
     },
     {
       "url": "https://gemini.google.com/share/b3542a2ea31f",
@@ -1030,7 +1111,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 82
     },
     {
       "url": "https://gemini.google.com/share/f8a966e93310",
@@ -1042,7 +1124,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 83
     },
     {
       "url": "http://gerberianshepsky.com/category/gerberian-shepsky-information/",
@@ -1052,7 +1135,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 84
     },
     {
       "url": "https://hlgk.goatcounter.com/",
@@ -1062,7 +1146,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 85
     },
     {
       "url": "https://www.google.com/",
@@ -1072,7 +1157,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 86
     },
     {
       "url": "https://calendar.google.com/calendar/u/0/r/week",
@@ -1084,7 +1170,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 87
     },
     {
       "url": "https://gemini.google.com/app",
@@ -1096,7 +1183,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 88
     },
     {
       "url": "https://calendar.google.com/calendar/u/0/r",
@@ -1108,7 +1196,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 89
     },
     {
       "url": "https://keep.google.com/u/0/#home",
@@ -1120,7 +1209,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 90
     },
     {
       "url": "https://messages.google.com/web/conversations",
@@ -1130,7 +1220,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 91
     },
     {
       "url": "http://recorder.google.com/",
@@ -1140,7 +1231,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 92
     },
     {
       "url": "https://scholar.google.com/scholar_labs/search",
@@ -1152,7 +1244,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 93
     },
     {
       "url": "https://scholar-google-com.ludwig.lub.lu.se:2443/",
@@ -1162,7 +1255,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 94
     },
     {
       "url": "https://historiskakartor.lantmateriet.se/",
@@ -1172,7 +1266,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 95
     },
     {
       "url": "https://hktcr.github.io/HKK-KM/",
@@ -1184,7 +1279,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 96
     },
     {
       "url": "https://share.streamlit.io/",
@@ -1194,7 +1290,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 97
     },
     {
       "url": "https://github.com/hktcr/Sims",
@@ -1204,7 +1301,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 98
     },
     {
       "url": "https://drive.google.com/drive/home",
@@ -1216,7 +1314,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 99
     },
     {
       "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
@@ -1228,7 +1327,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 100
     },
     {
       "url": "https://hktcr.github.io/SlideLauncher/slides/standalone/inlarning-typewriter.html",
@@ -1243,7 +1343,8 @@
         "Presentation",
         "Undervisning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 101
     },
     {
       "url": "https://hypothes.is/users/Hlgk",
@@ -1253,7 +1354,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 102
     },
     {
       "url": "https://flickr.com/photos/karlssoncorner/",
@@ -1263,7 +1365,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 103
     },
     {
       "url": "https://mail.google.com/mail/u/0/#inbox",
@@ -1275,7 +1378,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 104
     },
     {
       "url": "https://read.readwise.io/new",
@@ -1287,7 +1391,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 105
     },
     {
       "url": "https://docs.google.com/document/d/1u2DUXeV6qAP4_tQFBn4hTioRI8FDi-Q_rsP_mVnKJOw/edit#heading=h.tukac2m5kmxh",
@@ -1301,7 +1406,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 106
     },
     {
       "url": "https://docs.google.com/presentation/d/e/2PACX-1vT7KEnq_kBOgGgTumYyMwafEWR7iawshsTTAinM92BuWqnYk9wQFcrtUqGbeDAiSCsC-MvNRXI4HQ5N/pub?start=true&loop=true&delayms=15000&slide=id.p",
@@ -1315,7 +1421,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 107
     },
     {
       "url": "https://infranodus.com/hlgk/Nautilus%20(aggregated)/edit",
@@ -1327,7 +1434,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 108
     },
     {
       "url": "https://infranodus.com/hlgk/News_misc/edit",
@@ -1341,7 +1449,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 109
     },
     {
       "url": "https://infranodus.com/hlgk/Science%20news/edit",
@@ -1355,7 +1464,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 110
     },
     {
       "url": "https://docs.google.com/document/d/1a715Ll5W8Qe0FLcVnmIBuLfjrds5lxenTXExvmuKVxI/edit#heading=h.x88lio7hrcb0",
@@ -1369,7 +1479,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 111
     },
     {
       "url": "https://www.mentimeter.com/",
@@ -1381,7 +1492,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 112
     },
     {
       "url": "https://situational-awareness.ai/",
@@ -1391,7 +1503,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 113
     },
     {
       "url": "https://docs.google.com/document/d/14viBV_KeoCTj6xLOtAz53RlImaKmkZs889RDKAadvpg/edit",
@@ -1405,7 +1518,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 114
     },
     {
       "url": "https://docs.google.com/document/d/1wtwrbEpcF1gyFREdtGCaUs1oJveHduYYI7UyZueQrPA/edit",
@@ -1419,7 +1533,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 115
     },
     {
       "url": "https://read.amazon.com/kindle-library",
@@ -1429,7 +1544,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 116
     },
     {
       "url": "https://hktcr.github.io/koordinatvaljare/",
@@ -1441,7 +1557,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 117
     },
     {
       "url": "https://www.genspark.ai/api/page_private?id=cmuceruf",
@@ -1451,7 +1568,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 118
     },
     {
       "url": "https://docs.google.com/document/d/1JjDE-yGbuIa_2eRQVjC66oEaZdAdPlE-Zqv4Zb5RjiA/edit#heading=h.iizehqulg3b",
@@ -1469,7 +1587,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 119
     },
     {
       "url": "https://docs.google.com/document/d/1tqXeQ7b7I7yZR06UccBmouI58vRX9NRlj0dN_PGbSo8/edit?tab=t.0",
@@ -1483,7 +1602,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 120
     },
     {
       "url": "https://docs.google.com/document/d/1KGg738c0y_SgweyMPh_TqH9PZZwKnBHT1B-qcZdXxSo/edit",
@@ -1497,7 +1617,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 121
     },
     {
       "url": "https://hktcr.github.io/LessonLab/",
@@ -1509,7 +1630,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 122
     },
     {
       "url": "https://lex.page/~",
@@ -1519,7 +1641,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 123
     },
     {
       "url": "https://lighterpack.com/",
@@ -1529,7 +1652,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 124
     },
     {
       "url": "https://www.ambient-mixer.com/",
@@ -1539,7 +1663,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 125
     },
     {
       "url": "https://app.litmaps.com/",
@@ -1551,7 +1676,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 126
     },
     {
       "url": "https://app.litmaps.com/library/collection/0a244d45-3e3b-4b4f-9367-12631f4d6088",
@@ -1563,7 +1689,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 127
     },
     {
       "url": "https://www.genspark.ai/api/page_private?id=itfmhged",
@@ -1573,7 +1700,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 128
     },
     {
       "url": "https://hktcr.github.io/SoundMonitor/",
@@ -1585,7 +1713,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 129
     },
     {
       "url": "http://blogg.agria.se/fredriksteen/2015/08/31/lamna-valpen-ensam-just-do-it/",
@@ -1595,7 +1724,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 130
     },
     {
       "url": "https://docs.google.com/document/d/1YRJGT6N39HhXL7Hai_cSulPs1vvmLBE4YzWhdOKFjhw/edit#heading=h.gic49v4kr2dc",
@@ -1609,7 +1739,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 131
     },
     {
       "url": "https://www.skolverket.se/skolutveckling/inspiration-och-stod-i-arbetet/stod-i-arbetet/lar-dig-mer-om-digital-lasning",
@@ -1619,7 +1750,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 132
     },
     {
       "url": "https://www.mathworks.com/campaigns/offers/next/machine-learning-with-matlab.html",
@@ -1629,7 +1761,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 133
     },
     {
       "url": "https://roamresearch.com/#/app/Hive_1/page/05-17-2021",
@@ -1639,7 +1772,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 134
     },
     {
       "url": "https://docs.google.com/document/d/1-9BlRELvoiTlvpwHJi8xVkD7EWm2LGuM-McHkwMGTdY/edit#heading=h.c9p0gru79ovx",
@@ -1653,7 +1787,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 135
     },
     {
       "url": "https://www.mentimeter.com/app/home",
@@ -1665,7 +1800,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 136
     },
     {
       "url": "https://www.midjourney.com/imagine",
@@ -1677,7 +1813,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 137
     },
     {
       "url": "https://app.usemotion.com/web/",
@@ -1687,7 +1824,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 138
     },
     {
       "url": "https://openai.smapply.org/prog/",
@@ -1699,7 +1837,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 139
     },
     {
       "url": "https://console.cloud.google.com/billing/01BB06-D4B7F4-3FD0F2/budgets",
@@ -1709,7 +1848,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 140
     },
     {
       "url": "https://www.nationalgeographic.com/magazine",
@@ -1719,7 +1859,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 141
     },
     {
       "url": "https://archive.nationalgeographic.com/landing",
@@ -1729,7 +1870,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 142
     },
     {
       "url": "http://www.naturesoundmap.com/",
@@ -1739,7 +1881,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 143
     },
     {
       "url": "https://nearpod.com/",
@@ -1751,7 +1894,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 144
     },
     {
       "url": "http://my.netatmo.com/app/station",
@@ -1761,7 +1905,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 145
     },
     {
       "url": "https://manifold.markets/home",
@@ -1771,7 +1916,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 146
     },
     {
       "url": "https://www.newsminimalist.com/",
@@ -1781,7 +1927,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 147
     },
     {
       "url": "https://notebooklm.google.com/",
@@ -1796,7 +1943,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 148
     },
     {
       "url": "https://hktcr.github.io/nyhetskartan/",
@@ -1812,7 +1960,8 @@
         "Fåglar",
         "Kartografi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 149
     },
     {
       "url": "https://roamresearch.com/#/app/Hive_1/page/mFfsEx1tC",
@@ -1822,7 +1971,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 150
     },
     {
       "url": "https://mermaid.live/edit#pako:eNptk8tugzAQRX_Fmm5aKZEYHgmwqISolE1XbVatu7CCEyKFhygsqij_XnuIwaZlgXx95o7vyHCFQ1NISOHUibZkr2-85jVTz-aTw8MmZTuWsZzt1VuvHrumf-LwNdZEuiYaa_amZqLoaYze3GPn8Fjj2HZntjsgdzDz3O2OxNHu7vhD4qHh2eL0ROPEPj233T65_ZFnf9MRtrPZlKJPybNFcgrm5LK9W02381RuZ4o1pVrOhHQhGP3X-36rbL1-ZpEt0DMwIh3bAgMD0Rs30JWh4THpxBboT-Zg3HDU3BpJh47aTjQk7TsK1Qiwgkp2lTgX6vO9asyhL2UlOaRqWcijGC49B17fVKkY-ub9pz5A2neDXEHXDKcS0qO4fCs1tIXo5ctZqN-gMiWtqD-aproX3X4BtvK_Zg",
@@ -1832,7 +1982,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 151
     },
     {
       "url": "https://app.originality.ai/",
@@ -1844,7 +1995,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 152
     },
     {
       "url": "https://ourworldindata.org/",
@@ -1854,7 +2006,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 153
     },
     {
       "url": "https://openpdf.com/",
@@ -1864,7 +2017,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 154
     },
     {
       "url": "https://www.perplexity.ai/",
@@ -1876,7 +2030,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 155
     },
     {
       "url": "https://hktcr.github.io/StudentSelector/klassrum/",
@@ -1888,7 +2043,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 156
     },
     {
       "url": "https://claude.ai/chat/131f8254-e4e4-4130-8437-f071805410a8",
@@ -1900,7 +2056,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 157
     },
     {
       "url": "https://app.reclaim.ai/planner",
@@ -1910,7 +2067,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 158
     },
     {
       "url": "https://docs.google.com/document/d/1BLg_rqMcZcoUGRUDJI97OKnBpcG6kzssP1HvioxQydA/edit",
@@ -1924,7 +2082,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 159
     },
     {
       "url": "https://quizlet.com/latest",
@@ -1936,7 +2095,8 @@
         "Undervisning",
         "EdTech"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 160
     },
     {
       "url": "https://app.raindrop.io/my/28557025",
@@ -1946,7 +2106,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 161
     },
     {
       "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/prompt",
@@ -1958,7 +2119,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 162
     },
     {
       "url": "https://retune.so/chats",
@@ -1970,7 +2132,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 163
     },
     {
       "url": "https://readwise.io/chat",
@@ -1982,7 +2145,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 164
     },
     {
       "url": "https://readwise.io/dashboard",
@@ -1994,7 +2158,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 165
     },
     {
       "url": "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
@@ -2009,7 +2174,8 @@
         "Läsning",
         "Syntes"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 166
     },
     {
       "url": "https://ccmisbpa.gensparkspace.com/",
@@ -2019,7 +2185,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 167
     },
     {
       "url": "https://app.recolx.ai/",
@@ -2029,7 +2196,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 168
     },
     {
       "url": "https://mastodon.oeru.org/settings/profile",
@@ -2039,7 +2207,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 169
     },
     {
       "url": "https://reflect.app/g/raven/22072024",
@@ -2051,7 +2220,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 170
     },
     {
       "url": "https://reflect.app/g/raven/e2e3a002d1df4768b54f3117dd264940",
@@ -2063,7 +2233,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 171
     },
     {
       "url": "https://reflect.app/g/raven/17042023",
@@ -2075,7 +2246,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 172
     },
     {
       "url": "https://reflect.app/g/raven",
@@ -2087,7 +2259,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 173
     },
     {
       "url": "https://docs.google.com/presentation/d/1J1A__mMeaYLcoeTSbl7BtQJlVGxT9WK190FrllnREfI/edit#slide=id.p",
@@ -2105,7 +2278,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 174
     },
     {
       "url": "https://www.semanticscholar.org/me/research",
@@ -2117,7 +2291,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 175
     },
     {
       "url": "https://researchrabbitapp.com/home",
@@ -2129,7 +2304,8 @@
         "Litteratur",
         "Kunskapshantering"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 176
     },
     {
       "url": "https://hktcr.github.io/RakRadar/",
@@ -2141,7 +2317,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 177
     },
     {
       "url": "https://hktcr.github.io/SlideLauncher/",
@@ -2156,7 +2333,8 @@
         "Presentation",
         "Undervisning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 178
     },
     {
       "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
@@ -2166,7 +2344,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 179
     },
     {
       "url": "https://www.quantamagazine.org/?nsl_bypass_cache=aa6913d204e570806cb363794fb46973",
@@ -2176,7 +2355,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 180
     },
     {
       "url": "https://www.sciencenews.org/",
@@ -2186,7 +2366,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 181
     },
     {
       "url": "https://artportalen.se/search/sightings/taxon/4000104/area/330/days/7",
@@ -2201,7 +2382,8 @@
         "Rapportering",
         "Biologi"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 182
     },
     {
       "url": "https://outlook.office.com/mail",
@@ -2213,7 +2395,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 183
     },
     {
       "url": "https://docs.google.com/forms/u/1/d/1GcOJewpW150MZ22RvQiiD9S8yTxeI_habcdZMLNSm9g/edit?usp=redirect_edit_m2#responses",
@@ -2227,7 +2410,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 184
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/1MwRwy-bNDZSGIBiHvCuAM2GemBH7MmL1we2fFl0u7oI/edit?resourcekey#gid=709790722",
@@ -2241,7 +2425,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 185
     },
     {
       "url": "https://docs.google.com/forms/d/1D01UKYIBEhhCotONs5cZpOhjl2TKYs-tDXuGP_SD5hA/edit",
@@ -2255,7 +2440,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 186
     },
     {
       "url": "https://docs.google.com/spreadsheets/d/10jHk8Fsuegl_T9WrJKZZnCqMNo7JhXN3qSlVAL_wkb8/edit#gid=588827240",
@@ -2269,7 +2455,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 187
     },
     {
       "url": "https://docs.google.com/document/d/e/2PACX-1vQ0Wp28m0G-ITGLiX1mg9IqJOaQ_p7ZiQ_21wTeqWjHFhQczGduydG7GEPuHpLktKuIuLeynLDkrTY8/pub",
@@ -2283,7 +2470,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 188
     },
     {
       "url": "https://hktcr.github.io/SkrivBord/",
@@ -2295,7 +2483,8 @@
         "Utveckling",
         "Webbapp"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 189
     },
     {
       "url": "https://hktcr.github.io/CRE_APT_jan2026/shell.html",
@@ -2310,7 +2499,8 @@
         "Presentation",
         "Undervisning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 190
     },
     {
       "url": "http://www.driva-eget.se/kalkyler/moms",
@@ -2320,7 +2510,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 191
     },
     {
       "url": "https://stability.ai/",
@@ -2330,7 +2521,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 192
     },
     {
       "url": "https://karlsson.substack.com/publish/home",
@@ -2340,7 +2532,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 193
     },
     {
       "url": "https://ourworldindata.org/co2/country/sweden?country=SWE~USA~DEU",
@@ -2350,7 +2543,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 194
     },
     {
       "url": "https://docs.google.com/document/d/14BH9l0t6CK7JrE1pG8_7S-7haFzRTpXJs2n2UBgo744/edit#",
@@ -2364,7 +2558,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 195
     },
     {
       "url": "https://keep.google.com/u/0/#label/0_Texter%20In%20Progress",
@@ -2376,7 +2571,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 196
     },
     {
       "url": "https://app.trevorai.com/app",
@@ -2386,7 +2582,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 197
     },
     {
       "url": "https://www.menshealth.com/uk/workouts/a27006489/ultimate-arms-and-abs-workout/",
@@ -2396,7 +2593,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 198
     },
     {
       "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eefaf4-f2b9-0500-a62a-e51f61071505&tab=Unread",
@@ -2408,7 +2606,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 199
     },
     {
       "url": "https://docs.google.com/document/d/12yma_DI0jJUR3DeiayjzsjCg_Isv8dD9fiRHuSiwfpA/edit?tab=t.0",
@@ -2422,7 +2621,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 200
     },
     {
       "url": "https://platform.openai.com/usage",
@@ -2434,7 +2634,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 201
     },
     {
       "url": "https://www.improvethenews.org/",
@@ -2444,7 +2645,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 202
     },
     {
       "url": "https://chatgpt.com/c/66fa267a-55cc-8002-8f0c-4461d07b102c",
@@ -2456,7 +2658,8 @@
         "Verktyg",
         "Generativ AI"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 203
     },
     {
       "url": "https://docs.google.com/document/d/1fb3CM2lkVTd0FUHLNT-_byD2jeyMVYONXqgz5z8htTc/edit#heading=h.mx3z8bijejlm",
@@ -2470,7 +2673,8 @@
         "Google Docs",
         "Dokument"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 204
     },
     {
       "url": "http://www.wanghaijun.com/",
@@ -2480,7 +2684,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 205
     },
     {
       "url": "https://www.platformer.news/tuesday-newsletter/?ref=platformer-newsletter",
@@ -2490,7 +2695,8 @@
         "Nyheter",
         "Omvärldsbevakning"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 206
     },
     {
       "url": "https://www.window-swap.com/",
@@ -2500,7 +2706,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 207
     },
     {
       "url": "https://xmind.ai/home",
@@ -2510,7 +2717,8 @@
         "Bokmärke",
         "Verktyg"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 208
     },
     {
       "url": "https://mail.google.com/chat/u/1/#chat/dm/m10HqwAAAAE",
@@ -2522,7 +2730,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 209
     },
     {
       "url": "https://calendar.google.com/calendar/u/1/r",
@@ -2534,7 +2743,8 @@
         "Logistik",
         "Synk"
       ],
-      "tillagd": "2026-07-29"
+      "tillagd": "2026-07-29",
+      "id": 210
     }
   ]
 }
