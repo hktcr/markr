@@ -2,6 +2,17 @@
   "uppdaterad": "2026-07-29",
   "bokmarken": [
     {
+      "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
+      "titel": "Edlevo Lärarinloggning",
+      "beskrivning": "Skolplattform för registrering av närvaro, frånvaro med mera.",
+      "taggar": [
+        "Skola",
+        "Verktyg",
+        "Åstorp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
       "url": "https://discord.com/channels/@me",
       "titel": "(7) Discord | Vänner",
       "beskrivning": "",
