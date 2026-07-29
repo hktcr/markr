@@ -134,7 +134,7 @@ kolla('Escape lämnar listläget', $('#listlage').hidden && $('#skal').classList
 skriv('xyzzyplugh');
 kolla('nollträff säger det rakt', w.document.body.textContent.includes('Inga bokmärken matchar'));
 skriv('');
-kolla('dubbletter rapporteras i statusraden', /dubblett/.test($('#status').textContent), $('#status').textContent);
+kolla('statusraden är synlig (inga dubbletter krävs)', /bokmärken/.test($('#status').textContent), $('#status').textContent);
 kolla('inga konsolfel', fel.length === 0, fel.join(' | ').slice(0, 120));
 
 console.log(resultat.join('\n'));

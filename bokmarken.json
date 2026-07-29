@@ -1,2613 +1,2529 @@
-[
-  {
-    "titel": "Exploration",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/explorations/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "SkrivR",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/SkrivBord/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "gAIa Verktyg",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/gaia-tools/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Fågelåret i Åstorp",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://hktcr.github.io/birds_Astorp/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi"
-    ]
-  },
-  {
-    "titel": "FältPunkter — Positioner",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/FaltPunkter/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "RåkRadar — Fältinventering av råkbon",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/RakRadar/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Dokument 1 — SkrivBord",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/SkrivBord/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Hur lärande fungerar",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Verktyg för presentationer och undervisning.",
-    "url": "https://hktcr.github.io/SlideLauncher/slides/standalone/inlarning-typewriter.html",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "SlideCraft",
-      "Presentation",
-      "Undervisning"
-    ]
-  },
-  {
-    "titel": "Slide Shell",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Verktyg för presentationer och undervisning.",
-    "url": "https://hktcr.github.io/CRE_APT_jan2026/shell.html",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "SlideCraft",
-      "Presentation",
-      "Undervisning"
-    ]
-  },
-  {
-    "titel": "Bänkväljare — Slumpa bänknummer",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/StudentSelector/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Sammanfattningsslides — NO 7-9",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Verktyg för presentationer och undervisning.",
-    "url": "https://hktcr.github.io/SlideLauncher/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "SlideCraft",
-      "Presentation",
-      "Undervisning"
-    ]
-  },
-  {
-    "titel": "HKK Dashboard — Logga in",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/HKK-KM/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Koordinatväljare — Terrängkarta",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/koordinatvaljare/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Placering",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/StudentSelector/klassrum/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Ljudmonitor — Klassrumsverktyg",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/SoundMonitor/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "LessonLab — Genomgångsmanus",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/LessonLab/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Fältlistan — Digital Krysslista",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://hktcr.github.io/faltlistan/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "AI-ULF",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://ai-ulf.discourse.group/latest",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Nyheter",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://hktcr.github.io/nyhetskartan/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi"
-    ]
-  },
-  {
-    "titel": "Historiska Kartor och Akter",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://historiskakartor.lantmateriet.se/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "GoatCounter",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://hlgk.goatcounter.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "AG Status",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://statusgator.com/services/google-antigravity",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Google Scholar",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://scholar.google.com/scholar_labs/search",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "📙Mina anteckningsböcker - NotebookLM",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Dagens fynd",
-    "beskrivning": "Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://www.artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/%C3%85storp/Alla%20lokaler/Idag/Ingen/Status",
-    "taggar": [
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi",
-      "Åstorp",
-      "Rapportering",
-      "Biologi"
-    ]
-  },
-  {
-    "titel": "AP",
-    "beskrivning": "Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://artportalen.se/",
-    "taggar": [
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi",
-      "Åstorp",
-      "Rapportering",
-      "Biologi"
-    ]
-  },
-  {
-    "titel": "Google Messages for web: Conversations",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://messages.google.com/web/conversations",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "ElevenLabs",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elevenlabs.io/app/home",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "TTS",
-      "Röst",
-      "ElevenLabs"
-    ]
-  },
-  {
-    "titel": "Recolx",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://app.recolx.ai/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Inbox (31) - hlg.karlsson@gmail.com - Gmail",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://mail.google.com/mail/u/0/#inbox",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Google Calendar - Week of March 25, 2024",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://calendar.google.com/calendar/u/0/r/week",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Home - Google Drive",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://drive.google.com/drive/home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Skapa nyhetssammanfattning",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/e/2PACX-1vQ0Wp28m0G-ITGLiX1mg9IqJOaQ_p7ZiQ_21wTeqWjHFhQczGduydG7GEPuHpLktKuIuLeynLDkrTY8/pub",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Google Gemini",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://gemini.google.com/app",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "#001 🚀 AI i skolan - Åstorps kommun | Overview",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://dashboard.mailerlite.com/campaigns/162523879366985147/reports/overview",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "News Minimalist — All news ranked by significance",
-    "beskrivning": "Källa för omvärldsbevakning och nyheter.",
-    "url": "https://www.newsminimalist.com/",
-    "taggar": [
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "My Billing Account 1 – Budgets & alerts – Billing – Google Cloud console",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://console.cloud.google.com/billing/01BB06-D4B7F4-3FD0F2/budgets",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Readwise",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://readwise.io/chat",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "LighterPack",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://lighterpack.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Gem - backlinks till Obsidian",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://gemini.google.com/gem/620bc24530ca",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Sign in to your account",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://outlook.office.com/mail",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Inbox | Readwise",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://read.readwise.io/new",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "Lektorsanteckningar läsåret 2025/2026 - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1tqXeQ7b7I7yZR06UccBmouI58vRX9NRlj0dN_PGbSo8/edit?tab=t.0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Interactive presentation software",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://www.mentimeter.com/",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Google Messages for web",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://messages.google.com/web/conversations",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Home - Google Drive",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://drive.google.com/drive/home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "hktcr/Sims",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://github.com/hktcr/Sims",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "WindowSwap - Watch windows around the world",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.window-swap.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Free Text To Speech Online with Lifelike AI Voices | ElevenLabs",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elevenlabs.io/text-to-speech",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "TTS",
-      "Röst",
-      "ElevenLabs"
-    ]
-  },
-  {
-    "titel": "Fylogenetiskt träd konstruktion",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chatgpt.com/c/675a8ae1-9b6c-800d-98fb-6f5400bedeb0",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "CDN for your source code | raw.githack.com",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://raw.githack.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Online FlowChart & Diagrams Editor - Mermaid Live Editor",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://mermaid.live/edit#pako:eNptk8tugzAQRX_Fmm5aKZEYHgmwqISolE1XbVatu7CCEyKFhygsqij_XnuIwaZlgXx95o7vyHCFQ1NISOHUibZkr2-85jVTz-aTw8MmZTuWsZzt1VuvHrumf-LwNdZEuiYaa_amZqLoaYze3GPn8Fjj2HZntjsgdzDz3O2OxNHu7vhD4qHh2eL0ROPEPj233T65_ZFnf9MRtrPZlKJPybNFcgrm5LK9W02381RuZ4o1pVrOhHQhGP3X-36rbL1-ZpEt0DMwIh3bAgMD0Rs30JWh4THpxBboT-Zg3HDU3BpJh47aTjQk7TsK1Qiwgkp2lTgX6vO9asyhL2UlOaRqWcijGC49B17fVKkY-ub9pz5A2neDXEHXDKcS0qO4fCs1tIXo5ctZqN-gMiWtqD-aproX3X4BtvK_Zg",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Readwise - NotebookLM",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "ChatGPT",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chatgpt.com/c/676bcd6c-fd10-800d-b196-42da9e0c8b31",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Google Recorder",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://recorder.google.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Claude",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://claude.ai/new",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Fokustimer",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://bit.ly/timerF",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Elicit: The AI Research Assistant",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elicit.com/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Mentimeter",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://www.mentimeter.com/app/home",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Planering Ledningsgrupp AI",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://claude.ai/chat/131f8254-e4e4-4130-8437-f071805410a8",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Untitled document - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/12yma_DI0jJUR3DeiayjzsjCg_Isv8dD9fiRHuSiwfpA/edit?tab=t.0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "‎Gemini - Interaktiv Webbplats för Biologi",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://gemini.google.com/share/b3542a2ea31f",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "‎Gemini - Ofullständig Kod för Periodiska Systemet",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://gemini.google.com/share/f8a966e93310",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Realistisk Eldfluge-simulering - Synkrona Blinkande Ljus",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://ccmisbpa.gensparkspace.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Livets utveckling på jorden - Interaktiv tidslinje",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.genspark.ai/api/page_private?id=itfmhged",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Källkritik i biologi - avancerade flervalsfrågor för årskurs 7",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.genspark.ai/api/page_private?id=cmuceruf",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "AINO (allmän)",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. AINO - Lokalt AI-stöd för pedagogik.",
-    "url": "https://ainoapp.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "AINO",
-      "Skola",
-      "Lokal AI"
-    ]
-  },
-  {
-    "titel": "AInstein · Streamlit",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://ainstein.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "AINO (Kvidinge)",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. AINO - Lokalt AI-stöd för pedagogik.",
-    "url": "https://ainoai.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "AINO",
-      "Skola",
-      "Lokal AI"
-    ]
-  },
-  {
-    "titel": "AINO (Hyllinge)",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. AINO - Lokalt AI-stöd för pedagogik.",
-    "url": "https://ainohyllinge.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "AINO",
-      "Skola",
-      "Lokal AI"
-    ]
-  },
-  {
-    "titel": "AI-loggar version 2.0 - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/11xtfA2cAwqxWR4xUpFveq87aVUWInDpYe8Beu_1JVtg/edit?gid=0#gid=0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AINO-logg - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit?gid=1884570747#gid=1884570747",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AINO-logg Kvidinge - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/10kGjImnNMUx0_lCcUl0g3ScjcGJJZ0rfi2q9EH88nho/edit?gid=0#gid=0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AINO-logg Hyllinge skola - Google Sheets",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande. Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1ZtyPmAla8FOjtTSDn8dcYD454KFMGC3iitTmjMIHwkg/edit?gid=0#gid=0",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech",
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "A glossary for the AI-ecologist - making field notes in a new world · Streamlit",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://aiecology.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "A glossary for the AI-ecologist - making field notes in a new world - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1E-krs2u-qGcOnHau4-2Og5U1ivXKdUwlL9LgoJTGMbM/edit?gid=0#gid=0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Viktiga ekologiska begrepp",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chatgpt.com/c/66fa267a-55cc-8002-8f0c-4461d07b102c",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "AI-ecology - Information - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1h4FB0dGQheNuDntG8RFvD3wZCaRa-RW_bTTMPRG02DU/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "ChatGPT",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chatgpt.com/c/66fb8346-8c90-8002-a035-0b515405899d",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Claude",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://claude.ai/new",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Reflect",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://reflect.app/g/raven/22072024",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Perplexity",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.perplexity.ai/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "ChatGPT",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "http://chatgpt.com/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Elevtester med custom GPTs - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1wmC7R_FSqhlXdlmabl2g1SRtS7HlYFAy28thmaVOQzo/edit#heading=h.vcncddp2c8nu",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AINO · Streamlit",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. AINO - Lokalt AI-stöd för pedagogik.",
-    "url": "https://ainoapp.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp",
-      "AINO",
-      "Skola",
-      "Lokal AI"
-    ]
-  },
-  {
-    "titel": "AINO-logg - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit#gid=1884570747",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Google Keep",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://keep.google.com/u/0/#home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "ChatGPT - Taleswapper",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/g/g-H74PQcft4-taleswapper",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "AINO - Information - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1XiGsrgziwjZNa8V5A206Kv4BRDoipuN_c-LfFouLff4/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Håkan Karlsson | Flickr",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://flickr.com/photos/karlssoncorner/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Midjourney",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.midjourney.com/imagine",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "National Geographic Magazine",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.nationalgeographic.com/magazine",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "National Geographic Magazine Archive",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://archive.nationalgeographic.com/landing",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Att som skolhuvudman styra och leda skolan i en tid full av AI",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://api.screen9.com/preview/ADaAFTF3bojdUcNspR-RMCA4pZ20CUHtRfIkGQ4lVnS8F7nwapo6dQzxDkhvCkxz",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Reflect",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://reflect.app/g/raven/e2e3a002d1df4768b54f3117dd264940",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "re:tune",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/prompt",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Lektionslogg Mekanik vt 24 - Google Drive",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande. Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1JjDE-yGbuIa_2eRQVjC66oEaZdAdPlE-Zqv4Zb5RjiA/edit#heading=h.iizehqulg3b",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech",
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Länkar till illustrationer (med beskrivningar) till arbetsområdet i mekanisk - Google Drive",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1YRJGT6N39HhXL7Hai_cSulPs1vvmLBE4YzWhdOKFjhw/edit#heading=h.gic49v4kr2dc",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Mekanik - information om arbetsområdet vt24 - Google Drive",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1-9BlRELvoiTlvpwHJi8xVkD7EWm2LGuM-McHkwMGTdY/edit#heading=h.c9p0gru79ovx",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AINO",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://sites.google.com/d/1C5YQzAQ0GbUgGtkWsGsfExMQH5CdIdEk/p/12cdGP5itUR6yIXYWbyVKXLyVQORcLVcu/edit",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "AINO",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://sites.google.com/view/ainobjk/aino-start",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "information om träffar (AI-Piloten) - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1u2DUXeV6qAP4_tQFBn4hTioRI8FDi-Q_rsP_mVnKJOw/edit#heading=h.tukac2m5kmxh",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Våra målsättningar med projektet “AI-Piloten” - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1fb3CM2lkVTd0FUHLNT-_byD2jeyMVYONXqgz5z8htTc/edit#heading=h.mx3z8bijejlm",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Best practices for prompt engineering with the OpenAI API | OpenAI Help Center",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Inledande tankar från pedagoger inför starten av projektet (AI-Piloten) - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1a715Ll5W8Qe0FLcVnmIBuLfjrds5lxenTXExvmuKVxI/edit#heading=h.x88lio7hrcb0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Reflektionsyta/Kommentarer (AI-Piloten) - Google Slides",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande. Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/presentation/d/1J1A__mMeaYLcoeTSbl7BtQJlVGxT9WK190FrllnREfI/edit#slide=id.p",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech",
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Google",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.google.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Inkorgen (18) - hlg.karlsson@gmail.com - Gmail",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://mail.google.com/mail/u/0/#inbox",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "E-post - Håkan Karlsson - Outlook",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://outlook.office.com/mail/",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Google Kalender - 7 dagar, med start fredag, den 1 december 2023",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://calendar.google.com/calendar/u/0/r",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "ChatGPT - Captain's log",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/g/g-4AbSRgbZo-captain-s-log/c/92521ddd-44e5-4291-96d8-b8c741f7a84d",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "ChatGPT",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "re:tune",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://retune.so/chats",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Elicit: The AI Research Assistant",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elicit.com/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Inbox (63) - hlg.karlsson@gmail.com - Gmail",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://mail.google.com/mail/u/0/#inbox",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "ChatGPT - Validitet och reliabilitet",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/c/15f98a81-27f4-4602-b961-08c7dd034812",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "hktcr's apps · Streamlit",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://share.streamlit.io/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Lektionslogg Mekanik vt 24 - Google Docs",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande. Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1JjDE-yGbuIa_2eRQVjC66oEaZdAdPlE-Zqv4Zb5RjiA/edit#heading=h.iizehqulg3b",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech",
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Claude",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://claude.ai/login?returnTo=%2F%3F",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Fenologi m m_Ny Version_19jan11 - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit#heading=h.3nb9ljm9mhak",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Gemini",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://gemini.google.com/app",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Science News | The latest news from all areas of science",
-    "beskrivning": "Källa för omvärldsbevakning och nyheter.",
-    "url": "https://www.sciencenews.org/",
-    "taggar": [
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "(7) Discord | Vänner",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://discord.com/channels/@me",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Free AI Text To Speech Online | ElevenLabs",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elevenlabs.io/text-to-speech",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "TTS",
-      "Röst",
-      "ElevenLabs"
-    ]
-  },
-  {
-    "titel": "NotebookLM",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://notebooklm.google.com/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Readwise",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://readwise.io/dashboard",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "Usage - OpenAI API",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://platform.openai.com/usage",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Ditt förslag (Svar) - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1a2JyzJEavsuiT_lrCBxdUDz7q18QUlkN7tIbSk59Vh4/edit?resourcekey#gid=1704747000",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AgentHost AI",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.agenthost.ai/workspace",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Gamma",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://gamma.app/create",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "My Applications - OpenAI",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://openai.smapply.org/prog/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Start free trial · Streamlit",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://share.streamlit.io/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Unread AINO",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eefaf4-f2b9-0500-a62a-e51f61071505&tab=Unread",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "ChatGPT",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/gpts/mine",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Machine Learning with MATLAB - Introduction - MATLAB & Simulink",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.mathworks.com/campaigns/offers/next/machine-learning-with-matlab.html",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Communitas - Lärare delar, diskuterar och drömmer | Håkan Karlsson | Substack",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://communitas.substack.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Åstorps kommun – Kalender - tisdag, den 15 februari 2022",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://calendar.google.com/calendar/u/1/r",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Digital hjälplista (Responses) - Google Kalkylark",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1DjpHrz-1mZpnO_ZZkMUR1jEKU8u4W3m6YIhUru5U7Ao/edit#gid=86105119",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "GC",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://classroom.google.com/u/1/h",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Skadeanmälan av digitalt lärverktyg (Svar) - Google Kalkylark",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/10jHk8Fsuegl_T9WrJKZZnCqMNo7JhXN3qSlVAL_wkb8/edit#gid=588827240",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Skadeanmälan av digitalt lärverktyg - Google Formulär",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/forms/d/1D01UKYIBEhhCotONs5cZpOhjl2TKYs-tDXuGP_SD5hA/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Nearpod: You'll wonder how you taught without it",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://nearpod.com/",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "INFOSKÄRM BJK - Google Presentationer",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/presentation/d/e/2PACX-1vT7KEnq_kBOgGgTumYyMwafEWR7iawshsTTAinM92BuWqnYk9wQFcrtUqGbeDAiSCsC-MvNRXI4HQ5N/pub?start=true&loop=true&delayms=15000&slide=id.p",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Omdömen HT21 BJB-21 - Matematik",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://roamresearch.com/#/app/Hive_1/page/mFfsEx1tC",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Frånvaro veckovis Lag A - Google Kalkylark",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1yNHQcN51seipxRU9CaTcLyOs9d7evh35Dqn01E21IXM/edit#gid=498198438",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Listen and create ambient sounds easily",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.ambient-mixer.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Litmaps",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://app.litmaps.com/",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "LektorsLoggen - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1KGg738c0y_SgweyMPh_TqH9PZZwKnBHT1B-qcZdXxSo/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Communitas - Lärare delar, diskuterar och drömmer | Håkan Karlsson | Substack",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://communitas.substack.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Senaste obsarna från Åstorp",
-    "beskrivning": "Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://artportalen.se/search/sightings/taxon/4000104/area/330/days/7",
-    "taggar": [
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi",
-      "Åstorp",
-      "Rapportering",
-      "Biologi"
-    ]
-  },
-  {
-    "titel": "Fenologi m m_Ny Version_19jan11 - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Elicit: Find scientific research papers",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://elicit.com/?workflow=table-of-papers",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Verity - Headlines",
-    "beskrivning": "Källa för omvärldsbevakning och nyheter.",
-    "url": "https://www.improvethenews.org/",
-    "taggar": [
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "Quizlet",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://quizlet.com/latest",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Dashboard - SciSummary",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://scisummary.com/dashboard",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "News | Manifold",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://manifold.markets/home",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Litmaps",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://app.litmaps.com/library/collection/0a244d45-3e3b-4b4f-9367-12631f4d6088",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "Stability AI",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://stability.ai/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Bard",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://bard.google.com/chat",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "News Minimalist — Daily News Digest Curated by ChatGPT",
-    "beskrivning": "Källa för omvärldsbevakning och nyheter.",
-    "url": "https://www.newsminimalist.com/",
-    "taggar": [
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "Research Dashboard | Semantic Scholar",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://www.semanticscholar.org/me/research",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "Google Keep",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://keep.google.com/u/0/#home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "PDF Made Easy - OpenPDF",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://openpdf.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "AINO",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://sites.google.com/view/ainobjk/home",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Dagens utmaning",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.agenthost.ai/chat/utmaningen",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "AINO",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.agenthost.ai/chat/aino",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Perplexity",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.perplexity.ai/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Policy - Information - Google Docs",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1BLg_rqMcZcoUGRUDJI97OKnBpcG6kzssP1HvioxQydA/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "ChatGPT - Policy-hanteraren",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chatgpt.com/g/g-FWHtzQpQw-policy-hanteraren",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "AI-Policy diskussion - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1BNiTC6IYMZX5y2iclinP8Q_K_iJSI7UFVAA7SBvfEUY/edit?gid=0#gid=0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Använda referenser i sammanställing över AI-policyer - Google Sheets",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1ZSh3qciDCixkFg1vtnOCfK4jzsCrazN8i5IAMjrikYM/edit?gid=0#gid=0",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "AI-Policy Trädvisualisering · Streamlit",
-    "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt.",
-    "url": "https://aipolicy.streamlit.app/",
-    "taggar": [
-      "gAIa",
-      "Eget Projekt",
-      "Utveckling",
-      "Webbapp"
-    ]
-  },
-  {
-    "titel": "Research Rabbit",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://researchrabbitapp.com/home",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "Hypothesis",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://hypothes.is/users/Hlgk",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Google Keep",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://keep.google.com/u/0/#home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Raindrop",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://app.raindrop.io/my/28557025",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Reflect",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://reflect.app/g/raven/17042023",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Substack Home - Håkan’s Substack",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://karlsson.substack.com/publish/home",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Our World in Data",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://ourworldindata.org/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Sweden: CO2 Country Profile - Our World in Data",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://ourworldindata.org/co2/country/sweden?country=SWE~USA~DEU",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "ChatGPT - Hard Fork Bot",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://chat.openai.com/g/g-HyHaRsGaK-hard-fork-bot",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Texter In Progress",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://keep.google.com/u/0/#label/0_Texter%20In%20Progress",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "AgentGPT",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://agentgpt.reworkd.ai/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Inkorgen (78) - hlg.karlsson@gmail.com - Gmail",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://mail.google.com/mail/u/0/#inbox",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Zapier - Chat",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://mail.google.com/chat/u/1/#chat/dm/m10HqwAAAAE",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Kalendarium HT-22 - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1wtwrbEpcF1gyFREdtGCaUs1oJveHduYYI7UyZueQrPA/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Reflect",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://reflect.app/g/raven",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "K.I.DL. - Sammanställnig av önskade kompetenser - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/14viBV_KeoCTj6xLOtAz53RlImaKmkZs889RDKAadvpg/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Digitala lässtrategier - Referenser - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1k2aGZDvyueUY0lLC0H8UA-ql7TMRl4abCri-g5kEgNc/edit#",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Text till Helén om lektorsuppdraget (till ledningsgrupp) - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/14BH9l0t6CK7JrE1pG8_7S-7haFzRTpXJs2n2UBgo744/edit#",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Affilieringsförslag Malmö Universitet februari/mars 2022 - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1761Jlvaz41dc1wLHwkK6CioGdhlVp17a__MHdTVQHKQ/edit#heading=h.wo72xwzmks5",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Självskattning av digital kompetens - Google Formulär",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/forms/u/1/d/1GcOJewpW150MZ22RvQiiD9S8yTxeI_habcdZMLNSm9g/edit?usp=redirect_edit_m2#responses",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Självskattning av digital kompetens (Svar) - Google Kalkylark",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/spreadsheets/d/1MwRwy-bNDZSGIBiHvCuAM2GemBH7MmL1we2fFl0u7oI/edit?resourcekey#gid=709790722",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "Kindle",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://read.amazon.com/kindle-library",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "InfraNodus - Nautilus (aggregated)",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur.",
-    "url": "https://infranodus.com/hlgk/Nautilus%20(aggregated)/edit",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering"
-    ]
-  },
-  {
-    "titel": "InfraNodus - News_misc by hlgk - Text Network Graph",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur. Källa för omvärldsbevakning och nyheter.",
-    "url": "https://infranodus.com/hlgk/News_misc/edit",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering",
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "InfraNodus - Science news by hlgk - Text Network Graph",
-    "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur. Källa för omvärldsbevakning och nyheter.",
-    "url": "https://infranodus.com/hlgk/Science%20news/edit",
-    "taggar": [
-      "Forskning",
-      "Akademi",
-      "Litteratur",
-      "Kunskapshantering",
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "Lex",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://lex.page/~",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "OriginalityAI",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://app.originality.ai/",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Abstract summarization | Elicit",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI",
-      "Forskning",
-      "Läsning",
-      "Syntes"
-    ]
-  },
-  {
-    "titel": "Motion",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://app.usemotion.com/web/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Planner | Reclaim",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://app.reclaim.ai/planner",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Trevor AI - Planning Assistant for Deep Work",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://app.trevorai.com/app",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Redigera profil - OERu Social - Mastodon",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://mastodon.oeru.org/settings/profile",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Dagens fynd - Artportalen",
-    "beskrivning": "Data och verktyg för natur, fågelskådning och ekologi.",
-    "url": "https://artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/Hela%20landet/Alla%20lokaler/Idag/Art/Status/1",
-    "taggar": [
-      "Natur",
-      "Ekologi",
-      "Fåglar",
-      "Kartografi",
-      "Åstorp",
-      "Rapportering",
-      "Biologi"
-    ]
-  },
-  {
-    "titel": "Daily Notes",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://roamresearch.com/#/app/Hive_1",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "DagsLOGG - Google Dokument",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://docs.google.com/document/d/1YTJXfmk8Vcd7t32U1Cj0p0-nt1Gm1CfZE5sa-6IljC0/edit",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk",
-      "Google Docs",
-      "Dokument"
-    ]
-  },
-  {
-    "titel": "docanalyzer.ai/app",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://docanalyzer.ai/app",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Google Keep",
-    "beskrivning": "Daglig logistik, anteckningar och dokumenthantering.",
-    "url": "https://keep.google.com/u/0/#home",
-    "taggar": [
-      "Produktivitet",
-      "Dokumentation",
-      "Logistik",
-      "Synk"
-    ]
-  },
-  {
-    "titel": "Xmind AI: The Collaborative Mind Mapping Tool",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://xmind.ai/home",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "AgentHost AI",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://www.agenthost.ai/workspace",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Lär dig mer om digital läsning - Skolverket",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.skolverket.se/skolutveckling/inspiration-och-stod-i-arbetet/stod-i-arbetet/lar-dig-mer-om-digital-lasning",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "What aren’t the OpenAI whistleblowers saying?",
-    "beskrivning": "Källa för omvärldsbevakning och nyheter.",
-    "url": "https://www.platformer.news/tuesday-newsletter/?ref=platformer-newsletter",
-    "taggar": [
-      "Nyheter",
-      "Omvärldsbevakning"
-    ]
-  },
-  {
-    "titel": "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Introduction - SITUATIONAL AWARENESS: The Decade Ahead",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://situational-awareness.ai/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "May 17th, 2021",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://roamresearch.com/#/app/Hive_1/page/05-17-2021",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Wang Haijun Taiji World",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://www.wanghaijun.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Netatmo",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://my.netatmo.com/app/station",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Snabbaste sättet att räkna ut momsen | Driva Eget",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://www.driva-eget.se/kalkyler/moms",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Nature Soundmap",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://www.naturesoundmap.com/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Google Scholar (Lund)",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://scholar-google-com.ludwig.lub.lu.se:2443/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Biologi 7A2 16/17",
-    "beskrivning": "Verktyg eller resurs för klassrummet och elevernas lärande.",
-    "url": "https://classroom.google.com/u/1/c/MTY1NzUyNjIxNlpa",
-    "taggar": [
-      "Skola",
-      "Pedagogik",
-      "Undervisning",
-      "EdTech"
-    ]
-  },
-  {
-    "titel": "Free Music Archive",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://freemusicarchive.org/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Efter blodpropperne: Nu er Niels blevet vildmand | TV 2 Fyn",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.tv2fyn.dk/artikel/efter-blodpropperne-nu-er-niels-blevet-vildmand?fbclid=IwAR1nZR7PlW4aFGuOIO8aAwLBJc31TlzCOAwrmXCaurOOrUXlW_5DDeQ8XrI",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Ultimate Arms and Abs Workout",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.menshealth.com/uk/workouts/a27006489/ultimate-arms-and-abs-workout/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Gerberian Shepsky Information",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://gerberianshepsky.com/category/gerberian-shepsky-information/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "Lämna valpen ensam – Just do it! – Fredrik Steen",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "http://blogg.agria.se/fredriksteen/2015/08/31/lamna-valpen-ensam-just-do-it/",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  },
-  {
-    "titel": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
-    "beskrivning": "Central AI-tjänst för analys, text, bild eller röst.",
-    "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
-    "taggar": [
-      "AI",
-      "LLM",
-      "Verktyg",
-      "Generativ AI"
-    ]
-  },
-  {
-    "titel": "Science and Math News | Quanta Magazine",
-    "beskrivning": "Sparad länk eller verktyg för allmän användning.",
-    "url": "https://www.quantamagazine.org/?nsl_bypass_cache=aa6913d204e570806cb363794fb46973",
-    "taggar": [
-      "Bokmärke",
-      "Oklassificerad",
-      "Verktyg"
-    ]
-  }
-]
+{
+  "uppdaterad": "2026-07-29",
+  "bokmarken": [
+    {
+      "url": "https://discord.com/channels/@me",
+      "titel": "(7) Discord | Vänner",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://dashboard.mailerlite.com/campaigns/162523879366985147/reports/overview",
+      "titel": "#001 🚀 AI i skolan - Åstorps kommun | Overview",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
+      "titel": "📙Mina anteckningsböcker - NotebookLM",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1E-krs2u-qGcOnHau4-2Og5U1ivXKdUwlL9LgoJTGMbM/edit?gid=0#gid=0",
+      "titel": "A glossary for the AI-ecologist - making field notes in a new world - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://aiecology.streamlit.app/",
+      "titel": "A glossary for the AI-ecologist - making field notes in a new world · Streamlit",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
+      "titel": "Abstract summarization | Elicit",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1761Jlvaz41dc1wLHwkK6CioGdhlVp17a__MHdTVQHKQ/edit#heading=h.wo72xwzmks5",
+      "titel": "Affilieringsförslag Malmö Universitet februari/mars 2022 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://statusgator.com/services/google-antigravity",
+      "titel": "AG Status",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://agentgpt.reworkd.ai/",
+      "titel": "AgentGPT",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.agenthost.ai/workspace",
+      "titel": "AgentHost AI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1h4FB0dGQheNuDntG8RFvD3wZCaRa-RW_bTTMPRG02DU/edit",
+      "titel": "AI-ecology - Information - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/11xtfA2cAwqxWR4xUpFveq87aVUWInDpYe8Beu_1JVtg/edit?gid=0#gid=0",
+      "titel": "AI-loggar version 2.0 - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1BNiTC6IYMZX5y2iclinP8Q_K_iJSI7UFVAA7SBvfEUY/edit?gid=0#gid=0",
+      "titel": "AI-Policy diskussion - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://aipolicy.streamlit.app/",
+      "titel": "AI-Policy Trädvisualisering · Streamlit",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ai-ulf.discourse.group/latest",
+      "titel": "AI-ULF",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://sites.google.com/d/1C5YQzAQ0GbUgGtkWsGsfExMQH5CdIdEk/p/12cdGP5itUR6yIXYWbyVKXLyVQORcLVcu/edit",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://sites.google.com/view/ainobjk/aino-start",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://sites.google.com/view/ainobjk/home",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.agenthost.ai/chat/aino",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1XiGsrgziwjZNa8V5A206Kv4BRDoipuN_c-LfFouLff4/edit",
+      "titel": "AINO - Information - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ainoapp.streamlit.app/",
+      "titel": "AINO (allmän)",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "AINO",
+        "Skola",
+        "Lokal AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ainohyllinge.streamlit.app/",
+      "titel": "AINO (Hyllinge)",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "AINO",
+        "Skola",
+        "Lokal AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ainoai.streamlit.app/",
+      "titel": "AINO (Kvidinge)",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "AINO",
+        "Skola",
+        "Lokal AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit?gid=1884570747#gid=1884570747",
+      "titel": "AINO-logg - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit#gid=1884570747",
+      "titel": "AINO-logg - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1ZtyPmAla8FOjtTSDn8dcYD454KFMGC3iitTmjMIHwkg/edit?gid=0#gid=0",
+      "titel": "AINO-logg Hyllinge skola - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/10kGjImnNMUx0_lCcUl0g3ScjcGJJZ0rfi2q9EH88nho/edit?gid=0#gid=0",
+      "titel": "AINO-logg Kvidinge - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ainstein.streamlit.app/",
+      "titel": "AInstein · Streamlit",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1ZSh3qciDCixkFg1vtnOCfK4jzsCrazN8i5IAMjrikYM/edit?gid=0#gid=0",
+      "titel": "Använda referenser i sammanställing över AI-policyer - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://artportalen.se/",
+      "titel": "AP",
+      "beskrivning": "",
+      "taggar": [
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi",
+        "Åstorp",
+        "Rapportering",
+        "Biologi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://api.screen9.com/preview/ADaAFTF3bojdUcNspR-RMCA4pZ20CUHtRfIkGQ4lVnS8F7nwapo6dQzxDkhvCkxz",
+      "titel": "Att som skolhuvudman styra och leda skolan i en tid full av AI",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://bard.google.com/chat",
+      "titel": "Bard",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api",
+      "titel": "Best practices for prompt engineering with the OpenAI API | OpenAI Help Center",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://classroom.google.com/u/1/c/MTY1NzUyNjIxNlpa",
+      "titel": "Biologi 7A2 16/17",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/StudentSelector/",
+      "titel": "Bänkväljare — Slumpa bänknummer",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://raw.githack.com/",
+      "titel": "CDN for your source code | raw.githack.com",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chatgpt.com/c/676bcd6c-fd10-800d-b196-42da9e0c8b31",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chatgpt.com/c/66fb8346-8c90-8002-a035-0b515405899d",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://chatgpt.com/",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/gpts/mine",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/g/g-4AbSRgbZo-captain-s-log/c/92521ddd-44e5-4291-96d8-b8c741f7a84d",
+      "titel": "ChatGPT - Captain's log",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/g/g-HyHaRsGaK-hard-fork-bot",
+      "titel": "ChatGPT - Hard Fork Bot",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chatgpt.com/g/g-FWHtzQpQw-policy-hanteraren",
+      "titel": "ChatGPT - Policy-hanteraren",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/g/g-H74PQcft4-taleswapper",
+      "titel": "ChatGPT - Taleswapper",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chat.openai.com/c/15f98a81-27f4-4602-b961-08c7dd034812",
+      "titel": "ChatGPT - Validitet och reliabilitet",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://claude.ai/new",
+      "titel": "Claude",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://claude.ai/login?returnTo=%2F%3F",
+      "titel": "Claude",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://communitas.substack.com/",
+      "titel": "Communitas - Lärare delar, diskuterar och drömmer | Håkan Karlsson | Substack",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/%C3%85storp/Alla%20lokaler/Idag/Ingen/Status",
+      "titel": "Dagens fynd",
+      "beskrivning": "",
+      "taggar": [
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi",
+        "Åstorp",
+        "Rapportering",
+        "Biologi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/Hela%20landet/Alla%20lokaler/Idag/Art/Status/1",
+      "titel": "Dagens fynd - Artportalen",
+      "beskrivning": "",
+      "taggar": [
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi",
+        "Åstorp",
+        "Rapportering",
+        "Biologi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.agenthost.ai/chat/utmaningen",
+      "titel": "Dagens utmaning",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1YTJXfmk8Vcd7t32U1Cj0p0-nt1Gm1CfZE5sa-6IljC0/edit",
+      "titel": "DagsLOGG - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://roamresearch.com/#/app/Hive_1",
+      "titel": "Daily Notes",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://scisummary.com/dashboard",
+      "titel": "Dashboard - SciSummary",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1DjpHrz-1mZpnO_ZZkMUR1jEKU8u4W3m6YIhUru5U7Ao/edit#gid=86105119",
+      "titel": "Digital hjälplista (Responses) - Google Kalkylark",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1k2aGZDvyueUY0lLC0H8UA-ql7TMRl4abCri-g5kEgNc/edit#",
+      "titel": "Digitala lässtrategier - Referenser - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1a2JyzJEavsuiT_lrCBxdUDz7q18QUlkN7tIbSk59Vh4/edit?resourcekey#gid=1704747000",
+      "titel": "Ditt förslag (Svar) - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docanalyzer.ai/app",
+      "titel": "docanalyzer.ai/app",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://outlook.office.com/mail/",
+      "titel": "E-post - Håkan Karlsson - Outlook",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.tv2fyn.dk/artikel/efter-blodpropperne-nu-er-niels-blevet-vildmand",
+      "titel": "Efter blodpropperne: Nu er Niels blevet vildmand | TV 2 Fyn",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://elevenlabs.io/app/home",
+      "titel": "ElevenLabs",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "TTS",
+        "Röst",
+        "ElevenLabs"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1wmC7R_FSqhlXdlmabl2g1SRtS7HlYFAy28thmaVOQzo/edit#heading=h.vcncddp2c8nu",
+      "titel": "Elevtester med custom GPTs - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://elicit.com/?workflow=table-of-papers",
+      "titel": "Elicit: Find scientific research papers",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://elicit.com/",
+      "titel": "Elicit: The AI Research Assistant",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/explorations/",
+      "titel": "Exploration",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit#heading=h.3nb9ljm9mhak",
+      "titel": "Fenologi m m_Ny Version_19jan11 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit",
+      "titel": "Fenologi m m_Ny Version_19jan11 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://bit.ly/timerF",
+      "titel": "Fokustimer",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://freemusicarchive.org/",
+      "titel": "Free Music Archive",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://elevenlabs.io/text-to-speech",
+      "titel": "Free Text To Speech Online with Lifelike AI Voices | ElevenLabs",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "TTS",
+        "Röst",
+        "ElevenLabs"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1yNHQcN51seipxRU9CaTcLyOs9d7evh35Dqn01E21IXM/edit#gid=498198438",
+      "titel": "Frånvaro veckovis Lag A - Google Kalkylark",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chatgpt.com/c/675a8ae1-9b6c-800d-98fb-6f5400bedeb0",
+      "titel": "Fylogenetiskt träd konstruktion",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/birds_Astorp/",
+      "titel": "Fågelåret i Åstorp",
+      "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/faltlistan/",
+      "titel": "Fältlistan — Digital Krysslista",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/FaltPunkter/",
+      "titel": "FältPunkter — Positioner",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/gaia-tools/",
+      "titel": "gAIa Verktyg",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://gamma.app/create",
+      "titel": "Gamma",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://classroom.google.com/u/1/h",
+      "titel": "GC",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://gemini.google.com/gem/620bc24530ca",
+      "titel": "Gem - backlinks till Obsidian",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://gemini.google.com/share/b3542a2ea31f",
+      "titel": "Gemini - Interaktiv Webbplats för Biologi",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://gemini.google.com/share/f8a966e93310",
+      "titel": "Gemini - Ofullständig Kod för Periodiska Systemet",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://gerberianshepsky.com/category/gerberian-shepsky-information/",
+      "titel": "Gerberian Shepsky Information",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hlgk.goatcounter.com/",
+      "titel": "GoatCounter",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.google.com/",
+      "titel": "Google",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/u/0/r/week",
+      "titel": "Google Calendar - Week of March 25, 2024",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://gemini.google.com/app",
+      "titel": "Google Gemini",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/u/0/r",
+      "titel": "Google Kalender - 7 dagar, med start fredag, den 1 december 2023",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://keep.google.com/u/0/#home",
+      "titel": "Google Keep",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://messages.google.com/web/conversations",
+      "titel": "Google Messages for web: Conversations",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://recorder.google.com/",
+      "titel": "Google Recorder",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://scholar.google.com/scholar_labs/search",
+      "titel": "Google Scholar",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://scholar-google-com.ludwig.lub.lu.se:2443/",
+      "titel": "Google Scholar (Lund)",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://historiskakartor.lantmateriet.se/",
+      "titel": "Historiska Kartor och Akter",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/HKK-KM/",
+      "titel": "HKK Dashboard — Logga in",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://share.streamlit.io/",
+      "titel": "hktcr's apps · Streamlit",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://github.com/hktcr/Sims",
+      "titel": "hktcr/Sims",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://drive.google.com/drive/home",
+      "titel": "Home - Google Drive",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
+      "titel": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/SlideLauncher/slides/standalone/inlarning-typewriter.html",
+      "titel": "Hur lärande fungerar",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "SlideCraft",
+        "Presentation",
+        "Undervisning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hypothes.is/users/Hlgk",
+      "titel": "Hypothesis",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://flickr.com/photos/karlssoncorner/",
+      "titel": "Håkan Karlsson | Flickr",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://mail.google.com/mail/u/0/#inbox",
+      "titel": "Inbox (31) - hlg.karlsson@gmail.com - Gmail",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://read.readwise.io/new",
+      "titel": "Inbox | Readwise",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1u2DUXeV6qAP4_tQFBn4hTioRI8FDi-Q_rsP_mVnKJOw/edit#heading=h.tukac2m5kmxh",
+      "titel": "information om träffar (AI-Piloten) - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/presentation/d/e/2PACX-1vT7KEnq_kBOgGgTumYyMwafEWR7iawshsTTAinM92BuWqnYk9wQFcrtUqGbeDAiSCsC-MvNRXI4HQ5N/pub?start=true&loop=true&delayms=15000&slide=id.p",
+      "titel": "INFOSKÄRM BJK - Google Presentationer",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://infranodus.com/hlgk/Nautilus%20(aggregated)/edit",
+      "titel": "InfraNodus - Nautilus (aggregated)",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://infranodus.com/hlgk/News_misc/edit",
+      "titel": "InfraNodus - News_misc by hlgk - Text Network Graph",
+      "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur. Källa för omvärldsbevakning och nyheter.",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering",
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://infranodus.com/hlgk/Science%20news/edit",
+      "titel": "InfraNodus - Science news by hlgk - Text Network Graph",
+      "beskrivning": "Tjänst för att söka, kartlägga och hantera vetenskaplig litteratur. Källa för omvärldsbevakning och nyheter.",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering",
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1a715Ll5W8Qe0FLcVnmIBuLfjrds5lxenTXExvmuKVxI/edit#heading=h.x88lio7hrcb0",
+      "titel": "Inledande tankar från pedagoger inför starten av projektet (AI-Piloten) - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.mentimeter.com/",
+      "titel": "Interactive presentation software",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://situational-awareness.ai/",
+      "titel": "Introduction - SITUATIONAL AWARENESS: The Decade Ahead",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/14viBV_KeoCTj6xLOtAz53RlImaKmkZs889RDKAadvpg/edit",
+      "titel": "K.I.DL. - Sammanställnig av önskade kompetenser - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1wtwrbEpcF1gyFREdtGCaUs1oJveHduYYI7UyZueQrPA/edit",
+      "titel": "Kalendarium HT-22 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://read.amazon.com/kindle-library",
+      "titel": "Kindle",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/koordinatvaljare/",
+      "titel": "Koordinatväljare — Terrängkarta",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.genspark.ai/api/page_private?id=cmuceruf",
+      "titel": "Källkritik i biologi - avancerade flervalsfrågor för årskurs 7",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1JjDE-yGbuIa_2eRQVjC66oEaZdAdPlE-Zqv4Zb5RjiA/edit#heading=h.iizehqulg3b",
+      "titel": "Lektionslogg Mekanik vt 24 - Google Drive",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1tqXeQ7b7I7yZR06UccBmouI58vRX9NRlj0dN_PGbSo8/edit?tab=t.0",
+      "titel": "Lektorsanteckningar läsåret 2025/2026 - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1KGg738c0y_SgweyMPh_TqH9PZZwKnBHT1B-qcZdXxSo/edit",
+      "titel": "LektorsLoggen - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/LessonLab/",
+      "titel": "LessonLab — Genomgångsmanus",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://lex.page/~",
+      "titel": "Lex",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://lighterpack.com/",
+      "titel": "LighterPack",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.ambient-mixer.com/",
+      "titel": "Listen and create ambient sounds easily",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.litmaps.com/",
+      "titel": "Litmaps",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.litmaps.com/library/collection/0a244d45-3e3b-4b4f-9367-12631f4d6088",
+      "titel": "Litmaps",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.genspark.ai/api/page_private?id=itfmhged",
+      "titel": "Livets utveckling på jorden - Interaktiv tidslinje",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/SoundMonitor/",
+      "titel": "Ljudmonitor — Klassrumsverktyg",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://blogg.agria.se/fredriksteen/2015/08/31/lamna-valpen-ensam-just-do-it/",
+      "titel": "Lämna valpen ensam – Just do it! – Fredrik Steen",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1YRJGT6N39HhXL7Hai_cSulPs1vvmLBE4YzWhdOKFjhw/edit#heading=h.gic49v4kr2dc",
+      "titel": "Länkar till illustrationer (med beskrivningar) till arbetsområdet i mekanisk - Google Drive",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.skolverket.se/skolutveckling/inspiration-och-stod-i-arbetet/stod-i-arbetet/lar-dig-mer-om-digital-lasning",
+      "titel": "Lär dig mer om digital läsning - Skolverket",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.mathworks.com/campaigns/offers/next/machine-learning-with-matlab.html",
+      "titel": "Machine Learning with MATLAB - Introduction - MATLAB & Simulink",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://roamresearch.com/#/app/Hive_1/page/05-17-2021",
+      "titel": "May 17th, 2021",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1-9BlRELvoiTlvpwHJi8xVkD7EWm2LGuM-McHkwMGTdY/edit#heading=h.c9p0gru79ovx",
+      "titel": "Mekanik - information om arbetsområdet vt24 - Google Drive",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.mentimeter.com/app/home",
+      "titel": "Mentimeter",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.midjourney.com/imagine",
+      "titel": "Midjourney",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.usemotion.com/web/",
+      "titel": "Motion",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://openai.smapply.org/prog/",
+      "titel": "My Applications - OpenAI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://console.cloud.google.com/billing/01BB06-D4B7F4-3FD0F2/budgets",
+      "titel": "My Billing Account 1 – Budgets & alerts – Billing – Google Cloud console",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.nationalgeographic.com/magazine",
+      "titel": "National Geographic Magazine",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://archive.nationalgeographic.com/landing",
+      "titel": "National Geographic Magazine Archive",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://www.naturesoundmap.com/",
+      "titel": "Nature Soundmap",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://nearpod.com/",
+      "titel": "Nearpod: You'll wonder how you taught without it",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://my.netatmo.com/app/station",
+      "titel": "Netatmo",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://manifold.markets/home",
+      "titel": "News | Manifold",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.newsminimalist.com/",
+      "titel": "News Minimalist — All news ranked by significance",
+      "beskrivning": "",
+      "taggar": [
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://notebooklm.google.com/",
+      "titel": "NotebookLM",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/nyhetskartan/",
+      "titel": "Nyheter",
+      "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://roamresearch.com/#/app/Hive_1/page/mFfsEx1tC",
+      "titel": "Omdömen HT21 BJB-21 - Matematik",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://mermaid.live/edit#pako:eNptk8tugzAQRX_Fmm5aKZEYHgmwqISolE1XbVatu7CCEyKFhygsqij_XnuIwaZlgXx95o7vyHCFQ1NISOHUibZkr2-85jVTz-aTw8MmZTuWsZzt1VuvHrumf-LwNdZEuiYaa_amZqLoaYze3GPn8Fjj2HZntjsgdzDz3O2OxNHu7vhD4qHh2eL0ROPEPj233T65_ZFnf9MRtrPZlKJPybNFcgrm5LK9W02381RuZ4o1pVrOhHQhGP3X-36rbL1-ZpEt0DMwIh3bAgMD0Rs30JWh4THpxBboT-Zg3HDU3BpJh47aTjQk7TsK1Qiwgkp2lTgX6vO9asyhL2UlOaRqWcijGC49B17fVKkY-ub9pz5A2neDXEHXDKcS0qO4fCs1tIXo5ctZqN-gMiWtqD-aproX3X4BtvK_Zg",
+      "titel": "Online FlowChart & Diagrams Editor - Mermaid Live Editor",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.originality.ai/",
+      "titel": "OriginalityAI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ourworldindata.org/",
+      "titel": "Our World in Data",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://openpdf.com/",
+      "titel": "PDF Made Easy - OpenPDF",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.perplexity.ai/",
+      "titel": "Perplexity",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/StudentSelector/klassrum/",
+      "titel": "Placering",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://claude.ai/chat/131f8254-e4e4-4130-8437-f071805410a8",
+      "titel": "Planering Ledningsgrupp AI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.reclaim.ai/planner",
+      "titel": "Planner | Reclaim",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1BLg_rqMcZcoUGRUDJI97OKnBpcG6kzssP1HvioxQydA/edit",
+      "titel": "Policy - Information - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://quizlet.com/latest",
+      "titel": "Quizlet",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.raindrop.io/my/28557025",
+      "titel": "Raindrop",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/prompt",
+      "titel": "re:tune",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://retune.so/chats",
+      "titel": "re:tune",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://readwise.io/chat",
+      "titel": "Readwise",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://readwise.io/dashboard",
+      "titel": "Readwise",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
+      "titel": "Readwise - NotebookLM",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI",
+        "Forskning",
+        "Läsning",
+        "Syntes"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ccmisbpa.gensparkspace.com/",
+      "titel": "Realistisk Eldfluge-simulering - Synkrona Blinkande Ljus",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.recolx.ai/",
+      "titel": "Recolx",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://mastodon.oeru.org/settings/profile",
+      "titel": "Redigera profil - OERu Social - Mastodon",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://reflect.app/g/raven/22072024",
+      "titel": "Reflect",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://reflect.app/g/raven/e2e3a002d1df4768b54f3117dd264940",
+      "titel": "Reflect",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://reflect.app/g/raven/17042023",
+      "titel": "Reflect",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://reflect.app/g/raven",
+      "titel": "Reflect",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/presentation/d/1J1A__mMeaYLcoeTSbl7BtQJlVGxT9WK190FrllnREfI/edit#slide=id.p",
+      "titel": "Reflektionsyta/Kommentarer (AI-Piloten) - Google Slides",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.semanticscholar.org/me/research",
+      "titel": "Research Dashboard | Semantic Scholar",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://researchrabbitapp.com/home",
+      "titel": "Research Rabbit",
+      "beskrivning": "",
+      "taggar": [
+        "Forskning",
+        "Akademi",
+        "Litteratur",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/RakRadar/",
+      "titel": "RåkRadar — Fältinventering av råkbon",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/SlideLauncher/",
+      "titel": "Sammanfattningsslides — NO 7-9",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "SlideCraft",
+        "Presentation",
+        "Undervisning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html",
+      "titel": "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.quantamagazine.org/?nsl_bypass_cache=aa6913d204e570806cb363794fb46973",
+      "titel": "Science and Math News | Quanta Magazine",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.sciencenews.org/",
+      "titel": "Science News | The latest news from all areas of science",
+      "beskrivning": "",
+      "taggar": [
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://artportalen.se/search/sightings/taxon/4000104/area/330/days/7",
+      "titel": "Senaste obsarna från Åstorp",
+      "beskrivning": "",
+      "taggar": [
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi",
+        "Åstorp",
+        "Rapportering",
+        "Biologi"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://outlook.office.com/mail",
+      "titel": "Sign in to your account",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/forms/u/1/d/1GcOJewpW150MZ22RvQiiD9S8yTxeI_habcdZMLNSm9g/edit?usp=redirect_edit_m2#responses",
+      "titel": "Självskattning av digital kompetens - Google Formulär",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1MwRwy-bNDZSGIBiHvCuAM2GemBH7MmL1we2fFl0u7oI/edit?resourcekey#gid=709790722",
+      "titel": "Självskattning av digital kompetens (Svar) - Google Kalkylark",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/forms/d/1D01UKYIBEhhCotONs5cZpOhjl2TKYs-tDXuGP_SD5hA/edit",
+      "titel": "Skadeanmälan av digitalt lärverktyg - Google Formulär",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/10jHk8Fsuegl_T9WrJKZZnCqMNo7JhXN3qSlVAL_wkb8/edit#gid=588827240",
+      "titel": "Skadeanmälan av digitalt lärverktyg (Svar) - Google Kalkylark",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/e/2PACX-1vQ0Wp28m0G-ITGLiX1mg9IqJOaQ_p7ZiQ_21wTeqWjHFhQczGduydG7GEPuHpLktKuIuLeynLDkrTY8/pub",
+      "titel": "Skapa nyhetssammanfattning",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/SkrivBord/",
+      "titel": "SkrivR",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://hktcr.github.io/CRE_APT_jan2026/shell.html",
+      "titel": "Slide Shell",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "SlideCraft",
+        "Presentation",
+        "Undervisning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://www.driva-eget.se/kalkyler/moms",
+      "titel": "Snabbaste sättet att räkna ut momsen | Driva Eget",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://stability.ai/",
+      "titel": "Stability AI",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://karlsson.substack.com/publish/home",
+      "titel": "Substack Home - Håkan’s Substack",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://ourworldindata.org/co2/country/sweden?country=SWE~USA~DEU",
+      "titel": "Sweden: CO2 Country Profile - Our World in Data",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/14BH9l0t6CK7JrE1pG8_7S-7haFzRTpXJs2n2UBgo744/edit#",
+      "titel": "Text till Helén om lektorsuppdraget (till ledningsgrupp) - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://keep.google.com/u/0/#label/0_Texter%20In%20Progress",
+      "titel": "Texter In Progress",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://app.trevorai.com/app",
+      "titel": "Trevor AI - Planning Assistant for Deep Work",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.menshealth.com/uk/workouts/a27006489/ultimate-arms-and-abs-workout/",
+      "titel": "Ultimate Arms and Abs Workout",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eefaf4-f2b9-0500-a62a-e51f61071505&tab=Unread",
+      "titel": "Unread AINO",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/12yma_DI0jJUR3DeiayjzsjCg_Isv8dD9fiRHuSiwfpA/edit?tab=t.0",
+      "titel": "Untitled document - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://platform.openai.com/usage",
+      "titel": "Usage - OpenAI API",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.improvethenews.org/",
+      "titel": "Verity - Headlines",
+      "beskrivning": "",
+      "taggar": [
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://chatgpt.com/c/66fa267a-55cc-8002-8f0c-4461d07b102c",
+      "titel": "Viktiga ekologiska begrepp",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://docs.google.com/document/d/1fb3CM2lkVTd0FUHLNT-_byD2jeyMVYONXqgz5z8htTc/edit#heading=h.mx3z8bijejlm",
+      "titel": "Våra målsättningar med projektet “AI-Piloten” - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "http://www.wanghaijun.com/",
+      "titel": "Wang Haijun Taiji World",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.platformer.news/tuesday-newsletter/?ref=platformer-newsletter",
+      "titel": "What aren’t the OpenAI whistleblowers saying?",
+      "beskrivning": "",
+      "taggar": [
+        "Nyheter",
+        "Omvärldsbevakning"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://www.window-swap.com/",
+      "titel": "WindowSwap - Watch windows around the world",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://xmind.ai/home",
+      "titel": "Xmind AI: The Collaborative Mind Mapping Tool",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://mail.google.com/chat/u/1/#chat/dm/m10HqwAAAAE",
+      "titel": "Zapier - Chat",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    },
+    {
+      "url": "https://calendar.google.com/calendar/u/1/r",
+      "titel": "Åstorps kommun – Kalender - tisdag, den 15 februari 2022",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29"
+    }
+  ]
+}
