@@ -743,10 +743,12 @@ function saStjarnor() {
 }
 
 function undantagsrekt() {
-  const r = el.sokfalt.getBoundingClientRect();
+  const topp = document.querySelector('.topp');
+  if (!topp) return null;
+  const r = topp.getBoundingClientRect();
   if (!r.width) return null;
-  const marg = 30;
-  return { v: r.left - marg, t: r.top - marg, h: r.right + marg, b: r.bottom + marg + 46 };
+  const marg = 40;
+  return { v: r.left - marg, t: r.top - marg, h: r.right + marg, b: r.bottom + marg + 20 };
 }
 
 function simulera(steg) {
@@ -768,8 +770,8 @@ function simulera(steg) {
         const d = Math.sqrt(d2);
         const onskad = n1.kollision + n2.kollision;
         let f = a * 900 * (onskad / 60) / d2;
-        if (d < onskad) f += a * (onskad - d) * 0.06;
-        f = Math.min(f, 5);
+        if (d < onskad) f += a * (onskad - d) * 0.15;
+        f = Math.min(f, 15);
         const fx = (dx / d) * f;
         const fy = (dy / d) * f;
         n1.vx -= fx; n1.vy -= fy;
