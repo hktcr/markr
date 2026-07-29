@@ -65,6 +65,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  opacity: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,8 +85,12 @@ body {
   cursor: pointer;
   pointer-events: auto;
   will-change: transform;
-  transition: color 0.15s ease;
+  transition: color 0.15s ease, opacity 0.6s ease var(--fordrojning, 0s);
 }
+
+#noder.framme .nod { opacity: 1; }
+
+#noder.framme .nod.avlagsen { opacity: 0.35; transition-delay: 0s; }
 
 .nod .prick {
   display: block;
@@ -95,12 +100,6 @@ body {
   background: radial-gradient(circle at 35% 35%, var(--massing-lj), var(--massing) 65%);
   box-shadow: 0 0 6px rgba(197, 160, 89, 0.35);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
-}
-
-.nod .antal {
-  font-size: 0.6rem;
-  color: var(--massing);
-  opacity: 0.75;
 }
 
 .nod:hover, .nod:focus-visible, .nod.grann {
@@ -114,13 +113,6 @@ body {
 
 .nod.grann .prick { box-shadow: 0 0 12px rgba(197, 160, 89, 0.55); }
 
-.nod.sarnod { color: var(--massing-lj); }
-.nod.sarnod .prick {
-  border-radius: 2px;
-  transform: rotate(45deg);
-}
-.nod.sarnod:hover .prick, .nod.sarnod:focus-visible .prick { transform: rotate(45deg) scale(1.15); }
-
 /* ---------- Skalet, två lägen ---------- */
 
 .skal {
@@ -133,6 +125,20 @@ body {
   overflow: hidden;
   pointer-events: none;
 }
+
+.ordmarke {
+  margin: 0 0 1.1rem;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: var(--papper-dim);
+  visibility: hidden;
+}
+
+.skal.rymd .ordmarke { visibility: visible; }
 
 .topp {
   flex-shrink: 0;
@@ -209,17 +215,9 @@ body {
   pointer-events: auto;
 }
 
-.skal.rymd .status { text-align: center; }
+.skal.rymd .status { display: none; }
 .status.varning { color: var(--massing-lj); }
-
-.lankrad {
-  max-width: var(--spalt);
-  margin: 0.4rem auto 0;
-  text-align: center;
-  pointer-events: auto;
-}
-
-.skal:not(.rymd) .lankrad { display: none; }
+.skal.rymd .status.varning { display: block; text-align: center; }
 
 .lank {
   background: none;
@@ -238,6 +236,47 @@ body {
 
 .lank:hover { color: var(--massing-lj); text-decoration-color: var(--massing); }
 .lankskilje { color: var(--harfin-2); margin: 0 0.4rem; }
+
+.horisont {
+  flex-shrink: 0;
+  display: none;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0 0.2rem;
+  padding: 0.7rem 1rem;
+  padding-bottom: max(0.7rem, env(safe-area-inset-bottom));
+  pointer-events: auto;
+}
+
+.skal.rymd .horisont { display: flex; }
+
+.horisontinfo {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--papper-dim);
+  opacity: 0.7;
+}
+
+.horisontinfo:not(:empty)::before { content: "·"; color: var(--harfin-2); margin: 0 0.6rem; }
+.horisontinfo.varning { color: var(--massing-lj); opacity: 1; }
+
+.snabb {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--papper-dim);
+  border: 1px solid var(--harfin-2);
+  border-radius: 3px;
+  padding: 2px 7px;
+  margin-left: 0.25rem;
+  display: none;
+}
+
+@media (pointer: fine) {
+  .skal.rymd .sokfalt:not(.aktivt) .snabb { display: inline-block; }
+}
 
 /* ---------- Etiketter, taggar, filter ---------- */
 
@@ -290,13 +329,40 @@ body {
   color: var(--papper-dim);
 }
 
-.relaterat .tagg {
-  min-height: 36px;
-  font-size: 0.875rem;
-  padding: 0 0.8rem;
+.relaterat { margin-bottom: 1.9rem; }
+
+.stjarnrad {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 40px;
+  padding: 0 0.55rem;
+  background: none;
+  border: 0;
+  color: var(--papper-dim);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.15s ease;
 }
 
-.relaterat { margin-bottom: 1.75rem; }
+.stjarnrad .prick {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--massing-lj), var(--massing) 65%);
+  box-shadow: 0 0 5px rgba(197, 160, 89, 0.35);
+  transition: box-shadow 0.15s ease;
+}
+
+.stjarnrad .antal { color: var(--massing); opacity: 0.7; font-size: 0.7rem; }
+
+.stjarnrad:hover, .stjarnrad:focus-visible { color: var(--papper); }
+.stjarnrad:hover .prick { box-shadow: 0 0 12px rgba(197, 160, 89, 0.7); }
+
+.relaterat .katrad { gap: 0 0.5rem; }
 
 .filter {
   display: inline-flex;
@@ -332,9 +398,48 @@ body {
   width: 100%;
 }
 
+.indexrad {
+  display: flex;
+  align-items: baseline;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 0.25rem;
+  background: none;
+  border: 0;
+  border-radius: 3px;
+  color: var(--papper);
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.indexrad .ledare {
+  flex: 1;
+  border-bottom: 1px dotted var(--harfin-2);
+  margin: 0 0.7em;
+  transform: translateY(-0.28em);
+}
+
+.indexrad .antal {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--massing);
+  opacity: 0.85;
+}
+
+@media (pointer: fine) {
+  .indexrad:hover { color: var(--massing-lj); }
+  .indexrad:hover .ledare { border-color: var(--massing); }
+}
+
+.listlage .katrad { display: block; max-width: 34rem; }
+
 /* ---------- Innehåll ---------- */
 
 .innehall {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sot-3) transparent;
   flex: 1 1 auto;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -407,6 +512,14 @@ body {
   font-size: 0.75rem;
   color: var(--papper-dim);
   margin-right: 0.25rem;
+}
+
+.fler {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--papper-dim);
+  opacity: 0.8;
+  padding: 0 0.3rem;
 }
 
 mark {

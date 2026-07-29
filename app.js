@@ -50,7 +50,8 @@ const el = {
   innehall: document.getElementById('innehall'),
   brodrost: document.getElementById('brodrost'),
   himmel: document.getElementById('himmel'),
-  noder: document.getElementById('noder')
+  noder: document.getElementById('noder'),
+  horisontInfo: document.getElementById('horisont-info')
 };
 
 const finPekare = matchMedia('(pointer: fine)').matches;
@@ -207,7 +208,9 @@ function utforSokning() {
   if (!aktiv) {
     traffar = [];
     settLage('rymd');
-    satStatus(arkiv.bokmarken.length + ' bokmärken' + textAnmarkningar());
+    satStatus('');
+    el.sok.placeholder = 'Sök bland ' + arkiv.bokmarken.length + ' bokmärken';
+    uppdateraHorisont();
     return;
   }
 
@@ -294,11 +297,14 @@ function satStatus(text, arVarning) {
   el.status.classList.toggle('varning', !!arVarning);
 }
 
-function textAnmarkningar() {
-  const alla = anmarkningar.slice();
-  if (anmarkningarSenare) alla.unshift(anmarkningarSenare);
-  if (arkiv.uppdaterad) alla.unshift('uppdaterad ' + arkiv.uppdaterad);
-  return alla.length ? ', ' + alla.join(', ') : '';
+function uppdateraHorisont() {
+  const varningar = anmarkningar.slice();
+  if (anmarkningarSenare) varningar.unshift(anmarkningarSenare);
+  const delar = [];
+  if (arkiv.uppdaterad) delar.push('uppdaterad ' + arkiv.uppdaterad);
+  delar.push(...varningar);
+  el.horisontInfo.textContent = delar.join(', ');
+  el.horisontInfo.classList.toggle('varning', varningar.length > 0);
 }
 
 function byggKategorier() {
@@ -327,8 +333,23 @@ function taggKnapp(namn, antal, liten) {
 
 function ritaKategorilista() {
   el.kategorilista.textContent = '';
-  for (const k of byggKategorier()) {
-    el.kategorilista.append(taggKnapp(k.namn, k.antal, false));
+  const alfabetiskt = byggKategorier().slice()
+    .sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
+  for (const k of alfabetiskt) {
+    const rad = document.createElement('button');
+    rad.type = 'button';
+    rad.className = 'indexrad';
+    const namn = document.createElement('span');
+    namn.textContent = k.namn;
+    const ledare = document.createElement('span');
+    ledare.className = 'ledare';
+    ledare.setAttribute('aria-hidden', 'true');
+    const antal = document.createElement('span');
+    antal.className = 'antal';
+    antal.textContent = k.antal;
+    rad.append(namn, ledare, antal);
+    rad.addEventListener('click', () => laggTillFilter(k.namn));
+    el.kategorilista.append(rad);
   }
 }
 
@@ -354,8 +375,24 @@ function ritaRelaterade(aktivaVikta) {
   el.relaterat.hidden = false;
   el.relateradeTaggar.textContent = '';
   for (const k of lista) {
-    el.relateradeTaggar.append(taggKnapp(k.namn, k.antal, false));
+    el.relateradeTaggar.append(stjarnKnapp(k.namn, k.antal));
   }
+}
+
+function stjarnKnapp(namn, antal) {
+  const knapp = document.createElement('button');
+  knapp.type = 'button';
+  knapp.className = 'stjarnrad';
+  const prick = document.createElement('span');
+  prick.className = 'prick';
+  prick.setAttribute('aria-hidden', 'true');
+  knapp.append(prick, namn);
+  const n = document.createElement('span');
+  n.className = 'antal';
+  n.textContent = antal;
+  knapp.append(n);
+  knapp.addEventListener('click', () => laggTillFilter(namn));
+  return knapp;
 }
 
 function ritaTraffar(ord) {
@@ -430,7 +467,8 @@ function fyllLista(behallare, lista, ord) {
     catch (e) { vard.textContent = bm.url; }
     meta.append(vard);
 
-    for (const t of bm.taggar) {
+    const synligaTaggar = bm.taggar.slice(0, 4);
+    for (const t of synligaTaggar) {
       const s = document.createElement('span');
       s.className = 'tagg tagg-liten';
       s.textContent = t;
@@ -440,6 +478,13 @@ function fyllLista(behallare, lista, ord) {
         laggTillFilter(t);
       });
       meta.append(s);
+    }
+    if (bm.taggar.length > 4) {
+      const fler = document.createElement('span');
+      fler.className = 'fler';
+      fler.textContent = '+' + (bm.taggar.length - 4);
+      fler.title = bm.taggar.slice(4).join(', ');
+      meta.append(fler);
     }
     a.append(meta);
     li.append(a);
@@ -574,19 +619,6 @@ function byggHimmel() {
     };
   });
 
-  /* Särnoden: genvägen till det senaste, en romb bland runda stjärnor */
-  const forrSar = gamla.get('\u2726 Senast tillagda');
-  himmel.noder.push({
-    namn: '\u2726 Senast tillagda',
-    antal: null,
-    sar: true,
-    d: 9,
-    x: forrSar ? forrSar.x : cx, y: forrSar ? forrSar.y : cy - Math.min(innerHeight * 0.32, 260),
-    vx: 0, vy: 0,
-    fas: Math.random() * Math.PI * 2,
-    el: null
-  });
-
   /* Kanter ur samförekomst, topp tre per nod */
   const index = new Map(himmel.noder.map((n, i) => [n.namn, i]));
   const par = new Map();
@@ -625,12 +657,16 @@ function byggHimmel() {
 }
 
 function ritaNodknappar() {
+  el.noder.classList.remove('framme');
   el.noder.textContent = '';
   himmel.noder.forEach((nod, i) => {
     const knapp = document.createElement('button');
     knapp.type = 'button';
-    knapp.className = 'nod' + (nod.sar ? ' sarnod' : '');
+    knapp.className = 'nod';
     knapp.style.setProperty('--d', nod.d.toFixed(1) + 'px');
+    knapp.style.setProperty('--fordrojning', Math.min(i * 35, 600) + 'ms');
+    knapp.setAttribute('aria-label', nod.namn + ', ' + nod.antal +
+      (nod.antal === 1 ? ' bokmärke' : ' bokmärken'));
 
     const prick = document.createElement('span');
     prick.className = 'prick';
@@ -641,18 +677,7 @@ function ritaNodknappar() {
     text.textContent = nod.namn;
     knapp.append(text);
 
-    if (nod.antal != null) {
-      const n = document.createElement('span');
-      n.className = 'antal';
-      n.textContent = nod.antal;
-      knapp.append(n);
-    }
-
-    if (nod.sar) {
-      knapp.addEventListener('click', visaSenaste);
-    } else {
-      knapp.addEventListener('click', () => laggTillFilter(nod.namn));
-    }
+    knapp.addEventListener('click', () => laggTillFilter(nod.namn));
 
     knapp.addEventListener('mouseenter', () => lysGrannar(i));
     knapp.addEventListener('mouseleave', () => lysGrannar(-1));
@@ -660,9 +685,10 @@ function ritaNodknappar() {
     knapp.addEventListener('blur', () => lysGrannar(-1));
 
     nod.el = knapp;
-    nod.kollision = nod.d / 2 + Math.max(22, nod.namn.length * 3.6);
+    nod.kollision = nod.d / 2 + Math.max(20, nod.namn.length * 3.4);
     el.noder.append(knapp);
   });
+  requestAnimationFrame(() => el.noder.classList.add('framme'));
 }
 
 function lysGrannar(index) {
@@ -675,7 +701,9 @@ function lysGrannar(index) {
     }
   }
   himmel.noder.forEach((nod, i) => {
-    if (nod.el) nod.el.classList.toggle('grann', grannar.has(i));
+    if (!nod.el) return;
+    nod.el.classList.toggle('grann', grannar.has(i));
+    nod.el.classList.toggle('avlagsen', index >= 0 && i !== index && !grannar.has(i));
   });
   ritaHimmel();
 }
@@ -820,9 +848,10 @@ function ritaHimmel() {
     const n1 = himmel.noder[kant.a];
     const n2 = himmel.noder[kant.b];
     const lyser = himmel.hovIndex === kant.a || himmel.hovIndex === kant.b;
+    const dampad = himmel.hovIndex >= 0 && !lyser;
     ctx.strokeStyle = lyser
       ? 'rgba(220, 192, 138, ' + (0.35 + 0.4 * kant.w) + ')'
-      : 'rgba(197, 160, 89, ' + (0.08 + 0.16 * kant.w) + ')';
+      : 'rgba(197, 160, 89, ' + (dampad ? 0.04 : 0.08 + 0.16 * kant.w) + ')';
     ctx.lineWidth = lyser ? 1.2 : 0.75;
     ctx.beginPath();
     ctx.moveTo(n1.x, n1.y);

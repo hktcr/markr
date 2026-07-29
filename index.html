@@ -16,19 +16,16 @@
 <div class="skal rymd" id="skal">
 
   <header class="topp">
+    <h1 class="ordmarke">MärkR</h1>
     <div class="sokfalt" id="sokfalt">
       <span class="marke" aria-hidden="true"></span>
       <div class="filterrad" id="aktiva-filter"></div>
       <input type="search" id="sok" placeholder="Sök i arkivet" autocomplete="off" autocorrect="off"
              autocapitalize="off" spellcheck="false" enterkeyhint="go"
              aria-label="Sök bland bokmärken" aria-describedby="status">
+      <kbd class="snabb" aria-hidden="true">/</kbd>
     </div>
     <p class="status" id="status" role="status" aria-live="polite">Laddar</p>
-    <p class="lankrad" id="lankrad">
-      <button type="button" class="lank" id="lank-senaste">Senast tillagda</button>
-      <span class="lankskilje" aria-hidden="true">·</span>
-      <button type="button" class="lank" id="lank-lista">Alla kategorier som lista</button>
-    </p>
   </header>
 
   <main class="innehall" id="innehall">
@@ -48,6 +45,13 @@
     </section>
 
   </main>
+
+  <footer class="horisont" id="horisont">
+    <button type="button" class="lank" id="lank-senaste">Senast tillagda</button>
+    <span class="lankskilje" aria-hidden="true">·</span>
+    <button type="button" class="lank" id="lank-lista">Alla kategorier</button>
+    <span class="horisontinfo" id="horisont-info"></span>
+  </footer>
 
   <footer class="hjalp" aria-hidden="true">
     <kbd>/</kbd> sök <span class="skilje"></span>

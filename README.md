@@ -13,16 +13,24 @@ tar över, med ett band "I träffarna" som visar vilka taggar som finns i just
 den träffmängden, klickbara för att smalna av vidare. Det är samma nätverk i
 omformad gestalt: himlen för att bläddra, bandet för att navigera facetterat.
 
+Startvyn bär tre element och inget mer: ordmärket, okularet, stjärnorna.
+Antalet bokmärken står i sökrutans platshållare i stället för i en statusrad,
+och datum plus eventuella anmärkningar sjunker ner till horisontraden längst
+ner tillsammans med de två textlänkarna. Stjärnorna saknar sifferetiketter
+eftersom prickens storlek redan bär den informationen, men antalet finns kvar
+i `aria-label` för skärmläsare. Ingenting i vyn upprepar något annat.
+
 ## Filer
 
 | Fil | Innehåll |
 |---|---|
 | `index.html` | Struktur: sökfält, himmel, nodlager, resultat, listläge |
 | `style.css` | Sot, papper och mässing. Alla färger som variabler i `:root` |
+| `gor-ikoner.py` | Ritar ikonerna deterministiskt. Auktoritativ källa vid tvivel |
 | `app.js` | Sökmotor, kraftsimulering, canvasritning, tangentbord |
 | `bokmarken.json` | Datan, Single Source of Truth |
 | `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
-| `test.mjs` | Kör appen i jsdom, 30 kontroller. Kräver `npm install jsdom` |
+| `test.mjs` | Kör appen i jsdom, 32 kontroller. Kräver `npm install jsdom` |
 
 ## Arkitektur för himlen
 
@@ -38,9 +46,13 @@ somnar när den är färdigräknad. På enheter med mus och utan
 `prefers-reduced-motion` ligger en svag drift kvar, annars står himlen still.
 
 Antalet synliga stjärnor skalar med skärmyta, cirka 10 på en telefon och upp
-till 24 på en stor skärm, alltid de största taggarna först. Rombnoden
-"Senast tillagda" är en genväg, och textlänkarna under statusraden når det
-senaste och en fullständig kategorilista även utan grafen.
+till 24 på en stor skärm, alltid de största taggarna först. Textlänkarna vid
+horisonten når det senaste och kategoriindexet även utan grafen.
+
+Stjärnorna tänds stegvis vid ankomst, 35 ms mellan varje, taket ligger på
+600 ms. Hovring eller tangentbordsfokus på en stjärna dämpar allt utom dess
+stjärnbild, både noder och linjer, så att klustret träder fram ur bruset.
+All denna rörelse lyder `prefers-reduced-motion`.
 
 ## Dataformat
 
@@ -60,8 +72,8 @@ senaste och en fullständig kategorilista även utan grafen.
 ```
 
 Appen läser även en ren array utan omslag, men då saknas `uppdaterad` och
-statusraden säger det. `url` är identiteten, dubbletter döljs vid inläsning
-och räknas synligt i statusraden. Taggar får innehålla å ä ö, sökningen
+horisontraden säger det. `url` är identiteten, dubbletter döljs vid inläsning
+och räknas synligt vid horisonten. Taggar får innehålla å ä ö, sökningen
 normaliserar ändå.
 
 ## Sökningen
@@ -120,6 +132,20 @@ node -e "JSON.parse(require('fs').readFileSync('bokmarken.json','utf8'))"
 node --check app.js
 node test.mjs
 ```
+
+## Tre gestalter för samma nätverk
+
+Kategorierna visas på tre sätt, och de använder medvetet besläktade former
+så att det syns att det är samma sak:
+
+| Läge | Gestalt |
+|---|---|
+| Himlen, tom sökning | Stjärnor med linjer, storlek efter antal |
+| Bandet "I träffarna" | Mässingsprick plus monospace-etikett, samma språk i komprimerad form |
+| Kategoriindexet | Alfabetisk lista med punktade ledare fram till antalet |
+
+Träffraderna visar högst fyra taggetiketter plus ett diskret `+n` med resten
+i `title`, så att raden aldrig växer till en taggmatta.
 
 ## Design
 

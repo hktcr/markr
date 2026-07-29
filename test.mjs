@@ -3,7 +3,12 @@ import fs from 'fs';
 
 const html = fs.readFileSync('index.html', 'utf8');
 const js = fs.readFileSync('app.js', 'utf8');
-const json = fs.readFileSync('bokmarken.json', 'utf8');
+const rawJson = fs.readFileSync('bokmarken.json', 'utf8');
+const parsed = JSON.parse(rawJson);
+if (parsed.bokmarken && parsed.bokmarken.length > 0) {
+  parsed.bokmarken.push(parsed.bokmarken[0]);
+}
+const json = JSON.stringify(parsed);
 
 const fel = [];
 const dom = new JSDOM(html, {
@@ -49,9 +54,10 @@ for (let i = 0; i < 40; i++) await new Promise(r => setTimeout(r, 16));
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
 const noder = $$('#noder .nod');
-kolla('stjärnnoder ritade som knappar', noder.length >= 11, noder.length + ' st');
-kolla('särnoden Senast tillagda finns', $$('#noder .sarnod').length === 1);
-kolla('statusraden räknar arkivet', /^\d+ bokmärken/.test($('#status').textContent), $('#status').textContent);
+kolla('stjärnnoder ritade som knappar', noder.length >= 10, noder.length + ' st');
+kolla('inga siffror på stjärnorna', $$('#noder .nod .antal').length === 0);
+kolla('platshållaren räknar arkivet', /Sök bland \d+ bokmärken/.test(sok.placeholder), sok.placeholder);
+kolla('horisonten syns med datum eller anmärkning', $('#horisont-info').textContent.length > 0, $('#horisont-info').textContent);
 kolla('resultatytan dold i rymden', $('#resultat').hidden);
 
 /* Positioner: inga NaN, rimlig spridning */
@@ -73,13 +79,13 @@ klick(tagnod);
 kolla('nodklick lämnar rymden', !$('#skal').classList.contains('rymd'));
 kolla('nodklick ger filteretikett', $$('#aktiva-filter .filter').length === 1);
 kolla('nodklick ger träffar', $$('#traffar .rad').length > 0, $$('#traffar .rad').length + ' st');
-kolla('relaterade taggar visas', !$('#relaterat').hidden && $$('#relaterade-taggar .tagg').length > 0,
-  $$('#relaterade-taggar .tagg').length + ' st');
+kolla('relaterade taggar visas i himlens formspråk', !$('#relaterat').hidden && $$('#relaterade-taggar .stjarnrad').length > 0,
+  $$('#relaterade-taggar .stjarnrad').length + ' st');
 kolla('himlen dold vid sökning', $('#himmel').hasAttribute('data-dold'));
 
 /* Smalna av via relaterad tagg */
 const foreDrill = $$('#traffar .rad').length;
-klick($$('#relaterade-taggar .tagg')[0]);
+klick($$('#relaterade-taggar .stjarnrad')[0]);
 const efterDrill = $$('#traffar .rad').length;
 kolla('relaterad tagg smalnar av', efterDrill > 0 && efterDrill <= foreDrill, foreDrill + ' -> ' + efterDrill);
 
@@ -121,12 +127,11 @@ klick($('#lank-senaste'));
 kolla('Senast tillagda visar lista', !$('#resultat').hidden && $$('#traffar .rad').length === 20,
   $$('#traffar .rad').length + ' st');
 tangent('Escape');
-klick($$('#noder .sarnod')[0]);
-kolla('särnoden visar också senaste', $$('#traffar .rad').length === 20);
-tangent('Escape');
 klick($('#lank-lista'));
-kolla('listläget visar alla kategorier', !$('#listlage').hidden && $$('#kategorilista .tagg').length > 30,
-  $$('#kategorilista .tagg').length + ' st');
+kolla('listläget visar index över alla kategorier', !$('#listlage').hidden && $$('#kategorilista .indexrad').length > 30,
+  $$('#kategorilista .indexrad').length + ' st');
+const namnen = $$('#kategorilista .indexrad').map(r => r.firstChild.textContent);
+kolla('indexet är alfabetiskt', namnen.every((n, i) => i === 0 || namnen[i-1].localeCompare(n, 'sv') <= 0));
 tangent('Escape');
 kolla('Escape lämnar listläget', $('#listlage').hidden && $('#skal').classList.contains('rymd'));
 
@@ -134,7 +139,9 @@ kolla('Escape lämnar listläget', $('#listlage').hidden && $('#skal').classList
 skriv('xyzzyplugh');
 kolla('nollträff säger det rakt', w.document.body.textContent.includes('Inga bokmärken matchar'));
 skriv('');
-kolla('statusraden är synlig (inga dubbletter krävs)', /bokmärken/.test($('#status').textContent), $('#status').textContent);
+kolla('dubbletter rapporteras vid horisonten', /dubblett/.test($('#horisont-info').textContent), $('#horisont-info').textContent);
+kolla('högst fyra taggetiketter per rad', (() => { skriv('verktyg'); const forsta = $('#traffar .rad'); return forsta && forsta.querySelectorAll('.tagg-liten').length <= 4; })());
+skriv('');
 kolla('inga konsolfel', fel.length === 0, fel.join(' | ').slice(0, 120));
 
 console.log(resultat.join('\n'));
