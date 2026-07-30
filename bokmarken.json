@@ -2693,6 +2693,21 @@
       ],
       "tillagd": "2026-07-29",
       "id": 210
+    },
+    {
+      "url": "https://hktcr.github.io/vavr/",
+      "titel": "VävR",
+      "beskrivning": "Lokalt skrivverktyg för fokuserat skrivande och strukturerad redigering. Stycken blir noder i en interaktiv väv som visar rubrikhierarki, textordning och lexikala kopplingar. Har strukturvy, dokumentmål, skrivtimer, Markdown och offlineinstallation.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Produktivitet",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-30",
+      "id": 211
     }
   ]
 }
