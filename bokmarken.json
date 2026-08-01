@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-07-30",
+  "uppdaterad": "2026-08-01",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2708,6 +2708,21 @@
       ],
       "tillagd": "2026-07-30",
       "id": 211
+    },
+    {
+      "url": "https://hktcr.github.io/gaia-tools/tasks/",
+      "titel": "gAIa Tasks",
+      "beskrivning": "gAIas visuella och krypterade uppgiftsöversikt. Samlar uppgifter, projekt, nästa steg och uppmärksamhetsbehov i en privat master, medan ChatGPTs uppmärksamhetsvakt bedömer vad som är relevant för stunden och dagen.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Produktivitet",
+        "Logistik"
+      ],
+      "tillagd": "2026-08-01",
+      "id": 212
     }
   ]
 }
