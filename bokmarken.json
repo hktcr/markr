@@ -2708,21 +2708,6 @@
       ],
       "tillagd": "2026-07-30",
       "id": 211
-    },
-    {
-      "url": "https://gaia-tasks.hlgk.chatgpt.site",
-      "titel": "gAIa Tasks",
-      "beskrivning": "gAIas visuella och krypterade uppgiftsöversikt. Samlar uppgifter, projekt, nästa steg och uppmärksamhetsbehov i en privat master, medan ChatGPTs uppmärksamhetsvakt bedömer vad som är relevant för stunden och dagen.",
-      "taggar": [
-        "gAIa",
-        "Eget Projekt",
-        "Utveckling",
-        "Webbapp",
-        "Produktivitet",
-        "Logistik"
-      ],
-      "tillagd": "2026-08-01",
-      "id": 212
     }
   ]
 }
