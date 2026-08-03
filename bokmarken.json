@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-01",
+  "uppdaterad": "2026-08-03",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2695,7 +2695,7 @@
       "id": 210
     },
     {
-      "url": "https://hktcr.github.io/vavr/",
+      "url": "https://vavr-skrivmiljo.hlgk.chatgpt.site",
       "titel": "VävR",
       "beskrivning": "Lokalt skrivverktyg för fokuserat skrivande och strukturerad redigering. Stycken blir noder i en interaktiv väv som visar rubrikhierarki, textordning och lexikala kopplingar. Har strukturvy, dokumentmål, skrivtimer, Markdown och offlineinstallation.",
       "taggar": [
