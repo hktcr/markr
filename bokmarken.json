@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-03",
+  "uppdaterad": "2026-08-05",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2708,6 +2708,23 @@
       ],
       "tillagd": "2026-07-30",
       "id": 211
+    },
+    {
+      "url": "https://helhetr.hlgk.chatgpt.site",
+      "titel": "HelhetR",
+      "beskrivning": "Privat analysmiljö för reproducerbara helhetsanalyser. Modellerar frågor som interaktiva nodnätverk med påståenden, källor, återkopplingsloopar, osäkerheter, känslighetstester och hävstänger. Den lokala grafen är frågespecifik och hålls skild från Metaväven.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Forskning",
+        "Kunskapshantering",
+        "Syntes",
+        "Analys"
+      ],
+      "tillagd": "2026-08-05",
+      "id": 212
     }
   ]
 }
