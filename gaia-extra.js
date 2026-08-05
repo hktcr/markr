@@ -25,6 +25,24 @@
       ],
       tillagd: '2026-08-05',
       id: 'gaia-kunskapsvav'
+    },
+    {
+      url: 'https://hktcr.github.io/gaia-tools/geor/',
+      titel: 'GeoR, rese- och upptäcktskartor',
+      beskrivning: 'gAIa-systemets samlade bibliotek för klickbara rese- och upptäcktskartor. Natur, kultur, historia, hållpunkter och navigationslänkar samlas per resa. Första kartan går från Sarpsborg till Beito via Hadeland och Valdres.',
+      taggar: [
+        'gAIa',
+        'Eget Projekt',
+        'Webbapp',
+        'Karta',
+        'Resa',
+        'Natur',
+        'Kultur',
+        'Norge',
+        'GeoR'
+      ],
+      tillagd: '2026-08-05',
+      id: 'geor'
     }
   ];
 
