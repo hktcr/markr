@@ -8,9 +8,9 @@
 
   const extraBokmarken = [
     {
-      url: 'https://github.com/hktcr/hktcr-1/tree/main/gaia-kunskapsvav',
-      titel: 'gAIa kunskapsväv, privat förhandsversion',
-      beskrivning: 'Privat, levande kunskapsyta för AI ULF, vetenskap och omvärld, Naturveckan, Nautilus och Quanta samt svensk valopinion 2026. Visar senaste verifierade fynd, tidslinjer, källor, metodisk osäkerhet och versionssparade synteser. Nuvarande länk går till det privata källagret och byts till den privata ChatGPT Site adressen när publiceringen är klar.',
+      url: 'https://hktcr-1-ocax-git-agent-publish-gaia-kunskapsvav-hktcrs-projects.vercel.app/',
+      titel: 'gAIa kunskapsväv',
+      beskrivning: 'Privat och inloggningsskyddad kunskapsyta för AI ULF, vetenskap och omvärld, Naturveckan, Nautilus och Quanta, teknisk systemstatus samt svensk valopinion 2026. Visar nya verifierade fynd, senaste körningsdatum, kronologiska tidslinjer, originalkällor, metodisk osäkerhet, samband och versionssparade synteser. Endast uttryckligen godkända kunskapsflöden får visas.',
       taggar: [
         'gAIa',
         'Eget Projekt',
@@ -18,9 +18,12 @@
         'Privat',
         'Forskning',
         'Syntes',
+        'Källkritik',
+        'Tidslinje',
         'Omvärldsbevakning',
         'AI',
         'Natur',
+        'Valopinion',
         'Val 2026'
       ],
       tillagd: '2026-08-05',
