@@ -2741,7 +2741,22 @@
       ],
       "tillagd": "2026-08-06",
       "id": 213
+    },
+    {
+      "url": "https://gaia-kunskapsvav.hlgk.chatgpt.site",
+      "titel": "gAIa Kunskapsväv",
+      "beskrivning": "Privat kunskapsyta för verifierade informationskörningar, kronologisk kontext, versionssparade synteser, källor och samband. gAIa på Google Drive är auktoritativ systemmaster och Siten är endast presentationsyta.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Forskning",
+        "Kunskapshantering",
+        "Syntes"
+      ],
+      "tillagd": "2026-08-06",
+      "id": 214
     }
   ]
 }
-
