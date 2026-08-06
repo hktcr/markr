@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-05",
+  "uppdaterad": "2026-08-06",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2725,6 +2725,23 @@
       ],
       "tillagd": "2026-08-05",
       "id": 212
+    },
+    {
+      "url": "https://resonr.hlgk.chatgpt.site",
+      "titel": "ResonR",
+      "beskrivning": "Privat generativ ljudmiljö för läsning och koncentration. Hard Fork och Valsång skapar unika, långsamt föränderliga ljudbilder som påverkas av rörelse, beröring, tangentbord och frivillig lokal mikrofonanalys. Mikrofonljud spelas inte in eller laddas upp.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Produktivitet",
+        "Ljud",
+        "Läsning"
+      ],
+      "tillagd": "2026-08-06",
+      "id": 213
     }
   ]
 }
+
