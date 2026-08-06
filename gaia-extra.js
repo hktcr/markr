@@ -8,8 +8,8 @@
 
   const extraBokmarken = [
     {
-      url: 'https://hktcr-1-ocax-git-agent-publish-gaia-kunskapsvav-hktcrs-projects.vercel.app/',
-      titel: 'gAIa kunskapsväv',
+      url: 'https://gaia-kunskapsvav.hlgk.chatgpt.site',
+      titel: 'gAIa Kunskapsväv',
       beskrivning: 'Privat och inloggningsskyddad kunskapsyta för AI ULF, vetenskap och omvärld, Naturveckan, Nautilus och Quanta, teknisk systemstatus samt svensk valopinion 2026. Visar nya verifierade fynd, senaste körningsdatum, kronologiska tidslinjer, originalkällor, metodisk osäkerhet, samband och versionssparade synteser. Endast uttryckligen godkända kunskapsflöden får visas.',
       taggar: [
         'gAIa',
