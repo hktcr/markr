@@ -139,6 +139,27 @@ node --check app.js
 node test.mjs
 ```
 
+### Publiceringsrutin
+
+MärkR publiceras normalt som en avsiktlig, atomär commit direkt till `main`
+genom den anslutna GitHubbehörigheten. Projektets faktiska historik och
+tillgängliga anslutningar ska kontrolleras innan ett saknat hjälpprogram
+beskrivs som ett publiceringshinder.
+
+1. Läs aktuell `main`, senaste commit och ändringsomfånget.
+2. Kontrollera att endast avsedda filer ingår.
+3. Kör JSONkontroll, syntaxkontroll och hela testsviten.
+4. Skapa GitHubblobbar och jämför varje blob SHA med lokal `git hash-object`.
+5. Skapa ett träd ovanpå aktuell `main`, därefter en commit med aktuell
+   huvudcommit som förälder.
+6. Flytta `main` endast som fast forward.
+7. Återläs commit och kritiska filer från GitHub.
+8. Kontrollera den publicerade GitHub Pages versionen separat.
+
+Ett saknat verktyg, exempelvis `gh`, betyder endast att just den metoden inte
+är tillgänglig. Det får inte beskrivas som att publicering är omöjlig innan den
+etablerade anslutna vägen har kontrollerats.
+
 ## Tre gestalter för samma nätverk
 
 Verksamhetsområden och facetter visas på tre sätt, med besläktade former
