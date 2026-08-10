@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-06",
+  "uppdaterad": "2026-08-10",
   "bokmarken": [
     {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
@@ -2775,6 +2775,20 @@
       ],
       "tillagd": "2026-08-05",
       "id": 215
+    },
+    {
+      "url": "https://km.se/r/logga-in.php",
+      "titel": "KM administration och innehållsutveckling",
+      "beskrivning": "Inloggning till KM för arbete som administratör och innehållsutvecklare i systemet.",
+      "taggar": [
+        "Skola",
+        "Verktyg",
+        "KM",
+        "Administration",
+        "Innehållsutveckling"
+      ],
+      "tillagd": "2026-08-10",
+      "id": 216
     }
   ]
 }
