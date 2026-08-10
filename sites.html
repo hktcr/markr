@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0b0d">
+<meta name="description" content="Register över Håkans ChatGPT siter.">
+<title>ChatGPT siter | MärkR</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { overflow: auto; }
+  .sitesida { width: min(100% - 2rem, 58rem); margin: 0 auto; padding: max(2rem, env(safe-area-inset-top)) 0 max(4rem, env(safe-area-inset-bottom)); }
+  .sitetopp { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 3.5rem; }
+  .sitetopp .ordmarke { visibility: visible; margin: 0; text-align: left; }
+  .tillbaka { color: var(--papper-dim); font: 0.72rem var(--mono); letter-spacing: 0.08em; text-transform: uppercase; text-underline-offset: 4px; }
+  .siteintro { max-width: 43rem; margin-bottom: 3rem; }
+  .siteintro h1 { margin: 0 0 0.8rem; font: 400 clamp(2rem, 6vw, 3.6rem)/1.08 var(--serif); color: var(--papper); }
+  .siteintro p { margin: 0; color: var(--papper-dim); font-size: 1rem; line-height: 1.7; }
+  .sitegrupp { margin-top: 3rem; }
+  .sitegrupp h2 { margin: 0 0 1rem; color: var(--massing); font: 400 0.72rem var(--mono); letter-spacing: 0.14em; text-transform: uppercase; }
+  .sitegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: 0.8rem; }
+  .sitekort { display: block; min-height: 9rem; padding: 1.15rem 1.2rem; border: 1px solid var(--harfin-2); border-radius: var(--r); background: rgba(19,19,23,0.86); color: inherit; text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease; }
+  .sitekort:hover { border-color: var(--massing); transform: translateY(-2px); }
+  .sitekort h3 { margin: 0 0 0.55rem; color: var(--massing-lj); font: 400 1.22rem/1.25 var(--serif); }
+  .sitekort p { margin: 0; color: var(--papper-dim); font-size: 0.9rem; line-height: 1.5; }
+  .statusmarke { display: inline-block; margin-top: 1rem; color: var(--papper-dim); font: 0.66rem var(--mono); letter-spacing: 0.1em; text-transform: uppercase; }
+  .varningkort { border-style: dashed; }
+  .masterlank { display: inline-block; margin-top: 2rem; color: var(--massing-lj); font: 0.76rem var(--mono); letter-spacing: 0.05em; text-underline-offset: 4px; }
+  @media (max-width: 520px) { .sitetopp { margin-bottom: 2.5rem; } .sitegrid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="sitesida">
+  <header class="sitetopp">
+    <div class="ordmarke">MärkR</div>
+    <a class="tillbaka" href="index.html">Till bokmärken</a>
+  </header>
+
+  <section class="siteintro">
+    <h1>ChatGPT siter</h1>
+    <p>En samlad ingång till aktiva siter och en tydlig överblick över sådant som är tillfälligt, pausat eller på väg att avvecklas. Adresser och beskrivningar kontrollerades den 10 augusti 2026.</p>
+  </section>
+
+  <section class="sitegrupp" aria-labelledby="aktiva">
+    <h2 id="aktiva">Aktiva</h2>
+    <div class="sitegrid">
+      <a class="sitekort" href="https://vavr-skrivmiljo.hlgk.chatgpt.site"><h3>VävR</h3><p>Skrivmiljö med dokumenthantering, fokuslägen, kommentarer och strukturella vyer.</p><span class="statusmarke">Aktiv</span></a>
+      <a class="sitekort" href="https://helhetr.hlgk.chatgpt.site"><h3>HelhetR</h3><p>Verktyg för systemkartor, noder och samband i holistiska analyser.</p><span class="statusmarke">Aktiv</span></a>
+      <a class="sitekort" href="https://gaia-kunskapsvav.hlgk.chatgpt.site"><h3>gAIa Kunskapsväv</h3><p>Privat kunskapsyta för att navigera samband, projekt och dokumentation i gAIa.</p><span class="statusmarke">Aktiv</span></a>
+      <a class="sitekort" href="https://pris-vid-pump.hlgk.chatgpt.site"><h3>Pris vid pump</h3><p>Interaktiv systemkarta över faktorer och samband bakom pris vid pump.</p><span class="statusmarke">Aktiv</span></a>
+      <a class="sitekort" href="https://sven-effekten-slideboard.hlgk.chatgpt.site"><h3>SVEN effekten SlideBoard</h3><p>Visuell presentations och analysyta för arbetet med SVEN effekten.</p><span class="statusmarke">Aktiv</span></a>
+    </div>
+  </section>
+
+  <section class="sitegrupp" aria-labelledby="tillfalliga">
+    <h2 id="tillfalliga">Tillfälliga</h2>
+    <div class="sitegrid">
+      <a class="sitekort" href="https://stemup-tre-upplagg.hlgk.chatgpt.site"><h3>STEMup: tre upplägg</h3><p>Mobilvänlig konferensöversikt med tre personligt anpassade dagsupplägg och passinformation.</p><span class="statusmarke">Granskas efter konferensen</span></a>
+    </div>
+  </section>
+
+  <section class="sitegrupp" aria-labelledby="pausade">
+    <h2 id="pausade">Pausade</h2>
+    <div class="sitegrid">
+      <a class="sitekort" href="https://ljudr-faltlogg.hlgk.chatgpt.site"><h3>LjudR fältlogg</h3><p>Fältlogg för ljudinspelningar, platser, notiser och material i ljudprojektet.</p><span class="statusmarke">Pausad</span></a>
+      <a class="sitekort" href="https://resonr.hlgk.chatgpt.site"><h3>ResonR</h3><p>Ljudbaserad läs och lyssningsmiljö med responsiva ljudbilder.</p><span class="statusmarke">Pausad</span></a>
+    </div>
+  </section>
+
+  <section class="sitegrupp" aria-labelledby="avveckling">
+    <h2 id="avveckling">Avvecklingskandidater</h2>
+    <div class="sitegrid">
+      <a class="sitekort varningkort" href="https://blatandr.hlgk.chatgpt.site"><h3>BlåtandR</h3><p>Prototyp för inventering av Bluetoothenheter. Beslut finns om att verktyget ska tas bort.</p><span class="statusmarke">Avvecklingskandidat</span></a>
+      <a class="sitekort varningkort" href="https://gaia-tasks.hlgk.chatgpt.site"><h3>gAIa Tasks</h3><p>Tidigare uppgiftsyta som har markerats som avvecklad.</p><span class="statusmarke">Avvecklingskandidat</span></a>
+    </div>
+  </section>
+
+  <a class="masterlank" href="https://drive.google.com/file/d/1HeGrqRM4CX8knrLja7KT8qpmn-eJbjGR/view?usp=drivesdk">Öppna fullständigt MASTER register</a>
+</main>
+</body>
+</html>
