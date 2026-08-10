@@ -1,0 +1,1043 @@
+{
+  "datum": "2026-08-10",
+  "godkandAv": "Håkan",
+  "antal": 32,
+  "aterstallningskalla": "arkiv/bokmarken-legacy-2026-08-10.json",
+  "bokmarken": [
+    {
+      "url": "https://www.agenthost.ai/workspace",
+      "titel": "AgentHost AI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 11,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre generell AgentHost-ingång.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://sites.google.com/d/1C5YQzAQ0GbUgGtkWsGsfExMQH5CdIdEk/p/12cdGP5itUR6yIXYWbyVKXLyVQORcLVcu/edit",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 17,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Artikel",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Google Sites-redigeringslänk för AINO.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://sites.google.com/view/ainobjk/aino-start",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 18,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Google Sites-sida för AINO.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://sites.google.com/view/ainobjk/home",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 19,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Google Sites-hemsida för AINO.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://www.agenthost.ai/chat/aino",
+      "titel": "AINO",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 20,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre AgentHost-version av AINO.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://docs.google.com/spreadsheets/d/1zp-5m8ewTyyNsCgIz2_d7IPqHNbo6Yv_28W1nc7HYZc/edit#gid=1884570747",
+      "titel": "AINO-logg - Google Sheets",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 26,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Kalkylark",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Teknisk dubblett av AINO-logg #25.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://bard.google.com/chat",
+      "titel": "Bard",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 33,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Bard-länken leder vidare till Gemini, som finns som #88.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://classroom.google.com/u/1/c/MTY1NzUyNjIxNlpa",
+      "titel": "Biologi 7A2 16/17",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 35,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Classroom för Biologi 7A2 läsåret 2016/2017.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chatgpt.com/c/676bcd6c-fd10-800d-b196-42da9e0c8b31",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 38,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Oidentifierad äldre ChatGPT-konversation.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chatgpt.com/c/66fb8346-8c90-8002-a035-0b515405899d",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 39,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Oidentifierad äldre ChatGPT-konversation.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chat.openai.com/",
+      "titel": "ChatGPT",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 41,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre ChatGPT-domän. Kanonisk ChatGPT-ingång behålls.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chat.openai.com/g/g-4AbSRgbZo-captain-s-log/c/92521ddd-44e5-4291-96d8-b8c741f7a84d",
+      "titel": "ChatGPT - Captain's log",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 43,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre specialbyggd GPT och tillhörande konversation.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chat.openai.com/g/g-HyHaRsGaK-hard-fork-bot",
+      "titel": "ChatGPT - Hard Fork Bot",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 44,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Hard Fork-GPT.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chatgpt.com/g/g-FWHtzQpQw-policy-hanteraren",
+      "titel": "ChatGPT - Policy-hanteraren",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 45,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre GPT för policyhantering.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://chat.openai.com/g/g-H74PQcft4-taleswapper",
+      "titel": "ChatGPT - Taleswapper",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 46,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Taleswapper-GPT.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://claude.ai/login?returnTo=%2F%3F",
+      "titel": "Claude",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 49,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Dubblett av Claude-ingång #48.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://www.agenthost.ai/chat/utmaningen",
+      "titel": "Dagens utmaning",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 53,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre AgentHost-agent för Dagens utmaning.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://docs.google.com/document/d/1WBNB0Z3U_3YZHVaA9JeiQxqq2BPj6udgYrAmT5Tdz0o/edit",
+      "titel": "Fenologi m m_Ny Version_19jan11 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 69,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Dokument",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Samma Fenologi-dokument som #68.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://scholar-google-com.ludwig.lub.lu.se:2443/",
+      "titel": "Google Scholar (Lund)",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 94,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Google Scholar-ingång via Lunds universitet.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
+      "titel": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eef5e2-9e5b-9480-a90d-a92ad1081fc1",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 100,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre re:tune-konversation utan beskrivande titel.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://www.mentimeter.com/",
+      "titel": "Interactive presentation software",
+      "beskrivning": "",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 112,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Mentimeters marknadsföringssida. Arbetsytan behålls som #136.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://docs.google.com/document/d/1wtwrbEpcF1gyFREdtGCaUs1oJveHduYYI7UyZueQrPA/edit",
+      "titel": "Kalendarium HT-22 - Google Dokument",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 115,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Dokument",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre kalendarium för HT22.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://roamresearch.com/#/app/Hive_1/page/05-17-2021",
+      "titel": "May 17th, 2021",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 134,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre Roam-sida daterad 17 maj 2021.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://openai.smapply.org/prog/",
+      "titel": "My Applications - OpenAI",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 139,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre OpenAI Applications-ingång.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://roamresearch.com/#/app/Hive_1/page/mFfsEx1tC",
+      "titel": "Omdömen HT21 BJB-21 - Matematik",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 150,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre sida för omdömen HT21.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/prompt",
+      "titel": "re:tune",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 162,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre re:tune-promptingång.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://retune.so/chats",
+      "titel": "re:tune",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 163,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre generell re:tune-ingång.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://outlook.office.com/mail",
+      "titel": "Sign in to your account",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 183,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Kommunikationstjänst",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Dubblett av Outlook-ingång #61.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://hktcr.github.io/SkrivBord/",
+      "titel": "SkrivR",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 189,
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "SkrivR har ersatts av VävR #211.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://hktcr.github.io/CRE_APT_jan2026/shell.html",
+      "titel": "Slide Shell",
+      "beskrivning": "",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "SlideCraft",
+        "Presentation",
+        "Undervisning"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 190,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "SlideCraft"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "SlideCraft",
+        "Presentation",
+        "Undervisning"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Tillfällig Slide Shell från januari 2026.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://retune.so/chat/11eee11d-ff04-09e0-9f1e-718ace9be837/thread?threadId=11eefaf4-f2b9-0500-a62a-e51f61071505&tab=Unread",
+      "titel": "Unread AINO",
+      "beskrivning": "",
+      "taggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 199,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "AINO"
+      ],
+      "amnen": [
+        "AI"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "AI",
+        "LLM",
+        "Verktyg",
+        "Generativ AI"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Äldre re:tune-länk för AINO.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    },
+    {
+      "url": "https://docs.google.com/document/d/12yma_DI0jJUR3DeiayjzsjCg_Isv8dD9fiRHuSiwfpA/edit?tab=t.0",
+      "titel": "Untitled document - Google Docs",
+      "beskrivning": "",
+      "taggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 200,
+      "omrade": "Kommun och utvecklingsarbete",
+      "typ": "Dokument",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Produktivitet",
+        "Dokumentation",
+        "Logistik",
+        "Synk",
+        "Google Docs",
+        "Dokument"
+      ],
+      "raderad": "2026-08-10",
+      "status": "Raderad",
+      "skal": "Namnlöst Google-dokument utan identifierbart syfte.",
+      "aterstallning": "Återför hela posten till bokmarken.json med oförändrat ID och URL."
+    }
+  ]
+}

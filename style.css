@@ -400,25 +400,40 @@ body {
 
 .indexrad {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
-  min-height: 44px;
-  padding: 0 0.25rem;
-  background: none;
-  border: 0;
-  border-radius: 3px;
+  min-height: 72px;
+  padding: 0.85rem 1rem;
+  background: var(--sot-2);
+  border: 1px solid var(--harfin);
+  border-radius: var(--r);
   color: var(--papper);
   font: inherit;
-  font-size: 0.9375rem;
   cursor: pointer;
   text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.indexrad .ledare {
+.indextext {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
   flex: 1;
-  border-bottom: 1px dotted var(--harfin-2);
-  margin: 0 0.7em;
-  transform: translateY(-0.28em);
+  min-width: 0;
+}
+
+.indextext strong {
+  color: var(--massing-lj);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+}
+
+.indexbeskrivning {
+  color: var(--papper-dim);
+  font-size: 0.82rem;
+  line-height: 1.4;
 }
 
 .indexrad .antal {
@@ -429,11 +444,15 @@ body {
 }
 
 @media (pointer: fine) {
-  .indexrad:hover { color: var(--massing-lj); }
-  .indexrad:hover .ledare { border-color: var(--massing); }
+  .indexrad:hover { border-color: var(--massing); background: var(--sot-3); }
 }
 
-.listlage .katrad { display: block; max-width: 34rem; }
+.listlage .katrad {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: var(--spalt);
+}
 
 /* ---------- Innehåll ---------- */
 
@@ -605,6 +624,7 @@ mark {
     padding-top: calc(42dvh - 6.5rem);
   }
   .nod { font-size: 0.625rem; letter-spacing: 0.06em; }
+  .listlage .katrad { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 600px) {

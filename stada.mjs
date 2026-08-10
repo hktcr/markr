@@ -51,7 +51,18 @@ for (const post of lista) {
     url: t.url,
     titel: titel.replace(OSYNLIGA, '').trim(),
     beskrivning: String(post.beskrivning || '').trim(),
-    taggar: Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : []
+    taggar: Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : [],
+    omrade: String(post.omrade || 'Allmän kunskap och referens'),
+    typ: String(post.typ || 'Webbplats'),
+    kontexter: Array.isArray(post.kontexter) ? post.kontexter.filter(Boolean) : [],
+    projekt: Array.isArray(post.projekt) ? post.projekt.filter(Boolean) : [],
+    amnen: Array.isArray(post.amnen) ? post.amnen.filter(Boolean) : [],
+    period: String(post.period || ''),
+    livscykel: String(post.livscykel || 'Aktiv'),
+    favorit: !!post.favorit,
+    legacyTaggar: Array.isArray(post.legacyTaggar)
+      ? post.legacyTaggar.filter(Boolean)
+      : (Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : [])
   };
   if (post.tillagd) ny.tillagd = post.tillagd;
 
@@ -70,6 +81,8 @@ const mallar = Array.from(beskRakning).filter(([, n]) => n >= 3).sort((a, b) => 
 const antalMall = mallar.reduce((s, [, n]) => s + n, 0);
 
 const utanTaggar = bokmarken.filter(b => b.taggar.length === 0).length;
+const utanOmrade = bokmarken.filter(b => !b.omrade).length;
+const utanTyp = bokmarken.filter(b => !b.typ).length;
 const oklassificerade = bokmarken.filter(b => b.taggar.some(t => /oklassificerad/i.test(t)));
 const skrapTitlar = bokmarken.filter(b => /untitled|^ny flik$|^dokument utan titel$/i.test(b.titel));
 const utanTillagd = bokmarken.filter(b => !b.tillagd).length;
@@ -90,6 +103,8 @@ Genererad ${new Date().toISOString().slice(0, 10)} av stada.mjs. Inget original 
 | Poster med osynliga tecken i titeln | ${osynliga.length} |
 | Url:er med spårparametrar | ${urlRensade.length} |
 | Poster utan taggar | ${utanTaggar} |
+| Poster utan verksamhetsområde | ${utanOmrade} |
+| Poster utan typ | ${utanTyp} |
 | Poster taggade "Oklassificerad" | ${oklassificerade.length} |
 | Taggar som bara används en gång | ${engangstaggar.length} |
 | Titlar av typen "Untitled" | ${skrapTitlar.length} |

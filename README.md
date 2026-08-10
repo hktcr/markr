@@ -5,13 +5,10 @@ inga beroenden, inget byggsteg.
 
 ## Idén
 
-Tom sökning visar himlen: taggarna som stjärnor, dimensionerade efter antal
-bokmärken, sammanbundna med stjärnbildslinjer där linjerna är verklig
-samförekomst i datan. Sökrutan är okularet i mitten. Klick på en stjärna
-filtrerar på taggen. Så fort något söks viker himlen undan och träfflistan
-tar över, med ett band "I träffarna" som visar vilka taggar som finns i just
-den träffmängden, klickbara för att smalna av vidare. Det är samma nätverk i
-omformad gestalt: himlen för att bläddra, bandet för att navigera facetterat.
+Tom sökning visar åtta stabila verksamhetsområden som stjärnor med jämn visuell
+vikt. Linjerna visar områden som delar ämnen, projekt eller kontexter. Klick på
+ett område öppnar dess bokmärken. Bandet "I träffarna" visar därefter relevanta
+typer, kontexter, projekt och ämnen som klickbara facetter.
 
 Startvyn bär tre element och inget mer: ordmärket, okularet, stjärnorna.
 Antalet bokmärken står i sökrutans platshållare i stället för i en statusrad,
@@ -45,9 +42,8 @@ som inget får skymma, och mjuka skärmkanter med plats för etiketterna. Den
 somnar när den är färdigräknad. På enheter med mus och utan
 `prefers-reduced-motion` ligger en svag drift kvar, annars står himlen still.
 
-Antalet synliga stjärnor skalar med skärmyta, cirka 10 på en telefon och upp
-till 24 på en stor skärm, alltid de största taggarna först. Textlänkarna vid
-horisonten når det senaste och kategoriindexet även utan grafen.
+Alla verksamhetsområden visas i en fast ordning och på stabila platser. På mobil
+finns samma områden även som en enkel kortlista via länken "Alla områden".
 
 Stjärnorna tänds stegvis vid ankomst, 35 ms mellan varje, taket ligger på
 600 ms. Hovring eller tangentbordsfokus på en stjärna dämpar allt utom dess
@@ -61,20 +57,29 @@ All denna rörelse lyder `prefers-reduced-motion`.
   "uppdaterad": "2026-07-28",
   "bokmarken": [
     {
+      "id": 219,
       "url": "https://exempel.se/sida",
       "titel": "Rubriken på sidan",
       "beskrivning": "En eller två rader om varför den är sparad.",
-      "taggar": ["Didaktik", "Bedömning"],
+      "omrade": "Skola och undervisning",
+      "typ": "Dokument",
+      "kontexter": ["Björnekullaskolan"],
+      "projekt": [],
+      "amnen": ["Didaktik", "Bedömning"],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": ["Skola", "Dokument"],
       "tillagd": "2026-07-28"
     }
   ]
 }
 ```
 
-Appen läser även en ren array utan omslag, men då saknas `uppdaterad` och
-horisontraden säger det. `url` är identiteten, dubbletter döljs vid inläsning
-och räknas synligt vid horisonten. Taggar får innehålla å ä ö, sökningen
-normaliserar ändå.
+`url` är identiteten och `id` ska vara stabilt. `omrade` är exakt ett
+verksamhetsområde. Typ, kontexter, projekt, ämnen, period och livscykel är
+separata facetter. `legacyTaggar` bevarar den tidigare taxonomin och ingår i
+sökningen, men visas inte som huvudkategorier.
 
 ## Sökningen
 
@@ -121,8 +126,9 @@ Att lägga till ett bokmärke:
 3. Skriv beskrivningen utifrån vad Håkan har sagt. Har du inte läst sidan och
    han inte sagt något om innehållet: lämna fältet tomt. En påhittad
    beskrivning är värre än ingen, eftersom han litar på den om ett år.
-4. Föreslå taggar ur den flora som redan finns. Ny tagg bara när ingen
-   befintlig fungerar, med motivering.
+4. Välj ett befintligt verksamhetsområde och en korrekt typ. Lägg kontext,
+   projekt, ämne och period i respektive fält. Skapa inte en ny huvudkategori
+   för en filtyp, organisation, termin eller ett projekt.
 5. Visa hela posten för Håkan innan något skrivs.
 
 Före varje push:
@@ -135,14 +141,14 @@ node test.mjs
 
 ## Tre gestalter för samma nätverk
 
-Kategorierna visas på tre sätt, och de använder medvetet besläktade former
+Verksamhetsområden och facetter visas på tre sätt, med besläktade former
 så att det syns att det är samma sak:
 
 | Läge | Gestalt |
 |---|---|
-| Himlen, tom sökning | Stjärnor med linjer, storlek efter antal |
+| Himlen, tom sökning | Åtta verksamhetsområden med jämn visuell vikt |
 | Bandet "I träffarna" | Mässingsprick plus monospace-etikett, samma språk i komprimerad form |
-| Kategoriindexet | Alfabetisk lista med punktade ledare fram till antalet |
+| Områdesindexet | Kort i fast ordning med beskrivning och antal |
 
 Träffraderna visar högst fyra taggetiketter plus ett diskret `+n` med resten
 i `title`, så att raden aldrig växer till en taggmatta.

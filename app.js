@@ -17,6 +17,17 @@ const ANTAL_SENASTE = 20;
 const ANTAL_RELATERADE = 12;
 const KANTER_PER_NOD = 3;
 
+const OMRADEN = [
+  { namn: 'Skola och undervisning', beskrivning: 'Lektioner, lärverktyg och skolans vardag.' },
+  { namn: 'Kommun och utvecklingsarbete', beskrivning: 'Administration, AI-arbete och verksamhetsutveckling.' },
+  { namn: 'Forskning och akademi', beskrivning: 'Källor, läsning, syntes och akademiska verktyg.' },
+  { namn: 'Egna system och projekt', beskrivning: 'gAIa, egna webbverktyg och pågående byggen.' },
+  { namn: 'Kommunikation och publicering', beskrivning: 'Kanaler, nyhetsbrev och publiceringsytor.' },
+  { namn: 'Natur och fältarbete', beskrivning: 'Ekologi, fåglar, kartor och fältregistrering.' },
+  { namn: 'Privat och resor', beskrivning: 'Privata resurser, träning och resor.' },
+  { namn: 'Allmän kunskap och referens', beskrivning: 'Generella resurser som inte hör hemma i ett verksamhetsområde.' }
+];
+
 const SUFFIX = [
   ' - Google Docs', ' - Google Dokument', ' - Google Sheets', ' - Google Kalkylark',
   ' - Google Drive', ' - Google Slides', ' - Google Presentationer', ' - Google Formulär',
@@ -115,7 +126,21 @@ function normalisera(ra) {
 
     const titel = String(post.titel).replace(OSYNLIGA, '').trim();
     const beskrivning = String(post.beskrivning || '').trim();
-    const taggar = Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : [];
+    const legacyTaggar = Array.isArray(post.legacyTaggar)
+      ? post.legacyTaggar.filter(Boolean)
+      : (Array.isArray(post.taggar) ? post.taggar.filter(Boolean) : []);
+    const omrade = String(post.omrade || 'Allmän kunskap och referens').trim();
+    const typ = String(post.typ || 'Webbplats').trim();
+    const kontexter = Array.isArray(post.kontexter) ? post.kontexter.filter(Boolean) : [];
+    const projekt = Array.isArray(post.projekt) ? post.projekt.filter(Boolean) : [];
+    const amnen = Array.isArray(post.amnen) ? post.amnen.filter(Boolean) : [];
+    const period = String(post.period || '').trim();
+    const livscykel = String(post.livscykel || 'Aktiv').trim();
+    const taggar = Array.from(new Set([
+      omrade, typ, ...kontexter, ...projekt, ...amnen, period, livscykel
+    ].filter(Boolean)));
+    const sokbaraTaggar = Array.from(new Set([...taggar, ...legacyTaggar]));
+    const natverksFacetter = Array.from(new Set([...kontexter, ...projekt, ...amnen]));
 
     sedda.set(nyckel, {
       id: post.id || '',
@@ -124,11 +149,21 @@ function normalisera(ra) {
       visningstitel: stadaTitel(titel),
       beskrivning: beskrivning,
       taggar: taggar,
+      legacyTaggar: legacyTaggar,
+      omrade: omrade,
+      typ: typ,
+      kontexter: kontexter,
+      projekt: projekt,
+      amnen: amnen,
+      period: period,
+      livscykel: livscykel,
+      favorit: !!post.favorit,
+      natverksFacetter: natverksFacetter,
       tillagd: post.tillagd || '',
       vTitel: vik(titel),
       vBesk: vik(beskrivning),
       vUrl: vik(nyckel),
-      vTaggar: taggar.map(vik)
+      vTaggar: sokbaraTaggar.map(vik)
     });
   }
 
@@ -270,7 +305,7 @@ function visaLista() {
   ritaFilter();
   traffar = [];
   settLage('lista');
-  satStatus(byggKategorier().length + ' kategorier');
+  satStatus(byggKategorier().length + ' verksamhetsområden');
   ritaKategorilista();
 }
 
@@ -310,11 +345,12 @@ function uppdateraHorisont() {
 
 function byggKategorier() {
   const antal = new Map();
-  for (const bm of arkiv.bokmarken) {
-    for (const t of bm.taggar) antal.set(t, (antal.get(t) || 0) + 1);
-  }
-  return Array.from(antal, ([namn, n]) => ({ namn: namn, antal: n }))
-    .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, 'sv'));
+  for (const bm of arkiv.bokmarken) antal.set(bm.omrade, (antal.get(bm.omrade) || 0) + 1);
+  return OMRADEN.map(o => ({
+    namn: o.namn,
+    beskrivning: o.beskrivning,
+    antal: antal.get(o.namn) || 0
+  })).filter(o => o.antal > 0);
 }
 
 function taggKnapp(namn, antal, liten) {
@@ -334,21 +370,23 @@ function taggKnapp(namn, antal, liten) {
 
 function ritaKategorilista() {
   el.kategorilista.textContent = '';
-  const alfabetiskt = byggKategorier().slice()
-    .sort((a, b) => a.namn.localeCompare(b.namn, 'sv'));
-  for (const k of alfabetiskt) {
+  for (const k of byggKategorier()) {
     const rad = document.createElement('button');
     rad.type = 'button';
     rad.className = 'indexrad';
-    const namn = document.createElement('span');
+    const text = document.createElement('span');
+    text.className = 'indextext';
+    const namn = document.createElement('strong');
     namn.textContent = k.namn;
-    const ledare = document.createElement('span');
-    ledare.className = 'ledare';
-    ledare.setAttribute('aria-hidden', 'true');
+    const beskrivning = document.createElement('span');
+    beskrivning.className = 'indexbeskrivning';
+    beskrivning.textContent = k.beskrivning;
+    text.append(namn, beskrivning);
     const antal = document.createElement('span');
     antal.className = 'antal';
     antal.textContent = k.antal;
-    rad.append(namn, ledare, antal);
+    antal.setAttribute('aria-label', k.antal + (k.antal === 1 ? ' bokmärke' : ' bokmärken'));
+    rad.append(text, antal);
     rad.addEventListener('click', () => laggTillFilter(k.namn));
     el.kategorilista.append(rad);
   }
@@ -600,40 +638,46 @@ const himmel = {
   igang: false
 };
 
-function antalNoderForYta() {
-  const yta = innerWidth * innerHeight;
-  return Math.max(10, Math.min(24, Math.round(Math.sqrt(yta) / 40)));
-}
-
 function byggHimmel() {
   const gamla = new Map(himmel.noder.map(n => [n.namn, n]));
-  const kat = byggKategorier().slice(0, antalNoderForYta());
-  const cx = innerWidth / 2;
-  const cy = innerHeight / 2;
-  const maxAntal = kat.length ? kat[0].antal : 1;
+  const kat = byggKategorier();
+  const fastaLagen = [
+    [0.18, 0.18], [0.50, 0.13], [0.82, 0.18], [0.14, 0.48],
+    [0.86, 0.48], [0.18, 0.78], [0.50, 0.86], [0.82, 0.78]
+  ];
 
   himmel.noder = kat.map((k, i) => {
     const forr = gamla.get(k.namn);
-    const vinkel = i * 2.39996; /* gyllene vinkeln */
-    const radie = 90 + 14 * Math.sqrt(i + 1) * 3;
+    const lage = fastaLagen[i] || [0.5, 0.5];
+    const malX = innerWidth * lage[0];
+    const malY = innerHeight * lage[1];
     return {
       namn: k.namn,
       antal: k.antal,
       sar: false,
-      d: 6 + 10 * Math.sqrt(k.antal / maxAntal),
-      x: forr ? forr.x : cx + Math.cos(vinkel) * radie,
-      y: forr ? forr.y : cy + Math.sin(vinkel) * radie,
+      d: 12,
+      malX: malX,
+      malY: malY,
+      x: forr ? forr.x : malX,
+      y: forr ? forr.y : malY,
       vx: 0, vy: 0,
       fas: Math.random() * Math.PI * 2,
       el: null
     };
   });
 
-  /* Kanter ur samförekomst, topp tre per nod */
+  /* Kanter mellan verksamhetsområden som delar ämnen, projekt eller kontexter. */
   const index = new Map(himmel.noder.map((n, i) => [n.namn, i]));
   const par = new Map();
+  const omradenPerFacett = new Map();
   for (const bm of arkiv.bokmarken) {
-    const inne = bm.taggar.filter(t => index.has(t)).sort();
+    for (const facett of bm.natverksFacetter) {
+      if (!omradenPerFacett.has(facett)) omradenPerFacett.set(facett, new Set());
+      omradenPerFacett.get(facett).add(bm.omrade);
+    }
+  }
+  for (const omradesMangd of omradenPerFacett.values()) {
+    const inne = Array.from(omradesMangd).filter(t => index.has(t)).sort();
     for (let i = 0; i < inne.length; i++) {
       for (let j = i + 1; j < inne.length; j++) {
         const nyckel = inne[i] + '\u0000' + inne[j];
@@ -794,9 +838,9 @@ function simulera(steg) {
     }
 
     for (const nod of noder) {
-      /* Svag dragning mot mitten så att himlen hålls samlad */
-      nod.vx += (cx - nod.x) * 0.0018 * a;
-      nod.vy += (cy - nod.y) * 0.0016 * a;
+      /* Tydliga, stabila lägen med en svag fysisk mjukhet. */
+      nod.vx += (nod.malX - nod.x) * 0.012 * a;
+      nod.vy += (nod.malY - nod.y) * 0.012 * a;
 
       /* Okularet skjuter undan: inget får skymma sökrutan */
       if (rekt && nod.x > rekt.v && nod.x < rekt.h && nod.y > rekt.t && nod.y < rekt.b) {

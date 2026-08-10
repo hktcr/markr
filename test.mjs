@@ -54,7 +54,7 @@ for (let i = 0; i < 40; i++) await new Promise(r => setTimeout(r, 16));
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
 const noder = $$('#noder .nod');
-kolla('stjärnnoder ritade som knappar', noder.length >= 10, noder.length + ' st');
+kolla('alla verksamhetsområden ritade som knappar', noder.length === 8, noder.length + ' st');
 kolla('inga siffror på stjärnorna', $$('#noder .nod .antal').length === 0);
 kolla('platshållaren räknar arkivet', /Sök bland \d+ bokmärken/.test(sok.placeholder), sok.placeholder);
 kolla('horisonten syns med datum eller anmärkning', $('#horisont-info').textContent.length > 0, $('#horisont-info').textContent);
@@ -128,10 +128,10 @@ kolla('Senast tillagda visar lista', !$('#resultat').hidden && $$('#traffar .rad
   $$('#traffar .rad').length + ' st');
 tangent('Escape');
 klick($('#lank-lista'));
-kolla('listläget visar index över alla kategorier', !$('#listlage').hidden && $$('#kategorilista .indexrad').length > 30,
+kolla('listläget visar index över alla verksamhetsområden', !$('#listlage').hidden && $$('#kategorilista .indexrad').length === 8,
   $$('#kategorilista .indexrad').length + ' st');
-const namnen = $$('#kategorilista .indexrad').map(r => r.firstChild.textContent);
-kolla('indexet är alfabetiskt', namnen.every((n, i) => i === 0 || namnen[i-1].localeCompare(n, 'sv') <= 0));
+const namnen = $$('#kategorilista .indexrad strong').map(r => r.textContent);
+kolla('indexet har fast ordning', namnen[0] === 'Skola och undervisning' && namnen.at(-1) === 'Allmän kunskap och referens');
 tangent('Escape');
 kolla('Escape lämnar listläget', $('#listlage').hidden && $('#skal').classList.contains('rymd'));
 
@@ -141,6 +141,8 @@ kolla('nollträff säger det rakt', w.document.body.textContent.includes('Inga b
 skriv('');
 kolla('dubbletter rapporteras vid horisonten', /dubblett/.test($('#horisont-info').textContent), $('#horisont-info').textContent);
 kolla('högst fyra taggetiketter per rad', (() => { skriv('verktyg'); const forsta = $('#traffar .rad'); return forsta && forsta.querySelectorAll('.tagg-liten').length <= 4; })());
+skriv('');
+kolla('legacytaggar är fortsatt sökbara', (() => { skriv('logistik'); return $$('#traffar .rad').length > 0; })());
 skriv('');
 kolla('inga konsolfel', fel.length === 0, fel.join(' | ').slice(0, 120));
 
