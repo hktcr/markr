@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-10",
+  "uppdaterad": "2026-08-14",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5266,6 +5266,42 @@
         "Kalendarium",
         "HT26",
         "Dokument"
+      ]
+    },
+    {
+      "url": "https://creators.spotify.com/home/show/0346W2svmmtWa91BvQATWL",
+      "titel": "Twenty Minutes Here | Spotify for Creators",
+      "beskrivning": "Administrativ yta för showen Twenty Minutes Here. Här hanteras showprofil, avsnittsutkast, metadata och framtida publicering. Showen är skapad men ännu utan publicerade avsnitt. Den planerade webbplatsen är projektets konstnärliga huvudhem, medan Spotify fungerar som en kompletterande lyssningskanal.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Ljud",
+        "Spotify",
+        "Administration",
+        "Publicering"
+      ],
+      "tillagd": "2026-08-14",
+      "id": 219,
+      "omrade": "Egna system och projekt",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Twenty Minutes Here"
+      ],
+      "amnen": [
+        "Ljud"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Ljud",
+        "Spotify",
+        "Administration",
+        "Publicering"
       ]
     }
   ],
