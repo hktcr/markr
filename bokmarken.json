@@ -5368,7 +5368,7 @@
     {
       "url": "https://hktcr.github.io/ljudr-analysverkstad/",
       "titel": "LjudR Analysverkstad",
-      "beskrivning": "Lokal och integritetsbevarande WAV-verkstad för analys och varsam bearbetning av fältinspelningar, soundscapes, intervjuer och poddmaster. Mäter bland annat LUFS, LRA, True Peak, PLR, stereobalans och filintegritet; visar separata L/R-vågformer och tekniska markörer; erbjuder trimning, linjära fades och konstant global gain utan automatisk nivåutjämning, kompressor eller limiter. Kan exportera sample-payload-identiska trimutdrag, redigerad WAV-master, rapporter samt ett ljudfritt JSON-underlag för kvalificerad reflektion i gAIa/VEP. All ljudbearbetning sker lokalt i webbläsaren och verktyget fungerar offline som PWA. Version 1.0.0-rc.5 är en offentlig valideringskandidat; stabil 1.0 inväntar fysisk verifiering på iPad Pro.",
+      "beskrivning": "Lokal och integritetsbevarande WAV-verkstad för analys och varsam bearbetning av fältinspelningar, soundscapes, intervjuer och poddmaster. Mäter bland annat LUFS, LRA, True Peak, PLR, stereobalans och filintegritet; visar separata L/R-vågformer och tekniska markörer; erbjuder trimning, linjära fades och konstant global gain utan automatisk nivåutjämning, kompressor eller limiter. Kan exportera sample-payload-identiska trimutdrag, redigerad WAV-master, rapporter samt ett ljudfritt JSON-underlag för kvalificerad reflektion i gAIa/VEP. All ljudbearbetning sker lokalt i webbläsaren och verktyget fungerar offline som PWA. Version 1.0.0-rc.6 är en offentlig valideringskandidat; stabil 1.0 inväntar fysisk verifiering på iPad Pro.",
       "taggar": [
         "gAIa",
         "Eget Projekt",
