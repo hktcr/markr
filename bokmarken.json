@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-14",
+  "uppdaterad": "2026-08-15",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5302,6 +5302,67 @@
         "Spotify",
         "Administration",
         "Publicering"
+      ]
+    },
+    {
+      "url": "https://www.gen-ai.fi/en",
+      "titel": "Generation AI",
+      "beskrivning": "Generation AI samlar kostnadsfria webbaserade verktyg och undervisningsmaterial för AI-kunnighet i klassrummet. Elever kan bland annat bygga enkla maskininlärningsappar, träna och prompta en liten språkmodell samt undersöka profilering, rekommendationsalgoritmer och hur bildklassificerare kan luras. Materialet lyfter också etiska frågor och fallgropar när AI-system utvecklas. Verktygen körs lokalt i webbläsaren och är utvecklade inom det finländska forskningsprogrammet Generation AI.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "AI",
+        "Maskininlärning",
+        "Generativ AI",
+        "AI-kunnighet",
+        "Digital kompetens",
+        "Algoritmer",
+        "Sociala medier",
+        "Profilering",
+        "Rekommendationssystem",
+        "Språkmodeller",
+        "Etik"
+      ],
+      "tillagd": "2026-08-15",
+      "id": 220,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "AI",
+        "Maskininlärning",
+        "Generativ AI",
+        "AI-kunnighet",
+        "Digital kompetens",
+        "Algoritmer",
+        "Sociala medier",
+        "Profilering",
+        "Rekommendationssystem",
+        "Språkmodeller",
+        "Etik"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "AI",
+        "Maskininlärning",
+        "Generativ AI",
+        "AI-kunnighet",
+        "Digital kompetens",
+        "Algoritmer",
+        "Sociala medier",
+        "Profilering",
+        "Rekommendationssystem",
+        "Språkmodeller",
+        "Etik"
       ]
     }
   ],
