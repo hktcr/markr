@@ -5683,6 +5683,78 @@
         "Aktuell version",
         "Fullversion"
       ]
+    },
+    {
+      "url": "https://skrivrum.hlgk.chatgpt.site",
+      "titel": "Ordarium | Elevsida",
+      "beskrivning": "Öppen skrivyta där elever ansluter med projektkod, skriver eller klistrar in text, får eventuell lärarinstruktion och lämnar in med mottagningskvitto. Texten sparas lokalt under arbetet.",
+      "taggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "tillagd": "2026-08-20",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Ordarium"
+      ],
+      "amnen": [],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "id": 226
+    },
+    {
+      "url": "https://skrivrum.hlgk.chatgpt.site/larare",
+      "titel": "Ordarium | Lärarsida",
+      "beskrivning": "Inloggningsskyddad lärarsida för att skapa projekt och delprojekt, skicka skrivinstruktioner, följa inlämningar samt kopiera enskilda eller samlade texter som Markdown.",
+      "taggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "tillagd": "2026-08-20",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Ordarium"
+      ],
+      "amnen": [],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "id": 227
     }
   ],
   "senasteGallring": {
