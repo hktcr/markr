@@ -5507,6 +5507,56 @@
         "Åstorp",
         "ChatGPT Site"
       ]
+    },
+    {
+      "url": "https://ai-workshop-torsdag.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp, reservversion",
+      "beskrivning": "Fryst fullversion av VUX-workshopen med 28 presentationsbilder och körstöd. Bevarad oförändrad som reserv om den kortare, rena workshopversionen behöver ersättas.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 223,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ]
     }
   ],
   "senasteGallring": {
