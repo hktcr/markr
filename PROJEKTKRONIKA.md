@@ -14,6 +14,9 @@ Den verifierade produktionsrevisionen är commit
 ändrade filer, 182 aktiva poster och 32 arkiverade poster. GitHub Pages visade
 taxonomi version 2 och 182 aktiva poster. Testsviten passerade 33 av 33 tester.
 
+Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
+Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
+
 ## Tidslinje
 
 1. 2026-07-28, MärkR etablerades som en statisk GitHub Pages app.
@@ -24,6 +27,7 @@ taxonomi version 2 och 182 aktiva poster. Testsviten passerade 33 av 33 tester.
 4. 2026-08-10, facetterad taxonomi version 2 infördes efter VEPgranskning.
 5. 2026-08-10, 32 poster gallrades reversibelt och 182 aktiva poster
    publicerades.
+6. 2026-08-20, Bildanalys lades till bland aktiva, privata ChatGPT siter.
 
 ## Mål
 
@@ -44,6 +48,36 @@ taxonomi version 2 och 182 aktiva poster. Testsviten passerade 33 av 33 tester.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-08-20 | Bildanalys registrerad
+
+**Bakgrund och syfte**
+
+Håkan bad att den VEPgranskade bildanalys-siten skulle sparas med en tydlig
+beskrivning i MärkR.
+
+**Utfört**
+
+1. Den verifierade Sites-adressen lades till bland aktiva siter.
+2. Beskrivningen redovisar lokal behandling, relevanta scopes och metadata.
+3. RAW-stödet märktes som experimentellt och skilt från sensorvärden.
+4. Siten märktes som privat eftersom åtkomsten är begränsad till ägaren.
+5. MASTER-registret och gAIas checksummeverifierade återställningspaket
+   uppdaterades i samma arbetsomgång.
+
+**Verifieringsbevis**
+
+1. Publicerad Site: `https://bildanalys.hlgk.chatgpt.site`
+2. Sites version 2 och deploymentstatus `succeeded`.
+3. Tre VEP-perspektiv gav PASS.
+4. Appens testpaket gav 9 av 9 PASS.
+5. Webbläsarfixturer för 16-bitars PNG, alpha, Display P3 och EXIF-orientering
+   1 till 8 gav 11 av 11 PASS.
+
+**Öppet**
+
+Post-auth RAW-verifiering, verklig iPad Safari och Fuji X-E5 RAF återstår och
+redovisas som öppna punkter i Bildanalys verifieringsrapport.
 
 ### 2026-08-10 | Taxonomi, gallring och återfunnen publiceringsväg
 
@@ -96,3 +130,4 @@ Använd README:s publiceringsgrind före nästa MärkRändring och kontrollera
 projektkrönikan vid varje större datamigrering eller gallring.
 
 *Signatur: gAIa 🌲 2026-08-10*
+
