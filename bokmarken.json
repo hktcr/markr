@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-15",
+  "uppdaterad": "2026-08-20",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5447,6 +5447,65 @@
         "PWA",
         "iPad",
         "VEP"
+      ]
+    },
+    {
+      "url": "https://ai-workshop-vux-ren.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp",
+      "beskrivning": "Responsiv presentationsyta och körstöd för Håkan Karlssons VUX-workshop om generativ AI, språkmodeller, källkritik och AI som stöd för lärande. Innehåller 19 rena presentationsbilder, klickbar verktygsuppvärmning, verifierade forskningsresultat, Gemini-demonstrationer och två tydliga sökfraser för källarbete i NotebookLM.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 222,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site"
       ]
     }
   ],
