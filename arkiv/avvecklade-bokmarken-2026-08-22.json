@@ -1,0 +1,82 @@
+{
+  "arkiverad": "2026-08-22",
+  "orsak": "Tågspanaren avvecklades eftersom kostnadsfri publik positionsdata inte gav tillräcklig täckning för godståg. Ett tomt resultat kunde därför bli missvisande.",
+  "aterstallning": "Den tidigare Site-versionen och Git-historiken bevaras. Återställ posten till bokmarken.json endast om tjänsten återtas med en datakälla som kan verifieras mot användningsfallet.",
+  "bokmarken": [
+    {
+      "url": "https://tagspanaren.hlgk.chatgpt.site",
+      "titel": "Tågspanaren",
+      "beskrivning": "Responsiv webbapp för tågfotografering, trainspotting och dokumentation av graffiti på passerande tåg. Välj en valfri observationsplats via GPS eller karta och bevaka aktuella tågpositioner från Trafikverkets öppna API i realtid. Visar tåg i närheten, rörelseriktning, avstånd, hastighet, uppskattad passagetid och prognosens säkerhet. Järnvägsspår visas med data från OpenStreetMap. Fotoplatser kan sparas lokalt på enheten. Passagetiderna är prognoser och inte säkerhetsinformation.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Tågspanaren",
+        "Webbapp",
+        "Tåg",
+        "Järnväg",
+        "Trafikverket",
+        "Öppna data",
+        "Realtidsdata",
+        "Tågpositioner",
+        "GPS",
+        "Geolokalisering",
+        "Karta",
+        "Tågfotografering",
+        "Trainspotting",
+        "Graffiti",
+        "Fotografering",
+        "Fältarbete",
+        "Passagetid",
+        "Tågbevakning",
+        "OpenStreetMap",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-08-21",
+      "id": 228,
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Fotografering",
+        "Fältarbete"
+      ],
+      "projekt": [
+        "gAIa",
+        "Tågspanaren"
+      ],
+      "amnen": [
+        "Tåg",
+        "Järnväg",
+        "Fotografering",
+        "Öppna data"
+      ],
+      "period": "",
+      "livscykel": "Avvecklad",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Tågspanaren",
+        "Webbapp",
+        "Tåg",
+        "Järnväg",
+        "Trafikverket",
+        "Öppna data",
+        "Realtidsdata",
+        "Tågpositioner",
+        "GPS",
+        "Geolokalisering",
+        "Karta",
+        "Tågfotografering",
+        "Trainspotting",
+        "Graffiti",
+        "Fotografering",
+        "Fältarbete",
+        "Passagetid",
+        "Tågbevakning",
+        "OpenStreetMap",
+        "ChatGPT Site"
+      ],
+      "avvecklad": "2026-08-22"
+    }
+  ]
+}
