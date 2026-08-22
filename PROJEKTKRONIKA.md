@@ -49,6 +49,35 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 
 ## Sessionslogg
 
+### 2026-08-22 | Tågspanaren avvecklad
+
+**Bakgrund och syfte**
+
+Håkan bad att Tågspanaren skulle tas bort ur MärkR och att den publicerade
+tjänsten skulle stängas.
+
+**Utfört**
+
+1. Den aktiva bokmärkesposten med id 228 togs bort ur `bokmarken.json`.
+2. Posten sparades i ett återställningsbart avvecklingsarkiv med skäl och
+   återställningsvillkor.
+3. ChatGPT Siten ersattes av en statisk avvecklingssida utan tågdata,
+   platsåtkomst eller prognoser.
+4. Tåg- och spår-API-rutterna togs bort ur den publicerade versionen.
+
+**Verifieringsbevis**
+
+1. MärkR innehåller 191 aktiva bokmärken och ingen aktiv post för Tågspanaren.
+2. Avvecklingsarkivet innehåller den tidigare posten med id 228.
+3. Sites version 13 publicerades med deploymentstatus `succeeded`.
+4. Site-testpaketet gav 5 av 5 PASS.
+
+**Öppet**
+
+Sites saknar en funktion för att radera eller avpublicera projektet helt.
+Adressen visar därför en avvecklingssida med `noindex`, medan tidigare
+versioner bevaras i projektets historik.
+
 ### 2026-08-20 | Bildanalys registrerad
 
 **Bakgrund och syfte**
