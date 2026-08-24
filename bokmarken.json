@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-22",
+  "uppdaterad": "2026-08-24",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5755,6 +5755,49 @@
         "Eget Projekt"
       ],
       "id": 227
+    },
+    {
+      "url": "https://klassrumsplaceringar.hlgk.chatgpt.site",
+      "titel": "Klassrumsplaceringar",
+      "beskrivning": "Privat verktyg för att samla och visa klassrumsplaceringar i fullskärm, göra lokala platsändringar och skapa en kopierbar ändringslogg för permanenta uppdateringar.",
+      "taggar": [
+        "Skola",
+        "Undervisning",
+        "Klassrumsplacering",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-08-24",
+      "id": 228,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Klassrumsplaceringar"
+      ],
+      "amnen": [
+        "Klassrumsplacering",
+        "Arbetsro"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Undervisning",
+        "Klassrumsplacering",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site"
+      ]
     }
   ],
   "senasteGallring": {
