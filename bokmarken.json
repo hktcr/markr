@@ -5820,6 +5820,42 @@
       "favorit": false,
       "legacyTaggar": [],
       "tillagd": "2026-08-25"
+    },
+    {
+      "url": "https://web.skola24.se/timetable/timetable-viewer/astorp.skola24.se/Bj%C3%B6rnekullaskolan/",
+      "titel": "Skola24 | Björnekullaskolans schema",
+      "beskrivning": "Direktlänk till Skola24:s schemavisare för Björnekullaskolan. Här visas aktuella scheman för klasser, lärare och salar.",
+      "taggar": [
+        "Skola",
+        "Björnekullaskolan",
+        "Schema",
+        "Skola24",
+        "Verktyg",
+        "Åstorp"
+      ],
+      "tillagd": "2026-08-25",
+      "id": 230,
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Björnekullaskolan",
+        "Åstorps kommun"
+      ],
+      "projekt": [],
+      "amnen": [
+        "Schema"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Björnekullaskolan",
+        "Schema",
+        "Skola24",
+        "Verktyg",
+        "Åstorp"
+      ]
     }
   ],
   "senasteGallring": {
