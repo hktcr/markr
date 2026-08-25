@@ -45,6 +45,7 @@ let lage = 'rymd'; /* rymd, sok, senaste, lista */
 
 const el = {
   skal: document.getElementById('skal'),
+  topp: document.querySelector('.topp'),
   sok: document.getElementById('sok'),
   sokfalt: document.getElementById('sokfalt'),
   filter: document.getElementById('aktiva-filter'),
@@ -67,6 +68,7 @@ const el = {
 
 const finPekare = matchMedia('(pointer: fine)').matches;
 const lugnRorelse = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobilLayout = matchMedia('(max-width: 599px)');
 
 /* ================= 1. Normalisering ================= */
 
@@ -325,6 +327,16 @@ function settLage(nytt) {
   } else {
     el.himmel.setAttribute('data-dold', '');
     el.noder.setAttribute('data-dold', '');
+  }
+}
+
+function placeraRelaterade() {
+  const paMobil = mobilLayout.matches;
+  const foralder = paMobil ? el.topp : el.resultat;
+  const ankare = paMobil ? el.sokfalt : el.traffar;
+
+  if (el.relaterat.parentElement !== foralder || el.relaterat.nextElementSibling !== ankare) {
+    foralder.insertBefore(el.relaterat, ankare);
   }
 }
 
@@ -954,6 +966,7 @@ let resizeTimer = 0;
 addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
+    placeraRelaterade();
     dimensioneraHimmel();
     saStjarnor();
     byggHimmel();
@@ -1067,5 +1080,9 @@ el.visaAlla.addEventListener('click', () => {
 
 /* ================= 8. Uppstart ================= */
 
+placeraRelaterade();
+if (typeof mobilLayout.addEventListener === 'function') {
+  mobilLayout.addEventListener('change', placeraRelaterade);
+}
 laddaData();
 if (finPekare) el.sok.focus();
