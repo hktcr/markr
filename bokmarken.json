@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-24",
+  "uppdaterad": "2026-08-25",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5798,6 +5798,28 @@
         "Eget Projekt",
         "ChatGPT Site"
       ]
+    },
+    {
+      "id": 229,
+      "url": "https://lankr.hlgk.chatgpt.site",
+      "titel": "LänkR",
+      "beskrivning": "Privat länkbricka för att tillfälligt överföra URL:er mellan olika enheter och konton. Länkar kan rensas automatiskt efter vald tid.",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "LänkR"
+      ],
+      "amnen": [
+        "Länkar",
+        "Arbetsflöde"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "tillagd": "2026-08-25"
     }
   ],
   "senasteGallring": {
