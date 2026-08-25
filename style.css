@@ -625,6 +625,39 @@ mark {
   }
   .nod { font-size: 0.625rem; letter-spacing: 0.06em; }
   .listlage .katrad { grid-template-columns: 1fr; }
+
+  /* På mobil ligger de relevanta taggarna ovanför sökfältet i en enda rullbar rad.
+     Bokmärkena börjar då direkt under sökfältet i stället för efter ett högt taggmoln. */
+  .topp > .relaterat {
+    width: 100%;
+    max-width: min(var(--spalt), 34rem);
+    margin: 0 auto 0.45rem;
+    pointer-events: auto;
+  }
+
+  .topp > .relaterat .etikett {
+    margin-bottom: 0.1rem;
+  }
+
+  .topp > .relaterat .katrad {
+    flex-wrap: nowrap;
+    gap: 0 0.25rem;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .topp > .relaterat .katrad::-webkit-scrollbar { display: none; }
+
+  .topp > .relaterat .stjarnrad {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0 0.35rem;
+    font-size: 0.68rem;
+  }
+
+  .skal:not(.rymd) .innehall { padding-top: 0.75rem; }
 }
 
 @media (min-width: 600px) {
