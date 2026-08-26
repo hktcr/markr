@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-25",
+  "uppdaterad": "2026-08-26",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5855,6 +5855,60 @@
         "Skola24",
         "Verktyg",
         "Åstorp"
+      ]
+    },
+    {
+      "id": 231,
+      "url": "https://lektionsquiz.hlgk.chatgpt.site",
+      "titel": "Lektionsquiz",
+      "beskrivning": "Kodstyrt verktyg för att genomföra automaträttade lektionsquiz. Läraren väljer quiz, skapar och öppnar en kod, styr om eleverna ser resultatet direkt och följer sparade resultat per elev, klass, fråga och genomförande.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Quiz",
+        "Formativ bedömning",
+        "Automaträttning",
+        "Biologi",
+        "Fotosyntes",
+        "Cellandning",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-08-26",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Lektionsquiz"
+      ],
+      "amnen": [
+        "Biologi",
+        "Fotosyntes",
+        "Cellandning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Quiz",
+        "Formativ bedömning",
+        "Automaträttning",
+        "Biologi",
+        "Fotosyntes",
+        "Cellandning",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site"
       ]
     }
   ],
