@@ -5910,6 +5910,56 @@
         "Eget Projekt",
         "ChatGPT Site"
       ]
+    },
+    {
+      "id": 232,
+      "url": "https://lektionsquiz.hlgk.chatgpt.site/larare",
+      "titel": "Lektionsquiz | Lärarsida",
+      "beskrivning": "Inloggningsskyddad lärarsida för att välja quiz, skapa nya koder, öppna och stänga genomföranden, styra om eleverna ser resultatet direkt samt följa sparade och automaträttade resultat per elev, klass, fråga och genomförande.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Quiz",
+        "Formativ bedömning",
+        "Automaträttning",
+        "Biologi",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site",
+        "Lärarsida"
+      ],
+      "tillagd": "2026-08-26",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Lektionsquiz"
+      ],
+      "amnen": [
+        "Biologi"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Quiz",
+        "Formativ bedömning",
+        "Automaträttning",
+        "Biologi",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site",
+        "Lärarsida"
+      ]
     }
   ],
   "senasteGallring": {
