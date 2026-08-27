@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-26",
+  "uppdaterad": "2026-08-27",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5955,6 +5955,71 @@
         "Formativ bedömning",
         "Automaträttning",
         "Biologi",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site",
+        "Lärarsida"
+      ]
+    },
+    {
+      "id": 233,
+      "url": "https://kolhydraternas-byggstenar.hlgk.chatgpt.site",
+      "titel": "Kolhydraternas byggstenar",
+      "beskrivning": "Offentlig interaktiv simulering för undervisning om kolhydrater. Visar glukos, fruktos och galaktos, hur de bildar sackaros, laktos och maltos samt skillnader mellan stärkelse och cellulosa. Elever och lärare kan växla mellan förenklad modell, kemisk struktur och vridbar 3D-kulstavsmodell. Lärarstöd finns på /larare.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Interaktiv simulering",
+        "Kemi",
+        "Biologi",
+        "Kolhydrater",
+        "Molekyler",
+        "Glukos",
+        "Fruktos",
+        "Galaktos",
+        "Disackarider",
+        "3D",
+        "gAIa",
+        "Eget Projekt",
+        "ChatGPT Site",
+        "Lärarsida"
+      ],
+      "tillagd": "2026-08-27",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Kolhydraternas byggstenar"
+      ],
+      "amnen": [
+        "Kemi",
+        "Biologi",
+        "Kolhydrater",
+        "Molekyler"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "EdTech",
+        "Interaktiv simulering",
+        "Kemi",
+        "Biologi",
+        "Kolhydrater",
+        "Molekyler",
+        "Glukos",
+        "Fruktos",
+        "Galaktos",
+        "Disackarider",
+        "3D",
         "gAIa",
         "Eget Projekt",
         "ChatGPT Site",
