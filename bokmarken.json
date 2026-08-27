@@ -5176,9 +5176,9 @@
       ]
     },
     {
-      "url": "https://km.se/r/logga-in.php",
+      "url": "https://km.se/r/internal.php",
       "titel": "KM administration och innehållsutveckling",
-      "beskrivning": "Inloggning till KM för arbete som administratör och innehållsutvecklare i systemet.",
+      "beskrivning": "Intern inloggning till KM:s innehållsutvecklarplattform för administratörer och innehållsutvecklare. Ersätter den tidigare länken km.se/r/logga-in.php, som nu leder till KM.",
       "taggar": [
         "Skola",
         "Verktyg",
