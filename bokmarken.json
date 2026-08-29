@@ -6205,6 +6205,56 @@
         "Google Drive",
         "Mapp"
       ]
+    },
+    {
+      "id": 241,
+      "url": "https://maleriets-atlas.hlgk.chatgpt.site",
+      "titel": "Måleriets atlas",
+      "beskrivning": "Privat och levande undervisningsatlas om måleri, konsthistoria, konstnärskap, stilar, tekniker och sätt att se. Varje dagsutgåva kombinerar utförlig källbelagd text med närläsning, pedagogiska frågor och relevanta konstverk, antingen som enskilda bilder eller i jämförande grid med tillgänglig lightbox. Utgåvorna bevaras och bygger stegvis ett sammanlänkat ramverk över tidsfönster, lokala perioder, geografier, teman och perspektiv. Fakta, redaktionell tolkning och öppna frågor hålls isär. Exakta bilder och länkar kontrolleras före och efter publicering, och flera oberoende väktare kan stoppa en utgåva. Siten utvecklas dagligen inom ett maskinläsbart systemkontrakt, med hashkedjad körlogg och ägarbegränsad åtkomst.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Konst",
+        "Konsthistoria",
+        "Måleri",
+        "Lärande",
+        "Bildanalys",
+        "Kunskapshantering"
+      ],
+      "tillagd": "2026-08-29",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Måleriets atlas"
+      ],
+      "amnen": [
+        "Konst",
+        "Konsthistoria",
+        "Måleri",
+        "Bildanalys",
+        "Lärande"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Konst",
+        "Konsthistoria",
+        "Måleri",
+        "Lärande",
+        "Bildanalys",
+        "Kunskapshantering"
+      ]
     }
   ],
   "senasteGallring": {

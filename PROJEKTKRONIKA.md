@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 204 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 205 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 169 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 184 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -31,6 +31,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    Drive-mappar infördes.
 8. 2026-08-29, stjärnbildens nodpunkter skildes geometriskt från sina
    textetiketter.
+9. 2026-08-29, Måleriets atlas registrerades med full beskrivning i både
+   bokmärkesträdet och det samlade registret över ChatGPT siter.
 
 ## Mål
 
@@ -51,6 +53,20 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-08-29 | Måleriets atlas
+
+Måleriets atlas lades till som aktiv privat webbapp med stabilt id 241 och en
+fullständig beskrivning av innehåll, pedagogik, bildvisning, kunskapsstruktur,
+väktargrindar, länkverifiering och daglig utveckling. Posten placerades under
+Egna system och projekt och fick separata projekt och ämnesfacetter för bland
+annat konsthistoria, måleri, bildanalys och lärande. Den lades också till i
+MärkRs samlade register över aktiva ChatGPT siter.
+
+Ändringen verifierades som en separat atlasdelta så att äldre versionslåsta
+FotoR och Drivetester förblev historiskt korrekta. Testsviten passerade 184 av
+184 kontroller och bekräftade unik URL, unik identifierare, full beskrivning,
+sökbarhet och bevarad ordning för äldre träffar.
 
 ### 2026-08-29 | Fullskärm, Nordnätverk och FotoR
 

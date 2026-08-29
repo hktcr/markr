@@ -5,6 +5,7 @@ import crypto from 'crypto';
 const html = fs.readFileSync('index.html', 'utf8');
 const js = fs.readFileSync('app.js', 'utf8');
 const rawJson = fs.readFileSync('bokmarken.json', 'utf8');
+const sitesHtml = fs.readFileSync('sites.html', 'utf8');
 const parsed = JSON.parse(rawJson);
 if (parsed.bokmarken && parsed.bokmarken.length > 0) {
   parsed.bokmarken.push(parsed.bokmarken[0]);
@@ -51,6 +52,14 @@ function kolla(namn, villkor, detalj = '') {
 await new Promise(r => setTimeout(r, 80));
 /* Låt simuleringen räkna klart */
 for (let i = 0; i < 40; i++) await new Promise(r => setTimeout(r, 16));
+
+const atlaspost = parsed.bokmarken.find(post => post.url === 'https://maleriets-atlas.hlgk.chatgpt.site');
+kolla('Måleriets atlas har unik aktiv post med full beskrivning',
+  parsed.bokmarken.filter(post => post.url === 'https://maleriets-atlas.hlgk.chatgpt.site').length === 1 &&
+  atlaspost?.titel === 'Måleriets atlas' && atlaspost?.livscykel === 'Aktiv' &&
+  atlaspost?.beskrivning.length > 500 && atlaspost?.amnen.includes('Konsthistoria'));
+kolla('Måleriets atlas finns även i det samlade siteregistret',
+  sitesHtml.includes('https://maleriets-atlas.hlgk.chatgpt.site') && sitesHtml.includes('<h3>Måleriets atlas</h3>'));
 
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
@@ -243,6 +252,11 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const atlasId = 241;
+const preAtlasData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== atlasId)
+};
 const aktuellaId = currentData.bokmarken.map(bm => bm.id);
 const aktuellaUrl = currentData.bokmarken.map(bm => bm.url);
 kolla('aktuell data har unika numeriska id:n och unika URL:er',
@@ -283,8 +297,8 @@ const nyUrl = deltaFixture.newBookmark.url;
 const nyaPoster = currentData.bokmarken.filter(bm => bm.url === nyUrl);
 const driveNyaId = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.id));
 const preDriveData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => !driveNyaId.has(bm.id))
+  ...preAtlasData,
+  bokmarken: preAtlasData.bokmarken.filter(bm => !driveNyaId.has(bm.id))
 };
 const historiskFotoRData = {
   ...preDriveData,
@@ -350,8 +364,7 @@ kolla('inga konsolfel i corpusbeviset',
 
 /* Den senare Drive-deltan får nya träffar men får inte ändra äldre träffars relativa ordning. */
 kolla('aktuell Drive-corpus är versionslåst',
-  sha256(rawJson) === driveDeltaFixture.currentFileSha256 &&
-  sha256(JSON.stringify(currentData.bokmarken)) === driveDeltaFixture.currentCanonicalBookmarksSha256);
+  sha256(JSON.stringify(preAtlasData.bokmarken)) === driveDeltaFixture.currentCanonicalBookmarksSha256);
 kolla('rekonstruerad corpus före Drive-utbyggnaden är versionslåst',
   sha256(JSON.stringify(preDriveData.bokmarken)) === driveDeltaFixture.preDriveCanonicalBookmarksSha256);
 
@@ -361,7 +374,7 @@ kolla('Drive-deltan innehåller exakt de sex verifierade mapparna',
   driveDeltaFixture.newBookmarks.every(vantad => faktiskaDrivePoster.some(bm =>
     bm.id === vantad.id && bm.url === vantad.url && bm.titel === vantad.title)));
 
-const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(preAtlasData));
 const preDriveCorpusDom = await skapaKontraktsdom(JSON.stringify(preDriveData));
 const driveNyaUrl = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.url));
 for (const [fraga, facit] of Object.entries(driveDeltaFixture.queries)) {
@@ -379,6 +392,22 @@ for (const [fraga, facit] of Object.entries(driveDeltaFixture.queries)) {
 }
 kolla('inga konsolfel i Drive-corpusbeviset',
   preDriveCorpusDom.kontraktsfel.length === 0 && currentCorpusDom.kontraktsfel.length === 0);
+
+/* Måleriets atlas är en egen, senare delta och får inte skrivas in i äldre corpusbevis. */
+const preAtlasCorpusDom = await skapaKontraktsdom(JSON.stringify(preAtlasData));
+const atlasCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const atlasUrl = 'https://maleriets-atlas.hlgk.chatgpt.site';
+const atlasRenderedUrl = atlasUrl + '/';
+for (const fraga of ['måleriets atlas', 'konsthistoria', 'måleri', 'lärande', 'bildanalys', '#Aktiv']) {
+  const fore = korCorpusFraga(preAtlasCorpusDom.tw, fraga).alla;
+  const efter = korCorpusFraga(atlasCorpusDom.tw, fraga).alla;
+  kolla('atlasdelta ger exakt en ny träff: ' + fraga,
+    efter.length === fore.length + 1 && efter.includes(atlasRenderedUrl));
+  kolla('atlasdelta bevarar äldre ordning: ' + fraga,
+    JSON.stringify(efter.filter(url => url !== atlasRenderedUrl)) === JSON.stringify(fore));
+}
+kolla('inga konsolfel i atlasdeltan',
+  preAtlasCorpusDom.kontraktsfel.length === 0 && atlasCorpusDom.kontraktsfel.length === 0);
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');
