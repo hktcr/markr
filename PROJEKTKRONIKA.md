@@ -70,8 +70,8 @@ Analysinkorg för `FOTO_001: Triangles of people`.
 5. FotoR:s verifierade Analysinkorg lades till som post 234. Ingen tom
    originaldestination skapades.
 6. Måndagens veckounderhåll av MärkR fördes in i det befintliga `☕ Dagsnav 08`.
-7. Det felaktigt använda namnet Melker korrigerades till MärkR i samtliga nya
-   systemfiler, Swarm-protokoll och schemalagda rutiner.
+7. Den felaktiga dikteringstolkningen av systemnamnet korrigerades till MärkR i
+   samtliga nya systemfiler, Swarm-protokoll och schemalagda rutiner.
 
 **Verifieringsbevis**
 
@@ -200,4 +200,3 @@ Använd README:s publiceringsgrind före nästa MärkRändring och kontrollera
 projektkrönikan vid varje större datamigrering eller gallring.
 
 *Signatur: gAIa 🌲 2026-08-10*
-
