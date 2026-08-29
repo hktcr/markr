@@ -993,17 +993,23 @@ function renderaNatverk() {
     const plats = POLARA_PLATSER[i];
     li.style.setProperty('--x', plats[0] + '%');
     li.style.setProperty('--y', plats[1] + '%');
+    li.dataset.etikettlage = plats[1] <= 35 ? 'nedan'
+      : plats[1] >= 65 ? 'ovan'
+        : plats[0] <= 45 ? 'hoger' : 'vanster';
     const knapp = document.createElement('button');
     knapp.type = 'button';
     knapp.dataset.url = rel.bm.url;
     knapp.dataset.traffIndex = rel.traffIndex;
+    const nodpunkt = document.createElement('span');
+    nodpunkt.className = 'nodpunkt';
+    nodpunkt.setAttribute('aria-hidden', 'true');
     const titel = document.createElement('span');
     titel.className = 'nodtitel';
     titel.textContent = rel.bm.visningstitel;
     const orsak = document.createElement('span');
     orsak.className = 'nodorsak';
     orsak.textContent = relationsOrsak(rel);
-    knapp.append(titel, orsak);
+    knapp.append(nodpunkt, titel, orsak);
     knapp.addEventListener('click', () => {
       fullskarm.ankareUrl = rel.bm.url;
       renderaNatverk();

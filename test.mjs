@@ -480,6 +480,11 @@ kolla('DOM-relationerna följer samma relationsordning',
   JSON.stringify(r$$('#natverk-noder button').map(n => n.dataset.url)) === JSON.stringify(vantadRelationsordning));
 
 const semantiskaNoder = r$$('#natverk-noder button');
+kolla('stjärnbild skiljer nodpunkt från etikett',
+  semantiskaNoder.length > 0 &&
+  semantiskaNoder.every(n => n.querySelector('.nodpunkt[aria-hidden="true"]')) &&
+  r$$('#natverk-noder > li').every(n =>
+    ['nedan', 'ovan', 'hoger', 'vanster'].includes(n.dataset.etikettlage)));
 const rafForeStjarna = kontrakt.rafAnrop();
 rKlick(r$('#nat-stjarna'));
 await new Promise(r => setTimeout(r, 220));

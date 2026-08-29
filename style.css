@@ -1239,21 +1239,19 @@ a.full-kontroll:not([href]) {
   left: 50%;
   top: 50%;
   z-index: 3;
-  width: min(15rem, 34%);
-  min-height: 84px;
-  padding: 1.4rem 0.75rem 0.6rem;
-  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
   text-align: center;
 }
 
 .natverk-ankare::before {
   content: "";
   position: absolute;
-  left: 50%;
-  top: 0.3rem;
+  left: 0;
+  top: 0;
   width: 12px;
   height: 12px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   border: 1px solid var(--massing-lj);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, var(--papper), var(--massing-lj) 24%, var(--massing) 70%);
@@ -1261,9 +1259,14 @@ a.full-kontroll:not([href]) {
 }
 
 .natverk-ankare h2 {
+  position: absolute;
+  left: 0;
+  top: 0.9rem;
   display: -webkit-box;
+  width: min(15rem, 34vw);
   margin: 0;
   overflow: hidden;
+  transform: translateX(-50%);
   color: var(--papper);
   font: 1rem/1.25 var(--serif);
   text-shadow: 0 1px 10px var(--sot);
@@ -1306,6 +1309,8 @@ a.full-kontroll:not([href]) {
   text-align: left;
   cursor: pointer;
 }
+
+#natverk-noder .nodpunkt { display: none; }
 
 #natverk-noder .nodtitel {
   display: block;
@@ -1353,37 +1358,94 @@ a.full-kontroll:not([href]) {
   z-index: 2;
   left: var(--x);
   top: var(--y);
-  width: min(11.5rem, 25%);
-  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
 }
 
 #natverk-noder.stjarna button {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   gap: 0.18rem;
+  width: clamp(7.5rem, 15vw, 11.5rem);
   min-height: 64px;
-  padding: 1.35rem 0.35rem 0.25rem;
+  padding: 1.2rem 0.35rem 0.25rem;
   border-color: transparent;
   background: transparent;
   text-align: center;
   transition: color 0.15s ease, opacity 0.15s ease;
 }
 
-#natverk-noder.stjarna button::before {
-  content: "";
+#natverk-noder.stjarna .nodpunkt {
+  display: block;
   position: absolute;
   left: 50%;
-  top: 0.42rem;
+  top: 0;
   width: 8px;
   height: 8px;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, var(--massing-lj), var(--massing) 68%);
   box-shadow: 0 0 7px rgba(197, 160, 89, 0.48);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+#natverk-noder.stjarna li[data-etikettlage="nedan"] button {
+  left: 0;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="ovan"] button {
+  left: 0;
+  bottom: 0;
+  justify-content: flex-end;
+  padding: 0.25rem 0.35rem 1.2rem;
+  transform: translateX(-50%);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="ovan"] .nodpunkt {
+  top: auto;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="hoger"] button,
+#natverk-noder.stjarna li[data-etikettlage="vanster"] button {
+  top: 0;
+  justify-content: center;
+  min-height: 54px;
+  padding: 0.25rem 0.55rem;
+  transform: translateY(-50%);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="hoger"] button {
+  left: 0;
+  align-items: flex-start;
+  padding-left: 1rem;
+  text-align: left;
+}
+
+#natverk-noder.stjarna li[data-etikettlage="hoger"] .nodpunkt {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="vanster"] button {
+  right: 0;
+  align-items: flex-end;
+  padding-right: 1rem;
+  text-align: right;
+}
+
+#natverk-noder.stjarna li[data-etikettlage="vanster"] .nodpunkt {
+  left: auto;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
 }
 
 #natverk-noder.stjarna .nodtitel {
@@ -1410,10 +1472,29 @@ a.full-kontroll:not([href]) {
 #natverk-noder.stjarna button:hover .nodtitel,
 #natverk-noder.stjarna button:focus-visible .nodtitel { color: var(--papper); }
 
-#natverk-noder.stjarna button:hover::before,
-#natverk-noder.stjarna button:focus-visible::before {
+#natverk-noder.stjarna button:hover .nodpunkt,
+#natverk-noder.stjarna button:focus-visible .nodpunkt {
   box-shadow: 0 0 15px rgba(220, 192, 138, 0.85), 0 0 4px rgba(242, 239, 233, 0.8);
-  transform: translateX(-50%) scale(1.2);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="nedan"] button:hover .nodpunkt,
+#natverk-noder.stjarna li[data-etikettlage="nedan"] button:focus-visible .nodpunkt {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="ovan"] button:hover .nodpunkt,
+#natverk-noder.stjarna li[data-etikettlage="ovan"] button:focus-visible .nodpunkt {
+  transform: translate(-50%, 50%) scale(1.2);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="hoger"] button:hover .nodpunkt,
+#natverk-noder.stjarna li[data-etikettlage="hoger"] button:focus-visible .nodpunkt {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+#natverk-noder.stjarna li[data-etikettlage="vanster"] button:hover .nodpunkt,
+#natverk-noder.stjarna li[data-etikettlage="vanster"] button:focus-visible .nodpunkt {
+  transform: translate(50%, -50%) scale(1.2);
 }
 
 .natverk-panel {

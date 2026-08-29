@@ -11,7 +11,7 @@ ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 168 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 169 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -29,6 +29,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 6. 2026-08-20, Bildanalys lades till bland aktiva, privata ChatGPT siter.
 7. 2026-08-29, fullskärm, Nordnätverk, utfällbara träffar och verifierade
    Drive-mappar infördes.
+8. 2026-08-29, stjärnbildens nodpunkter skildes geometriskt från sina
+   textetiketter.
 
 ## Mål
 
@@ -81,11 +83,14 @@ Analysinkorg för `FOTO_001: Triangles of people`.
    FotoR, `FOTO_001: Triangles of people` och Analysinkorg.
 10. Nordnätverket fick relevanta Drive-genvägar i sidopanelen. Mapparna är
     aldrig grafnoder och påverkar därför inte träffsnapshot eller relationstak.
+11. Linjernas ändpunkter fick egna synliga nodpunkter. Etiketterna placeras
+    ovanför, nedanför eller vid sidan av punkterna beroende på skärmläge. Även
+    centralnodens punkt ligger nu exakt i linjernas gemensamma möte.
 
 **Verifieringsbevis**
 
 1. Reproducerbar installation med låst `jsdom` 26.1.0.
-2. Testsviten passerade 168 av 168 kontroller.
+2. Testsviten passerade 169 av 169 kontroller.
 3. Kodinvarians bevisades mot fryst pre-FotoR-data.
 4. Corpusförändringen bevisades separat. Äldre URL:ers matchstatus och relativa
    ordning bevarades, och både hela träffarrayen och de första 60 kontrollerades.
