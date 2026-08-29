@@ -1614,7 +1614,7 @@ a.full-kontroll:not([href]) {
 
   .natverk-yta { min-height: 34rem; }
   .natverk-yta[data-layout="relationer"] { min-height: 0; }
-  #natverk-noder.stjarna li { width: 8.5rem; }
+  #natverk-noder.stjarna button { width: 8.5rem; }
 }
 
 @media (max-width: 599px) {
@@ -1690,7 +1690,7 @@ a.full-kontroll:not([href]) {
     padding: 0.5rem;
   }
 
-  #natverk-noder.stjarna li { width: min(7rem, 29vw); }
+  #natverk-noder.stjarna button { width: min(7rem, 29vw); }
   #natverk-noder.stjarna li:nth-child(n + 9) { display: none; }
 
   #natverk-noder.stjarna li:nth-child(1) { left: 50%; top: 11%; }
@@ -1704,7 +1704,6 @@ a.full-kontroll:not([href]) {
 
   #natverk-noder.stjarna button {
     min-height: 58px;
-    padding-top: 1.2rem;
   }
 
   #natverk-noder.stjarna .nodtitel {
@@ -1712,8 +1711,7 @@ a.full-kontroll:not([href]) {
     letter-spacing: 0.02em;
   }
 
-  .natverk-ankare { width: min(11rem, 38%); }
-  .natverk-ankare h2 { font-size: 0.9rem; }
+  .natverk-ankare h2 { width: min(11rem, 38vw); font-size: 0.9rem; }
 }
 
 @media (max-width: 389px) {
@@ -1728,9 +1726,9 @@ a.full-kontroll:not([href]) {
   #natverk-noder.stjarna li:nth-child(3) { left: 50%; top: 88%; }
   #natverk-noder.stjarna li:nth-child(4) { left: 16%; top: 50%; }
 
-  #natverk-noder.stjarna li { width: 7rem; }
+  #natverk-noder.stjarna button { width: 7rem; }
   .natverk-yta { min-height: 27rem; }
-  .natverk-ankare { width: 9.5rem; }
+  .natverk-ankare h2 { width: 9.5rem; }
 }
 
 @media (max-height: 519px) {
@@ -1742,7 +1740,7 @@ a.full-kontroll:not([href]) {
 @media (min-width: 1200px) {
   .full-instrument { padding-inline: max(1.25rem, env(safe-area-inset-left)); }
   .natverk-yta { min-height: 36rem; }
-  #natverk-noder.stjarna li { width: min(12.5rem, 22%); }
+  #natverk-noder.stjarna button { width: min(12.5rem, 22vw); }
   .natverk-panel { padding: 1.2rem; }
 }
 
