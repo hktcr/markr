@@ -15,6 +15,8 @@ const P_URL = 1;
 const GRANS_TRAFFAR = 60;
 const ANTAL_SENASTE = 20;
 const ANTAL_RELATERADE = 12;
+const ANTAL_DETALJ_RELATIONER = 4;
+const ANTAL_MAPPGENVAGAR = 4;
 const KANTER_PER_NOD = 3;
 
 const OMRADEN = [
@@ -63,8 +65,13 @@ const el = {
   status: document.getElementById('status'),
   lankSenaste: document.getElementById('lank-senaste'),
   lankLista: document.getElementById('lank-lista'),
+  lankDrive: document.getElementById('lank-drive'),
   listlage: document.getElementById('listlage'),
   kategorilista: document.getElementById('kategorilista'),
+  driveNav: document.getElementById('drivenav'),
+  driveRubrik: document.getElementById('drive-rubrik'),
+  driveAntal: document.getElementById('drive-antal'),
+  driveGrupper: document.getElementById('drive-grupper'),
   resultat: document.getElementById('resultat'),
   relaterat: document.getElementById('relaterat'),
   relateradeTaggar: document.getElementById('relaterade-taggar'),
@@ -93,6 +100,8 @@ const el = {
   natRelationer: document.getElementById('nat-relationer'),
   natStjarna: document.getElementById('nat-stjarna'),
   natSammanfattning: document.getElementById('natverk-sammanfattning'),
+  natMappar: document.getElementById('natverk-mappar'),
+  natMapplankar: document.getElementById('natverk-mapplankar'),
   natOppna: document.getElementById('natverk-oppna'),
   natKopiera: document.getElementById('natverk-kopiera'),
   natVisaLista: document.getElementById('natverk-visa-lista'),
@@ -194,6 +203,7 @@ function normalisera(ra) {
       period: period,
       livscykel: livscykel,
       favorit: !!post.favorit,
+      mappForalderId: post.mappForalderId || null,
       natverksFacetter: natverksFacetter,
       tillagd: post.tillagd || '',
       vTitel: vik(titel),
@@ -337,7 +347,7 @@ function visaSenaste() {
   ritaRelaterade([]);
 }
 
-function visaLista() {
+function visaLista(fokuseraDrive) {
   el.sok.value = '';
   aktivaTaggar = [];
   ritaFilter();
@@ -345,6 +355,13 @@ function visaLista() {
   settLage('lista');
   satStatus(byggKategorier().length + ' verksamhetsområden');
   ritaKategorilista();
+  ritaDriveNav();
+  if (fokuseraDrive && !el.driveNav.hidden) {
+    requestAnimationFrame(() => {
+      el.driveRubrik.focus();
+      el.driveRubrik.scrollIntoView({ block: 'start' });
+    });
+  }
 }
 
 /* ================= 4. Lägen och utritning ================= */
@@ -440,6 +457,98 @@ function ritaKategorilista() {
   }
 }
 
+function arDriveMapp(bm) {
+  try {
+    const url = new URL(bm.url);
+    return url.protocol === 'https:' && url.hostname === 'drive.google.com' &&
+      /^\/drive(?:\/u\/\d+)?\/folders\/[^/]+\/?$/.test(url.pathname);
+  } catch (e) {
+    return false;
+  }
+}
+
+function driveMappar() {
+  return arkiv.bokmarken.filter(arDriveMapp);
+}
+
+function ritaDriveNav() {
+  const mappar = driveMappar();
+  el.driveGrupper.textContent = '';
+  el.driveNav.hidden = mappar.length === 0;
+  if (mappar.length === 0) return;
+
+  el.driveAntal.textContent = mappar.length + (mappar.length === 1 ? ' mapp' : ' mappar');
+  const perOmrade = new Map();
+  for (const bm of mappar) {
+    if (!perOmrade.has(bm.omrade)) perOmrade.set(bm.omrade, []);
+    perOmrade.get(bm.omrade).push(bm);
+  }
+
+  for (const omrade of OMRADEN) {
+    const poster = perOmrade.get(omrade.namn);
+    if (!poster || poster.length === 0) continue;
+    poster.sort((a, b) => a.visningstitel.localeCompare(b.visningstitel, 'sv'));
+
+    const grupp = document.createElement('section');
+    grupp.className = 'drive-grupp';
+    const rubrik = document.createElement('h3');
+    rubrik.textContent = omrade.namn;
+    const lista = document.createElement('ul');
+
+    const efterId = new Map(poster.filter(bm => bm.id).map(bm => [String(bm.id), bm]));
+    const barn = new Map();
+    const rotter = [];
+    for (const bm of poster) {
+      const foralder = bm.mappForalderId ? efterId.get(String(bm.mappForalderId)) : null;
+      if (!foralder || foralder.url === bm.url) rotter.push(bm);
+      else {
+        const nyckel = String(foralder.id);
+        if (!barn.has(nyckel)) barn.set(nyckel, []);
+        barn.get(nyckel).push(bm);
+      }
+    }
+    for (const listaBarn of barn.values()) {
+      listaBarn.sort((a, b) => a.visningstitel.localeCompare(b.visningstitel, 'sv'));
+    }
+
+    const besokta = new Set();
+    const byggMappnod = (bm, djup) => {
+      if (besokta.has(bm.url)) return null;
+      besokta.add(bm.url);
+      const li = document.createElement('li');
+      li.className = 'drive-niva-' + Math.min(djup, 3);
+      const lank = document.createElement('a');
+      lank.href = bm.url;
+      const titel = document.createElement('strong');
+      titel.textContent = bm.visningstitel;
+      const beskrivning = document.createElement('span');
+      beskrivning.textContent = bm.beskrivning || 'Öppna arbetsmappen i Google Drive.';
+      lank.append(titel, beskrivning);
+      li.append(lank);
+      const under = (barn.get(String(bm.id)) || []).map(post => byggMappnod(post, djup + 1)).filter(Boolean);
+      if (under.length) {
+        const underlista = document.createElement('ul');
+        underlista.className = 'drive-barn';
+        underlista.append(...under);
+        li.append(underlista);
+      }
+      return li;
+    };
+
+    for (const bm of rotter) {
+      const nod = byggMappnod(bm, 0);
+      if (nod) lista.append(nod);
+    }
+    for (const bm of poster) {
+      const nod = byggMappnod(bm, 0);
+      if (nod) lista.append(nod);
+    }
+
+    grupp.append(rubrik, lista);
+    el.driveGrupper.append(grupp);
+  }
+}
+
 /* Taggarna som förekommer i den aktuella träffmängden, minus de redan aktiva.
    Det här är nätverket i omformad gestalt: kartan över var man kan gå härnäst. */
 function ritaRelaterade(aktivaVikta) {
@@ -527,6 +636,9 @@ function fyllLista(behallare, lista, ord, indexStart) {
 
   lista.forEach((bm, i) => {
     const li = document.createElement('li');
+    li.className = 'traffpost';
+    const huvud = document.createElement('div');
+    huvud.className = 'traffhuvud';
     const a = document.createElement('a');
     a.className = 'rad';
     a.href = bm.url;
@@ -584,11 +696,128 @@ function fyllLista(behallare, lista, ord, indexStart) {
       meta.append(fler);
     }
     a.append(meta);
-    li.append(a);
+
+    const detaljId = behallare.id + '-detalj-' + String(bm.id || (bas + i)).replace(/[^a-zA-Z0-9_-]/g, '');
+    const detalj = document.createElement('section');
+    detalj.id = detaljId;
+    detalj.className = 'traffdetalj';
+    detalj.hidden = true;
+    detalj.setAttribute('aria-label', 'Detaljer för ' + bm.visningstitel);
+    let detaljByggd = false;
+    const expandera = document.createElement('button');
+    expandera.type = 'button';
+    expandera.className = 'traff-expandera';
+    expandera.textContent = 'Detaljer';
+    expandera.setAttribute('aria-expanded', 'false');
+    expandera.setAttribute('aria-controls', detaljId);
+    expandera.setAttribute('aria-label', 'Visa detaljer för ' + bm.visningstitel);
+    expandera.addEventListener('click', () => {
+      const oppna = expandera.getAttribute('aria-expanded') !== 'true';
+      if (oppna && !detaljByggd) {
+        fyllTraffdetalj(detalj, bm);
+        detaljByggd = true;
+      }
+      expandera.setAttribute('aria-expanded', String(oppna));
+      expandera.textContent = oppna ? 'Stäng' : 'Detaljer';
+      expandera.setAttribute('aria-label', (oppna ? 'Dölj' : 'Visa') + ' detaljer för ' + bm.visningstitel);
+      detalj.hidden = !oppna;
+      li.classList.toggle('detaljer-oppna', oppna);
+    });
+
+    huvud.append(a, expandera);
+    li.append(huvud, detalj);
     frag.append(li);
   });
 
   behallare.append(frag);
+}
+
+function laggTillDetaljFacetter(behallare, rubrik, varden) {
+  const rena = Array.from(new Set((Array.isArray(varden) ? varden : [varden]).filter(Boolean)));
+  if (rena.length === 0) return;
+  const grupp = document.createElement('div');
+  grupp.className = 'detalj-facettgrupp';
+  const etikett = document.createElement('span');
+  etikett.className = 'detalj-etikett';
+  etikett.textContent = rubrik;
+  const rad = document.createElement('div');
+  rad.className = 'detalj-facettrad';
+  for (const varde of rena) rad.append(taggKnapp(varde, null, true));
+  grupp.append(etikett, rad);
+  behallare.append(grupp);
+}
+
+function relateradeMappar(bm) {
+  const mappar = driveMappar().filter(kandidat => kandidat.url !== bm.url);
+  return beraknaRelationer(
+    [bm, ...mappar],
+    bm.url,
+    rel => rel.projekt.length > 0 || (rel.kontexter.length > 0 && rel.amnen.length > 0)
+  )
+    .map(rel => rel.bm)
+    .slice(0, ANTAL_MAPPGENVAGAR);
+}
+
+function byggTrafflankar(rubriktext, poster, klassnamn) {
+  if (poster.length === 0) return null;
+  const sektion = document.createElement('section');
+  sektion.className = 'detalj-lankar ' + klassnamn;
+  const rubrik = document.createElement('h4');
+  rubrik.textContent = rubriktext;
+  const lista = document.createElement('ul');
+  for (const bm of poster) {
+    const li = document.createElement('li');
+    const lank = document.createElement('a');
+    lank.href = bm.url;
+    lank.textContent = bm.visningstitel;
+    li.append(lank);
+    lista.append(li);
+  }
+  sektion.append(rubrik, lista);
+  return sektion;
+}
+
+function fyllTraffdetalj(panel, bm) {
+  const facetter = document.createElement('div');
+  facetter.className = 'detalj-facetter';
+  laggTillDetaljFacetter(facetter, 'Område', bm.omrade);
+  laggTillDetaljFacetter(facetter, 'Typ', bm.typ);
+  laggTillDetaljFacetter(facetter, 'Kontext', bm.kontexter);
+  laggTillDetaljFacetter(facetter, 'Projekt', bm.projekt);
+  laggTillDetaljFacetter(facetter, 'Ämnen', bm.amnen);
+  laggTillDetaljFacetter(facetter, 'Period', bm.period);
+  laggTillDetaljFacetter(facetter, 'Livscykel', bm.livscykel);
+  panel.append(facetter);
+
+  const mappsektion = byggTrafflankar('Mappgenvägar', relateradeMappar(bm), 'detalj-mappar');
+  if (mappsektion) panel.append(mappsektion);
+
+  const ickeMappar = arkiv.bokmarken.filter(kandidat => kandidat.url === bm.url || !arDriveMapp(kandidat));
+  const relationer = beraknaRelationer(ickeMappar, bm.url)
+    .map(rel => rel.bm)
+    .slice(0, ANTAL_DETALJ_RELATIONER);
+  const relationssektion = byggTrafflankar('Relaterade bokmärken', relationer, 'detalj-relationer');
+  if (relationssektion) panel.append(relationssektion);
+
+  const handlingar = document.createElement('div');
+  handlingar.className = 'detalj-handlingar';
+  const oppna = document.createElement('a');
+  oppna.className = 'detalj-handling';
+  oppna.href = bm.url;
+  oppna.textContent = arDriveMapp(bm) ? 'Öppna mappen' : 'Öppna bokmärket';
+  const kopiera = document.createElement('button');
+  kopiera.type = 'button';
+  kopiera.className = 'detalj-handling';
+  kopiera.textContent = 'Kopiera adress';
+  kopiera.addEventListener('click', () => {
+    const skriv = navigator.clipboard && navigator.clipboard.writeText
+      ? navigator.clipboard.writeText(bm.url)
+      : Promise.reject(new Error('saknas'));
+    skriv.then(() => brodrost('Adressen kopierad'))
+      .catch(() => brodrost('Kunde inte kopiera'));
+  });
+  handlingar.append(oppna, kopiera);
+  panel.append(handlingar);
 }
 
 function markeraIn(nod, text, ord) {
@@ -647,7 +876,7 @@ function facettSnitt(ankare, kandidat, nyckel) {
     .sort((x, y) => x.localeCompare(y, 'sv'));
 }
 
-function beraknaRelationer(snapshot, ankareUrl) {
+function beraknaRelationer(snapshot, ankareUrl, godkannRelation) {
   const ankare = snapshot.find(bm => bm.url === ankareUrl);
   if (!ankare) return [];
   const kandidater = [];
@@ -657,7 +886,9 @@ function beraknaRelationer(snapshot, ankareUrl) {
     const kontexter = facettSnitt(ankare, bm, 'kontexter');
     const amnen = facettSnitt(ankare, bm, 'amnen');
     if (projekt.length + kontexter.length + amnen.length === 0) return;
-    kandidater.push({ bm, traffIndex, projekt, kontexter, amnen });
+    const relation = { bm, traffIndex, projekt, kontexter, amnen };
+    if (godkannRelation && !godkannRelation(relation)) return;
+    kandidater.push(relation);
   });
   kandidater.sort((a, b) =>
     b.projekt.length - a.projekt.length ||
@@ -665,7 +896,7 @@ function beraknaRelationer(snapshot, ankareUrl) {
     b.amnen.length - a.amnen.length ||
     a.traffIndex - b.traffIndex
   );
-  return kandidater.slice(0, 12);
+  return kandidater.slice(0, ANTAL_RELATERADE);
 }
 
 function relationsOrsak(rel) {
@@ -715,6 +946,20 @@ const POLARA_PLATSER = [
   [12, 47], [22, 21], [64, 29], [70, 60], [38, 70], [31, 37]
 ];
 
+function renderaNatMappar(ankare) {
+  el.natMapplankar.textContent = '';
+  const mappar = ankare ? relateradeMappar(ankare) : [];
+  el.natMappar.hidden = mappar.length === 0;
+  for (const bm of mappar) {
+    const li = document.createElement('li');
+    const lank = document.createElement('a');
+    lank.href = bm.url;
+    lank.textContent = bm.visningstitel;
+    li.append(lank);
+    el.natMapplankar.append(li);
+  }
+}
+
 function renderaNatverk() {
   const ankare = fullskarm.snapshot.find(bm => bm.url === fullskarm.ankareUrl) || null;
   fullskarm.relationer = beraknaRelationer(fullskarm.snapshot, fullskarm.ankareUrl);
@@ -728,6 +973,7 @@ function renderaNatverk() {
     el.natOppna.removeAttribute('href');
     el.natKopiera.disabled = true;
     el.natVisaLista.disabled = true;
+    renderaNatMappar(null);
     uppdateraNatLayout();
     return;
   }
@@ -740,6 +986,7 @@ function renderaNatverk() {
     (fullskarm.relationer.length === 1 ? ' dokumenterad relation' : ' dokumenterade relationer') +
     ' av ' + fullskarm.snapshot.length + ' träffar.';
   el.natTomt.hidden = fullskarm.relationer.length > 0;
+  renderaNatMappar(ankare);
 
   fullskarm.relationer.forEach((rel, i) => {
     const li = document.createElement('li');
@@ -1391,7 +1638,8 @@ document.addEventListener('keydown', e => {
 });
 
 el.lankSenaste.addEventListener('click', visaSenaste);
-el.lankLista.addEventListener('click', visaLista);
+el.lankLista.addEventListener('click', () => visaLista(false));
+el.lankDrive.addEventListener('click', () => visaLista(true));
 el.fullOppna.addEventListener('click', oppnaFullskarm);
 el.fullStang.addEventListener('click', stangFullskarm);
 el.fullListknapp.addEventListener('click', () => sattFullVy('lista', false));

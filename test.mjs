@@ -147,17 +147,6 @@ kolla('legacytaggar är fortsatt sökbara', (() => { skriv('logistik'); return $
 skriv('');
 kolla('inga konsolfel', fel.length === 0, fel.join(' | ').slice(0, 120));
 
-/* 8. Versionslåst pre-FotoR-baslinje: samma frågor ska behålla exakt URL-ordning. */
-const baslinje = JSON.parse(fs.readFileSync('fixtures/search-baseline.json', 'utf8'));
-kolla('baslinjefixturen har versionslåst källhash', /^[a-f0-9]{64}$/.test(baslinje.sourceSha256));
-for (const [fraga, vantadeUrl] of Object.entries(baslinje.queries)) {
-  skriv(fraga);
-  if (!$('#visa-alla').hidden) klick($('#visa-alla'));
-  const faktiskaUrl = $$('#traffar a.rad').map(rad => rad.href);
-  kolla('sökbaslinje: ' + fraga, JSON.stringify(faktiskaUrl) === JSON.stringify(vantadeUrl),
-    faktiskaUrl.length + ' / ' + vantadeUrl.length);
-}
-
 async function skapaKontraktsdom(jsonText) {
   const kontraktsfel = [];
   const testdom = new JSDOM(html, {
@@ -192,29 +181,6 @@ async function skapaKontraktsdom(jsonText) {
   return { tw, kontraktsfel, rafAnrop: () => rafAnrop };
 }
 
-/* 9. Separat corpusbevis: avsedd FotoR-delta får inte döljas som kodregression. */
-const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.json', 'utf8'));
-const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
-const currentData = JSON.parse(rawJson);
-const nyUrl = deltaFixture.newBookmark.url;
-const nyaPoster = currentData.bokmarken.filter(bm => bm.url === nyUrl);
-const preFotoRData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.url !== nyUrl)
-};
-
-kolla('MärkR-corpus är versionslåst för dataförändringsbeviset',
-  sha256(rawJson) === deltaFixture.currentFileSha256 &&
-  sha256(JSON.stringify(currentData.bokmarken)) === deltaFixture.currentCanonicalBookmarksSha256);
-kolla('FotoR-deltan är exakt den avsedda posten',
-  nyaPoster.length === 1 && nyaPoster[0].id === deltaFixture.newBookmark.id &&
-  nyaPoster[0].titel === deltaFixture.newBookmark.title);
-kolla('rekonstruerad pre-FotoR-corpus är versionslåst',
-  sha256(JSON.stringify(preFotoRData.bokmarken)) === deltaFixture.preFotoRCanonicalBookmarksSha256);
-
-const preCorpusDom = await skapaKontraktsdom(JSON.stringify(preFotoRData));
-const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
-
 function korCorpusFraga(testfonster, fraga) {
   const falt = testfonster.document.querySelector('#sok');
   falt.value = fraga;
@@ -228,10 +194,136 @@ function korCorpusFraga(testfonster, fraga) {
   return { alla, forsta60 };
 }
 
+/* 8. Mappnav och expanderbara träffar. */
+klick($('#lank-drive'));
+kolla('Drive har en egen del i områdesöversikten', !$('#drivenav').hidden);
+kolla('Drivevyn visar sju unika mappgenvägar i fyra områdesgrupper',
+  $$('#drive-grupper a').length === 7 && $$('.drive-grupp').length === 4 &&
+  new Set($$('#drive-grupper a').map(a => a.href)).size === 7);
+kolla('FotoR visas som verifierad mapphierarki i tre nivåer',
+  $('#drive-grupper a[href*="1gHcF14n"]')?.closest('li')?.classList.contains('drive-niva-0') &&
+  $('#drive-grupper a[href*="1eyEFD-Y"]')?.closest('li')?.classList.contains('drive-niva-1') &&
+  $('#drive-grupper a[href*="1AzqYgAG"]')?.closest('li')?.classList.contains('drive-niva-2'));
+tangent('Escape');
+
+skriv('fotor');
+const detaljKnapp = $('#traffar .traff-expandera');
+const detaljPanel = $('#' + detaljKnapp.getAttribute('aria-controls'));
+kolla('disclosureknappen är inte nästlad i träfflänken', !detaljKnapp.closest('a'));
+kolla('detaljpanelen byggs först vid öppning', detaljPanel.hidden && detaljPanel.children.length === 0);
+detaljKnapp.focus();
+klick(detaljKnapp);
+kolla('detaljer öppnas med synkat aria-kontrakt',
+  detaljKnapp.getAttribute('aria-expanded') === 'true' && !detaljPanel.hidden &&
+  detaljKnapp.getAttribute('aria-label').startsWith('Dölj'));
+kolla('fokus stannar på disclosureknappen', w.document.activeElement === detaljKnapp);
+kolla('FotoR-detaljen visar facetter och två relevanta mappgenvägar',
+  Array.from(detaljPanel.querySelectorAll('.detalj-etikett')).some(n => n.textContent === 'Livscykel') &&
+  detaljPanel.querySelectorAll('.detalj-mappar a').length === 2);
+klick(detaljKnapp);
+kolla('detaljer kan stängas utan att sökningen ändras',
+  detaljPanel.hidden && sok.value === 'fotor' && $$('#traffar a.rad').length === 3);
+
+$('#full-oppna').focus();
+klick($('#full-oppna'));
+const fullDetaljKnapp = $('#full-traffar .traff-expandera');
+klick(fullDetaljKnapp);
+const allaDetaljId = $$('[id*="-detalj-"]').map(n => n.id);
+kolla('kompakt lista och fullskärmslista har unika detaljid:n',
+  allaDetaljId.length === new Set(allaDetaljId).size);
+klick($('#full-natknapp'));
+kolla('Nordpanelen visar mappgenvägar utan extra grafkontroller',
+  !$('#natverk-mappar').hidden && $$('#natverk-mapplankar a').length === 2 &&
+  $$('#natverk-noder button').length === w.__MARKR_TEST__.fullskarmsState().relationUrls.length);
+klick($('#full-stang'));
+tangent('Escape');
+
+/* 9. Historiska och aktuella corpusbevis hålls isär. */
+const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.json', 'utf8'));
+const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
+const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
+const currentData = JSON.parse(rawJson);
+const aktuellaId = currentData.bokmarken.map(bm => bm.id);
+const aktuellaUrl = currentData.bokmarken.map(bm => bm.url);
+kolla('aktuell data har unika numeriska id:n och unika URL:er',
+  aktuellaId.every(Number.isInteger) && new Set(aktuellaId).size === aktuellaId.length &&
+  new Set(aktuellaUrl).size === aktuellaUrl.length);
+
+const vantadeDriveId = new Set([
+  deltaFixture.newBookmark.id,
+  ...driveDeltaFixture.newBookmarks.map(bm => bm.id)
+]);
+const aktuellaDrivePoster = currentData.bokmarken.filter(bm => vantadeDriveId.has(bm.id));
+const aktuellDriveEfterId = new Map(aktuellaDrivePoster.map(bm => [bm.id, bm]));
+const kanoniskDriveUrl = url => {
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol === 'https:' && parsedUrl.hostname === 'drive.google.com' &&
+      /^\/drive(?:\/u\/\d+)?\/folders\/[^/]+\/?$/.test(parsedUrl.pathname);
+  } catch (e) {
+    return false;
+  }
+};
+const driveHarCykel = start => {
+  const besoktaId = new Set();
+  let post = start;
+  while (post && post.mappForalderId != null) {
+    if (besoktaId.has(post.id)) return true;
+    besoktaId.add(post.id);
+    post = aktuellDriveEfterId.get(post.mappForalderId);
+  }
+  return false;
+};
+kolla('Driveposter har kanoniska URL:er, giltiga föräldrar och inga cykler',
+  aktuellaDrivePoster.length === 7 && aktuellaDrivePoster.every(bm =>
+    kanoniskDriveUrl(bm.url) &&
+    (bm.mappForalderId == null || aktuellDriveEfterId.has(bm.mappForalderId)) &&
+    !driveHarCykel(bm)));
+const nyUrl = deltaFixture.newBookmark.url;
+const nyaPoster = currentData.bokmarken.filter(bm => bm.url === nyUrl);
+const driveNyaId = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.id));
+const preDriveData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => !driveNyaId.has(bm.id))
+};
+const historiskFotoRData = {
+  ...preDriveData,
+  bokmarken: preDriveData.bokmarken.map(bm => {
+    if (bm.url !== nyUrl) return bm;
+    const historisk = { ...bm };
+    delete historisk.mappForalderId;
+    return historisk;
+  })
+};
+const preFotoRData = {
+  ...historiskFotoRData,
+  bokmarken: historiskFotoRData.bokmarken.filter(bm => bm.url !== nyUrl)
+};
+
+kolla('historisk FotoR-corpus är versionslåst',
+  sha256(JSON.stringify(historiskFotoRData.bokmarken)) === deltaFixture.currentCanonicalBookmarksSha256);
+kolla('FotoR-deltan är exakt den avsedda posten',
+  nyaPoster.length === 1 && nyaPoster[0].id === deltaFixture.newBookmark.id &&
+  nyaPoster[0].titel === deltaFixture.newBookmark.title);
+kolla('rekonstruerad pre-FotoR-corpus är versionslåst',
+  sha256(JSON.stringify(preFotoRData.bokmarken)) === deltaFixture.preFotoRCanonicalBookmarksSha256);
+
+const preCorpusDom = await skapaKontraktsdom(JSON.stringify(preFotoRData));
+const fotoRCorpusDom = await skapaKontraktsdom(JSON.stringify(historiskFotoRData));
+
+/* Baslinjen körs mot den corpus den faktiskt beskriver, inte mot senare avsedda tillägg. */
+const baslinje = JSON.parse(fs.readFileSync('fixtures/search-baseline.json', 'utf8'));
+kolla('baslinjefixturen har versionslåst källhash', /^[a-f0-9]{64}$/.test(baslinje.sourceSha256));
+for (const [fraga, vantadeUrl] of Object.entries(baslinje.queries)) {
+  const faktiskaUrl = korCorpusFraga(preCorpusDom.tw, fraga).alla;
+  kolla('sökbaslinje: ' + fraga, JSON.stringify(faktiskaUrl) === JSON.stringify(vantadeUrl),
+    faktiskaUrl.length + ' / ' + vantadeUrl.length);
+}
+
 const fragorMedNyUrl = [];
 for (const [fraga, facit] of Object.entries(deltaFixture.queries)) {
   const fore = korCorpusFraga(preCorpusDom.tw, fraga);
-  const efter = korCorpusFraga(currentCorpusDom.tw, fraga);
+  const efter = korCorpusFraga(fotoRCorpusDom.tw, fraga);
   const nyttIndex = efter.alla.indexOf(nyUrl);
   if (nyttIndex >= 0) fragorMedNyUrl.push(fraga);
 
@@ -254,7 +346,39 @@ kolla('exakt redovisade frågor får den nya FotoR-URL:en',
   JSON.stringify(fragorMedNyUrl) === JSON.stringify(deltaFixture.queriesReceivingNewUrl),
   fragorMedNyUrl.join(', '));
 kolla('inga konsolfel i corpusbeviset',
-  preCorpusDom.kontraktsfel.length === 0 && currentCorpusDom.kontraktsfel.length === 0);
+  preCorpusDom.kontraktsfel.length === 0 && fotoRCorpusDom.kontraktsfel.length === 0);
+
+/* Den senare Drive-deltan får nya träffar men får inte ändra äldre träffars relativa ordning. */
+kolla('aktuell Drive-corpus är versionslåst',
+  sha256(rawJson) === driveDeltaFixture.currentFileSha256 &&
+  sha256(JSON.stringify(currentData.bokmarken)) === driveDeltaFixture.currentCanonicalBookmarksSha256);
+kolla('rekonstruerad corpus före Drive-utbyggnaden är versionslåst',
+  sha256(JSON.stringify(preDriveData.bokmarken)) === driveDeltaFixture.preDriveCanonicalBookmarksSha256);
+
+const faktiskaDrivePoster = currentData.bokmarken.filter(bm => driveNyaId.has(bm.id));
+kolla('Drive-deltan innehåller exakt de sex verifierade mapparna',
+  faktiskaDrivePoster.length === driveDeltaFixture.newBookmarks.length &&
+  driveDeltaFixture.newBookmarks.every(vantad => faktiskaDrivePoster.some(bm =>
+    bm.id === vantad.id && bm.url === vantad.url && bm.titel === vantad.title)));
+
+const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const preDriveCorpusDom = await skapaKontraktsdom(JSON.stringify(preDriveData));
+const driveNyaUrl = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.url));
+for (const [fraga, facit] of Object.entries(driveDeltaFixture.queries)) {
+  const fore = korCorpusFraga(preDriveCorpusDom.tw, fraga);
+  const efter = korCorpusFraga(currentCorpusDom.tw, fraga);
+  const faktiskaNyaUrl = efter.alla.filter(url => driveNyaUrl.has(url));
+  kolla('Drive-delta antal och nya URL:er: ' + fraga,
+    fore.alla.length === facit.preCount && efter.alla.length === facit.currentCount &&
+    JSON.stringify(faktiskaNyaUrl) === JSON.stringify(facit.newUrls),
+    fore.alla.length + ' -> ' + efter.alla.length + ', ' + faktiskaNyaUrl.length + ' nya');
+
+  const aldreEfter = efter.alla.filter(url => !driveNyaUrl.has(url));
+  kolla('äldre ordning efter Drive-delta: ' + fraga,
+    JSON.stringify(aldreEfter) === JSON.stringify(fore.alla));
+}
+kolla('inga konsolfel i Drive-corpusbeviset',
+  preDriveCorpusDom.kontraktsfel.length === 0 && currentCorpusDom.kontraktsfel.length === 0);
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

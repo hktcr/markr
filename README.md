@@ -25,11 +25,11 @@ i `aria-label` för skärmläsare. Ingenting i vyn upprepar något annat.
 | `index.html` | Struktur: sökfält, himmel, resultat och fullskärmslager |
 | `style.css` | Sot, papper och mässing. Alla färger som variabler i `:root` |
 | `gor-ikoner.py` | Ritar ikonerna deterministiskt. Auktoritativ källa vid tvivel |
-| `app.js` | Sökmotor, söktillstånd, fullskärm, Nordnätverk, canvas och tangentbord |
+| `app.js` | Sökmotor, söktillstånd, träffdetaljer, Driveindex, fullskärm, Nordnätverk, canvas och tangentbord |
 | `bokmarken.json` | Datan, Single Source of Truth |
 | `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
-| `test.mjs` | Kör 115 regressions-, corpus-, relations- och tillståndskontroller |
-| `fixtures/` | Versionslåsta facit för pre-FotoR-sökning, corpusdelta och relationer |
+| `test.mjs` | Kör 168 regressions-, corpus-, relations- och tillståndskontroller |
+| `fixtures/` | Versionslåsta facit för pre-FotoR-sökning, FotoR- och Drivedelta samt relationer |
 | `package.json`, `package-lock.json` | Reproducerbar jsdom-baserad testmiljö |
 
 ## Arkitektur för himlen
@@ -73,6 +73,7 @@ All denna rörelse lyder `prefers-reduced-motion`.
       "livscykel": "Aktiv",
       "favorit": false,
       "legacyTaggar": ["Skola", "Dokument"],
+      "mappForalderId": null,
       "tillagd": "2026-07-28"
     }
   ]
@@ -82,7 +83,9 @@ All denna rörelse lyder `prefers-reduced-motion`.
 `url` är identiteten och `id` ska vara stabilt. `omrade` är exakt ett
 verksamhetsområde. Typ, kontexter, projekt, ämnen, period och livscykel är
 separata facetter. `legacyTaggar` bevarar den tidigare taxonomin och ingår i
-sökningen, men visas inte som huvudkategorier.
+sökningen, men visas inte som huvudkategorier. För Drive-mappar kan det valfria
+`mappForalderId` peka på en annan Drive-post och därmed beskriva en verifierad
+mapphierarki. Referensen får inte bilda en cykel.
 
 ## Sökningen
 
@@ -137,6 +140,20 @@ Bakgrunden är inert medan lagret är öppet. Escape stänger först fullskärme
 
 Träffraderna är riktiga `<a>`-element, så mittenklick, högerklick och
 skärmläsare fungerar som på vilken länk som helst.
+
+### Utfällbara träffar och Drive
+
+Varje träff har en separat informationsknapp bredvid länken. Den bygger sin
+detaljpanel först när användaren öppnar den och visar postens strukturerade
+facetter, närliggande bokmärken samt relevanta genvägar till Drive-mappar.
+Genvägar kräver gemensamt projekt eller kombinationen gemensam kontext och
+gemensamt ämne. Enbart ett gemensamt ämne räcker inte.
+
+Länken "Drive" i horisontraden öppnar ett index över verifierade Drive-mappar,
+grupperade efter verksamhetsområde. Kända föräldrarelationer visas som ett
+mappträd. Samma relevansregler används för mappgenvägarna i Nordnätverkets
+sidopanel. Drive-mapparna är genvägar och blir aldrig grafnoder, så nätverkets
+urval, rangordning och tillstånd förblir oförändrade.
 
 ## Underhåll
 

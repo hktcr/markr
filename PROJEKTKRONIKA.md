@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 198 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 204 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 115 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 168 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -27,7 +27,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 5. 2026-08-10, 32 poster gallrades reversibelt och 182 aktiva poster
    publicerades.
 6. 2026-08-20, Bildanalys lades till bland aktiva, privata ChatGPT siter.
-7. 2026-08-29, fullskärm, Nordnätverk och FotoR:s första Analysinkorg infördes.
+7. 2026-08-29, fullskärm, Nordnätverk, utfällbara träffar och verifierade
+   Drive-mappar infördes.
 
 ## Mål
 
@@ -72,11 +73,19 @@ Analysinkorg för `FOTO_001: Triangles of people`.
 6. Måndagens veckounderhåll av MärkR fördes in i det befintliga `☕ Dagsnav 08`.
 7. Det felaktigt använda namnet Melker korrigerades till MärkR i samtliga nya
    systemfiler, Swarm-protokoll och schemalagda rutiner.
+8. Varje sökträff fick en separat, semantiskt riktig informationsknapp. Panelen
+   byggs först vid öppning och visar alla facetter, närliggande bokmärken samt
+   relevanta mappgenvägar.
+9. Horisontraden fick ett Driveindex med sju verifierade mappar i fyra
+   verksamhetsområden. FotoR visas som ett verifierat träd i tre nivåer:
+   FotoR, `FOTO_001: Triangles of people` och Analysinkorg.
+10. Nordnätverket fick relevanta Drive-genvägar i sidopanelen. Mapparna är
+    aldrig grafnoder och påverkar därför inte träffsnapshot eller relationstak.
 
 **Verifieringsbevis**
 
 1. Reproducerbar installation med låst `jsdom` 26.1.0.
-2. Testsviten passerade 115 av 115 kontroller.
+2. Testsviten passerade 168 av 168 kontroller.
 3. Kodinvarians bevisades mot fryst pre-FotoR-data.
 4. Corpusförändringen bevisades separat. Äldre URL:ers matchstatus och relativa
    ordning bevarades, och både hela träffarrayen och de första 60 kontrollerades.
@@ -90,6 +99,11 @@ Analysinkorg för `FOTO_001: Triangles of people`.
    sökning, att FotoR-resultatet öppnas i Lista, att en `gaia`-sökning ger 12
    dokumenterade relationer av 35 träffar, att Stjärnbild använder samma 12
    kontroller samt att Stäng bevarar frågan och återför fokus.
+9. Ett separat Drivedelta låser de sex nya mapparna, deras ordning och deras
+   inverkan på sökresultaten utan att skriva över det historiska FotoR-facitet.
+10. Testerna verifierar unik identifiering, kanoniska Drive-adresser,
+    mapphierarki utan cykler, lat detaljrendering, fokuskontrakt, 44-pixelytor
+    och att Nordnätverkets grafdata förblir oförändrade.
 
 **Öppet**
 

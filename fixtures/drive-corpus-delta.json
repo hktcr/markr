@@ -1,0 +1,157 @@
+{
+  "name": "MärkR Drive map corpus delta",
+  "captured": "2026-08-29",
+  "currentFileSha256": "11dbdd1fef9b736e547b254291d8c554a92b400ccadb4f9a4d224d215a01c4a7",
+  "currentCanonicalBookmarksSha256": "e9a8b0996844fc591836a077ce380db3abfd53266735386031d0a0ed036b796b",
+  "preDriveCanonicalBookmarksSha256": "f3f32e7185627690c3f2a0884fa6fe2d99a9aaf949a605ad1b186e747b15f619",
+  "newBookmarks": [
+    {
+      "id": 235,
+      "url": "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+      "title": "FotoR"
+    },
+    {
+      "id": 236,
+      "url": "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+      "title": "FOTO_001: Triangles of people"
+    },
+    {
+      "id": 237,
+      "url": "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT",
+      "title": "Twenty Minutes Here"
+    },
+    {
+      "id": 238,
+      "url": "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd",
+      "title": "Kommunornitolog"
+    },
+    {
+      "id": 239,
+      "url": "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+      "title": "Livets kemi 2026 till 2027: lärarmaterial"
+    },
+    {
+      "id": 240,
+      "url": "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS",
+      "title": "Livets kemi och människokroppen HT26: elevmaterial"
+    }
+  ],
+  "queries": {
+    "gemini": { "preCount": 7, "currentCount": 7, "newUrls": [] },
+    "gemini biologi": { "preCount": 1, "currentCount": 1, "newUrls": [] },
+    "lasning": { "preCount": 8, "currentCount": 8, "newUrls": [] },
+    "läsning": { "preCount": 8, "currentCount": 8, "newUrls": [] },
+    "ai forskning": { "preCount": 8, "currentCount": 8, "newUrls": [] },
+    "biologi": {
+      "preCount": 9,
+      "currentCount": 11,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+        "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS"
+      ]
+    },
+    "foto": {
+      "preCount": 2,
+      "currentCount": 4,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB"
+      ]
+    },
+    "fotor": {
+      "preCount": 1,
+      "currentCount": 3,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf"
+      ]
+    },
+    "analysinkorg": {
+      "preCount": 1,
+      "currentCount": 2,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf"
+      ]
+    },
+    "triangles": {
+      "preCount": 1,
+      "currentCount": 2,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf"
+      ]
+    },
+    "fotografi": {
+      "preCount": 1,
+      "currentCount": 3,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB"
+      ]
+    },
+    "bildanalys": {
+      "preCount": 1,
+      "currentCount": 2,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf"
+      ]
+    },
+    "drive": {
+      "preCount": 8,
+      "currentCount": 14,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+        "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd",
+        "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+        "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS",
+        "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT"
+      ]
+    },
+    "mapp": {
+      "preCount": 5,
+      "currentCount": 11,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+        "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd",
+        "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+        "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS",
+        "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT"
+      ]
+    },
+    "#Aktiv": {
+      "preCount": 198,
+      "currentCount": 204,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+        "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+        "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd",
+        "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+        "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS",
+        "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT"
+      ]
+    },
+    "twenty minutes here": {
+      "preCount": 1,
+      "currentCount": 2,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT"
+      ]
+    },
+    "kommunornitolog": {
+      "preCount": 0,
+      "currentCount": 1,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd"
+      ]
+    },
+    "livets kemi": {
+      "preCount": 0,
+      "currentCount": 2,
+      "newUrls": [
+        "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+        "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS"
+      ]
+    }
+  }
+}

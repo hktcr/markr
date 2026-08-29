@@ -6047,7 +6047,164 @@
       "period": "",
       "livscykel": "Aktiv",
       "favorit": false,
+      "mappForalderId": 236,
       "legacyTaggar": []
+    },
+    {
+      "id": 235,
+      "url": "https://drive.google.com/drive/folders/1gHcF14nTK7QUoK0k7GwrJW2qoc6IbNyB",
+      "titel": "FotoR",
+      "beskrivning": "Huvudmapp för FotoR och projektets fotografiska arbetsytor.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Egna system och projekt",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "FotoR"
+      ],
+      "amnen": [
+        "Fotografi"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
+    },
+    {
+      "id": 236,
+      "url": "https://drive.google.com/drive/folders/1eyEFD-Y-yxaeCuN8WBKbPV6glJLyl8Kf",
+      "titel": "FOTO_001: Triangles of people",
+      "beskrivning": "Projektmapp för FOTO_001 med direktväg till projektets Analysinkorg.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Egna system och projekt",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "FotoR",
+        "Triangles of people"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildanalys"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "mappForalderId": 235,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
+    },
+    {
+      "id": 237,
+      "url": "https://drive.google.com/drive/folders/1HTSu4w_vFj0pF4io-Fcr3B39GAme4bDT",
+      "titel": "Twenty Minutes Here",
+      "beskrivning": "Projektmapp för avsnitt, publiceringsrutiner, resurser och visuell identitet.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Kommunikation och publicering",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "Twenty Minutes Here"
+      ],
+      "amnen": [
+        "Fältinspelning",
+        "Ljud"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
+    },
+    {
+      "id": 238,
+      "url": "https://drive.google.com/drive/folders/1uGn402hPErwVIWX9v7SCLKaAtSPEMJjd",
+      "titel": "Kommunornitolog",
+      "beskrivning": "Projektmapp för krönika, erfarenhetsbank, korrespondens och kommunvisa underlag.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Natur och fältarbete",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "Kommunornitolog"
+      ],
+      "amnen": [
+        "Fåglar",
+        "Naturvård"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
+    },
+    {
+      "id": 239,
+      "url": "https://drive.google.com/drive/folders/1EahzuczCM32XTrbbBiO9bKo8rDC8QMub",
+      "titel": "Livets kemi 2026 till 2027: lärarmaterial",
+      "beskrivning": "Aktiv arbetsmapp för planering, lärarnoteringar och undervisningsmaterial om Livets kemi.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Skola och undervisning",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "Livets kemi"
+      ],
+      "amnen": [
+        "Biologi",
+        "Kemi"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
+    },
+    {
+      "id": 240,
+      "url": "https://drive.google.com/drive/folders/1-sHoh5_tX9g9sl_1FB0kUADNEf2MI5XS",
+      "titel": "Livets kemi och människokroppen HT26: elevmaterial",
+      "beskrivning": "Delad mapp för elevmaterial till Livets kemi och människokroppen under höstterminen 2026.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Skola och undervisning",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "Livets kemi",
+        "Människokroppen"
+      ],
+      "amnen": [
+        "Biologi",
+        "Kemi"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp"
+      ]
     }
   ],
   "senasteGallring": {

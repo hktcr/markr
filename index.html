@@ -35,6 +35,17 @@
     <section class="listlage" id="listlage" hidden aria-label="Alla områden">
       <h2 class="etikett">Verksamhetsområden</h2>
       <div class="katrad" id="kategorilista"></div>
+
+      <section class="drivenav" id="drivenav" hidden aria-labelledby="drive-rubrik">
+        <div class="drivenav-huvud">
+          <div>
+            <h2 class="etikett" id="drive-rubrik" tabindex="-1">Mappar i Drive</h2>
+            <p>Direktvägar till aktiva arbetsmappar, ordnade efter verksamhetsområde.</p>
+          </div>
+          <span id="drive-antal" class="drivenav-antal"></span>
+        </div>
+        <div class="drive-grupper" id="drive-grupper"></div>
+      </section>
     </section>
 
     <section class="resultat" id="resultat" hidden>
@@ -52,6 +63,8 @@
     <button type="button" class="lank" id="lank-senaste">Senast tillagda</button>
     <span class="lankskilje" aria-hidden="true">·</span>
     <button type="button" class="lank" id="lank-lista">Alla områden</button>
+    <span class="lankskilje" aria-hidden="true">·</span>
+    <button type="button" class="lank" id="lank-drive">Drive</button>
     <span class="lankskilje" aria-hidden="true">·</span>
     <a class="lank" href="sites.html">ChatGPT siter</a>
     <span class="horisontinfo" id="horisont-info"></span>
@@ -108,6 +121,10 @@
             <button type="button" class="full-kontroll" id="nat-stjarna" aria-pressed="false">Stjärnbild</button>
           </div>
           <p id="natverk-sammanfattning"></p>
+          <section class="natverk-mappar" id="natverk-mappar" hidden aria-labelledby="natverk-mappar-rubrik">
+            <h3 id="natverk-mappar-rubrik">Mappgenvägar</h3>
+            <ul id="natverk-mapplankar"></ul>
+          </section>
           <div class="natverk-handlingar">
             <a class="full-kontroll" id="natverk-oppna" href="#">Öppna</a>
             <button type="button" class="full-kontroll" id="natverk-kopiera">Kopiera adress</button>

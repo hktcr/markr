@@ -454,6 +454,141 @@ body {
   max-width: var(--spalt);
 }
 
+/* ---------- Mappnav ---------- */
+
+.drivenav {
+  max-width: var(--spalt);
+  margin: 2.6rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--harfin-2);
+}
+
+.drivenav[hidden] { display: none; }
+
+.drivenav-huvud {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.drivenav-huvud .etikett { margin-bottom: 0.25rem; }
+
+.drivenav-huvud p {
+  max-width: 36rem;
+  margin: 0;
+  color: var(--papper-dim);
+  font-size: 0.85rem;
+}
+
+.drivenav-antal {
+  flex: 0 0 auto;
+  color: var(--massing);
+  font: 0.72rem var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.drive-grupper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.drive-grupp {
+  min-width: 0;
+  padding: 0.9rem;
+  border: 1px solid var(--harfin);
+  border-radius: var(--r);
+  background: linear-gradient(145deg, rgba(28, 28, 33, 0.75), rgba(19, 19, 23, 0.45));
+}
+
+.drive-grupp h3 {
+  margin: 0 0 0.6rem;
+  color: var(--massing-lj);
+  font: 400 0.95rem var(--serif);
+}
+
+.drive-grupp ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.drive-grupp li + li { border-top: 1px solid var(--harfin); }
+
+.drive-grupp .drive-barn {
+  position: relative;
+  margin-left: 0.85rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid rgba(197, 160, 89, 0.28);
+}
+
+.drive-grupp .drive-barn > li { border-top: 1px solid var(--harfin); }
+
+.drive-grupp .drive-barn a::before {
+  width: 5px;
+  height: 5px;
+  background: var(--sot-3);
+  border: 1px solid var(--massing);
+  box-shadow: none;
+}
+
+.drive-grupp .drive-niva-2 > a strong { color: var(--papper-dim); }
+
+.drive-grupp a {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-height: 52px;
+  padding: 0.55rem 1.25rem 0.55rem 0.8rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.drive-grupp a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.95rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--massing);
+  box-shadow: 0 0 7px rgba(197, 160, 89, 0.45);
+}
+
+.drive-grupp a::after {
+  content: "↗";
+  position: absolute;
+  right: 0;
+  top: 0.55rem;
+  color: var(--papper-dim);
+  font-family: var(--mono);
+}
+
+.drive-grupp strong {
+  color: var(--papper);
+  font-size: 0.86rem;
+  font-weight: 550;
+}
+
+.drive-grupp a span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--papper-dim);
+  font-size: 0.76rem;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+@media (pointer: fine) {
+  .drive-grupp a:hover strong { color: var(--massing-lj); }
+}
+
 /* ---------- Innehåll ---------- */
 
 .innehall {
@@ -474,15 +609,159 @@ body {
   padding: 0;
 }
 
+.traffpost {
+  position: relative;
+  border-bottom: 1px solid var(--harfin);
+}
+
+.traffhuvud {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+}
+
 .rad {
   position: relative;
   display: block;
   padding: 0.9rem 1rem 0.9rem 1.1rem;
-  border-bottom: 1px solid var(--harfin);
   color: inherit;
   text-decoration: none;
   transition: background 0.12s ease;
 }
+
+.traff-expandera {
+  align-self: end;
+  min-width: 72px;
+  min-height: 44px;
+  margin: 0.45rem 0.35rem 0.45rem 0;
+  padding: 0.45rem 0.55rem;
+  border: 0;
+  border-left: 1px solid var(--harfin);
+  background: transparent;
+  color: var(--papper-dim);
+  font: 0.66rem var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.traff-expandera::after {
+  content: "⌄";
+  display: block;
+  margin-top: -0.15rem;
+  color: var(--massing);
+  font-size: 0.9rem;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.traff-expandera[aria-expanded="true"]::after { transform: rotate(180deg); }
+
+.traffdetalj {
+  margin: 0 0.75rem 0.8rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--harfin);
+  border-left: 2px solid rgba(197, 160, 89, 0.7);
+  border-radius: 0 var(--r) var(--r) 0;
+  background: rgba(19, 19, 23, 0.72);
+}
+
+.traffdetalj[hidden] { display: none; }
+
+.detalj-facetter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem 1rem;
+}
+
+.detalj-facettgrupp { min-width: 0; }
+
+.detalj-etikett {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--papper-dim);
+  font: 0.63rem var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.detalj-facettrad {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.detalj-facettrad .tagg-liten {
+  min-height: 44px;
+  padding: 0 0.55rem;
+  font-size: 0.72rem;
+}
+
+.detalj-lankar {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--harfin);
+}
+
+.detalj-lankar h4 {
+  margin: 0 0 0.35rem;
+  color: var(--massing-lj);
+  font: 400 0.82rem var(--serif);
+}
+
+.detalj-lankar ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detalj-lankar a {
+  display: block;
+  overflow: hidden;
+  min-height: 44px;
+  padding: 0.25rem 0;
+  color: var(--papper);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-decoration-color: rgba(197, 160, 89, 0.45);
+  text-overflow: ellipsis;
+}
+
+.detalj-mappar a::before {
+  content: "•";
+  margin-right: 0.4rem;
+  color: var(--massing);
+}
+
+.detalj-handlingar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.detalj-handling {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--harfin-2);
+  border-radius: var(--r);
+  background: transparent;
+  color: var(--papper-dim);
+  font: 0.68rem var(--mono);
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.detaljer-oppna .traffhuvud { background: rgba(28, 28, 33, 0.42); }
 
 .rad::before {
   content: "";
@@ -625,6 +904,26 @@ mark {
   }
   .nod { font-size: 0.625rem; letter-spacing: 0.06em; }
   .listlage .katrad { grid-template-columns: 1fr; }
+
+  .drive-grupper,
+  .detalj-facetter,
+  .detalj-lankar ul { grid-template-columns: 1fr; }
+
+  .drivenav-huvud { align-items: start; }
+  .drivenav-huvud p { max-width: 24rem; }
+
+  .traffhuvud { grid-template-columns: minmax(0, 1fr) 58px; }
+  .traff-expandera {
+    min-width: 54px;
+    padding-inline: 0.2rem;
+    font-size: 0;
+  }
+  .traff-expandera::before {
+    content: "Mer";
+    font-size: 0.62rem;
+  }
+  .traff-expandera[aria-expanded="true"]::before { content: "Stäng"; }
+  .traffdetalj { margin-inline: 0.35rem; padding-inline: 0.8rem; }
 
   /* På mobil ligger de relevanta taggarna ovanför sökfältet i en enda rullbar rad.
      Bokmärkena börjar då direkt under sökfältet i stället för efter ett högt taggmoln. */
@@ -1142,6 +1441,42 @@ a.full-kontroll:not([href]) {
 .natverk-panel .full-vaxel { width: 100%; }
 .natverk-panel .full-vaxel .full-kontroll { flex: 1 1 0; }
 
+.natverk-mappar {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--harfin);
+}
+
+.natverk-mappar[hidden] { display: none; }
+
+.natverk-mappar h3 {
+  margin: 0 0 0.4rem;
+  color: var(--massing-lj);
+  font: 400 0.9rem var(--serif);
+}
+
+.natverk-mappar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.natverk-mappar a {
+  display: block;
+  min-height: 44px;
+  padding: 0.35rem 0;
+  color: var(--papper);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-decoration-color: rgba(197, 160, 89, 0.45);
+}
+
+.natverk-mappar a::before {
+  content: "•";
+  margin-right: 0.45rem;
+  color: var(--massing);
+}
+
 .natverk-handlingar {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1349,7 +1684,11 @@ a.full-kontroll:not([href]) {
   #full-sok,
   .full-kontroll,
   #natverk-noder button,
-  #full-traffar .rad {
+  #full-traffar .rad,
+  .traff-expandera,
+  .traffdetalj,
+  .drive-grupp,
+  .detalj-handling {
     background: Canvas;
     color: CanvasText;
     forced-color-adjust: auto;
@@ -1360,7 +1699,11 @@ a.full-kontroll:not([href]) {
   .natverk-panel,
   #full-sok,
   .full-kontroll,
-  #natverk-noder button { border-color: ButtonText; }
+  #natverk-noder button,
+  .traff-expandera,
+  .traffdetalj,
+  .drive-grupp,
+  .detalj-handling { border-color: ButtonText; }
 
   .full-kontroll[aria-pressed="true"] {
     border-color: Highlight;
@@ -1371,7 +1714,10 @@ a.full-kontroll:not([href]) {
   .fullskarm-oppna,
   #natverk-noder .nodtitel,
   .natverk-panel h2,
-  .natverk-ankare h2 { color: LinkText; }
+  .natverk-ankare h2,
+  .drive-grupp strong,
+  .detalj-lankar a,
+  .natverk-mappar a { color: LinkText; }
 
   .fullskarm-oppna::before,
   .natverk-ankare::before,
