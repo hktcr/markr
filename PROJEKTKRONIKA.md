@@ -5,14 +5,13 @@
 MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
-för typ, kontext, projekt, ämne, period och livscykel. Efter gallringen
-2026-08-10 finns 182 aktiva bokmärken. De 32 borttagna posterna finns i ett
-återställningsbart arkiv med gallringsorsaker.
+för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
+innehåller 198 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+ett återställningsbart arkiv med gallringsorsaker.
 
-Den verifierade produktionsrevisionen är commit
-`a4b54929d97cec865a1bf41d4bd99656547ee3a0`. GitHubåterläsningen visade 13
-ändrade filer, 182 aktiva poster och 32 arkiverade poster. GitHub Pages visade
-taxonomi version 2 och 182 aktiva poster. Testsviten passerade 33 av 33 tester.
+Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
+`87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
+taxonomi version 2 och har en reproducerbar testmiljö med 115 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -28,6 +27,7 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 5. 2026-08-10, 32 poster gallrades reversibelt och 182 aktiva poster
    publicerades.
 6. 2026-08-20, Bildanalys lades till bland aktiva, privata ChatGPT siter.
+7. 2026-08-29, fullskärm, Nordnätverk och FotoR:s första Analysinkorg infördes.
 
 ## Mål
 
@@ -48,6 +48,47 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-08-29 | Fullskärm, Nordnätverk och FotoR
+
+**Bakgrund och syfte**
+
+Håkan ville behålla MärkRs kompakta sökträffar men också kunna öppna sökningen
+i ett adaptivt fullskärmsläge och förstå närbesläktade bokmärken genom det
+etablerade nordiska stjärnkartsspråket. Samtidigt skulle FotoR få en verklig
+Analysinkorg för `FOTO_001: Triangles of people`.
+
+**Utfört**
+
+1. Fullskärmen fick lägena Lista och Nordnätverk med samma atomära
+   träffsnapshot och oförändrad sökrankning.
+2. Relationer härleds endast ur gemensamma projekt, kontexter och ämnen.
+3. Samma semantiska nodkontroller växlar deterministiskt mellan Stjärnbild och
+   Relationer utan fri fysik eller varaktig animationsloop.
+4. Fokus, inert bakgrund, Escape, nollresultat och ankare som försvinner ur en
+   ny sökning fick uttryckliga tillståndskontrakt.
+5. FotoR:s verifierade Analysinkorg lades till som post 234. Ingen tom
+   originaldestination skapades.
+6. Måndagens veckounderhåll av MärkR fördes in i det befintliga `☕ Dagsnav 08`.
+7. Det felaktigt använda namnet Melker korrigerades till MärkR i samtliga nya
+   systemfiler, Swarm-protokoll och schemalagda rutiner.
+
+**Verifieringsbevis**
+
+1. Reproducerbar installation med låst `jsdom` 26.1.0.
+2. Testsviten passerade 115 av 115 kontroller.
+3. Kodinvarians bevisades mot fryst pre-FotoR-data.
+4. Corpusförändringen bevisades separat. Äldre URL:ers matchstatus och relativa
+   ordning bevarades, och både hela träffarrayen och de första 60 kontrollerades.
+5. Drive-länken till Analysinkorgen provöppnades och pekade på rätt rollmapp.
+6. GitHubrevisionen publicerades som en atomär fast-forward till `main`,
+   återlästes och kontrollerades separat på GitHub Pages.
+
+**Öppet**
+
+Verklig visuell kontroll på flera fysiska webbläsare och enheter ingår i den
+fortsatta användningsverifieringen. Den automatiserade matrisen täcker
+responsiv layout, tangentbord, reducerad rörelse och tillståndskontrakten.
 
 ### 2026-08-22 | Tågspanaren avvecklad
 

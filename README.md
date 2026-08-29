@@ -1,7 +1,8 @@
 # MärkR
 
 Bokmärkesarkiv med sökning och stjärnkarta. Statisk sida på GitHub Pages,
-inga beroenden, inget byggsteg.
+inga produktionsberoenden och inget byggsteg. Testmiljön har ett låst
+utvecklingsberoende på jsdom.
 
 ## Idén
 
@@ -21,13 +22,15 @@ i `aria-label` för skärmläsare. Ingenting i vyn upprepar något annat.
 
 | Fil | Innehåll |
 |---|---|
-| `index.html` | Struktur: sökfält, himmel, nodlager, resultat, listläge |
+| `index.html` | Struktur: sökfält, himmel, resultat och fullskärmslager |
 | `style.css` | Sot, papper och mässing. Alla färger som variabler i `:root` |
 | `gor-ikoner.py` | Ritar ikonerna deterministiskt. Auktoritativ källa vid tvivel |
-| `app.js` | Sökmotor, kraftsimulering, canvasritning, tangentbord |
+| `app.js` | Sökmotor, söktillstånd, fullskärm, Nordnätverk, canvas och tangentbord |
 | `bokmarken.json` | Datan, Single Source of Truth |
 | `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
-| `test.mjs` | Kör appen i jsdom, 32 kontroller. Kräver `npm install jsdom` |
+| `test.mjs` | Kör 115 regressions-, corpus-, relations- och tillståndskontroller |
+| `fixtures/` | Versionslåsta facit för pre-FotoR-sökning, corpusdelta och relationer |
+| `package.json`, `package-lock.json` | Reproducerbar jsdom-baserad testmiljö |
 
 ## Arkitektur för himlen
 
@@ -101,6 +104,24 @@ Poäng per ord, högsta värdet räknas, summeras över orden:
 
 Konstanterna ligger överst i `app.js`. De är en bedömning, inte ett mätt resultat.
 
+### Fullskärm och Nordnätverk
+
+Den kompakta träfflistan är fortsatt standard. När en sökning har träffar kan
+den öppnas som ett CSS-baserat fullskärmslager med lägena Lista och
+Nordnätverk. Båda läser samma atomärt fastställda och redan rangordnade
+`traffar`-snapshot.
+
+Nordnätverket använder ett separat URL-ankare. Relationer beräknas endast från
+normaliserade och deduplicerade gemensamma värden i `projekt`, `kontexter` och
+`amnen`. Alla kandidater bedöms före taket tolv. Ordningen är gemensamma
+projekt, därefter kontexter, därefter ämnen och sist postens befintliga index i
+`traffar`. Samma semantiska nodkontroller visas som Stjärnbild eller Relationer.
+Det finns ingen fri fysik eller varaktig animationsloop i Nordnätverket.
+
+På trånga skärmar är Relationer förvalt. Stjärnbild används bara när den ryms.
+Bakgrunden är inert medan lagret är öppet. Escape stänger först fullskärmen och
+återför fokus utan att rensa frågan.
+
 ## Tangentbord
 
 | Tangent | Handling |
@@ -134,9 +155,10 @@ Att lägga till ett bokmärke:
 Före varje push:
 
 ```bash
+npm ci --ignore-scripts
 node -e "JSON.parse(require('fs').readFileSync('bokmarken.json','utf8'))"
 node --check app.js
-node test.mjs
+npm test
 ```
 
 ### Publiceringsrutin

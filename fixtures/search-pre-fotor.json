@@ -1,0 +1,77 @@
+{
+  "uppdaterad": "2026-08-28",
+  "bokmarken": [
+    {
+      "id": 1,
+      "url": "https://fixture.test/norr-a",
+      "titel": "Norr A",
+      "beskrivning": "extra",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 2,
+      "url": "https://fixture.test/titel-b",
+      "titel": "Norr B",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 3,
+      "url": "https://fixture.test/exakt-tagg",
+      "titel": "Atlas exakt tagg",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": ["norr"], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 4,
+      "url": "https://fixture.test/titel-innehall",
+      "titel": "Atlas norr i titeln",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 5,
+      "url": "https://fixture.test/tagg-prefix",
+      "titel": "Atlas taggprefix",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": ["norrsken"], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 6,
+      "url": "https://fixture.test/beskrivning",
+      "titel": "Atlas beskrivning",
+      "beskrivning": "Ordet norr finns här.",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 7,
+      "url": "https://fixture.test/url-med-norr",
+      "titel": "Atlas url",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    },
+    {
+      "id": 8,
+      "url": "https://fixture.test/lasning",
+      "titel": "Läsning med diakritik",
+      "beskrivning": "",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Dokument",
+      "kontexter": [], "projekt": [], "amnen": [], "period": "", "livscykel": "Aktiv", "legacyTaggar": []
+    }
+  ]
+}

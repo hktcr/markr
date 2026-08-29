@@ -42,6 +42,17 @@ let traffar = [];
 let valdIndex = -1;
 let visaAllaTraffar = false;
 let lage = 'rymd'; /* rymd, sok, senaste, lista */
+const fullskarm = {
+  oppen: false,
+  vy: 'lista',
+  nodLayout: 'relationer',
+  ankareUrl: null,
+  snapshot: [],
+  relationer: [],
+  oppnare: null,
+  listScroll: 0,
+  natScroll: 0
+};
 
 const el = {
   skal: document.getElementById('skal'),
@@ -63,7 +74,30 @@ const el = {
   brodrost: document.getElementById('brodrost'),
   himmel: document.getElementById('himmel'),
   noder: document.getElementById('noder'),
-  horisontInfo: document.getElementById('horisont-info')
+  horisontInfo: document.getElementById('horisont-info'),
+  fullOppna: document.getElementById('full-oppna'),
+  fullskarm: document.getElementById('fullskarm'),
+  fullSok: document.getElementById('full-sok'),
+  fullStatus: document.getElementById('full-status'),
+  fullFilter: document.getElementById('full-filter'),
+  fullStang: document.getElementById('full-stang'),
+  fullListknapp: document.getElementById('full-listknapp'),
+  fullNatknapp: document.getElementById('full-natknapp'),
+  fullListvy: document.getElementById('full-listvy'),
+  fullNatvy: document.getElementById('full-natvy'),
+  fullTraffar: document.getElementById('full-traffar'),
+  natYta: document.getElementById('natverk-yta'),
+  natLinjer: document.getElementById('natverk-linjer'),
+  natAnkartitel: document.getElementById('natverk-ankartitel'),
+  natNoder: document.getElementById('natverk-noder'),
+  natRelationer: document.getElementById('nat-relationer'),
+  natStjarna: document.getElementById('nat-stjarna'),
+  natSammanfattning: document.getElementById('natverk-sammanfattning'),
+  natOppna: document.getElementById('natverk-oppna'),
+  natKopiera: document.getElementById('natverk-kopiera'),
+  natVisaLista: document.getElementById('natverk-visa-lista'),
+  natTomt: document.getElementById('natverk-tomt'),
+  natLive: document.getElementById('natverk-live')
 };
 
 const finPekare = matchMedia('(pointer: fine)').matches;
@@ -249,6 +283,7 @@ function utforSokning() {
     satStatus('');
     el.sok.placeholder = 'Sök bland ' + arkiv.bokmarken.length + ' bokmärken';
     uppdateraHorisont();
+    slutforSoktransaktion(fraga);
     return;
   }
 
@@ -273,6 +308,7 @@ function utforSokning() {
   satStatus(traffar.length + (traffar.length === 1 ? ' träff' : ' träffar'));
   ritaTraffar(fraga.ord);
   ritaRelaterade(fraga.taggar);
+  slutforSoktransaktion(fraga);
 }
 
 function senasteLista() {
@@ -320,7 +356,7 @@ function settLage(nytt) {
   el.resultat.hidden = !(nytt === 'sok' || nytt === 'senaste');
   el.listlage.hidden = nytt !== 'lista';
 
-  if (iRymden) {
+  if (iRymden && !fullskarm.oppen) {
     el.himmel.removeAttribute('data-dold');
     el.noder.removeAttribute('data-dold');
     vackSimulering();
@@ -484,16 +520,17 @@ function ritaTomt() {
   return li;
 }
 
-function fyllLista(behallare, lista, ord) {
+function fyllLista(behallare, lista, ord, indexStart) {
   behallare.textContent = '';
   const frag = document.createDocumentFragment();
+  const bas = Number.isInteger(indexStart) ? indexStart : 0;
 
   lista.forEach((bm, i) => {
     const li = document.createElement('li');
     const a = document.createElement('a');
     a.className = 'rad';
     a.href = bm.url;
-    a.dataset.index = i;
+    a.dataset.index = bas + i;
 
     const h3 = document.createElement('h3');
     h3.className = 'titel';
@@ -589,22 +626,281 @@ function markeraIn(nod, text, ord) {
   if (pos < kalla.length) nod.append(document.createTextNode(kalla.slice(pos)));
 }
 
-/* ================= 5. Filter ================= */
+/* ================= 5. Fullskärm och bokmärkesrelationer ================= */
+
+function facettKarta(bm, nyckel) {
+  const karta = new Map();
+  const lista = bm && Array.isArray(bm[nyckel]) ? bm[nyckel] : [];
+  for (const raa of lista) {
+    const namn = String(raa || '').trim();
+    const vikt = vik(namn);
+    if (vikt && !karta.has(vikt)) karta.set(vikt, namn);
+  }
+  return karta;
+}
+
+function facettSnitt(ankare, kandidat, nyckel) {
+  const a = facettKarta(ankare, nyckel);
+  const b = facettKarta(kandidat, nyckel);
+  return Array.from(a, ([vikt, namn]) => b.has(vikt) ? namn : null)
+    .filter(Boolean)
+    .sort((x, y) => x.localeCompare(y, 'sv'));
+}
+
+function beraknaRelationer(snapshot, ankareUrl) {
+  const ankare = snapshot.find(bm => bm.url === ankareUrl);
+  if (!ankare) return [];
+  const kandidater = [];
+  snapshot.forEach((bm, traffIndex) => {
+    if (bm.url === ankareUrl) return;
+    const projekt = facettSnitt(ankare, bm, 'projekt');
+    const kontexter = facettSnitt(ankare, bm, 'kontexter');
+    const amnen = facettSnitt(ankare, bm, 'amnen');
+    if (projekt.length + kontexter.length + amnen.length === 0) return;
+    kandidater.push({ bm, traffIndex, projekt, kontexter, amnen });
+  });
+  kandidater.sort((a, b) =>
+    b.projekt.length - a.projekt.length ||
+    b.kontexter.length - a.kontexter.length ||
+    b.amnen.length - a.amnen.length ||
+    a.traffIndex - b.traffIndex
+  );
+  return kandidater.slice(0, 12);
+}
+
+function relationsOrsak(rel) {
+  const delar = [];
+  if (rel.projekt.length) delar.push('projekt ' + rel.projekt.join(', '));
+  if (rel.kontexter.length) delar.push('kontext ' + rel.kontexter.join(', '));
+  if (rel.amnen.length) delar.push((rel.amnen.length === 1 ? 'ämne ' : 'ämnen ') + rel.amnen.join(', '));
+  return 'Delar ' + delar.join('; ');
+}
+
+function aktivSokyta() {
+  return fullskarm.oppen ? el.fullSok : el.sok;
+}
+
+function aktivScrollYta() {
+  if (!fullskarm.oppen) return el.innehall;
+  return fullskarm.vy === 'lista' ? el.fullListvy : el.fullNatvy;
+}
+
+function synkaSokfalt(varde) {
+  if (el.sok.value !== varde) el.sok.value = varde;
+  if (el.fullSok.value !== varde) el.fullSok.value = varde;
+}
+
+function slutforSoktransaktion(fraga) {
+  synkaSokfalt(el.sok.value);
+  el.fullOppna.hidden = !(lage === 'sok' && traffar.length > 0);
+  if (!fullskarm.oppen) return;
+
+  fullskarm.snapshot = traffar;
+  if (!fullskarm.ankareUrl || !traffar.some(bm => bm.url === fullskarm.ankareUrl)) {
+    fullskarm.ankareUrl = traffar.length ? traffar[0].url : null;
+  }
+  fullskarm.relationer = beraknaRelationer(fullskarm.snapshot, fullskarm.ankareUrl);
+  renderaFullskarm(fraga.ord);
+}
+
+function renderaFullskarm(ord) {
+  const snapshot = fullskarm.snapshot;
+  el.fullStatus.textContent = snapshot.length + (snapshot.length === 1 ? ' träff' : ' träffar');
+  fyllLista(el.fullTraffar, snapshot, ord || [], 0);
+  renderaNatverk();
+}
+
+const POLARA_PLATSER = [
+  [50, 11], [78, 21], [88, 47], [75, 78], [50, 89], [25, 78],
+  [12, 47], [22, 21], [64, 29], [70, 60], [38, 70], [31, 37]
+];
+
+function renderaNatverk() {
+  const ankare = fullskarm.snapshot.find(bm => bm.url === fullskarm.ankareUrl) || null;
+  fullskarm.relationer = beraknaRelationer(fullskarm.snapshot, fullskarm.ankareUrl);
+  el.natNoder.textContent = '';
+  el.natLinjer.textContent = '';
+
+  if (!ankare) {
+    el.natAnkartitel.textContent = 'Inga träffar';
+    el.natSammanfattning.textContent = 'Skriv en ny fråga för att bygga Nordnätverket.';
+    el.natTomt.hidden = false;
+    el.natOppna.removeAttribute('href');
+    el.natKopiera.disabled = true;
+    el.natVisaLista.disabled = true;
+    uppdateraNatLayout();
+    return;
+  }
+
+  el.natAnkartitel.textContent = ankare.visningstitel;
+  el.natOppna.href = ankare.url;
+  el.natKopiera.disabled = false;
+  el.natVisaLista.disabled = false;
+  el.natSammanfattning.textContent = 'Ankare: ' + ankare.visningstitel + '. ' + fullskarm.relationer.length +
+    (fullskarm.relationer.length === 1 ? ' dokumenterad relation' : ' dokumenterade relationer') +
+    ' av ' + fullskarm.snapshot.length + ' träffar.';
+  el.natTomt.hidden = fullskarm.relationer.length > 0;
+
+  fullskarm.relationer.forEach((rel, i) => {
+    const li = document.createElement('li');
+    const plats = POLARA_PLATSER[i];
+    li.style.setProperty('--x', plats[0] + '%');
+    li.style.setProperty('--y', plats[1] + '%');
+    const knapp = document.createElement('button');
+    knapp.type = 'button';
+    knapp.dataset.url = rel.bm.url;
+    knapp.dataset.traffIndex = rel.traffIndex;
+    const titel = document.createElement('span');
+    titel.className = 'nodtitel';
+    titel.textContent = rel.bm.visningstitel;
+    const orsak = document.createElement('span');
+    orsak.className = 'nodorsak';
+    orsak.textContent = relationsOrsak(rel);
+    knapp.append(titel, orsak);
+    knapp.addEventListener('click', () => {
+      fullskarm.ankareUrl = rel.bm.url;
+      renderaNatverk();
+      el.natAnkartitel.focus();
+      el.natLive.textContent = rel.bm.visningstitel + ' är nytt ankare.';
+    });
+    li.append(knapp);
+    el.natNoder.append(li);
+
+    const linje = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    linje.setAttribute('x1', '50');
+    linje.setAttribute('y1', '50');
+    linje.setAttribute('x2', String(plats[0]));
+    linje.setAttribute('y2', String(plats[1]));
+    const styrka = rel.projekt.length * 3 + rel.kontexter.length * 2 + rel.amnen.length;
+    linje.style.opacity = String(Math.min(0.25 + styrka * 0.08, 0.85));
+    el.natLinjer.append(linje);
+  });
+  uppdateraNatLayout();
+}
+
+function stjarnbildRyms() {
+  const skala = window.visualViewport && Number.isFinite(window.visualViewport.scale)
+    ? window.visualViewport.scale
+    : 1;
+  return innerWidth >= 320 && innerHeight >= 520 && skala <= 1.5;
+}
+
+function sattNatLayout(layout, annonsera) {
+  if (layout === 'stjarna' && !stjarnbildRyms()) {
+    layout = 'relationer';
+    if (annonsera) el.natLive.textContent = 'Stjärnbild ryms inte. Relationer visas.';
+  }
+  fullskarm.nodLayout = layout;
+  uppdateraNatLayout();
+}
+
+function uppdateraNatLayout() {
+  const stjarna = fullskarm.nodLayout === 'stjarna' && stjarnbildRyms();
+  if (!stjarna) fullskarm.nodLayout = 'relationer';
+  el.natNoder.className = stjarna ? 'stjarna' : 'relationer';
+  el.natYta.dataset.layout = stjarna ? 'stjarna' : 'relationer';
+  el.natYta.dataset.stjarnaDold = stjarna ? 'false' : 'true';
+  el.natRelationer.setAttribute('aria-pressed', String(!stjarna));
+  el.natStjarna.setAttribute('aria-pressed', String(stjarna));
+}
+
+function sattFullVy(vy, flyttaFokus) {
+  if (!fullskarm.oppen) return;
+  if (fullskarm.vy === 'lista') fullskarm.listScroll = el.fullListvy.scrollTop;
+  else fullskarm.natScroll = el.fullNatvy.scrollTop;
+  fullskarm.vy = vy;
+  const lista = vy === 'lista';
+  el.fullListvy.hidden = !lista;
+  el.fullNatvy.hidden = lista;
+  el.fullListknapp.setAttribute('aria-pressed', String(lista));
+  el.fullNatknapp.setAttribute('aria-pressed', String(!lista));
+  if (lista) el.fullListvy.scrollTop = fullskarm.listScroll;
+  else {
+    renderaNatverk();
+    el.fullNatvy.scrollTop = fullskarm.natScroll;
+  }
+  if (flyttaFokus) (lista ? el.fullListknapp : el.fullNatknapp).focus();
+}
+
+function oppnaFullskarm() {
+  if (fullskarm.oppen || traffar.length === 0 || lage !== 'sok') return;
+  fullskarm.oppen = true;
+  fullskarm.oppnare = document.activeElement === el.fullOppna ? el.fullOppna : el.fullOppna;
+  fullskarm.snapshot = traffar;
+  const vald = aktuellTraff();
+  fullskarm.ankareUrl = vald ? vald.url : traffar[0].url;
+  fullskarm.vy = 'lista';
+  fullskarm.nodLayout = 'relationer';
+  el.fullskarm.hidden = false;
+  el.skal.inert = true;
+  el.skal.setAttribute('inert', '');
+  el.noder.inert = true;
+  el.noder.setAttribute('inert', '');
+  synkaSokfalt(el.sok.value);
+  ritaFilter();
+  renderaFullskarm(laesFraga().ord);
+  sattFullVy('lista', false);
+  el.fullSok.focus();
+}
+
+function stangFullskarm() {
+  if (!fullskarm.oppen) return;
+  fullskarm.oppen = false;
+  el.fullskarm.hidden = true;
+  el.skal.inert = false;
+  el.skal.removeAttribute('inert');
+  el.noder.inert = false;
+  el.noder.removeAttribute('inert');
+  if (lage === 'rymd') {
+    el.himmel.removeAttribute('data-dold');
+    el.noder.removeAttribute('data-dold');
+    vackSimulering();
+  }
+  const mal = fullskarm.oppnare;
+  fullskarm.oppnare = null;
+  if (mal && mal.isConnected && !mal.hidden) mal.focus();
+  else el.sok.focus();
+}
+
+function visaAnkareILista() {
+  const i = fullskarm.snapshot.findIndex(bm => bm.url === fullskarm.ankareUrl);
+  if (i < 0) return;
+  sattFullVy('lista', false);
+  flyttaVal(i, el.fullTraffar);
+  const rad = radElement(i, el.fullTraffar);
+  if (rad) rad.focus();
+}
+
+function fangTabbIFullskarm(e) {
+  if (e.key !== 'Tab') return;
+  const valjare = 'button:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+  const fokusbara = Array.from(el.fullskarm.querySelectorAll(valjare)).filter(n => !n.closest('[hidden]'));
+  if (!fokusbara.length) return;
+  const forsta = fokusbara[0];
+  const sista = fokusbara[fokusbara.length - 1];
+  if (e.shiftKey && document.activeElement === forsta) { e.preventDefault(); sista.focus(); }
+  else if (!e.shiftKey && document.activeElement === sista) { e.preventDefault(); forsta.focus(); }
+}
+
+/* ================= 6. Filter ================= */
 
 function ritaFilter() {
   el.filter.textContent = '';
+  el.fullFilter.textContent = '';
   for (const tagg of aktivaTaggar) {
-    const knapp = document.createElement('button');
-    knapp.type = 'button';
-    knapp.className = 'filter';
-    knapp.append(tagg);
-    knapp.setAttribute('aria-label', 'Ta bort filtret ' + tagg);
-    const kryss = document.createElement('span');
-    kryss.className = 'kryss';
-    kryss.textContent = '\u00d7';
-    knapp.append(kryss);
-    knapp.addEventListener('click', () => taBortFilter(tagg));
-    el.filter.append(knapp);
+    for (const behallare of [el.filter, el.fullFilter]) {
+      const knapp = document.createElement('button');
+      knapp.type = 'button';
+      knapp.className = 'filter';
+      knapp.append(tagg);
+      knapp.setAttribute('aria-label', 'Ta bort filtret ' + tagg);
+      const kryss = document.createElement('span');
+      kryss.className = 'kryss';
+      kryss.textContent = '\u00d7';
+      knapp.append(kryss);
+      knapp.addEventListener('click', () => taBortFilter(tagg));
+      behallare.append(knapp);
+    }
   }
 }
 
@@ -612,15 +908,15 @@ function laggTillFilter(tagg) {
   if (!aktivaTaggar.some(t => vik(t) === vik(tagg))) aktivaTaggar.push(tagg);
   ritaFilter();
   utforSokning();
-  el.innehall.scrollTop = 0;
-  if (finPekare) el.sok.focus();
+  aktivScrollYta().scrollTop = 0;
+  if (fullskarm.oppen || finPekare) aktivSokyta().focus();
 }
 
 function taBortFilter(tagg) {
   aktivaTaggar = aktivaTaggar.filter(t => t !== tagg);
   ritaFilter();
   utforSokning();
-  if (finPekare) el.sok.focus();
+  if (fullskarm.oppen || finPekare) aktivSokyta().focus();
 }
 
 function rensaAllt() {
@@ -628,7 +924,7 @@ function rensaAllt() {
   aktivaTaggar = [];
   ritaFilter();
   utforSokning();
-  el.innehall.scrollTop = 0;
+  aktivScrollYta().scrollTop = 0;
 }
 
 /* ================= 6. Himlen ================= */
@@ -970,22 +1266,24 @@ addEventListener('resize', () => {
     dimensioneraHimmel();
     saStjarnor();
     byggHimmel();
+    if (fullskarm.oppen) uppdateraNatLayout();
   }, 160);
 });
 
 /* ================= 7. Tangentbord ================= */
 
-function radElement(i) {
-  return el.traffar.querySelector('.rad[data-index="' + i + '"]');
+function radElement(i, behallare) {
+  return (behallare || el.traffar).querySelector('.rad[data-index="' + i + '"]');
 }
 
-function flyttaVal(nyIndex) {
-  const synliga = el.traffar.querySelectorAll('.rad').length;
+function flyttaVal(nyIndex, behallare) {
+  const lista = behallare || el.traffar;
+  const synliga = lista.querySelectorAll('.rad').length;
   if (synliga === 0) return;
-  const gammal = radElement(valdIndex);
+  const gammal = radElement(valdIndex, lista);
   if (gammal) gammal.classList.remove('vald');
   valdIndex = Math.max(0, Math.min(nyIndex, synliga - 1));
-  const ny = radElement(valdIndex);
+  const ny = radElement(valdIndex, lista);
   if (ny) {
     ny.classList.add('vald');
     ny.scrollIntoView({ block: 'nearest' });
@@ -1004,35 +1302,44 @@ function brodrost(text) {
   brodrost.timer = setTimeout(() => el.brodrost.classList.remove('syns'), 1600);
 }
 
-el.sok.addEventListener('input', utforSokning);
+el.sok.addEventListener('input', () => {
+  synkaSokfalt(el.sok.value);
+  utforSokning();
+});
+el.fullSok.addEventListener('input', () => {
+  synkaSokfalt(el.fullSok.value);
+  utforSokning();
+});
 el.sok.addEventListener('focus', () => el.sokfalt.classList.add('aktivt'));
 el.sok.addEventListener('blur', () => el.sokfalt.classList.remove('aktivt'));
 
-el.sok.addEventListener('keydown', e => {
-  if (e.key === 'Backspace' && el.sok.value === '' && aktivaTaggar.length > 0) {
+function hanteraSokTangent(e, iFullskarm) {
+  const inmatning = iFullskarm ? el.fullSok : el.sok;
+  const lista = iFullskarm ? el.fullTraffar : el.traffar;
+  if (e.key === 'Backspace' && inmatning.value === '' && aktivaTaggar.length > 0) {
     aktivaTaggar.pop();
     ritaFilter();
     utforSokning();
     return;
   }
-  if (e.key === 'Escape') {
+  if (e.key === 'Escape' && !iFullskarm) {
     e.preventDefault();
     if (el.sok.value === '' && aktivaTaggar.length === 0 && lage === 'rymd') el.sok.blur();
     else rensaAllt();
     return;
   }
-  if (traffar.length === 0 || (lage !== 'sok' && lage !== 'senaste')) return;
+  if (traffar.length === 0 || (!iFullskarm && lage !== 'sok' && lage !== 'senaste')) return;
 
-  if (e.key === 'ArrowDown') { e.preventDefault(); flyttaVal(valdIndex + 1); }
-  else if (e.key === 'ArrowUp') { e.preventDefault(); flyttaVal(valdIndex - 1); }
-  else if (e.key === 'Home') { e.preventDefault(); flyttaVal(0); }
+  if (e.key === 'ArrowDown') { e.preventDefault(); flyttaVal(valdIndex + 1, lista); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); flyttaVal(valdIndex - 1, lista); }
+  else if (e.key === 'Home') { e.preventDefault(); flyttaVal(0, lista); }
   else if (e.key === 'End') {
     e.preventDefault();
-    if (!visaAllaTraffar && traffar.length > GRANS_TRAFFAR) {
+    if (!iFullskarm && !visaAllaTraffar && traffar.length > GRANS_TRAFFAR) {
       visaAllaTraffar = true;
       ritaTraffar(laesFraga().ord);
     }
-    flyttaVal(traffar.length - 1);
+    flyttaVal(traffar.length - 1, lista);
   } else if (e.key === 'Enter') {
     e.preventDefault();
     const bm = aktuellTraff();
@@ -1049,7 +1356,20 @@ el.sok.addEventListener('keydown', e => {
       window.open(bm.url, '_blank', 'noopener');
     }
   }
-});
+}
+
+el.sok.addEventListener('keydown', e => hanteraSokTangent(e, false));
+el.fullSok.addEventListener('keydown', e => hanteraSokTangent(e, true));
+
+el.fullskarm.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    stangFullskarm();
+    return;
+  }
+  fangTabbIFullskarm(e);
+}, true);
 
 document.addEventListener('keydown', e => {
   const mal = e.target;
@@ -1057,21 +1377,37 @@ document.addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
     e.preventDefault();
     rensaAllt();
-    el.sok.focus();
+    aktivSokyta().focus();
     return;
   }
-  if (e.key === 'Escape' && !iFalt && lage !== 'rymd') {
+  if (e.key === 'Escape' && !iFalt && lage !== 'rymd' && !fullskarm.oppen) {
     rensaAllt();
     return;
   }
   if (e.key === '/' && !iFalt && !e.ctrlKey && !e.metaKey && !e.altKey) {
     e.preventDefault();
-    el.sok.focus();
+    aktivSokyta().focus();
   }
 });
 
 el.lankSenaste.addEventListener('click', visaSenaste);
 el.lankLista.addEventListener('click', visaLista);
+el.fullOppna.addEventListener('click', oppnaFullskarm);
+el.fullStang.addEventListener('click', stangFullskarm);
+el.fullListknapp.addEventListener('click', () => sattFullVy('lista', false));
+el.fullNatknapp.addEventListener('click', () => sattFullVy('natverk', false));
+el.natRelationer.addEventListener('click', () => sattNatLayout('relationer', true));
+el.natStjarna.addEventListener('click', () => sattNatLayout('stjarna', true));
+el.natVisaLista.addEventListener('click', visaAnkareILista);
+el.natKopiera.addEventListener('click', () => {
+  const ankare = fullskarm.snapshot.find(bm => bm.url === fullskarm.ankareUrl);
+  if (!ankare) return;
+  const skriv = navigator.clipboard && navigator.clipboard.writeText
+    ? navigator.clipboard.writeText(ankare.url)
+    : Promise.reject(new Error('saknas'));
+  skriv.then(() => { el.natLive.textContent = 'Adressen kopierad.'; })
+    .catch(() => { el.natLive.textContent = 'Kunde inte kopiera adressen.'; });
+});
 
 el.visaAlla.addEventListener('click', () => {
   visaAllaTraffar = true;
@@ -1080,9 +1416,30 @@ el.visaAlla.addEventListener('click', () => {
 
 /* ================= 8. Uppstart ================= */
 
+Object.defineProperty(window, '__MARKR_TEST__', {
+  configurable: false,
+  enumerable: false,
+  value: Object.freeze({
+    beraknaRelationer: (poster, ankareUrl) => beraknaRelationer(poster.slice(), ankareUrl),
+    fullskarmsState: () => ({
+      oppen: fullskarm.oppen,
+      vy: fullskarm.vy,
+      nodLayout: fullskarm.nodLayout,
+      ankareUrl: fullskarm.ankareUrl,
+      snapshotUrls: fullskarm.snapshot.map(bm => bm.url),
+      relationUrls: fullskarm.relationer.map(rel => rel.bm.url)
+    })
+  })
+});
+
 placeraRelaterade();
 if (typeof mobilLayout.addEventListener === 'function') {
   mobilLayout.addEventListener('change', placeraRelaterade);
+}
+if (window.visualViewport && typeof window.visualViewport.addEventListener === 'function') {
+  window.visualViewport.addEventListener('resize', () => {
+    if (fullskarm.oppen) uppdateraNatLayout();
+  });
 }
 laddaData();
 if (finPekare) el.sok.focus();

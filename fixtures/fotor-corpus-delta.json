@@ -1,0 +1,40 @@
+{
+  "name": "MärkR FotoR corpus delta",
+  "captured": "2026-08-29",
+  "currentFileSha256": "28b2dbb5069f8e61d38e3d83106c1eb3bfa891980cdfc95b94b60965155d6f14",
+  "currentCanonicalBookmarksSha256": "848422f7948229fc1788cb257f393d3ddcf3b564b55ad4367739d4bf844ef42e",
+  "preFotoRCanonicalBookmarksSha256": "1e126b0c04c9e8563d4e276d3202c69676123786eae412c03939ec0c7a8b5a70",
+  "newBookmark": {
+    "id": 234,
+    "url": "https://drive.google.com/drive/folders/1AzqYgAGPABkTvuD6i1ZLYYwx8DfI6YAS",
+    "title": "FOTO_001: Analysinkorg: Triangles of people"
+  },
+  "queries": {
+    "gemini": { "preCount": 7, "currentCount": 7, "newIndex": -1 },
+    "gemini biologi": { "preCount": 1, "currentCount": 1, "newIndex": -1 },
+    "lasning": { "preCount": 8, "currentCount": 8, "newIndex": -1 },
+    "läsning": { "preCount": 8, "currentCount": 8, "newIndex": -1 },
+    "ai forskning": { "preCount": 8, "currentCount": 8, "newIndex": -1 },
+    "biologi": { "preCount": 9, "currentCount": 9, "newIndex": -1 },
+    "foto": { "preCount": 1, "currentCount": 2, "newIndex": 0 },
+    "fotor": { "preCount": 0, "currentCount": 1, "newIndex": 0 },
+    "analysinkorg": { "preCount": 0, "currentCount": 1, "newIndex": 0 },
+    "triangles": { "preCount": 0, "currentCount": 1, "newIndex": 0 },
+    "fotografi": { "preCount": 0, "currentCount": 1, "newIndex": 0 },
+    "bildanalys": { "preCount": 0, "currentCount": 1, "newIndex": 0 },
+    "drive": { "preCount": 7, "currentCount": 8, "newIndex": 5 },
+    "mapp": { "preCount": 4, "currentCount": 5, "newIndex": 1 },
+    "#Aktiv": { "preCount": 197, "currentCount": 198, "newIndex": 52 }
+  },
+  "queriesReceivingNewUrl": [
+    "foto",
+    "fotor",
+    "analysinkorg",
+    "triangles",
+    "fotografi",
+    "bildanalys",
+    "drive",
+    "mapp",
+    "#Aktiv"
+  ]
+}

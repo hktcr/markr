@@ -23,6 +23,8 @@
       <input type="search" id="sok" placeholder="Sök i arkivet" autocomplete="off" autocorrect="off"
              autocapitalize="off" spellcheck="false" enterkeyhint="go"
              aria-label="Sök bland bokmärken" aria-describedby="status">
+      <button type="button" class="fullskarm-oppna" id="full-oppna" hidden
+              aria-haspopup="dialog" aria-controls="fullskarm">Fullskärm</button>
       <kbd class="snabb" aria-hidden="true">/</kbd>
     </div>
     <p class="status" id="status" role="status" aria-live="polite">Laddar</p>
@@ -63,6 +65,61 @@
   </footer>
 
 </div>
+
+<section class="fullskarm" id="fullskarm" hidden role="dialog" aria-modal="true"
+         aria-labelledby="full-rubrik">
+  <header class="full-instrument">
+    <div class="full-sokgrupp">
+      <h1 class="visuellt-dold" id="full-rubrik">MärkR fullskärmssökning</h1>
+      <div class="full-sokrad">
+        <input type="search" id="full-sok" autocomplete="off" autocorrect="off"
+               autocapitalize="off" spellcheck="false" enterkeyhint="go"
+               aria-label="Sök bland bokmärken i fullskärm" aria-describedby="full-status">
+        <span id="full-status" role="status" aria-live="polite"></span>
+      </div>
+      <div id="full-filter" aria-label="Aktiva filter"></div>
+    </div>
+    <div class="full-vaxel" aria-label="Fullskärmsvy">
+      <button type="button" class="full-kontroll" id="full-listknapp" aria-pressed="true">Lista</button>
+      <button type="button" class="full-kontroll" id="full-natknapp" aria-pressed="false">Nordnätverk</button>
+    </div>
+    <button type="button" class="full-kontroll" id="full-stang">Stäng</button>
+  </header>
+
+  <main class="full-huvud">
+    <section class="full-vy" id="full-listvy" aria-label="Träfflista i fullskärm">
+      <ul class="traffar" id="full-traffar"></ul>
+    </section>
+
+    <section class="full-vy" id="full-natvy" hidden aria-label="Nordnätverket">
+      <div class="natverk-huvud">
+        <div class="natverk-yta" id="natverk-yta">
+          <svg class="natverk-linjer" id="natverk-linjer" aria-hidden="true"
+               viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+          <div class="natverk-ankare" id="natverk-ankare">
+            <h2 id="natverk-ankartitel" tabindex="-1"></h2>
+          </div>
+          <ol id="natverk-noder" class="relationer" aria-label="Dokumenterade relationer"></ol>
+        </div>
+        <aside class="natverk-panel" aria-labelledby="natverk-paneltitel">
+          <h2 id="natverk-paneltitel">Nordnätverket</h2>
+          <div class="full-vaxel" aria-label="Gestalt för relationerna">
+            <button type="button" class="full-kontroll" id="nat-relationer" aria-pressed="true">Relationer</button>
+            <button type="button" class="full-kontroll" id="nat-stjarna" aria-pressed="false">Stjärnbild</button>
+          </div>
+          <p id="natverk-sammanfattning"></p>
+          <div class="natverk-handlingar">
+            <a class="full-kontroll" id="natverk-oppna" href="#">Öppna</a>
+            <button type="button" class="full-kontroll" id="natverk-kopiera">Kopiera adress</button>
+            <button type="button" class="full-kontroll" id="natverk-visa-lista">Visa i lista</button>
+          </div>
+          <p class="natverk-tomt" id="natverk-tomt" hidden>Inga dokumenterade relationer.</p>
+        </aside>
+      </div>
+      <p class="visuellt-dold" id="natverk-live" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</section>
 
 <canvas id="himmel" aria-hidden="true"></canvas>
 <nav id="noder" aria-label="Verksamhetsområden"></nav>

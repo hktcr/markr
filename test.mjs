@@ -1,5 +1,6 @@
 import { JSDOM } from 'jsdom';
 import fs from 'fs';
+import crypto from 'crypto';
 
 const html = fs.readFileSync('index.html', 'utf8');
 const js = fs.readFileSync('app.js', 'utf8');
@@ -145,6 +146,266 @@ skriv('');
 kolla('legacytaggar är fortsatt sökbara', (() => { skriv('logistik'); return $$('#traffar .rad').length > 0; })());
 skriv('');
 kolla('inga konsolfel', fel.length === 0, fel.join(' | ').slice(0, 120));
+
+/* 8. Versionslåst pre-FotoR-baslinje: samma frågor ska behålla exakt URL-ordning. */
+const baslinje = JSON.parse(fs.readFileSync('fixtures/search-baseline.json', 'utf8'));
+kolla('baslinjefixturen har versionslåst källhash', /^[a-f0-9]{64}$/.test(baslinje.sourceSha256));
+for (const [fraga, vantadeUrl] of Object.entries(baslinje.queries)) {
+  skriv(fraga);
+  if (!$('#visa-alla').hidden) klick($('#visa-alla'));
+  const faktiskaUrl = $$('#traffar a.rad').map(rad => rad.href);
+  kolla('sökbaslinje: ' + fraga, JSON.stringify(faktiskaUrl) === JSON.stringify(vantadeUrl),
+    faktiskaUrl.length + ' / ' + vantadeUrl.length);
+}
+
+async function skapaKontraktsdom(jsonText) {
+  const kontraktsfel = [];
+  const testdom = new JSDOM(html, {
+    url: 'https://hktcr.github.io/markr/',
+    runScripts: 'outside-only',
+    pretendToBeVisual: true
+  });
+  const tw = testdom.window;
+  tw.matchMedia = fraga => ({
+    matches: fraga.includes('pointer: fine') ? false : false,
+    media: fraga,
+    addEventListener() {},
+    removeEventListener() {}
+  });
+  tw.fetch = async () => ({ ok: true, status: 200, text: async () => jsonText });
+  tw.console.error = (...a) => kontraktsfel.push(a.join(' '));
+  tw.Element.prototype.scrollIntoView = function () {};
+  tw.HTMLCanvasElement.prototype.getContext = () => null;
+  tw.open = () => null;
+  Object.defineProperty(tw.navigator, 'clipboard', {
+    configurable: true,
+    value: { writeText: async () => {} }
+  });
+  const ursprungligRaf = tw.requestAnimationFrame.bind(tw);
+  let rafAnrop = 0;
+  tw.requestAnimationFrame = cb => {
+    rafAnrop++;
+    return ursprungligRaf(cb);
+  };
+  tw.eval(js);
+  await new Promise(r => setTimeout(r, 100));
+  return { tw, kontraktsfel, rafAnrop: () => rafAnrop };
+}
+
+/* 9. Separat corpusbevis: avsedd FotoR-delta får inte döljas som kodregression. */
+const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.json', 'utf8'));
+const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
+const currentData = JSON.parse(rawJson);
+const nyUrl = deltaFixture.newBookmark.url;
+const nyaPoster = currentData.bokmarken.filter(bm => bm.url === nyUrl);
+const preFotoRData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.url !== nyUrl)
+};
+
+kolla('MärkR-corpus är versionslåst för dataförändringsbeviset',
+  sha256(rawJson) === deltaFixture.currentFileSha256 &&
+  sha256(JSON.stringify(currentData.bokmarken)) === deltaFixture.currentCanonicalBookmarksSha256);
+kolla('FotoR-deltan är exakt den avsedda posten',
+  nyaPoster.length === 1 && nyaPoster[0].id === deltaFixture.newBookmark.id &&
+  nyaPoster[0].titel === deltaFixture.newBookmark.title);
+kolla('rekonstruerad pre-FotoR-corpus är versionslåst',
+  sha256(JSON.stringify(preFotoRData.bokmarken)) === deltaFixture.preFotoRCanonicalBookmarksSha256);
+
+const preCorpusDom = await skapaKontraktsdom(JSON.stringify(preFotoRData));
+const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+
+function korCorpusFraga(testfonster, fraga) {
+  const falt = testfonster.document.querySelector('#sok');
+  falt.value = fraga;
+  falt.dispatchEvent(new testfonster.Event('input', { bubbles: true }));
+  const forsta60 = Array.from(testfonster.document.querySelectorAll('#traffar a.rad')).map(rad => rad.href);
+  const visaAllaKnapp = testfonster.document.querySelector('#visa-alla');
+  if (!visaAllaKnapp.hidden) {
+    visaAllaKnapp.dispatchEvent(new testfonster.MouseEvent('click', { bubbles: true, cancelable: true }));
+  }
+  const alla = Array.from(testfonster.document.querySelectorAll('#traffar a.rad')).map(rad => rad.href);
+  return { alla, forsta60 };
+}
+
+const fragorMedNyUrl = [];
+for (const [fraga, facit] of Object.entries(deltaFixture.queries)) {
+  const fore = korCorpusFraga(preCorpusDom.tw, fraga);
+  const efter = korCorpusFraga(currentCorpusDom.tw, fraga);
+  const nyttIndex = efter.alla.indexOf(nyUrl);
+  if (nyttIndex >= 0) fragorMedNyUrl.push(fraga);
+
+  kolla('corpusdelta antal/index: ' + fraga,
+    fore.alla.length === facit.preCount && efter.alla.length === facit.currentCount &&
+    nyttIndex === facit.newIndex,
+    fore.alla.length + ' -> ' + efter.alla.length + ', index ' + nyttIndex);
+
+  const aldreEfter = efter.alla.filter(url => url !== nyUrl);
+  kolla('äldre URL:ers matchstatus och relativa ordning: ' + fraga,
+    JSON.stringify(aldreEfter) === JSON.stringify(fore.alla));
+
+  const synligaAldreEfter = efter.forsta60.filter(url => url !== nyUrl);
+  kolla('första 60 efter corpusdelta: ' + fraga,
+    efter.forsta60.length === Math.min(facit.currentCount, 60) &&
+    JSON.stringify(synligaAldreEfter) === JSON.stringify(fore.forsta60.slice(0, synligaAldreEfter.length)),
+    fore.forsta60.length + ' -> ' + efter.forsta60.length);
+}
+kolla('exakt redovisade frågor får den nya FotoR-URL:en',
+  JSON.stringify(fragorMedNyUrl) === JSON.stringify(deltaFixture.queriesReceivingNewUrl),
+  fragorMedNyUrl.join(', '));
+kolla('inga konsolfel i corpusbeviset',
+  preCorpusDom.kontraktsfel.length === 0 && currentCorpusDom.kontraktsfel.length === 0);
+
+/* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
+const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');
+const frystSokdom = await skapaKontraktsdom(frystSokRa);
+const fw = frystSokdom.tw;
+const fSok = fw.document.querySelector('#sok');
+const fSkriv = text => {
+  fSok.value = text;
+  fSok.dispatchEvent(new fw.Event('input', { bubbles: true }));
+  return Array.from(fw.document.querySelectorAll('#traffar a.rad')).map(rad => rad.href);
+};
+const frystNorr = [
+  'https://fixture.test/norr-a',
+  'https://fixture.test/titel-b',
+  'https://fixture.test/exakt-tagg',
+  'https://fixture.test/titel-innehall',
+  'https://fixture.test/tagg-prefix',
+  'https://fixture.test/beskrivning',
+  'https://fixture.test/url-med-norr'
+];
+kolla('fryst pre-FotoR-fixture bevarar alla poängnivåer och ordning',
+  JSON.stringify(fSkriv('norr')) === JSON.stringify(frystNorr));
+kolla('fryst pre-FotoR-fixture bevarar OCH-semantik',
+  JSON.stringify(fSkriv('norr extra')) === JSON.stringify(['https://fixture.test/norr-a']));
+kolla('fryst pre-FotoR-fixture bevarar exakt kategorifilter',
+  JSON.stringify(fSkriv('#norr')) === JSON.stringify(['https://fixture.test/exakt-tagg']));
+kolla('fryst pre-FotoR-fixture bevarar diakritfällning',
+  JSON.stringify(fSkriv('lasning')) === JSON.stringify(fSkriv('läsning')) && fSkriv('lasning').length === 1);
+
+/* 11. Ren relationsfunktion: facettklasser, normalisering, deduplicering och tak. */
+const relationRa = fs.readFileSync('fixtures/relations.json', 'utf8');
+const relationData = JSON.parse(relationRa);
+const kontrakt = await skapaKontraktsdom(relationRa);
+const rw = kontrakt.tw;
+const api = rw.__MARKR_TEST__;
+const renaRelationer = api.beraknaRelationer(relationData.bokmarken, 'https://fixture.test/anchor');
+const vantadRelationsordning = [
+  'https://fixture.test/project-context',
+  'https://fixture.test/project-subjects',
+  'https://fixture.test/two-projects',
+  'https://fixture.test/context-subject',
+  'https://fixture.test/subject-only'
+];
+kolla('relationer följer lexikografisk nyckel',
+  JSON.stringify(renaRelationer.map(r => r.bm.url)) === JSON.stringify(vantadRelationsordning));
+kolla('normaliseringskollisioner räknas en gång',
+  renaRelationer.find(r => r.bm.url.endsWith('/two-projects')).projekt.length === 1 &&
+  renaRelationer[0].kontexter.length === 1);
+kolla('post utan nätverksfacett fyller inte ut',
+  !renaRelationer.some(r => r.bm.url.endsWith('/unrelated')));
+
+const takPoster = [{ url: 'https://fixture.test/tak-ankare', projekt: ['P'], kontexter: ['C'], amnen: [] }];
+for (let i = 0; i < 13; i++) {
+  takPoster.push({ url: 'https://fixture.test/tak-' + i, projekt: ['P'], kontexter: [], amnen: [] });
+}
+takPoster.push({ url: 'https://fixture.test/tak-sist-men-stark', projekt: ['P'], kontexter: ['C'], amnen: [] });
+const takRelationer = api.beraknaRelationer(takPoster, 'https://fixture.test/tak-ankare');
+kolla('alla kandidater bedöms före taket tolv',
+  takRelationer.length === 12 && takRelationer[0].bm.url.endsWith('/tak-sist-men-stark'));
+
+/* 12. Fullskärmens atomära state-, ankare-, fokus- och Escape-kontrakt. */
+const r$ = s => rw.document.querySelector(s);
+const r$$ = s => Array.from(rw.document.querySelectorAll(s));
+const rSok = r$('#sok');
+const rFullSok = r$('#full-sok');
+const rKlick = nod => nod.dispatchEvent(new rw.MouseEvent('click', { bubbles: true, cancelable: true }));
+const rSkriv = (nod, text) => {
+  nod.value = text;
+  nod.dispatchEvent(new rw.Event('input', { bubbles: true }));
+};
+
+rSkriv(rSok, 'atlas');
+const kompaktFore = r$$('#traffar a.rad').map(rad => rad.href);
+r$('#full-oppna').focus();
+rKlick(r$('#full-oppna'));
+let fullState = api.fullskarmsState();
+kolla('fullskärm öppnar med inert bakgrund och aktivt fullsökfält',
+  fullState.oppen && r$('#skal').hasAttribute('inert') && rw.document.activeElement === rFullSok);
+kolla('Lista använder samma atomära träffsnapshot',
+  JSON.stringify(r$$('#full-traffar a.rad').map(rad => rad.href)) === JSON.stringify(kompaktFore) &&
+  JSON.stringify(fullState.snapshotUrls) === JSON.stringify(kompaktFore));
+kolla('inga duplicerade id:n har införts', (() => {
+  const ids = r$$('[id]').map(n => n.id);
+  return ids.length === new Set(ids).size;
+})());
+
+const fullFacett = r$('#full-traffar .tagg-liten');
+rKlick(fullFacett);
+kolla('fullskärmsfilter behåller fokus på aktiv sökyta',
+  rw.document.activeElement === rFullSok && r$('#full-filter .filter'));
+rKlick(r$('#full-filter .filter'));
+kolla('borttaget fullskärmsfilter behåller fokus på aktiv sökyta',
+  rw.document.activeElement === rFullSok && r$('#full-filter').children.length === 0);
+
+rKlick(r$('#full-natknapp'));
+kolla('Nordnätverket använder separat URL-ankare',
+  api.fullskarmsState().ankareUrl === 'https://fixture.test/anchor');
+kolla('DOM-relationerna följer samma relationsordning',
+  JSON.stringify(r$$('#natverk-noder button').map(n => n.dataset.url)) === JSON.stringify(vantadRelationsordning));
+
+const semantiskaNoder = r$$('#natverk-noder button');
+const rafForeStjarna = kontrakt.rafAnrop();
+rKlick(r$('#nat-stjarna'));
+await new Promise(r => setTimeout(r, 220));
+kolla('samma semantiska nodkontroller får stjärnlayout',
+  r$('#natverk-noder').classList.contains('stjarna') &&
+  r$$('#natverk-noder button').every((n, i) => n === semantiskaNoder[i]));
+kolla('Nordnätverket startar ingen RAF-loop', kontrakt.rafAnrop() === rafForeStjarna,
+  rafForeStjarna + ' -> ' + kontrakt.rafAnrop());
+
+const nyttAnkareKnapp = r$$('#natverk-noder button').find(n => n.dataset.url.endsWith('/project-context'));
+rKlick(nyttAnkareKnapp);
+kolla('nodval ändrar ankare utan att mutera snapshot',
+  api.fullskarmsState().ankareUrl.endsWith('/project-context') &&
+  JSON.stringify(api.fullskarmsState().snapshotUrls) === JSON.stringify(kompaktFore));
+
+rFullSok.focus();
+rSkriv(rFullSok, 'atlas kontext');
+fullState = api.fullskarmsState();
+kolla('fullskärmens sökfält synkas och bevarar kvarvarande ankare',
+  rSok.value === 'atlas kontext' && fullState.ankareUrl.endsWith('/project-context'));
+
+rSkriv(rFullSok, 'atlas ämne');
+fullState = api.fullskarmsState();
+kolla('försvunnet ankare faller atomärt till första träffen',
+  !fullState.ankareUrl.endsWith('/project-context') && fullState.ankareUrl === fullState.snapshotUrls[0]);
+
+const rafForeTomFraga = kontrakt.rafAnrop();
+rSkriv(rFullSok, '');
+await new Promise(r => setTimeout(r, 60));
+kolla('tom fråga väcker inte startsideshimlen bakom fullskärmen',
+  r$('#himmel').hasAttribute('data-dold') && kontrakt.rafAnrop() === rafForeTomFraga);
+
+rSkriv(rFullSok, 'zzzz-ingen-traff');
+fullState = api.fullskarmsState();
+kolla('nollresultat tömmer snapshot och ankare men lämnar lagret användbart',
+  fullState.oppen && fullState.snapshotUrls.length === 0 && fullState.ankareUrl === null &&
+  rw.document.activeElement === rFullSok);
+
+rFullSok.dispatchEvent(new rw.KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+kolla('första Escape stänger endast fullskärmen',
+  !api.fullskarmsState().oppen && rSok.value === 'zzzz-ingen-traff' &&
+  !r$('#skal').hasAttribute('inert') && rw.document.activeElement === rSok);
+
+rSkriv(rSok, 'atlas');
+r$('#full-oppna').focus();
+rKlick(r$('#full-oppna'));
+rKlick(r$('#full-stang'));
+kolla('stängning återför fokus till öppningsknappen', rw.document.activeElement === r$('#full-oppna'));
+kolla('inga konsolfel i kontraktsdom', kontrakt.kontraktsfel.length === 0,
+  kontrakt.kontraktsfel.join(' | ').slice(0, 120));
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;

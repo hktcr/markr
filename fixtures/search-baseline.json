@@ -1,0 +1,60 @@
+{
+  "name": "pre-FotoR compact search baseline",
+  "sourceSha256": "13613297275953e7f82d4fe076966c625e802b658badd477edc117c6e83c20b8",
+  "captured": "2026-08-29",
+  "queries": {
+    "gemini": [
+      "https://gemini.google.com/share/b3542a2ea31f",
+      "https://gemini.google.com/share/f8a966e93310",
+      "https://ai-workshop-vux-full-slutbild.hlgk.chatgpt.site/",
+      "https://ai-workshop-vux-ren-slutbild.hlgk.chatgpt.site/",
+      "https://ai-workshop-vux-ren.hlgk.chatgpt.site/",
+      "https://gemini.google.com/app",
+      "https://gemini.google.com/gem/620bc24530ca"
+    ],
+    "gemini biologi": [
+      "https://gemini.google.com/share/b3542a2ea31f"
+    ],
+    "lasning": [
+      "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
+      "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
+      "https://elicit.com/?workflow=table-of-papers",
+      "https://elicit.com/",
+      "https://notebooklm.google.com/",
+      "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
+      "https://resonr.hlgk.chatgpt.site/",
+      "https://www.skolverket.se/skolutveckling/inspiration-och-stod-i-arbetet/stod-i-arbetet/lar-dig-mer-om-digital-lasning"
+    ],
+    "läsning": [
+      "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
+      "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
+      "https://elicit.com/?workflow=table-of-papers",
+      "https://elicit.com/",
+      "https://notebooklm.google.com/",
+      "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
+      "https://resonr.hlgk.chatgpt.site/",
+      "https://www.skolverket.se/skolutveckling/inspiration-och-stod-i-arbetet/stod-i-arbetet/lar-dig-mer-om-digital-lasning"
+    ],
+    "ai forskning": [
+      "https://notebooklm.google.com/notebook/7f50377b-c94f-40cb-bab3-deb23bad4ad9",
+      "https://ide.elicit.org/run/uPpdWzW54aXKwL66t",
+      "https://elicit.com/?workflow=table-of-papers",
+      "https://elicit.com/",
+      "https://notebooklm.google.com/",
+      "https://notebooklm.google.com/notebook/a6a773fb-29b7-4ac8-a1f2-a320e49fb0ad?_gl=1*z90bwb*_ga*MTE3OTEyMDYzNC4xNzI3MDA1MDY3*_ga_W0LDH41ZCB*MTcyNzUwMjgyNC4zLjAuMTcyNzUwMjgyNC4wLjAuMA..",
+      "https://gaia-kunskapsvav.hlgk.chatgpt.site/",
+      "https://www.gen-ai.fi/en"
+    ],
+    "biologi": [
+      "https://artportalen.se/",
+      "https://www.artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/%C3%85storp/Alla%20lokaler/Idag/Ingen/Status",
+      "https://artportalen.se/TodaysSightings/Observerad/F%C3%A5glar/Alla%20arter/Hela%20landet/Alla%20lokaler/Idag/Art/Status/1",
+      "https://kolhydraternas-byggstenar.hlgk.chatgpt.site/",
+      "https://lektionsquiz.hlgk.chatgpt.site/",
+      "https://lektionsquiz.hlgk.chatgpt.site/larare",
+      "https://artportalen.se/search/sightings/taxon/4000104/area/330/days/7",
+      "https://gemini.google.com/share/b3542a2ea31f",
+      "https://www.genspark.ai/api/page_private?id=cmuceruf"
+    ]
+  }
+}

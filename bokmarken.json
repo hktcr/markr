@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-27",
+  "uppdaterad": "2026-08-29",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6025,6 +6025,29 @@
         "ChatGPT Site",
         "Lärarsida"
       ]
+    },
+    {
+      "id": 234,
+      "url": "https://drive.google.com/drive/folders/1AzqYgAGPABkTvuD6i1ZLYYwx8DfI6YAS",
+      "titel": "FOTO_001: Analysinkorg: Triangles of people",
+      "beskrivning": "Operativ mottagningsyta för märkta analyskopior och derivat. Varje fil ska registreras med bildid och kunna följas till sitt kanoniska original i det datumordnade fotoarkivet. Original lagras inte här.",
+      "taggar": [],
+      "tillagd": "2026-08-29",
+      "omrade": "Egna system och projekt",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "FotoR",
+        "Triangles of people"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildanalys"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": []
     }
   ],
   "senasteGallring": {
