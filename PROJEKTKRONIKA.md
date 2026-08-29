@@ -70,8 +70,8 @@ Analysinkorg för `FOTO_001: Triangles of people`.
 5. FotoR:s verifierade Analysinkorg lades till som post 234. Ingen tom
    originaldestination skapades.
 6. Måndagens veckounderhåll av MärkR fördes in i det befintliga `☕ Dagsnav 08`.
-7. Den felaktiga dikteringstolkningen av systemnamnet korrigerades till MärkR i
-   samtliga nya systemfiler, Swarm-protokoll och schemalagda rutiner.
+7. Det felaktigt använda namnet Melker korrigerades till MärkR i samtliga nya
+   systemfiler, Swarm-protokoll och schemalagda rutiner.
 
 **Verifieringsbevis**
 
@@ -83,6 +83,13 @@ Analysinkorg för `FOTO_001: Triangles of people`.
 5. Drive-länken till Analysinkorgen provöppnades och pekade på rätt rollmapp.
 6. GitHubrevisionen publicerades som en atomär fast-forward till `main`,
    återlästes och kontrollerades separat på GitHub Pages.
+7. En verklig webbläsarkontroll upptäckte att CSS överstyrde `hidden` på
+   fullskärmsknappen före sökning. Regeln korrigerades i commit
+   `6443f57664fccdd5d138ef62268f14cccd1fd8ff` och återprovades live.
+8. Liveflödet verifierade att knappen är dold före sökning, synlig efter
+   sökning, att FotoR-resultatet öppnas i Lista, att en `gaia`-sökning ger 12
+   dokumenterade relationer av 35 träffar, att Stjärnbild använder samma 12
+   kontroller samt att Stäng bevarar frågan och återför fokus.
 
 **Öppet**
 
