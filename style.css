@@ -705,6 +705,8 @@ mark {
   transition: color 0.15s ease, background 0.15s ease;
 }
 
+.fullskarm-oppna[hidden] { display: none; }
+
 .fullskarm-oppna::before {
   content: "";
   width: 7px;
