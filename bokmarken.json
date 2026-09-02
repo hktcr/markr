@@ -6311,6 +6311,56 @@
         "iPad",
         "VEP"
       ]
+    },
+    {
+      "id": 243,
+      "url": "https://lightroom-keywordnatverk.hlgk.chatgpt.site",
+      "titel": "Keywordnätverk",
+      "beskrivning": "Privat ChatGPT Site för att söka, utforska och välja svenska nyckelord till fotografier före inklistring i Adobe Lightroom Mobile. Verktyget innehåller 256 begrepp och över 500 kuraterade relationer. Sökresultat visas som lista och nodnätverk. Ett valt begrepp ger förslag ett och två samband bort, samtidigt som relationernas väg och styrka framgår. Egna nyckelord kan läggas till, urvalet kan ordnas och resultatet kopieras som kommaseparerad text. Tillstånd synkroniseras privat mellan enheter med revisionskontroll och återställningsbara konfliktkopior. Källbelagda samband skiljs från redaktionellt kuraterade och beräknade förslag. Sajten är ägarbegränsad. Verklig inklistring i Lightroom Mobile på Pixel 9 Pro återstår som fälttest.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Lightroom",
+        "Metadata",
+        "Keywords",
+        "Nodnätverk"
+      ],
+      "tillagd": "2026-09-02",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Fotografi",
+        "Keywordnätverk"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildmetadata",
+        "Nyckelord",
+        "Lightroom",
+        "Bildarkiv",
+        "Kunskapshantering"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Lightroom",
+        "Metadata",
+        "Keywords",
+        "Nodnätverk"
+      ]
     }
   ],
   "senasteGallring": {

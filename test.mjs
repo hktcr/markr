@@ -60,6 +60,15 @@ kolla('Måleriets atlas har unik aktiv post med full beskrivning',
   atlaspost?.beskrivning.length > 500 && atlaspost?.amnen.includes('Konsthistoria'));
 kolla('Måleriets atlas finns även i det samlade siteregistret',
   sitesHtml.includes('https://maleriets-atlas.hlgk.chatgpt.site') && sitesHtml.includes('<h3>Måleriets atlas</h3>'));
+const keywordpost = parsed.bokmarken.find(post => post.url === 'https://lightroom-keywordnatverk.hlgk.chatgpt.site');
+kolla('Keywordnätverk har unik aktiv post med full beskrivning',
+  parsed.bokmarken.filter(post => post.url === 'https://lightroom-keywordnatverk.hlgk.chatgpt.site').length === 1 &&
+  keywordpost?.titel === 'Keywordnätverk' && keywordpost?.livscykel === 'Aktiv' &&
+  keywordpost?.beskrivning.length > 600 && keywordpost?.projekt.includes('Fotografi') &&
+  keywordpost?.amnen.includes('Lightroom'));
+kolla('Keywordnätverk finns även i det samlade siteregistret',
+  sitesHtml.includes('https://lightroom-keywordnatverk.hlgk.chatgpt.site') &&
+  sitesHtml.includes('<h3>Keywordnätverk</h3>') && sitesHtml.includes('Aktiv, privat'));
 
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
@@ -252,10 +261,15 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const keywordId = 243;
+const preKeywordData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== keywordId)
+};
 const zineId = 242;
 const preZineData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== zineId)
+  ...preKeywordData,
+  bokmarken: preKeywordData.bokmarken.filter(bm => bm.id !== zineId)
 };
 const atlasId = 241;
 const preAtlasData = {
@@ -416,7 +430,7 @@ kolla('inga konsolfel i atlasdeltan',
 
 /* Zineverkstad är den senaste, egna deltan och bevarar samtliga äldre sökresultat. */
 const preZineCorpusDom = await skapaKontraktsdom(JSON.stringify(preZineData));
-const zineCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const zineCorpusDom = await skapaKontraktsdom(JSON.stringify(preKeywordData));
 const zineUrl = 'https://zineverkstad.hlgk.chatgpt.site/';
 for (const fraga of ['zineverkstad', 'zine', 'fotografi', 'fotobok', 'magasin', 'layout', 'lightbox', 'tryck', '#Aktiv']) {
   const fore = korCorpusFraga(preZineCorpusDom.tw, fraga).alla;
@@ -433,6 +447,26 @@ kolla('Zineverkstad har full beskrivning och systemkoppling',
   zinePost.livscykel === 'Aktiv');
 kolla('inga konsolfel i zinedeltan',
   preZineCorpusDom.kontraktsfel.length === 0 && zineCorpusDom.kontraktsfel.length === 0);
+
+/* Keywordnätverk är en egen delta och bevarar samtliga äldre sökresultat. */
+const preKeywordCorpusDom = await skapaKontraktsdom(JSON.stringify(preKeywordData));
+const keywordCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const keywordUrl = 'https://lightroom-keywordnatverk.hlgk.chatgpt.site/';
+for (const fraga of ['keywordnätverk', 'keywords', 'fotografi', 'lightroom', 'metadata', 'nodnätverk', '#Aktiv']) {
+  const fore = korCorpusFraga(preKeywordCorpusDom.tw, fraga).alla;
+  const efter = korCorpusFraga(keywordCorpusDom.tw, fraga).alla;
+  kolla('keyworddelta ger exakt en ny träff: ' + fraga,
+    efter.length === fore.length + 1 && efter.includes(keywordUrl));
+  kolla('keyworddelta bevarar äldre ordning: ' + fraga,
+    JSON.stringify(efter.filter(url => url !== keywordUrl)) === JSON.stringify(fore));
+}
+const keywordPost = currentData.bokmarken.find(bm => bm.id === keywordId);
+kolla('Keywordnätverk har full beskrivning och systemkoppling',
+  keywordPost?.url === keywordUrl.slice(0, -1) && keywordPost.beskrivning.length > 600 &&
+  keywordPost.projekt.includes('Fotografi') && keywordPost.projekt.includes('Keywordnätverk') &&
+  keywordPost.amnen.includes('Lightroom') && keywordPost.livscykel === 'Aktiv');
+kolla('inga konsolfel i keyworddeltan',
+  preKeywordCorpusDom.kontraktsfel.length === 0 && keywordCorpusDom.kontraktsfel.length === 0);
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

@@ -6,7 +6,7 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 205 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 206 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
@@ -33,6 +33,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    textetiketter.
 9. 2026-08-29, Måleriets atlas registrerades med full beskrivning i både
    bokmärkesträdet och det samlade registret över ChatGPT siter.
+10. 2026-09-02, Keywordnätverk registrerades med full beskrivning i både
+    bokmärkesträdet och det samlade registret över ChatGPT siter.
 
 ## Mål
 
@@ -53,6 +55,26 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-09-02 | Keywordnätverk
+
+Keywordnätverk lades till som aktiv privat webbapp med stabilt id 243 och en
+fullständig beskrivning av sökning, lista, nodnätverk, förslag ett och två
+samband bort, egna nyckelord, ordnat urval och kommaseparerad kopiering till
+Adobe Lightroom Mobile. Beskrivningen redovisar även privat synkning,
+revisionskontroll, återställningsbara konfliktkopior och skillnaden mellan
+källbelagda, redaktionellt kuraterade och beräknade samband.
+
+Posten placerades under Egna system och projekt och fick separata projekt och
+ämnesfacetter för gAIa, Fotografi, Keywordnätverk, Bildmetadata, Nyckelord,
+Lightroom, Bildarkiv och Kunskapshantering. Den verifierade ägarbegränsade
+adressen lades samtidigt till i MärkRs samlade register över aktiva ChatGPT
+siter. Det återstående verkliga inklistringstestet i Lightroom Mobile på Pixel
+9 Pro redovisas öppet och påverkar inte länkens aktiva status.
+
+Ändringen har ett eget regressionsskydd som kräver unik identifierare och URL,
+utförlig beskrivning, systemkoppling, siteregisterpost, sökbarhet och bevarad
+ordning för samtliga äldre sökresultat.
 
 ### 2026-08-29 | Måleriets atlas
 
