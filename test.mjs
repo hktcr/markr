@@ -252,10 +252,15 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const zineId = 242;
+const preZineData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== zineId)
+};
 const atlasId = 241;
 const preAtlasData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== atlasId)
+  ...preZineData,
+  bokmarken: preZineData.bokmarken.filter(bm => bm.id !== atlasId)
 };
 const aktuellaId = currentData.bokmarken.map(bm => bm.id);
 const aktuellaUrl = currentData.bokmarken.map(bm => bm.url);
@@ -395,7 +400,7 @@ kolla('inga konsolfel i Drive-corpusbeviset',
 
 /* Måleriets atlas är en egen, senare delta och får inte skrivas in i äldre corpusbevis. */
 const preAtlasCorpusDom = await skapaKontraktsdom(JSON.stringify(preAtlasData));
-const atlasCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const atlasCorpusDom = await skapaKontraktsdom(JSON.stringify(preZineData));
 const atlasUrl = 'https://maleriets-atlas.hlgk.chatgpt.site';
 const atlasRenderedUrl = atlasUrl + '/';
 for (const fraga of ['måleriets atlas', 'konsthistoria', 'måleri', 'lärande', 'bildanalys', '#Aktiv']) {
@@ -408,6 +413,26 @@ for (const fraga of ['måleriets atlas', 'konsthistoria', 'måleri', 'lärande',
 }
 kolla('inga konsolfel i atlasdeltan',
   preAtlasCorpusDom.kontraktsfel.length === 0 && atlasCorpusDom.kontraktsfel.length === 0);
+
+/* Zineverkstad är den senaste, egna deltan och bevarar samtliga äldre sökresultat. */
+const preZineCorpusDom = await skapaKontraktsdom(JSON.stringify(preZineData));
+const zineCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const zineUrl = 'https://zineverkstad.hlgk.chatgpt.site/';
+for (const fraga of ['zineverkstad', 'zine', 'fotografi', 'fotobok', 'magasin', 'layout', 'lightbox', 'tryck', '#Aktiv']) {
+  const fore = korCorpusFraga(preZineCorpusDom.tw, fraga).alla;
+  const efter = korCorpusFraga(zineCorpusDom.tw, fraga).alla;
+  kolla('zinedelta ger exakt en ny träff: ' + fraga,
+    efter.length === fore.length + 1 && efter.includes(zineUrl));
+  kolla('zinedelta bevarar äldre ordning: ' + fraga,
+    JSON.stringify(efter.filter(url => url !== zineUrl)) === JSON.stringify(fore));
+}
+const zinePost = currentData.bokmarken.find(bm => bm.id === zineId);
+kolla('Zineverkstad har full beskrivning och systemkoppling',
+  zinePost?.url === zineUrl.slice(0, -1) && zinePost.beskrivning.length > 500 &&
+  zinePost.projekt.includes('Fotografi') && zinePost.projekt.includes('Zineverkstad') &&
+  zinePost.livscykel === 'Aktiv');
+kolla('inga konsolfel i zinedeltan',
+  preZineCorpusDom.kontraktsfel.length === 0 && zineCorpusDom.kontraktsfel.length === 0);
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');
