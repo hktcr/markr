@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-08-29",
+  "uppdaterad": "2026-09-02",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6254,6 +6254,62 @@
         "Lärande",
         "Bildanalys",
         "Kunskapshantering"
+      ]
+    },
+    {
+      "id": 242,
+      "url": "https://zineverkstad.hlgk.chatgpt.site",
+      "titel": "Zineverkstad",
+      "beskrivning": "Privat arbetsverktyg för att planera, sekvensera, formge, kontrollera och exportera fotografiska zines, små häften och magasin. Verktyget förenar en skalbar digital lightbox med massimport, urval, grupper, materialstatus och bildsekvens samt en sid- och uppslagsbaserad layoutyta med verkliga miniatyrer, icke destruktiva mallar, precisionskontroller och säkerhetszoner. Projekt sparas med revisionskontroll, konfliktskydd, lokala projektutkast, namngivna milstolpar och kompletta säkerhetskopior som inkluderar bilder och kan återställas som nya projekt. Exportkontrollen identifierar tomma sidor, text utanför säkerhetszon, låg effektiv bildupplösning och saknade bildfiler. PDF kan skapas i läsordning eller som korrekt utskjutet A4-häfte i 300 ppi med profiler för kantlös utskrift samt generiska skrivarprofiler med 3 eller 5 millimeters marginal. Originalbilder ändras aldrig och sajten är ägarbegränsad.",
+      "taggar": [
+        "gAIa",
+        "Fotografi",
+        "Zine",
+        "Fotobok",
+        "Magasin",
+        "Layout",
+        "Lightbox",
+        "Tryck",
+        "Webbapp",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-09-02",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Fotografi",
+        "Zineverkstad"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Zine",
+        "Fotobok",
+        "Magasin",
+        "Bildredigering",
+        "Layout",
+        "Tryck",
+        "Publicering"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Zine",
+        "Fotobok",
+        "Magasin",
+        "Layout",
+        "Lightbox",
+        "Tryck",
+        "iPad",
+        "VEP"
       ]
     }
   ],
