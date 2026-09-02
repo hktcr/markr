@@ -6260,7 +6260,7 @@
       "id": 242,
       "url": "https://zineverkstad.hlgk.chatgpt.site",
       "titel": "Zineverkstad",
-      "beskrivning": "Privat arbetsverktyg för att planera, sekvensera, formge, kontrollera och exportera fotografiska zines, små häften och magasin. Verktyget förenar en skalbar digital lightbox med massimport, urval, grupper, materialstatus och bildsekvens samt en sid- och uppslagsbaserad layoutyta med verkliga miniatyrer, icke destruktiva mallar, precisionskontroller och säkerhetszoner. Projekt sparas med revisionskontroll, konfliktskydd, lokala projektutkast, namngivna milstolpar och kompletta säkerhetskopior som inkluderar bilder och kan återställas som nya projekt. Exportkontrollen identifierar tomma sidor, text utanför säkerhetszon, låg effektiv bildupplösning och saknade bildfiler. PDF kan skapas i läsordning eller som korrekt utskjutet A4-häfte i 300 ppi med profiler för kantlös utskrift samt generiska skrivarprofiler med 3 eller 5 millimeters marginal. Originalbilder ändras aldrig och sajten är ägarbegränsad.",
+      "beskrivning": "Privat och iPad-anpassat arbetsverktyg för hela processen från fotografiskt material till färdigt zine, häfte eller magasin. Den visuella lightboxen stödjer massimport, touchbaserat multival, fria anteckningar, flyttbara och namngivna grupper, betyg, taggar, materialstatus, kombinerade filter, jämförelse av bildkandidater, omsorteringsbar bildsekvens och sparade alternativa sekvenser. Formgivningen sker i läsordning sida för sida eller som uppslag med helhetsvy över boken, tydliga sidroller, sidlåsning, flyttning av hela uppslag, bilder över mittvecket, icke destruktiva mallar, textstilar, typografiska kontroller, beskärningszoom, rotation, säkerhetszoner och exakt numerisk placering. Projekt sparas med revisionskontroll, konfliktskydd, lokala utkast, namngivna milstolpar och kompletta säkerhetskopior inklusive originalbilder. Förkontrollen identifierar tomma sidor, text som inte ryms, text utanför säkerhetszon, låg effektiv bildupplösning, saknade bildfiler och möjliga överlappningar. Produktionsdelen visar varje fysiskt arks fram- och baksida, skapar skrivarkalibrering för skala och passning, sparar personliga fram- och baksideskorrigeringar, räknar pappersåtgång, hanterar valbar krypkompensation och skapar en projektspecifik arbetsorder för provutskrift, sortering, falsning, häftning och skärning. PDF kan exporteras i läsordning eller som korrekt utskjutet A4-häfte i 300 ppi. Ett separat RGB-tryckeriprov med utfall och skärmarkeringar finns, men märks tydligt som icke certifierad PDF/X och ska färghanteras och kontrolleras av tryckeriet. Originalbilder ändras aldrig och sajten är ägarbegränsad.",
       "taggar": [
         "gAIa",
         "Fotografi",
@@ -6310,56 +6310,6 @@
         "Tryck",
         "iPad",
         "VEP"
-      ]
-    },
-    {
-      "id": 243,
-      "url": "https://lightroom-keywordnatverk.hlgk.chatgpt.site",
-      "titel": "Keywordnätverk",
-      "beskrivning": "Privat ChatGPT Site för att söka, utforska och välja svenska nyckelord till fotografier före inklistring i Adobe Lightroom Mobile. Verktyget innehåller 256 begrepp och över 500 kuraterade relationer. Sökresultat visas som lista och nodnätverk. Ett valt begrepp ger förslag ett och två samband bort, samtidigt som relationernas väg och styrka framgår. Egna nyckelord kan läggas till, urvalet kan ordnas och resultatet kopieras som kommaseparerad text. Tillstånd synkroniseras privat mellan enheter med revisionskontroll och återställningsbara konfliktkopior. Källbelagda samband skiljs från redaktionellt kuraterade och beräknade förslag. Sajten är ägarbegränsad. Verklig inklistring i Lightroom Mobile på Pixel 9 Pro återstår som fälttest.",
-      "taggar": [
-        "gAIa",
-        "Eget Projekt",
-        "Utveckling",
-        "Webbapp",
-        "ChatGPT Site",
-        "Fotografi",
-        "Lightroom",
-        "Metadata",
-        "Keywords",
-        "Nodnätverk"
-      ],
-      "tillagd": "2026-09-02",
-      "omrade": "Egna system och projekt",
-      "typ": "Webbapp",
-      "kontexter": [],
-      "projekt": [
-        "gAIa",
-        "Fotografi",
-        "Keywordnätverk"
-      ],
-      "amnen": [
-        "Fotografi",
-        "Bildmetadata",
-        "Nyckelord",
-        "Lightroom",
-        "Bildarkiv",
-        "Kunskapshantering"
-      ],
-      "period": "",
-      "livscykel": "Aktiv",
-      "favorit": false,
-      "legacyTaggar": [
-        "gAIa",
-        "Eget Projekt",
-        "Utveckling",
-        "Webbapp",
-        "ChatGPT Site",
-        "Fotografi",
-        "Lightroom",
-        "Metadata",
-        "Keywords",
-        "Nodnätverk"
       ]
     }
   ],
