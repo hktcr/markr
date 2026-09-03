@@ -56,6 +56,17 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 
 ## Sessionslogg
 
+### 2026-09-03 | Återställd post för Keywordnätverk
+
+Vid kontroll av den publicerade korpusen upptäcktes att Keywordnätverk fanns i
+siteregistret, projektkrönikan och regressionsskyddet men saknades i
+`bokmarken.json`. Posten återställdes med stabilt id 243, kanonisk privat URL,
+fullständig beskrivning och separata facetter för bland annat Fotografi,
+Lightroom, Keywords, Metadata, Nyckelord, Bildarkiv och Kunskapshantering.
+Samtliga riktade kontroller för unik post, full beskrivning, sökbarhet,
+systemkoppling och bevarad ordning för äldre sökresultat passerade efter
+rättelsen.
+
 ### 2026-09-02 | Keywordnätverk
 
 Keywordnätverk lades till som aktiv privat webbapp med stabilt id 243 och en

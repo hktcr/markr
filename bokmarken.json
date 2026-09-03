@@ -6329,6 +6329,64 @@
         "iPad",
         "VEP"
       ]
+    },
+    {
+      "id": 243,
+      "url": "https://lightroom-keywordnatverk.hlgk.chatgpt.site",
+      "titel": "Keywordnätverk",
+      "beskrivning": "Privat och responsivt arbetsverktyg för att söka, utforska, välja och ordna svenska nyckelord till fotografier före inklistring i Adobe Lightroom Mobile. Verktyget visar 256 begrepp och över 500 kuraterade relationer både som sökbar lista och som interaktivt nodnätverk. När ett begrepp väljs visas relevanta förslag ett och två samband bort, tillsammans med relationernas väg och styrka, så att närliggande motiv, miljöer, stämningar, tekniker och bildmässiga egenskaper kan upptäckas utan att urvalet blir oöverskådligt. Valda nyckelord samlas i en tydlig lista, kan ordnas och tas bort och kopieras sedan som kommaseparerad text för användning i Lightroom. Egna ord kan läggas till när den befintliga begreppsbanken inte räcker. Tillståndet synkroniseras privat mellan enheter med revisionskontroll, lokala utkast och återställningsbara konfliktkopior. Källbelagda samband, redaktionellt kuraterade samband och maskinellt beräknade samband hålls uttryckligen isär för att användaren ska kunna bedöma deras grund. Siten är ägarbegränsad. Verklig inklistring i Lightroom Mobile på Pixel 9 Pro återstår som fälttest och redovisas därför öppet som en ännu inte slutverifierad del av arbetsflödet.",
+      "taggar": [
+        "gAIa",
+        "Fotografi",
+        "Keywordnätverk",
+        "Keywords",
+        "Bildmetadata",
+        "Metadata",
+        "Nyckelord",
+        "Lightroom",
+        "Bildarkiv",
+        "Kunskapshantering",
+        "Webbapp",
+        "ChatGPT Site"
+      ],
+      "tillagd": "2026-09-02",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Fotografi",
+        "Keywordnätverk"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildmetadata",
+        "Metadata",
+        "Nyckelord",
+        "Keywords",
+        "Lightroom",
+        "Bildarkiv",
+        "Kunskapshantering"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Keywordnätverk",
+        "Keywords",
+        "Bildmetadata",
+        "Metadata",
+        "Nyckelord",
+        "Lightroom",
+        "Bildarkiv",
+        "Kunskapshantering"
+      ]
     }
   ],
   "senasteGallring": {
