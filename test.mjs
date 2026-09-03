@@ -69,6 +69,15 @@ kolla('Keywordnätverk har unik aktiv post med full beskrivning',
 kolla('Keywordnätverk finns även i det samlade siteregistret',
   sitesHtml.includes('https://lightroom-keywordnatverk.hlgk.chatgpt.site') &&
   sitesHtml.includes('<h3>Keywordnätverk</h3>') && sitesHtml.includes('Aktiv, privat'));
+const kontaktarkpost = parsed.bokmarken.find(post => post.url === 'https://kontaktark-foto.hlgk.chatgpt.site');
+kolla('Kontaktark har unik aktiv post med full beskrivning',
+  parsed.bokmarken.filter(post => post.url === 'https://kontaktark-foto.hlgk.chatgpt.site').length === 1 &&
+  kontaktarkpost?.id === 244 && kontaktarkpost?.titel === 'Kontaktark' &&
+  kontaktarkpost?.livscykel === 'Aktiv' && kontaktarkpost?.beskrivning.length > 800 &&
+  kontaktarkpost?.projekt.includes('Fotografi') && kontaktarkpost?.amnen.includes('EXIF'));
+kolla('Kontaktark finns även i det samlade siteregistret',
+  sitesHtml.includes('https://kontaktark-foto.hlgk.chatgpt.site') &&
+  sitesHtml.includes('<h3>Kontaktark</h3>') && sitesHtml.includes('valfritt antal sidor'));
 
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));

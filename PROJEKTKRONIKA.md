@@ -6,7 +6,7 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 206 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 208 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
@@ -35,6 +35,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    bokmärkesträdet och det samlade registret över ChatGPT siter.
 10. 2026-09-02, Keywordnätverk registrerades med full beskrivning i både
     bokmärkesträdet och det samlade registret över ChatGPT siter.
+11. 2026-09-03, Kontaktark registrerades med full beskrivning i både
+    bokmärkesträdet och det samlade registret över ChatGPT siter.
 
 ## Mål
 
@@ -55,6 +57,19 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-09-03 | Kontaktark
+
+Kontaktark lades till som aktiv privat webbapp med stabilt id 244 och den
+kanoniska adressen https://kontaktark-foto.hlgk.chatgpt.site. Beskrivningen
+omfattar lokal bildhantering, automatiskt skapade sidor, självständig layout
+per sida, fria rader och kolumner, snabblayouter, bildordning, filnamn,
+EXIF-datum, sidfot, egen text samt PNG-export i 150 eller 300 DPI. Posten
+placerades under Egna system och projekt och fick separata projekt- och
+ämnesfacetter för Fotografi, Kontaktark, Bildurval, Layout, Utskrift,
+Bildmetadata, EXIF och PNG. Samma länk lades till i det samlade siteregistret
+och fick ett riktat regressionsskydd för unik post, full beskrivning och
+registerkoppling.
 
 ### 2026-09-03 | Återställd post för Keywordnätverk
 
