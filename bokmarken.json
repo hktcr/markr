@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-02",
+  "uppdaterad": "2026-09-03",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -5963,9 +5963,9 @@
     },
     {
       "id": 233,
-      "url": "https://kolhydraternas-byggstenar.hlgk.chatgpt.site",
-      "titel": "Kolhydraternas byggstenar",
-      "beskrivning": "Offentlig interaktiv simulering för undervisning om kolhydrater. Visar glukos, fruktos och galaktos, hur de bildar sackaros, laktos och maltos samt skillnader mellan stärkelse och cellulosa. Elever och lärare kan växla mellan förenklad modell, kemisk struktur och vridbar 3D-kulstavsmodell. Lärarstöd finns på /larare.",
+      "url": "https://naringsamnenas-byggstenar.hlgk.chatgpt.site",
+      "titel": "Näringsämnenas byggstenar",
+      "beskrivning": "Offentligt interaktivt undervisningsgränssnitt för Livets kemi om kolhydrater, fetter och proteiner. Kolhydratdelen visar glukos, fruktos och galaktos, sammansatta sockerarter samt skillnader mellan stärkelse och cellulosa i förenklad, kemisk och vridbar tredimensionell modell. Fettdelen visar källor, funktioner, triglyceridens uppbyggnad och skillnader mellan mättade och omättade fettsyror, med frivillig strukturfördjupning. Proteindelen leder eleverna genom aminosyra, kedja, möjlig veckning, tredimensionell form och funktion med förutsägelse, presentationsläge, språkstöd och kompakt reservvy. Lärarstöd finns på /larare. Gränssnittet är anpassat för projektor och iPad.",
       "taggar": [
         "Skola",
         "Pedagogik",
@@ -5984,7 +5984,14 @@
         "gAIa",
         "Eget Projekt",
         "ChatGPT Site",
-        "Lärarsida"
+        "Lärarsida",
+        "Näringsämnen",
+        "Fetter",
+        "Proteiner",
+        "Aminosyror",
+        "Tillgänglighet",
+        "iPad",
+        "VEP"
       ],
       "tillagd": "2026-08-27",
       "omrade": "Skola och undervisning",
@@ -5994,13 +6001,17 @@
       ],
       "projekt": [
         "gAIa",
-        "Kolhydraternas byggstenar"
+        "Näringsämnenas byggstenar"
       ],
       "amnen": [
         "Kemi",
         "Biologi",
         "Kolhydrater",
-        "Molekyler"
+        "Molekyler",
+        "Näringsämnen",
+        "Fetter",
+        "Proteiner",
+        "Aminosyror"
       ],
       "period": "HT26",
       "livscykel": "Aktiv",
@@ -6023,7 +6034,14 @@
         "gAIa",
         "Eget Projekt",
         "ChatGPT Site",
-        "Lärarsida"
+        "Lärarsida",
+        "Näringsämnen",
+        "Fetter",
+        "Proteiner",
+        "Aminosyror",
+        "Tillgänglighet",
+        "iPad",
+        "VEP"
       ]
     },
     {
