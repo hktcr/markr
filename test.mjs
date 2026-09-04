@@ -270,10 +270,14 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const preKontaktarkData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== 244)
+};
 const keywordId = 243;
 const preKeywordData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== keywordId)
+  ...preKontaktarkData,
+  bokmarken: preKontaktarkData.bokmarken.filter(bm => bm.id !== keywordId)
 };
 const zineId = 242;
 const preZineData = {
@@ -324,9 +328,16 @@ kolla('Driveposter har kanoniska URL:er, giltiga föräldrar och inga cykler',
 const nyUrl = deltaFixture.newBookmark.url;
 const nyaPoster = currentData.bokmarken.filter(bm => bm.url === nyUrl);
 const driveNyaId = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.id));
-const preDriveData = {
+/* Återskapa versionslåsta historiska beskrivningar utan att ändra dagens data. */
+const historicalChanges = JSON.parse(fs.readFileSync('fixtures/historical-bookmark-versions.json', 'utf8'));
+const historicalById = new Map(historicalChanges.records.map(bm => [bm.id, bm]));
+const historicalDriveData = {
   ...preAtlasData,
-  bokmarken: preAtlasData.bokmarken.filter(bm => !driveNyaId.has(bm.id))
+  bokmarken: preAtlasData.bokmarken.map(bm => historicalById.get(bm.id) || bm)
+};
+const preDriveData = {
+  ...historicalDriveData,
+  bokmarken: historicalDriveData.bokmarken.filter(bm => !driveNyaId.has(bm.id))
 };
 const historiskFotoRData = {
   ...preDriveData,
@@ -391,8 +402,8 @@ kolla('inga konsolfel i corpusbeviset',
   preCorpusDom.kontraktsfel.length === 0 && fotoRCorpusDom.kontraktsfel.length === 0);
 
 /* Den senare Drive-deltan får nya träffar men får inte ändra äldre träffars relativa ordning. */
-kolla('aktuell Drive-corpus är versionslåst',
-  sha256(JSON.stringify(preAtlasData.bokmarken)) === driveDeltaFixture.currentCanonicalBookmarksSha256);
+kolla('historisk Drive-corpus är versionslåst',
+  sha256(JSON.stringify(historicalDriveData.bokmarken)) === driveDeltaFixture.currentCanonicalBookmarksSha256);
 kolla('rekonstruerad corpus före Drive-utbyggnaden är versionslåst',
   sha256(JSON.stringify(preDriveData.bokmarken)) === driveDeltaFixture.preDriveCanonicalBookmarksSha256);
 
@@ -402,7 +413,7 @@ kolla('Drive-deltan innehåller exakt de sex verifierade mapparna',
   driveDeltaFixture.newBookmarks.every(vantad => faktiskaDrivePoster.some(bm =>
     bm.id === vantad.id && bm.url === vantad.url && bm.titel === vantad.title)));
 
-const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(preAtlasData));
+const currentCorpusDom = await skapaKontraktsdom(JSON.stringify(historicalDriveData));
 const preDriveCorpusDom = await skapaKontraktsdom(JSON.stringify(preDriveData));
 const driveNyaUrl = new Set(driveDeltaFixture.newBookmarks.map(bm => bm.url));
 for (const [fraga, facit] of Object.entries(driveDeltaFixture.queries)) {
@@ -459,7 +470,7 @@ kolla('inga konsolfel i zinedeltan',
 
 /* Keywordnätverk är en egen delta och bevarar samtliga äldre sökresultat. */
 const preKeywordCorpusDom = await skapaKontraktsdom(JSON.stringify(preKeywordData));
-const keywordCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const keywordCorpusDom = await skapaKontraktsdom(JSON.stringify(preKontaktarkData));
 const keywordUrl = 'https://lightroom-keywordnatverk.hlgk.chatgpt.site/';
 for (const fraga of ['keywordnätverk', 'keywords', 'fotografi', 'lightroom', 'metadata', 'nodnätverk', '#Aktiv']) {
   const fore = korCorpusFraga(preKeywordCorpusDom.tw, fraga).alla;
@@ -476,6 +487,18 @@ kolla('Keywordnätverk har full beskrivning och systemkoppling',
   keywordPost.amnen.includes('Lightroom') && keywordPost.livscykel === 'Aktiv');
 kolla('inga konsolfel i keyworddeltan',
   preKeywordCorpusDom.kontraktsfel.length === 0 && keywordCorpusDom.kontraktsfel.length === 0);
+
+/* Kontaktark läggs till utan att äldre sökträffar försvinner eller flyttas. */
+const kontaktarkCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const kontaktarkUrl = 'https://kontaktark-foto.hlgk.chatgpt.site/';
+for (const fraga of ['kontaktark', 'fotografi', 'foto', 'mapp', 'EXIF', 'PNG', '#Aktiv']) {
+  const fore = korCorpusFraga(keywordCorpusDom.tw, fraga).alla;
+  const efter = korCorpusFraga(kontaktarkCorpusDom.tw, fraga).alla;
+  kolla('Kontaktark ger exakt en ny träff: ' + fraga,
+    efter.length === fore.length + 1 && efter.includes(kontaktarkUrl));
+  kolla('Kontaktark bevarar äldre träffar och ordning: ' + fraga,
+    JSON.stringify(efter.filter(url => url !== kontaktarkUrl)) === JSON.stringify(fore));
+}
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

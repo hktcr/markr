@@ -58,6 +58,23 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
 
 ## Sessionslogg
 
+### 2026-09-04 | Återställning efter avkortad bokmärkesfil
+
+Commit 64d82df skrev in ett avkortat verktygssvar i bokmarken.json när
+Kontaktark registrerades. Återställningen utgår från den giltiga versionen
+61469a74a012bcbfba42cf6a3440c51b5bb2f712 och bevarar Kontaktark exakt
+från den skadade versionens oskadade slutdel. Samtliga 207 tidigare poster
+är jämförda fält för fält och i samma ordning; metadata är oförändrade.
+Resultatet innehåller 208 unika ID:n och URL:er. Arkiverade poster och
+siteregistret har inte ändrats.
+
+Historiska söktester använder åter den versionslåsta beskrivningen för
+post 233 från commit 4dc0e26aa7598d1f69bb10e53d7ea4894b548ab5. Dagens
+beskrivning är oförändrad. Kontaktark hålls åtskild från äldre testperioder
+och har egna kontroller för bevarade sökträffar och ordning. JSON- och
+syntaxkontroll samt 238 av 238 regressionstester passerar före push.
+
+
 ### 2026-09-03 | Kontaktark
 
 Kontaktark lades till som aktiv privat webbapp med stabilt id 244 och den
