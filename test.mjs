@@ -78,6 +78,15 @@ kolla('Kontaktark har unik aktiv post med full beskrivning',
 kolla('Kontaktark finns även i det samlade siteregistret',
   sitesHtml.includes('https://kontaktark-foto.hlgk.chatgpt.site') &&
   sitesHtml.includes('<h3>Kontaktark</h3>') && sitesHtml.includes('valfritt antal sidor'));
+const bildanalysPost = parsed.bokmarken.find(post => post.url === 'https://hktcr.github.io/Bildanalys/');
+kolla('Bildanalys har en unik aktiv sökpost med full beskrivning',
+  parsed.bokmarken.filter(post => post.url === 'https://hktcr.github.io/Bildanalys/').length === 1 &&
+  bildanalysPost?.id === 245 && bildanalysPost?.titel === 'Bildanalys' &&
+  bildanalysPost?.livscykel === 'Aktiv' && bildanalysPost?.beskrivning.length > 200 &&
+  bildanalysPost?.projekt.includes('FotoR') && bildanalysPost?.amnen.includes('Färg'));
+kolla('Bildanalys finns även i det samlade siteregistret',
+  sitesHtml.includes('https://hktcr.github.io/Bildanalys/') &&
+  sitesHtml.includes('<h3>Bildanalys'));
 
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
@@ -234,6 +243,7 @@ kolla('FotoR visas som verifierad mapphierarki i tre nivåer',
 tangent('Escape');
 
 skriv('fotor');
+const detaljTraffarFore = $$('#traffar a.rad').map(rad => rad.href);
 const detaljKnapp = $('#traffar .traff-expandera');
 const detaljPanel = $('#' + detaljKnapp.getAttribute('aria-controls'));
 kolla('disclosureknappen är inte nästlad i träfflänken', !detaljKnapp.closest('a'));
@@ -249,7 +259,8 @@ kolla('FotoR-detaljen visar facetter och två relevanta mappgenvägar',
   detaljPanel.querySelectorAll('.detalj-mappar a').length === 2);
 klick(detaljKnapp);
 kolla('detaljer kan stängas utan att sökningen ändras',
-  detaljPanel.hidden && sok.value === 'fotor' && $$('#traffar a.rad').length === 3);
+  detaljPanel.hidden && sok.value === 'fotor' &&
+  JSON.stringify($$('#traffar a.rad').map(rad => rad.href)) === JSON.stringify(detaljTraffarFore));
 
 $('#full-oppna').focus();
 klick($('#full-oppna'));
@@ -270,9 +281,14 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
-const preKontaktarkData = {
+const bildanalysId = 245;
+const preBildanalysData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== 244)
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== bildanalysId)
+};
+const preKontaktarkData = {
+  ...preBildanalysData,
+  bokmarken: preBildanalysData.bokmarken.filter(bm => bm.id !== 244)
 };
 const keywordId = 243;
 const preKeywordData = {
@@ -489,7 +505,7 @@ kolla('inga konsolfel i keyworddeltan',
   preKeywordCorpusDom.kontraktsfel.length === 0 && keywordCorpusDom.kontraktsfel.length === 0);
 
 /* Kontaktark läggs till utan att äldre sökträffar försvinner eller flyttas. */
-const kontaktarkCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const kontaktarkCorpusDom = await skapaKontraktsdom(JSON.stringify(preBildanalysData));
 const kontaktarkUrl = 'https://kontaktark-foto.hlgk.chatgpt.site/';
 for (const fraga of ['kontaktark', 'fotografi', 'foto', 'mapp', 'EXIF', 'PNG', '#Aktiv']) {
   const fore = korCorpusFraga(keywordCorpusDom.tw, fraga).alla;
@@ -499,6 +515,20 @@ for (const fraga of ['kontaktark', 'fotografi', 'foto', 'mapp', 'EXIF', 'PNG', '
   kolla('Kontaktark bevarar äldre träffar och ordning: ' + fraga,
     JSON.stringify(efter.filter(url => url !== kontaktarkUrl)) === JSON.stringify(fore));
 }
+
+/* Bildanalys är den aktuella deltan och blir sökbar utan att ändra äldre träffars ordning. */
+const bildanalysCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const bildanalysUrl = 'https://hktcr.github.io/Bildanalys/';
+for (const fraga of ['bildanalys', 'fotografi', 'färg', 'lightroom', 'fotor', '#Aktiv']) {
+  const fore = korCorpusFraga(kontaktarkCorpusDom.tw, fraga).alla;
+  const efter = korCorpusFraga(bildanalysCorpusDom.tw, fraga).alla;
+  kolla('Bildanalys ger exakt en ny träff: ' + fraga,
+    efter.length === fore.length + 1 && efter.includes(bildanalysUrl));
+  kolla('Bildanalys bevarar äldre träffar och ordning: ' + fraga,
+    JSON.stringify(efter.filter(url => url !== bildanalysUrl)) === JSON.stringify(fore));
+}
+kolla('inga konsolfel i Bildanalys-deltan',
+  kontaktarkCorpusDom.kontraktsfel.length === 0 && bildanalysCorpusDom.kontraktsfel.length === 0);
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');
