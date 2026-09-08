@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-03",
+  "uppdaterad": "2026-09-08",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6404,6 +6404,44 @@
       "livscykel": "Aktiv",
       "favorit": false,
       "legacyTaggar": ["gAIa", "Eget Projekt", "Utveckling", "Fotografi", "Kontaktark", "Bildurval", "Layout", "Utskrift", "PNG", "EXIF", "Bildmetadata", "Webbapp", "ChatGPT Site"]
+    },
+    {
+      "id": 245,
+      "url": "https://hktcr.github.io/Bildanalys/",
+      "titel": "Bildanalys",
+      "beskrivning": "Fotografiskt analysverktyg med Lightroomliknande färgkanaler, kulörfördelning, färgharmonier, kanalneutralisering, histogram, områdesurval, clipping och pixelprov. Bilderna behandlas lokalt i webbläsaren. RAW-stödet är experimentellt.",
+      "taggar": [
+        "gAIa",
+        "Eget projekt",
+        "Webbapp",
+        "Fotografi",
+        "Bildanalys",
+        "Färg",
+        "Lightroom"
+      ],
+      "tillagd": "2026-09-08",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "FotoR",
+        "Bildanalys"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildanalys",
+        "Färg"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Fotografi",
+        "Bildanalys",
+        "Färg",
+        "Lightroom"
+      ]
     }
   ],
   "senasteGallring": {
