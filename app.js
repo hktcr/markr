@@ -30,6 +30,12 @@ const OMRADEN = [
   { namn: 'Allmän kunskap och referens', beskrivning: 'Generella resurser som inte hör hemma i ett verksamhetsområde.' }
 ];
 
+/* Ämnesingångar återanvänder sökningens befintliga facetter. */
+const AMNESINGANGAR = [
+  { namn: 'Fotografi och bildskapande', filter: 'Fotografi', beskrivning: 'FotoR, bildanalys, bildurval och fotografiska verktyg.' },
+  { namn: 'Ljud och fältinspelning', filter: 'Ljud', beskrivning: 'Ljudverktyg, lyssning och inspelningar över områdesgränserna.' }
+];
+
 const SUFFIX = [
   ' - Google Docs', ' - Google Dokument', ' - Google Sheets', ' - Google Kalkylark',
   ' - Google Drive', ' - Google Slides', ' - Google Presentationer', ' - Google Formulär',
@@ -353,7 +359,7 @@ function visaLista(fokuseraDrive) {
   ritaFilter();
   traffar = [];
   settLage('lista');
-  satStatus(byggKategorier().length + ' verksamhetsområden');
+  satStatus(byggKategorier().length + ' verksamhetsområden och ' + byggAmnesingangar().length + ' ämnesingångar');
   ritaKategorilista();
   ritaDriveNav();
   if (fokuseraDrive && !el.driveNav.hidden) {
@@ -418,6 +424,16 @@ function byggKategorier() {
   })).filter(o => o.antal > 0);
 }
 
+function byggAmnesingangar() {
+  return AMNESINGANGAR.map(a => ({ ...a,
+    antal: arkiv.bokmarken.filter(bm => bm.vTaggar.includes(vik(a.filter))).length
+  })).filter(a => a.antal > 0);
+}
+
+function byggIngangar() {
+  return [...byggKategorier(), ...byggAmnesingangar()];
+}
+
 function taggKnapp(namn, antal, liten) {
   const knapp = document.createElement('button');
   knapp.type = 'button';
@@ -435,7 +451,7 @@ function taggKnapp(namn, antal, liten) {
 
 function ritaKategorilista() {
   el.kategorilista.textContent = '';
-  for (const k of byggKategorier()) {
+  for (const k of byggIngangar()) {
     const rad = document.createElement('button');
     rad.type = 'button';
     rad.className = 'indexrad';
@@ -452,7 +468,7 @@ function ritaKategorilista() {
     antal.textContent = k.antal;
     antal.setAttribute('aria-label', k.antal + (k.antal === 1 ? ' bokmärke' : ' bokmärken'));
     rad.append(text, antal);
-    rad.addEventListener('click', () => laggTillFilter(k.namn));
+    rad.addEventListener('click', () => laggTillFilter(k.filter || k.namn));
     el.kategorilista.append(rad);
   }
 }
@@ -1201,26 +1217,34 @@ const himmel = {
 
 function byggHimmel() {
   const gamla = new Map(himmel.noder.map(n => [n.namn, n]));
-  const kat = byggKategorier();
+  const kat = byggIngangar();
   const fastaLagen = [
-    [0.18, 0.18], [0.50, 0.13], [0.82, 0.18], [0.14, 0.48],
-    [0.86, 0.48], [0.18, 0.78], [0.50, 0.86], [0.82, 0.78]
+    [0.18, 0.14], [0.50, 0.12], [0.82, 0.14], [0.16, 0.35],
+    [0.84, 0.35], [0.18, 0.82], [0.50, 0.86], [0.82, 0.82],
+    [0.22, 0.64], [0.78, 0.64]
   ];
+  const kort = innerHeight < 520 && innerWidth >= 600;
+  const smal = innerWidth < 1000 || kort;
 
   himmel.noder = kat.map((k, i) => {
     const forr = gamla.get(k.namn);
-    const lage = fastaLagen[i] || [0.5, 0.5];
+    const lage = kort
+      ? [(i % 5 + 0.5) / 5, i < 5 ? 0.14 : 0.73]
+      : smal
+      ? [i % 2 === 0 ? 0.25 : 0.75, [0.10, 0.22, 0.57, 0.70, 0.83][Math.floor(i / 2)]]
+      : fastaLagen[i];
     const malX = innerWidth * lage[0];
     const malY = innerHeight * lage[1];
     return {
       namn: k.namn,
+      filter: k.filter || k.namn,
       antal: k.antal,
       sar: false,
       d: 12,
       malX: malX,
       malY: malY,
-      x: forr ? forr.x : malX,
-      y: forr ? forr.y : malY,
+      x: forr && !smal ? forr.x : malX,
+      y: forr && !smal ? forr.y : malY,
       vx: 0, vy: 0,
       fas: Math.random() * Math.PI * 2,
       el: null
@@ -1231,10 +1255,13 @@ function byggHimmel() {
   const index = new Map(himmel.noder.map((n, i) => [n.namn, i]));
   const par = new Map();
   const omradenPerFacett = new Map();
+  const amnesingangar = byggAmnesingangar();
   for (const bm of arkiv.bokmarken) {
+    const ingangar = [bm.omrade, ...amnesingangar
+      .filter(a => bm.vTaggar.includes(vik(a.filter))).map(a => a.namn)];
     for (const facett of bm.natverksFacetter) {
       if (!omradenPerFacett.has(facett)) omradenPerFacett.set(facett, new Set());
-      omradenPerFacett.get(facett).add(bm.omrade);
+      for (const ingang of ingangar) omradenPerFacett.get(facett).add(ingang);
     }
   }
   for (const omradesMangd of omradenPerFacett.values()) {
@@ -1292,7 +1319,7 @@ function ritaNodknappar() {
     text.textContent = nod.namn;
     knapp.append(text);
 
-    knapp.addEventListener('click', () => laggTillFilter(nod.namn));
+    knapp.addEventListener('click', () => laggTillFilter(nod.filter));
 
     knapp.addEventListener('mouseenter', () => lysGrannar(i));
     knapp.addEventListener('mouseleave', () => lysGrannar(-1));
@@ -1358,6 +1385,10 @@ function undantagsrekt() {
 
 function simulera(steg) {
   const noder = himmel.noder;
+  if (innerWidth < 1000 || innerHeight < 520) {
+    for (const nod of noder) { nod.x = nod.malX; nod.y = nod.malY; }
+    return;
+  }
   const rekt = undantagsrekt();
   const cx = himmel.b / 2;
   const cy = himmel.h / 2;
@@ -1433,7 +1464,7 @@ function simulera(steg) {
 }
 
 function placeraNoder() {
-  const drift = !lugnRorelse && finPekare;
+  const drift = !lugnRorelse && finPekare && innerWidth >= 1000 && innerHeight >= 520;
   for (const nod of himmel.noder) {
     if (!nod.el) continue;
     let x = nod.x;
@@ -1487,7 +1518,7 @@ function bildruta(tid) {
   placeraNoder();
   ritaHimmel();
 
-  const drift = !lugnRorelse && finPekare;
+  const drift = !lugnRorelse && finPekare && innerWidth >= 1000 && innerHeight >= 520;
   if (vaken || drift) {
     himmel.rafId = requestAnimationFrame(bildruta);
   } else {

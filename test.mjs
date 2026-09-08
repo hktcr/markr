@@ -91,7 +91,7 @@ kolla('Bildanalys finns även i det samlade siteregistret',
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
 const noder = $$('#noder .nod');
-kolla('alla verksamhetsområden ritade som knappar', noder.length === 8, noder.length + ' st');
+kolla('åtta områden och två ämnesingångar ritade som knappar', noder.length === 10, noder.length + ' st');
 kolla('inga siffror på stjärnorna', $$('#noder .nod .antal').length === 0);
 kolla('platshållaren räknar arkivet', /Sök bland \d+ bokmärken/.test(sok.placeholder), sok.placeholder);
 kolla('horisonten syns med datum eller anmärkning', $('#horisont-info').textContent.length > 0, $('#horisont-info').textContent);
@@ -111,6 +111,26 @@ for (let i = 0; i < pos.length; i++) for (let j = i + 1; j < pos.length; j++) {
 kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFixed(0) + 'px');
 
 /* 2. Nodklick */
+for (const [namn, filter, antal] of [
+  ['Fotografi och bildskapande', 'Fotografi', 7],
+  ['Ljud och fältinspelning', 'Ljud', 4]
+]) {
+  const nod = noder.find(n => n.textContent === namn);
+  klick(nod);
+  kolla(namn + ' ger rätt antal och befintlig facett',
+    $$('#traffar .rad').length === antal && $('#aktiva-filter').textContent.includes(filter));
+  const franNod = $$('#traffar .rad').map(n => n.href);
+  tangent('Escape');
+  skriv('#' + filter);
+  kolla(namn + ' matchar exakt samma sökning och ordning',
+    JSON.stringify(franNod) === JSON.stringify($$('#traffar .rad').map(n => n.href)));
+  tangent('Escape');
+  klick($('#lank-lista'));
+  klick($$('#kategorilista .indexrad').find(n => n.querySelector('strong').textContent === namn));
+  kolla(namn + ' fungerar även från listvyn',
+    JSON.stringify(franNod) === JSON.stringify($$('#traffar .rad').map(n => n.href)));
+  tangent('Escape');
+}
 const tagnod = noder.find(n => !n.classList.contains('sarnod'));
 klick(tagnod);
 kolla('nodklick lämnar rymden', !$('#skal').classList.contains('rymd'));
@@ -165,10 +185,10 @@ kolla('Senast tillagda visar lista', !$('#resultat').hidden && $$('#traffar .rad
   $$('#traffar .rad').length + ' st');
 tangent('Escape');
 klick($('#lank-lista'));
-kolla('listläget visar index över alla verksamhetsområden', !$('#listlage').hidden && $$('#kategorilista .indexrad').length === 8,
+kolla('listläget visar alla områden och ämnesingångar', !$('#listlage').hidden && $$('#kategorilista .indexrad').length === 10,
   $$('#kategorilista .indexrad').length + ' st');
 const namnen = $$('#kategorilista .indexrad strong').map(r => r.textContent);
-kolla('indexet har fast ordning', namnen[0] === 'Skola och undervisning' && namnen.at(-1) === 'Allmän kunskap och referens');
+kolla('indexet behåller områdenas ordning och lägger till ämnen', namnen[0] === 'Skola och undervisning' && namnen[7] === 'Allmän kunskap och referens' && namnen.at(-1) === 'Ljud och fältinspelning');
 tangent('Escape');
 kolla('Escape lämnar listläget', $('#listlage').hidden && $('#skal').classList.contains('rymd'));
 

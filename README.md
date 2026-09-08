@@ -6,9 +6,12 @@ utvecklingsberoende på jsdom.
 
 ## Idén
 
-Tom sökning visar åtta stabila verksamhetsområden som stjärnor med jämn visuell
-vikt. Linjerna visar områden som delar ämnen, projekt eller kontexter. Klick på
-ett område öppnar dess bokmärken. Bandet "I träffarna" visar därefter relevanta
+Tom sökning visar åtta stabila verksamhetsområden samt ämnesingångarna
+Fotografi och bildskapande och Ljud och fältinspelning. Ämnesingångarna
+återanvänder filtren Fotografi och Ljud och samlar poster över områdesgränserna.
+De visas endast när filtret har träffar. Linjerna visar ingångar som delar
+ämnen, projekt eller kontexter. Klick öppnar motsvarande bokmärken.
+Bandet "I träffarna" visar därefter relevanta
 typer, kontexter, projekt och ämnen som klickbara facetter.
 
 Startvyn bär tre element och inget mer: ordmärket, okularet, stjärnorna.
@@ -28,7 +31,7 @@ i `aria-label` för skärmläsare. Ingenting i vyn upprepar något annat.
 | `app.js` | Sökmotor, söktillstånd, träffdetaljer, Driveindex, fullskärm, Nordnätverk, canvas och tangentbord |
 | `bokmarken.json` | Datan, Single Source of Truth |
 | `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
-| `test.mjs` | Kör 168 regressions-, corpus-, relations- och tillståndskontroller |
+| `test.mjs` | Kör regressions-, corpus-, relations- och tillståndskontroller |
 | `fixtures/` | Versionslåsta facit för pre-FotoR-sökning, FotoR- och Drivedelta samt relationer |
 | `package.json`, `package-lock.json` | Reproducerbar jsdom-baserad testmiljö |
 
@@ -45,8 +48,11 @@ som inget får skymma, och mjuka skärmkanter med plats för etiketterna. Den
 somnar när den är färdigräknad. På enheter med mus och utan
 `prefers-reduced-motion` ligger en svag drift kvar, annars står himlen still.
 
-Alla verksamhetsområden visas i en fast ordning och på stabila platser. På mobil
-finns samma områden även som en enkel kortlista via länken "Alla områden".
+Alla verksamhetsområden och ämnesingångar visas i en fast ordning.
+På skärmar under 1000 px används två fasta kolumner med radbrutna etiketter.
+På låga landskapsskärmar används två rader om fem noder. Dessa kompakta
+layouter har ingen fysikdrift. Samma ingångar finns som kortlista via
+"Alla ingångar". Bokmärkenas verksamhetsområden och sökrankning ändras inte.
 
 Stjärnorna tänds stegvis vid ankomst, 35 ms mellan varje, taket ligger på
 600 ms. Hovring eller tangentbordsfokus på en stjärna dämpar allt utom dess
@@ -206,7 +212,7 @@ så att det syns att det är samma sak:
 
 | Läge | Gestalt |
 |---|---|
-| Himlen, tom sökning | Åtta verksamhetsområden med jämn visuell vikt |
+| Himlen, tom sökning | Åtta verksamhetsområden och två ämnesingångar |
 | Bandet "I träffarna" | Mässingsprick plus monospace-etikett, samma språk i komprimerad form |
 | Områdesindexet | Kort i fast ordning med beskrivning och antal |
 

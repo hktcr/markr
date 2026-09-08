@@ -90,6 +90,26 @@ body {
 
 #noder.framme .nod { opacity: 1; }
 
+@media (max-width: 999px) {
+  .nod {
+    width: 46vw;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+  }
+}
+
+@media (max-height: 519px) and (min-width: 600px) {
+  .nod {
+    width: 19vw;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+    font-size: 0.625rem;
+    letter-spacing: 0.06em;
+  }
+}
+
 #noder.framme .nod.avlagsen { opacity: 0.35; transition-delay: 0s; }
 
 .nod .prick {
