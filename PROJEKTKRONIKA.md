@@ -6,7 +6,7 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 208 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 209 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
@@ -37,6 +37,8 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
     bokmärkesträdet och det samlade registret över ChatGPT siter.
 11. 2026-09-03, Kontaktark registrerades med full beskrivning i både
     bokmärkesträdet och det samlade registret över ChatGPT siter.
+12. 2026-09-08, Bildanalys fick en egen aktiv sökpost som länkar till den
+    publicerade GitHub Pages-versionen.
 
 ## Mål
 
@@ -57,6 +59,19 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-09-08 | Bildanalys blev sökbar i MärkR
+
+Bildanalys fanns sedan tidigare i det samlade siteregistret men saknades i
+`bokmarken.json`, som är MärkR-sökningens Single Source of Truth. Därför gav
+sökningen bara tematiskt besläktade träffar. En egen aktiv post lades till med
+id 245, kanonisk GitHub Pages-adress, beskrivning av färgkanaler,
+kulörfördelning, harmonier och lokal bildbehandling samt separata projekt- och
+ämnesfacetter. Historiska sökcorpus hålls fortsatt versionslåsta och den nya
+deltan har riktade regressionstester för unik post, sökbarhet och bevarad
+ordning bland äldre träffar.
+
+Händelse-id: `EVT-76041040-ae50-4507-adce-ec327810d401`.
 
 ### 2026-09-04 | Återställning efter avkortad bokmärkesfil
 
