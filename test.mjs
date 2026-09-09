@@ -87,6 +87,12 @@ kolla('Bildanalys har en unik aktiv sökpost med full beskrivning',
 kolla('Bildanalys finns även i det samlade siteregistret',
   sitesHtml.includes('https://hktcr.github.io/Bildanalys/') &&
   sitesHtml.includes('<h3>Bildanalys'));
+const fargateljenPost = parsed.bokmarken.find(post => post.url === 'https://fargateljen.hlgk.chatgpt.site');
+kolla('Färgateljén har en unik aktiv sökpost med godkänd beskrivning',
+  parsed.bokmarken.filter(post => post.url === 'https://fargateljen.hlgk.chatgpt.site').length === 1 &&
+  fargateljenPost?.id === 247 && fargateljenPost?.titel === 'Färgateljén' &&
+  fargateljenPost?.livscykel === 'Aktiv' && fargateljenPost?.beskrivning.length > 500 &&
+  fargateljenPost?.projekt.includes('FotoR') && fargateljenPost?.amnen.includes('Färgteori'));
 
 /* 1. Rymdläget */
 kolla('rymdläget aktivt vid start', $('#skal').classList.contains('rymd'));
@@ -112,7 +118,7 @@ kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFi
 
 /* 2. Nodklick */
 for (const [namn, filter, antal] of [
-  ['Fotografi och bildskapande', 'Fotografi', 7],
+  ['Fotografi och bildskapande', 'Fotografi', 8],
   ['Ljud och fältinspelning', 'Ljud', 4]
 ]) {
   const nod = noder.find(n => n.textContent === namn);
@@ -301,10 +307,11 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== enzymjaktenId)
+  bokmarken: currentData.bokmarken.filter(bm => ![fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {
@@ -571,6 +578,26 @@ kolla('Enzymjakten har full beskrivning och korrekt område',
   currentData.bokmarken.find(bm => bm.id === enzymjaktenId)?.omrade === 'Skola och undervisning');
 kolla('inga konsolfel i Enzymjakten-deltan', enzymeDom.kontraktsfel.length === 0);
 enzymeDom.tw.close();
+
+/* Färgateljén är en egen senare delta med oförändrad äldre ordning. */
+const preFargateljenData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== fargateljenId)
+};
+const preFargateljenDom = await skapaKontraktsdom(JSON.stringify(preFargateljenData));
+const fargateljenDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const fargateljenUrl = 'https://fargateljen.hlgk.chatgpt.site/';
+for (const fraga of ['färgateljén', 'färghjul', 'komplementära', 'triadiska', 'färgteori', '#FotoR']) {
+  const fore = korCorpusFraga(preFargateljenDom.tw, fraga).alla;
+  const efter = korCorpusFraga(fargateljenDom.tw, fraga).alla;
+  kolla('Färgateljén hittas utan att ändra äldre träffar: ' + fraga,
+    efter.filter(url => url === fargateljenUrl).length === 1 &&
+    JSON.stringify(efter.filter(url => url !== fargateljenUrl)) === JSON.stringify(fore));
+}
+kolla('inga konsolfel i Färgateljén-deltan',
+  preFargateljenDom.kontraktsfel.length === 0 && fargateljenDom.kontraktsfel.length === 0);
+preFargateljenDom.tw.close();
+fargateljenDom.tw.close();
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

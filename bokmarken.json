@@ -6484,6 +6484,55 @@
       "livscykel": "Aktiv",
       "favorit": false,
       "legacyTaggar": []
+    },
+    {
+      "id": 247,
+      "url": "https://fargateljen.hlgk.chatgpt.site",
+      "titel": "Färgateljén",
+      "beskrivning": "Privat interaktivt färgverktyg för att välja en basfärg visuellt i ett HSL-färghjul eller genom HEX-, RGB- och HSL-koder. Verktyget skapar komplementära, närliggande, triadiska, delat komplementära, tetradiska, kvadratiska och monokromatiska paletter. Färgavståndet kan justeras och varje färg kan göras till ny basfärg. Paletter och enskilda färgkoder kan kopieras, paletter kan exporteras som SVG och basfärgen visas i ljusare, mörkare och mjukare varianter. En kontrastkontroll jämför text och bakgrund enligt WCAG. Färghjulet använder HSL i sRGB och simulerar inte pigmentblandning.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Färg",
+        "Färgpalett",
+        "Färgharmoni",
+        "Färgteori"
+      ],
+      "tillagd": "2026-09-09",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "FotoR",
+        "Färgateljén"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Färg",
+        "Bildredigering",
+        "Bildanalys",
+        "Färgteori"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "ChatGPT Site",
+        "Fotografi",
+        "Färg",
+        "Färgpalett",
+        "Färgharmoni",
+        "Färgteori"
+      ]
     }
   ],
   "senasteGallring": {
