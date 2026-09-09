@@ -301,10 +301,15 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const enzymjaktenId = 246;
+const preEnzymjaktenData = {
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== enzymjaktenId)
+};
 const bildanalysId = 245;
 const preBildanalysData = {
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== bildanalysId)
+  ...preEnzymjaktenData,
+  bokmarken: preEnzymjaktenData.bokmarken.filter(bm => bm.id !== bildanalysId)
 };
 const preKontaktarkData = {
   ...preBildanalysData,
@@ -537,7 +542,7 @@ for (const fraga of ['kontaktark', 'fotografi', 'foto', 'mapp', 'EXIF', 'PNG', '
 }
 
 /* Bildanalys är den aktuella deltan och blir sökbar utan att ändra äldre träffars ordning. */
-const bildanalysCorpusDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const bildanalysCorpusDom = await skapaKontraktsdom(JSON.stringify(preEnzymjaktenData));
 const bildanalysUrl = 'https://hktcr.github.io/Bildanalys/';
 for (const fraga of ['bildanalys', 'fotografi', 'färg', 'lightroom', 'fotor', '#Aktiv']) {
   const fore = korCorpusFraga(kontaktarkCorpusDom.tw, fraga).alla;
@@ -549,6 +554,23 @@ for (const fraga of ['bildanalys', 'fotografi', 'färg', 'lightroom', 'fotor', '
 }
 kolla('inga konsolfel i Bildanalys-deltan',
   kontaktarkCorpusDom.kontraktsfel.length === 0 && bildanalysCorpusDom.kontraktsfel.length === 0);
+
+/* Enzymjakten is a new corpus delta, never part of frozen historical baselines. */
+const enzymeDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const enzymeUrl = 'https://enzymjakten-3d.hlgk.chatgpt.site/';
+for (const query of ['enzymjakten', 'matspjälkning', 'enzymer', 'livets kemi', '#PEPSIN', '#NO79']) {
+  const before = korCorpusFraga(bildanalysCorpusDom.tw, query).alla;
+  const after = korCorpusFraga(enzymeDom.tw, query).alla;
+  kolla('Enzymjakten hittas utan att ändra äldre träffar: ' + query,
+    after.filter(url => url === enzymeUrl).length === 1 &&
+    JSON.stringify(after.filter(url => url !== enzymeUrl)) === JSON.stringify(before));
+}
+kolla('Enzymjakten finns i sajtlistan', sitesHtml.includes(enzymeUrl.slice(0, -1)));
+kolla('Enzymjakten har full beskrivning och korrekt område',
+  currentData.bokmarken.find(bm => bm.id === enzymjaktenId)?.beskrivning.includes('sju verkliga enzymer') &&
+  currentData.bokmarken.find(bm => bm.id === enzymjaktenId)?.omrade === 'Skola och undervisning');
+kolla('inga konsolfel i Enzymjakten-deltan', enzymeDom.kontraktsfel.length === 0);
+enzymeDom.tw.close();
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

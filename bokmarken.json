@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-08",
+  "uppdaterad": "2026-09-09",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6442,6 +6442,48 @@
         "Färg",
         "Lightroom"
       ]
+    },
+    {
+      "id": 246,
+      "url": "https://enzymjakten-3d.hlgk.chatgpt.site",
+      "titel": "Enzymjakten 3D",
+      "beskrivning": "Öppet pedagogiskt 3D-spel om matspjälkning. Välj mellan sju verkliga enzymer med siffertangenterna 1 till 7 eller enzymknapparna. Spjälka kolhydrater, proteiner och fetter i olika storlekar, bearbeta mellanprodukter och samla ämnen för upptag. Molekylerna närmar sig under automatisk framåtfärd och svårigheten ökar genom nivåerna. Innehåller Enzymbok med källor, lugnt övningsläge, paus samt alias och gemensam highscore. Förenklad modell av verkliga enzymreaktioner för undervisning i livets kemi och människokroppen.",
+      "taggar": [
+        "Biologi",
+        "Kemi",
+        "Matspjälkning",
+        "Enzymer",
+        "Näringsämnen",
+        "Kolhydrater",
+        "Proteiner",
+        "Fetter",
+        "Pedagogiska spel"
+      ],
+      "tillagd": "2026-09-09",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "PEPSIN",
+        "NO79"
+      ],
+      "amnen": [
+        "Biologi",
+        "Kemi",
+        "Matspjälkning",
+        "Enzymer",
+        "Näringsämnen",
+        "Kolhydrater",
+        "Proteiner",
+        "Fetter",
+        "Pedagogiska spel"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": []
     }
   ],
   "senasteGallring": {

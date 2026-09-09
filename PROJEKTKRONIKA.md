@@ -322,3 +322,10 @@ Använd README:s publiceringsgrind före nästa MärkRändring och kontrollera
 projektkrönikan vid varje större datamigrering eller gallring.
 
 *Signatur: gAIa 🌲 2026-08-10*
+
+
+## 2026-09-09: Enzymjakten 3D i MärkR
+
+Håkans mandat: lägg in spelet efter att statuskontroll visat att det saknades. Post 246, URL https://enzymjakten-3d.hlgk.chatgpt.site, komplett beskrivning, undervisningsämnen och projekten PEPSIN/NO79. Hela posten visad före skrivning. Tillagd både i sökdatakällan och i sajtlistan. Historiska testkorpusar avgränsade före nytillskottet; frysta facit bevarade och egna sökprov kontrollerar nytillskott och äldre träffordning.
+
+Workstream WS-9f63c5e3-7270-488e-b44b-4c956f89feb3; event EVT-b92d8418-c6f8-464e-9488-d9cf307821e9. Huvudkrönika https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view ; spelprojekt https://drive.google.com/file/d/1yr3erqxpVppyUlz6lPCqas9mmUEg3lFq/view .
