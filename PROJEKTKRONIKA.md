@@ -329,3 +329,11 @@ projektkrönikan vid varje större datamigrering eller gallring.
 Håkans mandat: lägg in spelet efter att statuskontroll visat att det saknades. Post 246, URL https://enzymjakten-3d.hlgk.chatgpt.site, komplett beskrivning, undervisningsämnen och projekten PEPSIN/NO79. Hela posten visad före skrivning. Tillagd både i sökdatakällan och i sajtlistan. Historiska testkorpusar avgränsade före nytillskottet; frysta facit bevarade och egna sökprov kontrollerar nytillskott och äldre träffordning.
 
 Workstream WS-9f63c5e3-7270-488e-b44b-4c956f89feb3; event EVT-b92d8418-c6f8-464e-9488-d9cf307821e9. Huvudkrönika https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view ; spelprojekt https://drive.google.com/file/d/1yr3erqxpVppyUlz6lPCqas9mmUEg3lFq/view .
+
+## 2026-09-09: Färgateljén i MärkR
+
+Håkans mandat: registrera den privat publicerade färghjulssajten enligt MärkR:s rutiner. Hela postförslaget visades och godkändes före skrivning. Post 247, URL https://fargateljen.hlgk.chatgpt.site, har en utförlig beskrivning av färgval, färgkoder, harmonier, varianter, SVG-export och WCAG-kontrast. Avgränsningen HSL i sRGB, inte pigmentblandning, anges uttryckligen.
+
+Posten lades till i `bokmarken.json` med typ Webbapp, område Egna system och projekt samt projekten gAIa, FotoR och Färgateljén. Sökproven omfattar namn, färghjul, komplementära, triadiska, färgteori och projektfiltret FotoR. Historiska facit bevarades genom en tidsmässigt avgränsad testkorpus. JSON, JavaScript och hela testpaketet verifierades; 276 av 276 tester passerade. Funktionsrevision: `438eaddf425250ddfdab49451b35e75df563685b`.
+
+Workstream WS-7e3e175d-9b2c-450e-9fc6-960f8261907c; event EVT-b458f3fc-0dfc-4460-bdd3-868c1e259f94. Huvudkrönika https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view .
