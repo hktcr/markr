@@ -535,6 +535,8 @@ function ritaDriveNav() {
       li.className = 'drive-niva-' + Math.min(djup, 3);
       const lank = document.createElement('a');
       lank.href = bm.url;
+      lank.target = '_blank';
+      lank.rel = 'noopener';
       const titel = document.createElement('strong');
       titel.textContent = bm.visningstitel;
       const beskrivning = document.createElement('span');
@@ -658,6 +660,8 @@ function fyllLista(behallare, lista, ord, indexStart) {
     const a = document.createElement('a');
     a.className = 'rad';
     a.href = bm.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
     a.dataset.index = bas + i;
 
     const h3 = document.createElement('h3');
@@ -785,6 +789,8 @@ function byggTrafflankar(rubriktext, poster, klassnamn) {
     const li = document.createElement('li');
     const lank = document.createElement('a');
     lank.href = bm.url;
+    lank.target = '_blank';
+    lank.rel = 'noopener';
     lank.textContent = bm.visningstitel;
     li.append(lank);
     lista.append(li);
@@ -820,6 +826,8 @@ function fyllTraffdetalj(panel, bm) {
   const oppna = document.createElement('a');
   oppna.className = 'detalj-handling';
   oppna.href = bm.url;
+  oppna.target = '_blank';
+  oppna.rel = 'noopener';
   oppna.textContent = arDriveMapp(bm) ? 'Öppna mappen' : 'Öppna bokmärket';
   const kopiera = document.createElement('button');
   kopiera.type = 'button';
@@ -970,6 +978,8 @@ function renderaNatMappar(ankare) {
     const li = document.createElement('li');
     const lank = document.createElement('a');
     lank.href = bm.url;
+    lank.target = '_blank';
+    lank.rel = 'noopener';
     lank.textContent = bm.visningstitel;
     li.append(lank);
     el.natMapplankar.append(li);

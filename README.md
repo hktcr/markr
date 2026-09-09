@@ -144,6 +144,9 @@ Bakgrunden är inert medan lagret är öppet. Escape stänger först fullskärme
 | `Shift+Enter` | kopiera adressen |
 | `Esc` | rensa och tillbaka till himlen |
 
+Klick på bokmärken öppnar en ny flik så att MärkR finns kvar. Det gäller även
+detaljvyer, Nordnätverk, Drive-genvägar och sajtlistan.
+
 Träffraderna är riktiga `<a>`-element, så mittenklick, högerklick och
 skärmläsare fungerar som på vilken länk som helst.
 
