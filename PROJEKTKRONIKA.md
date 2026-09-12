@@ -337,3 +337,11 @@ Håkans mandat: registrera den privat publicerade färghjulssajten enligt MärkR
 Posten lades till i `bokmarken.json` med typ Webbapp, område Egna system och projekt samt projekten gAIa, FotoR och Färgateljén. Sökproven omfattar namn, färghjul, komplementära, triadiska, färgteori och projektfiltret FotoR. Historiska facit bevarades genom en tidsmässigt avgränsad testkorpus. JSON, JavaScript och hela testpaketet verifierades; 276 av 276 tester passerade. Funktionsrevision: `438eaddf425250ddfdab49451b35e75df563685b`.
 
 Workstream WS-7e3e175d-9b2c-450e-9fc6-960f8261907c; event EVT-b458f3fc-0dfc-4460-bdd3-868c1e259f94. Huvudkrönika https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view .
+
+
+
+## 2026-09-12: Ljusbord registrerat
+
+På Håkans uppdrag kontrollerades URL-identitet och befintligt register. Ljusbord saknades och tillförs som post 248, Webbapp under Egna system och projekt, med projekten gAIa, Fotografi och Ljusbord. Fullständig post visades före skrivning. Sajtöversikten får motsvarande kort. Beskrivningen gäller befintlig funktionalitet; den pågående beställningen av fullskärm och VEP-utveckling redovisas inte som färdig funktion.
+
+Event EVT-80920cf5-4461-4cc5-b14c-dbb7d91ae891, workstream WS-912f0904-16b2-56aa-aca4-c8a4534ca208. [Huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view), [fotokrönika](https://drive.google.com/file/d/1tKuVhvDDOOlHAs8ZSTxBnrQn1J49Rr8x/view). Tester och publiceringskvitto återförs dit efter exekvering. Historiska testkorpusar avgränsas från den nya posten; befintliga poster och appkod bevaras.

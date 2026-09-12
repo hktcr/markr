@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-09",
+  "uppdaterad": "2026-09-12",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6393,17 +6393,56 @@
       "url": "https://kontaktark-foto.hlgk.chatgpt.site",
       "titel": "Kontaktark",
       "beskrivning": "Privat och responsivt arbetsverktyg för att skapa utskrivbara fotografiska kontaktark direkt i webbläsaren. Lokala bildmappar eller enskilda JPEG-, PNG-, WebP- och GIF-filer kan läsas in, sorteras och fördelas automatiskt över valfritt antal sidor utan att originalbilderna ändras eller lämnar användarens enhet. Varje sida kan utformas självständigt som A4 eller A3, stående eller liggande, med valfritt antal rader och kolumner, justerbara marginaler och mellanrum samt bildpassning som visar hela bilden eller fyller rutan. Snabblayouter finns för bland annat två liggande bilder, fyra stående bilder och ett 2 × 2-rutnät. Bilder kan markeras, flyttas mellan sidor och ordnas inom den aktiva sidan. Filnamn kan placeras under varje bild och fotograferingsdatum med tid kan hämtas ur EXIF. Filens ändringsdatum används bara när det väljs uttryckligen. Varje sida kan dessutom få ett diskret datum i sidfoten och egen flyttbar text med valbar storlek och justering. En enskild sida eller alla bildförsedda sidor kan exporteras som separata PNG-filer i 150 eller 300 DPI med inbäddad upplösningsinformation. Siten är ägarbegränsad och bildbehandlingen sker lokalt.",
-      "taggar": ["gAIa", "Fotografi", "Kontaktark", "Bildurval", "Layout", "Utskrift", "PNG", "EXIF", "Bildmetadata", "Webbapp", "ChatGPT Site"],
+      "taggar": [
+        "gAIa",
+        "Fotografi",
+        "Kontaktark",
+        "Bildurval",
+        "Layout",
+        "Utskrift",
+        "PNG",
+        "EXIF",
+        "Bildmetadata",
+        "Webbapp",
+        "ChatGPT Site"
+      ],
       "tillagd": "2026-08-30",
       "omrade": "Egna system och projekt",
       "typ": "Webbapp",
       "kontexter": [],
-      "projekt": ["gAIa", "Fotografi", "Kontaktark"],
-      "amnen": ["Fotografi", "Kontaktark", "Bildurval", "Layout", "Utskrift", "Bildmetadata", "EXIF", "PNG"],
+      "projekt": [
+        "gAIa",
+        "Fotografi",
+        "Kontaktark"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Kontaktark",
+        "Bildurval",
+        "Layout",
+        "Utskrift",
+        "Bildmetadata",
+        "EXIF",
+        "PNG"
+      ],
       "period": "",
       "livscykel": "Aktiv",
       "favorit": false,
-      "legacyTaggar": ["gAIa", "Eget Projekt", "Utveckling", "Fotografi", "Kontaktark", "Bildurval", "Layout", "Utskrift", "PNG", "EXIF", "Bildmetadata", "Webbapp", "ChatGPT Site"]
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Fotografi",
+        "Kontaktark",
+        "Bildurval",
+        "Layout",
+        "Utskrift",
+        "PNG",
+        "EXIF",
+        "Bildmetadata",
+        "Webbapp",
+        "ChatGPT Site"
+      ]
     },
     {
       "id": 245,
@@ -6533,6 +6572,52 @@
         "Färgharmoni",
         "Färgteori"
       ]
+    },
+    {
+      "id": 248,
+      "url": "https://ljusbord.hlgk.chatgpt.site",
+      "titel": "Ljusbord",
+      "beskrivning": "Privat, lösenordsskyddat fotoverktyg för bildurval och komposition inför zine i Affinity. Bilder förminskas lokalt och kan flyttas och storleksändras med bevarade proportioner på ett svart eller vitt ljusbord. Stöd för flerval, zoom, panorering och tänkta uppslag med olika sidformat. Projekt med arbetskopior och placeringar sparas i molnet och kan öppnas på andra enheter med samma ChatGPT-konto och lösenord. Automatisk sparning efter första namngivningen, revisionskontroll och lokal projektfil som säkerhetskopia. Originalbilderna ändras inte eller laddas upp. Slutlayout och färgbedömning görs i Affinity.",
+      "taggar": [
+        "Fotografi",
+        "Bildurval",
+        "Zine",
+        "Layout",
+        "Ljusbord",
+        "Uppslag",
+        "Affinity"
+      ],
+      "tillagd": "2026-09-12",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Fotografi",
+        "Ljusbord"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildurval",
+        "Zine",
+        "Layout",
+        "Ljusbord",
+        "Uppslag",
+        "Affinity"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Fotografi",
+        "Bildurval",
+        "Zine",
+        "Layout",
+        "Ljusbord",
+        "Uppslag",
+        "Affinity"
+      ],
+      "mappForalderId": null
     }
   ],
   "senasteGallring": {
