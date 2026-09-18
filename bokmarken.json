@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-12",
+  "uppdaterad": "2026-09-18",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6616,6 +6616,48 @@
         "Ljusbord",
         "Uppslag",
         "Affinity"
+      ],
+      "mappForalderId": null
+    },
+    {
+      "id": 249,
+      "url": "https://drive.google.com/drive/folders/1rsYDz45YzU1JtFaiBEPOalQpLudYF00c",
+      "titel": "Bildarkivets kontaktkort i Google Drive",
+      "beskrivning": "Mapp i Google Drive med små JPEG-kontaktkort för att överblicka bildarkivet och välja fotografier att arbeta vidare med. Öppna mappen i rutnätsvy på iPad eller dator. Varje kort visar hela bilden i svart ram samt originalfilnamn, fotograferingsdatum, kamera och ursprungsmapp när uppgifterna finns. Ett klick öppnar kontaktkortet; originalet återfinns med hjälp av filnamnet och mappangivelsen. Originalbilderna läses enbart och ändras inte. Korten byggs ut stegvis. Åtkomst kräver behörighet till den privata Drive-mappen.",
+      "taggar": [
+        "Fotografi",
+        "Bildarkiv",
+        "Kontaktark",
+        "Kontaktkort",
+        "Miniatyrer",
+        "Bildurval",
+        "Google Drive"
+      ],
+      "tillagd": "2026-09-18",
+      "omrade": "Egna system och projekt",
+      "typ": "Mapp och anteckningar",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Fotografi"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Bildarkiv",
+        "Kontaktark",
+        "Kontaktkort",
+        "Miniatyrer",
+        "Bildurval"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Google Drive",
+        "Mapp",
+        "Fotografi",
+        "Bildarkiv",
+        "Kontaktark"
       ],
       "mappForalderId": null
     }

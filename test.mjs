@@ -118,7 +118,7 @@ kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFi
 
 /* 2. Nodklick */
 for (const [namn, filter, antal] of [
-  ['Fotografi och bildskapande', 'Fotografi', 9],
+  ['Fotografi och bildskapande', 'Fotografi', 10],
   ['Ljud och fältinspelning', 'Ljud', 4]
 ]) {
   const nod = noder.find(n => n.textContent === namn);
@@ -259,9 +259,9 @@ function korCorpusFraga(testfonster, fraga) {
 /* 8. Mappnav och expanderbara träffar. */
 klick($('#lank-drive'));
 kolla('Drive har en egen del i områdesöversikten', !$('#drivenav').hidden);
-kolla('Drivevyn visar sju unika mappgenvägar i fyra områdesgrupper',
-  $$('#drive-grupper a').length === 7 && $$('.drive-grupp').length === 4 &&
-  new Set($$('#drive-grupper a').map(a => a.href)).size === 7);
+kolla('Drivevyn visar åtta unika mappgenvägar i fyra områdesgrupper',
+  $$('#drive-grupper a').length === 8 && $$('.drive-grupp').length === 4 &&
+  new Set($$('#drive-grupper a').map(a => a.href)).size === 8);
 kolla('FotoR visas som verifierad mapphierarki i tre nivåer',
   $('#drive-grupper a[href*="1gHcF14n"]')?.closest('li')?.classList.contains('drive-niva-0') &&
   $('#drive-grupper a[href*="1eyEFD-Y"]')?.closest('li')?.classList.contains('drive-niva-1') &&
@@ -311,7 +311,7 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken.filter(bm => ![249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {
@@ -344,6 +344,7 @@ kolla('aktuell data har unika numeriska id:n och unika URL:er',
   new Set(aktuellaUrl).size === aktuellaUrl.length);
 
 const vantadeDriveId = new Set([
+  249,
   deltaFixture.newBookmark.id,
   ...driveDeltaFixture.newBookmarks.map(bm => bm.id)
 ]);
@@ -369,7 +370,7 @@ const driveHarCykel = start => {
   return false;
 };
 kolla('Driveposter har kanoniska URL:er, giltiga föräldrar och inga cykler',
-  aktuellaDrivePoster.length === 7 && aktuellaDrivePoster.every(bm =>
+  aktuellaDrivePoster.length === 8 && aktuellaDrivePoster.every(bm =>
     kanoniskDriveUrl(bm.url) &&
     (bm.mappForalderId == null || aktuellDriveEfterId.has(bm.mappForalderId)) &&
     !driveHarCykel(bm)));
@@ -599,6 +600,23 @@ kolla('inga konsolfel i Färgateljén-deltan',
 preFargateljenDom.tw.close();
 fargateljenDom.tw.close();
 
+/* Arkivets kontaktkort är en separat Drive-mapp, inte Kontaktark-sajten. */
+const preKontaktkortData = {...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 249)};
+const preKontaktkortDom = await skapaKontraktsdom(JSON.stringify(preKontaktkortData));
+const kontaktkortDom = await skapaKontraktsdom(rawJson);
+const kontaktkortUrl = 'https://drive.google.com/drive/folders/1rsYDz45YzU1JtFaiBEPOalQpLudYF00c';
+for (const fraga of ['kontaktkort', 'bildarkiv', 'kontaktark', 'miniatyrer', 'fotografi', 'drive', 'mapp']) {
+  const fore = korCorpusFraga(preKontaktkortDom.tw, fraga).alla;
+  const efter = korCorpusFraga(kontaktkortDom.tw, fraga).alla;
+  kolla('Kontaktkorten hittas och äldre ordning bevaras: ' + fraga,
+    efter.filter(url => url === kontaktkortUrl).length === 1 &&
+    JSON.stringify(efter.filter(url => url !== kontaktkortUrl)) === JSON.stringify(fore));
+}
+kolla('inga konsolfel i Kontaktkort-deltan',
+  preKontaktkortDom.kontraktsfel.length === 0 && kontaktkortDom.kontraktsfel.length === 0);
+preKontaktkortDom.tw.close();
+kontaktkortDom.tw.close();
+
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');
 const frystSokdom = await skapaKontraktsdom(frystSokRa);
@@ -759,4 +777,3 @@ console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
 process.exit(antalFel ? 1 : 0);
-
