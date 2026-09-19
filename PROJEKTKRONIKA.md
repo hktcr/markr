@@ -345,3 +345,14 @@ Workstream WS-7e3e175d-9b2c-450e-9fc6-960f8261907c; event EVT-b458f3fc-0dfc-4460
 På Håkans uppdrag kontrollerades URL-identitet och befintligt register. Ljusbord saknades och tillförs som post 248, Webbapp under Egna system och projekt, med projekten gAIa, Fotografi och Ljusbord. Fullständig post visades före skrivning. Sajtöversikten får motsvarande kort. Beskrivningen gäller befintlig funktionalitet; den pågående beställningen av fullskärm och VEP-utveckling redovisas inte som färdig funktion.
 
 Event EVT-80920cf5-4461-4cc5-b14c-dbb7d91ae891, workstream WS-912f0904-16b2-56aa-aca4-c8a4534ca208. [Huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view), [fotokrönika](https://drive.google.com/file/d/1tKuVhvDDOOlHAs8ZSTxBnrQn1J49Rr8x/view). Tester och publiceringskvitto återförs dit efter exekvering. Historiska testkorpusar avgränsas från den nya posten; befintliga poster och appkod bevaras.
+
+
+## 2026-09-19: National Geographic Archive kompletterat
+
+Håkan bad att lägga till arkivet enligt rutinerna. Det fanns redan som post 142 utan beskrivning och ämnen. Samma ID, tilläggsdatum och historiska taggar bevaras. URL uppdateras från /landing till den officiellt länkade rotadressen https://archive.nationalgeographic.com/. Posten får källgrundad beskrivning samt Fotografi, Fotojournalistik, Bildberättande, Tidskriftsarkiv, Geografi, Natur, Historia och Kultur. Befintligt område Allmän kunskap och referens och typen Webbplats behålls. Inga projektkopplingar antas. Därmed ingår den även i den befintliga fotoingången. Övriga 212 poster är oförändrade.
+
+Källa: [National Geographics internationella åtkomstguide](https://www.nationalgeographic.com/pages/article/getdigitalaccess), läst 2026-09-19. Den beskriver nummer från 1888 och framåt samt inloggning med kopplad prenumeration. Arkivläsaren gav fel i webbverktyget, så läsning bakom inloggning är inte verifierad. Fullständig post presenterades före ändring.
+
+Historiska prov bevarar postens gamla värden i befintlig versionsfixtur; fotoingångens aktuella antal ökar från 10 till 11. Publicerings- och slutkvitto återförs till [huvudkrönikan](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view). [Spårregister](https://drive.google.com/file/d/1SgFQiwAkzKSxgTenF0GuwJPaPd1vrI15/view).
+
+workstream_id: WS-807dc11d-fd0e-4321-a0b7-98d305231485; event_id: EVT-df0e3cce-2656-4280-86bc-e36a6bbe93ec. Evidens: användaruppdrag, återlästa original och officiell åtkomstguide. Signatur: gAIa.

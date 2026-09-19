@@ -65,6 +65,29 @@
         "ChatGPT Site",
         "Lärarsida"
       ]
+    },
+    {
+      "url": "https://archive.nationalgeographic.com/landing",
+      "titel": "National Geographic Magazine Archive",
+      "beskrivning": "",
+      "taggar": [
+        "Bokmärke",
+        "Verktyg"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 142,
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Bokmärke",
+        "Verktyg"
+      ]
     }
   ]
 }

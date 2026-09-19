@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-18",
+  "uppdaterad": "2026-09-19",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -3398,9 +3398,9 @@
       ]
     },
     {
-      "url": "https://archive.nationalgeographic.com/landing",
+      "url": "https://archive.nationalgeographic.com/",
       "titel": "National Geographic Magazine Archive",
-      "beskrivning": "",
+      "beskrivning": "National Geographics digitala tidskriftsarkiv med nummer från 1888 och framåt, inklusive artiklar, fotografier och kartor. En resurs för fotografisk inspiration, bildberättande och historiska perspektiv på natur, geografi och kultur. Läsåtkomst kräver inloggning och kopplad prenumeration enligt National Geographics internationella åtkomstguide.",
       "taggar": [
         "Bokmärke",
         "Verktyg"
@@ -3411,7 +3411,16 @@
       "typ": "Webbplats",
       "kontexter": [],
       "projekt": [],
-      "amnen": [],
+      "amnen": [
+        "Fotografi",
+        "Fotojournalistik",
+        "Bildberättande",
+        "Tidskriftsarkiv",
+        "Geografi",
+        "Natur",
+        "Historia",
+        "Kultur"
+      ],
       "period": "",
       "livscykel": "Aktiv",
       "favorit": false,

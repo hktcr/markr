@@ -118,7 +118,7 @@ kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFi
 
 /* 2. Nodklick */
 for (const [namn, filter, antal] of [
-  ['Fotografi och bildskapande', 'Fotografi', 10],
+  ['Fotografi och bildskapande', 'Fotografi', 11],
   ['Ljud och fältinspelning', 'Ljud', 4]
 ]) {
   const nod = noder.find(n => n.textContent === namn);
