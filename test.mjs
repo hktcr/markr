@@ -311,7 +311,7 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken.filter(bm => ![250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {

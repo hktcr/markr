@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-19",
+  "uppdaterad": "2026-09-22",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6668,6 +6668,38 @@
         "Bildarkiv",
         "Kontaktark"
       ],
+      "mappForalderId": null
+    },
+    {
+      "id": 250,
+      "url": "https://gaia-presenter.hlgk.chatgpt.site",
+      "titel": "gAIa Presenter",
+      "beskrivning": "Privat presentationsverktyg för att skriva och redigera bildspel med text, bilder och separat talarmanus. Markdownredigering, bildöversikt och förhandsvisning hjälper till att bygga berättelsen. Talarvyn visar aktuell och nästa bild, manus och timer; ett separat publikfönster visar presentationen. Presentationer kan sparas i molnet och importeras eller exporteras som gAIa-paket. HTML-export ger en fristående version att visa i webbläsaren.",
+      "taggar": [
+        "Presentationer",
+        "Talarmanus",
+        "Bildberättande",
+        "Undervisning"
+      ],
+      "tillagd": "2026-09-22",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "LEKTOR",
+        "gAIa Presenter"
+      ],
+      "amnen": [
+        "Presentationer",
+        "Talarmanus",
+        "Bildberättande",
+        "Undervisning"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
       "mappForalderId": null
     }
   ],

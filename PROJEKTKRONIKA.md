@@ -356,3 +356,12 @@ Källa: [National Geographics internationella åtkomstguide](https://www.nationa
 Historiska prov bevarar postens gamla värden i befintlig versionsfixtur; fotoingångens aktuella antal ökar från 10 till 11. Publicerings- och slutkvitto återförs till [huvudkrönikan](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view). [Spårregister](https://drive.google.com/file/d/1SgFQiwAkzKSxgTenF0GuwJPaPd1vrI15/view).
 
 workstream_id: WS-807dc11d-fd0e-4321-a0b7-98d305231485; event_id: EVT-df0e3cce-2656-4280-86bc-e36a6bbe93ec. Evidens: användaruppdrag, återlästa original och officiell åtkomstguide. Signatur: gAIa.
+
+
+## 2026-09-22: gAIa Presenter registrerat
+
+Håkan bad att kontrollera om appen finns i MärkR med beskrivning och lägga till den om den saknas. Namn och URL saknades i både sökdata och sajtlista. Post 250 tillför gAIa Presenter med den kanoniska adressen https://gaia-presenter.hlgk.chatgpt.site, typ Webbapp, område Egna system och projekt och projekten gAIa, LEKTOR och gAIa Presenter. Beskrivningen omfattar Markdown, bildspel med bilder och separat manus, talarvy med timer, publikfönster, molnsparning samt gAIa-paket och HTML-export. Hela postens innehåll visades före skrivning. Ägarprivat åtkomst bevaras; ingen laserfunktion utlovas i beskrivningen.
+
+Samma post finns i sajtlistan. Alla 213 tidigare poster bevaras fält för fält och i samma ordning; 214 poster totalt. Den nya posten undantas från frysta historiska testkorpusar. JSON, syntax och hela testsviten kontrolleras före publicering; publicerings- och slutkvitto återförs till [huvudkrönikan](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view) och [LEKTOR](https://drive.google.com/file/d/1q-YYp0aIU7GKGafeLvAxqWHxLKfMAQ2q/view).
+
+workstream_id: WS-1cfccb1c-d75a-4953-9519-aa355b5f0903; event_id: EVT-810fe9c9-1e32-4b5c-9859-2ac9a40eb67e. Evidens: användaruppdrag, aktuell data och faktisk användning av appen. Signatur: gAIa.
