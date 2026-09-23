@@ -365,3 +365,13 @@ Håkan bad att kontrollera om appen finns i MärkR med beskrivning och lägga ti
 Samma post finns i sajtlistan. Alla 213 tidigare poster bevaras fält för fält och i samma ordning; 214 poster totalt. Den nya posten undantas från frysta historiska testkorpusar. JSON, syntax och hela testsviten kontrolleras före publicering; publicerings- och slutkvitto återförs till [huvudkrönikan](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view) och [LEKTOR](https://drive.google.com/file/d/1q-YYp0aIU7GKGafeLvAxqWHxLKfMAQ2q/view).
 
 workstream_id: WS-1cfccb1c-d75a-4953-9519-aa355b5f0903; event_id: EVT-810fe9c9-1e32-4b5c-9859-2ac9a40eb67e. Evidens: användaruppdrag, aktuell data och faktisk användning av appen. Signatur: gAIa.
+
+
+## 2026-09-23 | Mobilstyrning i gAIa Presenter tillagd
+
+- event_id: EVT-09f456b2-3075-4295-b078-82d53b75b23c; workstream_id: WS-1cfccb1c-d75a-4953-9519-aa355b5f0903; relaterat WS-3790e59d-1112-4d38-833a-ea3e101b2f89.
+- Håkan har uttryckligen godkänt omsparning av befintlig bokmärkesfil och krönika i detta offentliga arkiv med den tidigare visade mobilgenvägen. Godkännandet följer på två automatiska avvisningar och omfattar denna konkreta ändring; ingen vidare åtkomst eller delning ändras.
+- Ny post251: gAIa Presenter · mobilstyrning, https://gaia-presenter.hlgk.chatgpt.site/remote . Samma ChatGPT-konto som datorn, öppen talarvy, stora framåt/bakåtknappar, bildöversikt med direktval, svart skärm, timer och rörelsereglage. Alla214 äldre poster bevaras fält för fält, i samma ordning. Inga URL-dubbletter.
+- gAIa Presenter är redan publicerad som webbversion8, källcommit dca774cbc6d538ea63b8839c0b9401b070ee0faa. Senaste presentationen heter ”Hugging Face · När AI börjar handla · R15b” och är en separat sparad molnpresentation. Mobilanslutning och faktisk bildväxling till talarvyn observerades i föregående pass. Appens privata åtkomst är oförändrad.
+- Föreskrivna kontroller godkända för exakt dessa bokmärkes- och testindata: installation enligt låsfil, JSON, JavaScript och284/284tester. Ny post undantas från frysta historiska testkorpusar. Endast bokmarken.json, test.mjs och denna krönika ändras. Återläsning och Pages-status följs upp i huvudkrönikan.
+- Återpekare: [app](https://gaia-presenter.hlgk.chatgpt.site/) ↔ [workshoporiginal](https://drive.google.com/file/d/1QYoqP6Bz53vQEwrPP60DrHennYS84X0k/view) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view). Signatur: gAIa.

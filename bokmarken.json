@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-22",
+  "uppdaterad": "2026-09-23",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6695,6 +6695,38 @@
         "Talarmanus",
         "Bildberättande",
         "Undervisning"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 251,
+      "url": "https://gaia-presenter.hlgk.chatgpt.site/remote",
+      "titel": "gAIa Presenter · mobilstyrning",
+      "beskrivning": "Styr den aktiva presentationen i gAIa Presenter från mobilen. Logga in med samma ChatGPT-konto som på datorn. Stora knappar för föregående och nästa bild, bildöversikt med direktval, svart skärm, timer och av/på för rörelser. Datorns talarvy behöver vara öppen; anslutningsstatus visar när mobilstyrningen är redo.",
+      "taggar": [
+        "Presentationer",
+        "Mobilstyrning",
+        "Fjärrkontroll",
+        "Talarmanus"
+      ],
+      "tillagd": "2026-09-23",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "LEKTOR",
+        "gAIa Presenter"
+      ],
+      "amnen": [
+        "Presentationer",
+        "Mobilstyrning",
+        "Fjärrkontroll",
+        "Talarmanus"
       ],
       "period": "",
       "livscykel": "Aktiv",
