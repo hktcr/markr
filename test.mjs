@@ -118,7 +118,7 @@ kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFi
 
 /* 2. Nodklick */
 for (const [namn, filter, antal] of [
-  ['Fotografi och bildskapande', 'Fotografi', 11],
+  ['Fotografi och bildskapande', 'Fotografi', 12],
   ['Ljud och fältinspelning', 'Ljud', 4]
 ]) {
   const nod = noder.find(n => n.textContent === namn);
@@ -311,7 +311,7 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken.filter(bm => ![252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {

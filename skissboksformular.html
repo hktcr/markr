@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="sv">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Skissboken · Ny bild</title>
+<style>
+:root{font:18px/1.6 system-ui,sans-serif;color:#292c28;background:#f6f5f1}*{box-sizing:border-box}body{margin:0}main{max-width:1000px;margin:auto;padding:48px 24px}h1{font:400 38px Georgia,serif;margin:0 0 12px}h2{font-size:21px;font-weight:500}p{margin:0 0 22px}.intro{max-width:650px;color:#61665e}.layout{display:grid;grid-template-columns:1fr 1fr;gap:32px}.card{padding:28px;background:white;border:1px solid #dddcd5;border-radius:14px}label,legend{font-weight:600;font-size:16px}input,textarea,select{width:100%;font:inherit;color:inherit;border:1px solid #b5b9b0;border-radius:6px;padding:12px;background:#fff}textarea{resize:vertical}input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid #7b947b;outline-offset:3px}.field{margin-bottom:22px}.hint{font-size:14px;color:#646a60;margin:6px 0 0}.dates{display:flex;gap:14px;margin-top:10px}.dates>*{flex:1;min-width:0}button{font:600 16px/1.5 system-ui;padding:12px 18px;border-radius:7px;border:1px solid #304634;color:#fff;background:#304634;cursor:pointer;min-height:48px}button.secondary{color:#304634;background:#fff}.buttons{display:flex;gap:10px;flex-wrap:wrap}#status{min-height:30px;font-size:15px;margin:12px 0}#quote{font:italic 22px/1.65 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere}#placePreview{font-size:14px;color:#6b7167;overflow-wrap:anywhere;margin-top:18px}#empty{color:#73796e}#excerpt{font:15px/1.7 ui-monospace,monospace;background:#fafaf7}ol{padding-left:22px;font-size:16px}li{margin-bottom:10px}a{color:#304634}details{margin-top:20px;font-size:15px}summary{cursor:pointer}footer{font-size:13px;color:#71766d;margin-top:24px}[hidden]{display:none!important}@media(max-width:760px){main{padding:28px 18px}.layout{grid-template-columns:1fr}.card{padding:22px}h1{font-size:32px}}
+</style>
+<main>
+<h1>Ny bild i skissboken</h1>
+<p class="intro">Fyll i uppgifterna och kopiera den färdiga texten till bildinlägget i Squarespace. Det här formuläret laddar inte upp eller publicerar något.</p>
+<div class="layout">
+<form id="form" class="card">
+<div class="field"><label for="precision">När togs bilden?</label><select id="precision"><option value="day">Jag vet datumet</option><option value="year">Jag vet bara året</option><option value="none">Lämna utan datum</option></select><div class="dates"><input type="date" id="date" aria-label="Bilddatum" min="0001-01-01" max="9999-12-31"><input id="year" type="number" min="1" max="9999" step="1" placeholder="Exempel: 2026" aria-label="Bildens år" hidden disabled></div><p class="hint">Datumet används för sortering och årsfilter. Det visas inte vid bilden.</p></div>
+<div class="field"><label for="place">Plats <span class="hint">(valfritt)</span></label><input id="place" maxlength="100" placeholder="Exempel: Båstad hamn"><p class="hint">Visas som en egen rad under kommentaren.</p></div>
+<div class="field"><label for="comment">Bildkommentar</label><textarea id="comment" rows="7" placeholder="Skriv dina tankar om bilden…" required></textarea></div>
+<div class="buttons"><button type="submit">Kopiera till Excerpt</button><button type="button" class="secondary" id="copyComment">Kopiera bara kommentaren</button></div>
+<p id="status" role="status" aria-live="polite"></p>
+<button type="button" class="secondary" id="reset">Börja med en ny bild</button>
+</form>
+<div>
+<section class="card" aria-label="Förhandsvisning"><h2>Så visas texten</h2><p id="empty">Din bildkommentar visas här när du skriver.</p><div id="quote" hidden></div><p id="placePreview" hidden></p></section>
+<section><h2>Lägg in bilden</h2><ol><li>Ladda upp bilden i ditt skissboksinlägg och välj den även som <strong>Featured Image</strong>.</li><li>Klistra in den färdiga texten under <strong>Settings → Content → Excerpt</strong>.</li><li>Klistra in enbart kommentaren i inläggets textblock. Då blir kommentaren samma i båda visningslägena.</li><li>Spara som utkast eller publicera när du är redo.</li></ol><a href="https://conch-cricket-6ram.squarespace.com/config/pages/6ab0fd89eef3a02318581765" target="_blank" rel="noopener">Öppna skissboken i Squarespace ↗</a></section>
+</div></div>
+<details><summary>Visa texten som kopieras</summary><label for="excerpt">Färdig text till Excerpt</label><textarea id="excerpt" rows="9" readonly></textarea><p class="hint">Om automatisk kopiering inte fungerar kan du markera och kopiera texten här.</p></details>
+<footer>Uppgifterna behandlas bara i den här sidan. Inget sparas automatiskt. Behåll sidan öppen tills du har klistrat in texten i Squarespace.</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id),form=$('form');
+function entryText(date,place,comment){return [(date?'Bilddatum: '+date:''),(place?'Plats: '+place:'')].filter(Boolean).join('\n')+(date||place?'\n\n':'')+comment;}
+function update(){const mode=$('precision').value;$('date').hidden=mode!=='day';$('date').disabled=mode!=='day';$('date').required=mode==='day';$('year').hidden=mode!=='year';$('year').disabled=mode!=='year';$('year').required=mode==='year';const date=mode==='day'?$('date').value:mode==='year'&&$('year').value?String($('year').value).padStart(4,'0'):'';const place=$('place').value.trim(),comment=$('comment').value.trim();$('excerpt').value=entryText(date,place,comment);$('quote').textContent='”'+comment.replace(/^[“”"]|[“”"]$/g,'')+'”';$('quote').hidden=!comment;$('empty').hidden=!!comment;$('placePreview').textContent=place;$('placePreview').hidden=!place;}
+async function copy(text,label){try{await navigator.clipboard.writeText(text);$('status').textContent=label+' är kopierad. Klistra in i Squarespace.';}catch{document.querySelector('details').open=true;$('excerpt').value=text;$('excerpt').focus();$('excerpt').select();$('status').textContent='Markera texten nedan och välj Kopiera.';}}
+form.addEventListener('input',()=>{update();$('status').textContent='';});form.addEventListener('change',update);form.addEventListener('submit',e=>{e.preventDefault();update();if(form.reportValidity())copy($('excerpt').value,'Texten');});$('copyComment').addEventListener('click',()=>{if($('comment').reportValidity())copy($('comment').value.trim(),'Kommentaren');});$('reset').addEventListener('click',()=>{if(($('comment').value||$('place').value||$('date').value||$('year').value)&&!confirm('Töm formuläret för en ny bild?'))return;form.reset();update();$('status').textContent='';$('date').focus();});update();
+</script>
+</html>

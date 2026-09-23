@@ -6733,6 +6733,36 @@
       "favorit": false,
       "legacyTaggar": [],
       "mappForalderId": null
+    },
+    {
+      "id": 252,
+      "url": "https://hktcr.github.io/markr/skissboksformular.html",
+      "titel": "Skissboken · formulär för nya bilder",
+      "beskrivning": "Hjälpformulär för nya bildinlägg i skissboken på hakankarlsson.se. Fyll i fotograferingsdatum, enbart år eller lämna utan datum, valfri plats och bildkommentar. Exempeltexter visar vad som ska fyllas i. En förhandsvisning visar kommentaren i kursiv stil med platsen på en egen rad under. Kopiera färdig metadata och kommentar till Settings → Content → Excerpt i Squarespace och kopiera enbart kommentaren till inläggets textblock. Datumet används av skissbokens sortering och årsfilter men visas inte vid bilden. Bilden laddas upp separat i Squarespace och väljs även som Featured Image. Formuläret behandlar texten lokalt i webbläsaren, sparar inte automatiskt och laddar inte upp eller publicerar något. Behåll sidan öppen tills texten har klistrats in i Squarespace.",
+      "taggar": [
+        "Fotografi",
+        "Skissbok",
+        "Squarespace",
+        "Bildmetadata"
+      ],
+      "tillagd": "2026-09-23",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "Fotografi"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Skissbok",
+        "Squarespace",
+        "Bildmetadata"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
     }
   ],
   "senasteGallring": {
