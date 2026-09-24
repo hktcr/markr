@@ -311,7 +311,7 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken.filter(bm => ![253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {
@@ -616,6 +616,14 @@ kolla('inga konsolfel i Kontaktkort-deltan',
   preKontaktkortDom.kontraktsfel.length === 0 && kontaktkortDom.kontraktsfel.length === 0);
 preKontaktkortDom.tw.close();
 kontaktkortDom.tw.close();
+
+/* Läsutgåvan ska hittas med ord användaren minns. */
+const readerDom = await skapaKontraktsdom(rawJson);
+for (const fraga of ['hugging face', 'AI-agenter', 'distansversion', 'efterhandsvisning', 'läsutgåva', 'titta senare', 'Björnekullaskolan']) {
+  const found = korCorpusFraga(readerDom.tw, fraga).alla;
+  kolla('läsutgåvan hittas: ' + fraga, found.filter(url => url === 'https://hktcr.github.io/SlideHub/presentations/nar-ai-borjar-agera/').length === 1);
+}
+readerDom.tw.close();
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

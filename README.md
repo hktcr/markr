@@ -178,6 +178,32 @@ Att lägga till ett bokmärke:
    för en filtyp, organisation, termin eller ett projekt.
 5. Visa hela posten för Håkan innan något skrivs.
 
+### Sökbara beskrivningar · MARKR-SOK-001 · version 1.0.0
+
+Gäller nya och ändrade poster samt granskade poster vid veckounderhåll.
+Beskrivningen ska alltid innehålla relevanta sökord som användaren rimligen
+minns: centrala egennamn, ämnen, användning och naturliga benämningar eller
+synonymer, även när orden saknas i titeln. Skriv sammanhängande, källgrundad
+svenska; undvik nyckelordsfyllnad och påhittade kopplingar. Taggar och facetter
+kompletterar beskrivningen. Om innehållet inte kan verifieras ska bristen
+markeras och komplettering återstå, inte fyllas med gissningar.
+
+Skilj verktyget från dess innehåll: en publicerad presentation eller läsutgåva
+behöver en egen direktpost när den omfattas av registreringsuppdraget.
+För denna läsutgåva är Hugging Face, AI-agenter, AI-workshop, distansversion,
+efterhandsvisning och läsutgåva relevanta uttryck.
+
+Välj minst tre realistiska provsökningar, däribland ett centralt namn, ett
+ämne och ett användningssätt. Kör dem i MärkR:s verkliga sökfunktion, före
+publicering och mot publicerad data efteråt; varje sökning ska ge rätt URL.
+Dokumentera sökorden och utfallet. Ett sparat bokmärke är inte färdigverifierat
+förrän länken fungerar och dessa sökningar lyckas. Vid veckounderhåll rättas
+upptäckta luckor inom befintligt mandat; osäker eller ej granskad täckning
+redovisas. Regeln utökar inga publicerings- eller delningsbehörigheter.
+
+change_set_id: CHG-1776aae7-6ef3-4165-a9ab-c04ca1f2cacd. Beslut: Håkan,
+2026-09-24. Kanonisk rutin: detta avsnitt i MärkR:s README på GitHub.
+
 Före varje push:
 
 ```bash
