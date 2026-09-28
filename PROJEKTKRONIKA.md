@@ -375,3 +375,22 @@ workstream_id: WS-1cfccb1c-d75a-4953-9519-aa355b5f0903; event_id: EVT-810fe9c9-1
 - gAIa Presenter är redan publicerad som webbversion8, källcommit dca774cbc6d538ea63b8839c0b9401b070ee0faa. Senaste presentationen heter ”Hugging Face · När AI börjar handla · R15b” och är en separat sparad molnpresentation. Mobilanslutning och faktisk bildväxling till talarvyn observerades i föregående pass. Appens privata åtkomst är oförändrad.
 - Föreskrivna kontroller godkända för exakt dessa bokmärkes- och testindata: installation enligt låsfil, JSON, JavaScript och284/284tester. Ny post undantas från frysta historiska testkorpusar. Endast bokmarken.json, test.mjs och denna krönika ändras. Återläsning och Pages-status följs upp i huvudkrönikan.
 - Återpekare: [app](https://gaia-presenter.hlgk.chatgpt.site/) ↔ [workshoporiginal](https://drive.google.com/file/d/1QYoqP6Bz53vQEwrPP60DrHennYS84X0k/view) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view). Signatur: gAIa.
+
+
+## 2026-09-28 | Historiska corpus efter VUX-arkivering
+
+Veckounderhållet fann sex reproducerbara testfel efter att posterna 222–225
+arkiverades den 24 september. Den aktuella bokmärkesdatan var korrekt, men de
+historiska FotoR- och Drive-corpusen rekonstruerades från dagens arkiverade
+versioner. Därför bröts deras versionshashar och de historiska sökproven för
+`#Aktiv` tappade fyra träffar.
+
+De fyra senast aktiva versionerna har lagts till i den befintliga
+versionsfixturen. Dagens arkiverade poster, livscykelkanon och sökdata har inte
+ändrats. JSON, JavaScript och hela testsviten verifierades efter rättelsen;
+291 av 291 tester passerade.
+
+workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
+event_id: EVT-1fa66a96-0a2b-4f69-9c52-863bdc00f30a. Evidens: commit
+`8c50af640c17c4360ff75ae6c27f572c89b1c9cb`, dess förälder och reproducerbar
+testkörning. Signatur: gAIa.

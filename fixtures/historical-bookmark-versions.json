@@ -67,6 +67,241 @@
       ]
     },
     {
+      "url": "https://ai-workshop-vux-ren.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp, tidigare ren reservversion",
+      "beskrivning": "Fryst tidigare version med 19 rena presentationsbilder. Bevarad oförändrad som reserv efter att dagens version med sammanfattande slutbild publicerades.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 222,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ]
+    },
+    {
+      "url": "https://ai-workshop-torsdag.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp, reservversion",
+      "beskrivning": "Fryst fullversion av VUX-workshopen med 28 presentationsbilder och körstöd. Bevarad oförändrad som reserv om den kortare, rena workshopversionen behöver ersättas.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 223,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Reservversion"
+      ]
+    },
+    {
+      "url": "https://ai-workshop-vux-ren-slutbild.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp, dagens rena version",
+      "beskrivning": "Dagens rena och responsiva workshopversion med 20 elevanpassade presentationsbilder. NotebookLM-arbetet är avskalat till två tydliga sökfraser, varefter presentationen går till en sammanfattande slutbild med workshopens huvudpoänger.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Aktuell version"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 224,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Aktuell version"
+      ]
+    },
+    {
+      "url": "https://ai-workshop-vux-full-slutbild.hlgk.chatgpt.site",
+      "titel": "Generativ AI i praktiken, VUX Åstorp, dagens fullversion",
+      "beskrivning": "Dagens fullständiga workshopversion med 29 presentationsbilder, hela workshopflödet, körstöd och en sammanfattande slutbild med huvudpoängerna om mål, tänkande, granskning och ansvar.",
+      "taggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Aktuell version",
+        "Fullversion"
+      ],
+      "tillagd": "2026-08-20",
+      "id": 225,
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [
+        "VUX Åstorp"
+      ],
+      "projekt": [
+        "VUX AI workshop 2026"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik"
+      ],
+      "period": "Augusti 2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Pedagogik",
+        "Undervisning",
+        "AI",
+        "Generativ AI",
+        "Språkmodeller",
+        "Lärande",
+        "Källkritik",
+        "Gemini",
+        "NotebookLM",
+        "Presentation",
+        "Workshop",
+        "VUX",
+        "Åstorp",
+        "ChatGPT Site",
+        "Aktuell version",
+        "Fullversion"
+      ]
+    },
+    {
       "url": "https://archive.nationalgeographic.com/landing",
       "titel": "National Geographic Magazine Archive",
       "beskrivning": "",
