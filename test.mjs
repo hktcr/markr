@@ -311,7 +311,7 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken.filter(bm => ![254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
 };
 const bildanalysId = 245;
 const preBildanalysData = {
@@ -564,7 +564,10 @@ kolla('inga konsolfel i Bildanalys-deltan',
   kontaktarkCorpusDom.kontraktsfel.length === 0 && bildanalysCorpusDom.kontraktsfel.length === 0);
 
 /* Enzymjakten is a new corpus delta, never part of frozen historical baselines. */
-const enzymeDom = await skapaKontraktsdom(JSON.stringify(currentData));
+const enzymeDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData,
+  bokmarken: currentData.bokmarken.filter(bm => bm.id !== 254)
+}));
 const enzymeUrl = 'https://enzymjakten-3d.hlgk.chatgpt.site/';
 for (const query of ['enzymjakten', 'matspjälkning', 'enzymer', 'livets kemi', '#PEPSIN', '#NO79']) {
   const before = korCorpusFraga(bildanalysCorpusDom.tw, query).alla;
@@ -624,6 +627,28 @@ for (const fraga of ['hugging face', 'AI-agenter', 'distansversion', 'efterhands
   kolla('läsutgåvan hittas: ' + fraga, found.filter(url => url === 'https://hktcr.github.io/SlideHub/presentations/nar-ai-borjar-agera/').length === 1);
 }
 readerDom.tw.close();
+
+/* Pepsinlaboration har en egen delta; historiska korpusar förblir frysta. */
+const pepsinUrl = 'https://docs.google.com/document/d/11QzY4y2ukDi2h-pMfdIyCTRpqpCDmz7guQRw1iIZqyw/edit';
+const pepsinPost = currentData.bokmarken.find(bm => bm.id === 254);
+kolla('Pepsin har unik dokumentpost och källgrundad beskrivning',
+  currentData.bokmarken.filter(bm => bm.url === pepsinUrl).length === 1 &&
+  pepsinPost?.url === pepsinUrl && pepsinPost?.typ === 'Dokument' &&
+  pepsinPost?.beskrivning.includes('Koncentrationer och lokal riskbedömning framgår inte') &&
+  pepsinPost?.projekt.includes('HT26KROPP'));
+const prePepsinData = {...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 254)};
+const prePepsinDom = await skapaKontraktsdom(JSON.stringify(prePepsinData));
+const pepsinDom = await skapaKontraktsdom(rawJson);
+for (const fraga of ['pepsin', 'äggvita', 'matspjälkning', 'labbrapport', 'laborationsinstruktion']) {
+  const fore = korCorpusFraga(prePepsinDom.tw, fraga).alla;
+  const efter = korCorpusFraga(pepsinDom.tw, fraga).alla;
+  kolla('Pepsin hittas och äldre ordning bevaras: ' + fraga,
+    efter.filter(url => url === pepsinUrl).length === 1 &&
+    JSON.stringify(efter.filter(url => url !== pepsinUrl)) === JSON.stringify(fore));
+}
+kolla('inga konsolfel i Pepsin-deltan', prePepsinDom.kontraktsfel.length === 0 && pepsinDom.kontraktsfel.length === 0);
+prePepsinDom.tw.close();
+pepsinDom.tw.close();
 
 /* 10. Kodinvarians körs också mot en faktisk fryst pre-FotoR-datafixture. */
 const frystSokRa = fs.readFileSync('fixtures/search-pre-fotor.json', 'utf8');

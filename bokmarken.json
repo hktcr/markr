@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-24",
+  "uppdaterad": "2026-09-30",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6790,6 +6790,45 @@
         "AI-agenter",
         "AI-workshop",
         "Presentationer"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 254,
+      "url": "https://docs.google.com/document/d/11QzY4y2ukDi2h-pMfdIyCTRpqpCDmz7guQRw1iIZqyw/edit",
+      "titel": "Pepsinlaboration · instruktion och labbrapport",
+      "beskrivning": "Laborationsinstruktion om pepsin, matspjälkning och nedbrytning av protein i magsäcken. Fyra mikrorör jämför koagulerad äggvita med vatten, saltsyra, ättiksyra och pepsinlösning i fingervarmt vattenbad, cirka 20 minuter. Innehåller materiallista, stegvis metod och stöd för laborationsrapportens struktur. Google-dokumentet ”Instruktion Pepsinlaboration extern lab-rapport”, senast ändrat 2023-10-02. Koncentrationer och lokal riskbedömning framgår inte av dokumentet.",
+      "taggar": [
+        "Biologi",
+        "Matspjälkning",
+        "Pepsin",
+        "Enzymer",
+        "Protein",
+        "Laboration",
+        "Labbrapport"
+      ],
+      "tillagd": "2026-09-30",
+      "omrade": "Skola och undervisning",
+      "typ": "Dokument",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Matspjälkning",
+        "Pepsin",
+        "Enzymer",
+        "Protein",
+        "Laboration",
+        "Labbrapport"
       ],
       "period": "HT26",
       "livscykel": "Aktiv",
