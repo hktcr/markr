@@ -394,3 +394,20 @@ workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
 event_id: EVT-1fa66a96-0a2b-4f69-9c52-863bdc00f30a. Evidens: commit
 `8c50af640c17c4360ff75ae6c27f572c89b1c9cb`, dess förälder och reproducerbar
 testkörning. Signatur: gAIa.
+
+
+## 2026-09-30 | Pepsinlaborationens instruktion registrerad
+
+Post 254 registrerar det befintliga Google-dokumentet ”Instruktion
+Pepsinlaboration extern lab-rapport” som en aktiv dokumentpost under Skola och
+undervisning. Den källgrundade beskrivningen omfattar pepsin, matspjälkning,
+protein, koagulerad äggvita, syror, vattenbad och laborationsrapport. Dokumentet
+är kopplat till Björnekullaskolan samt projekten NO79 och HT26KROPP.
+
+Direktlänken och dokumentinnehållet återlästes 2026-10-05. Sökproven `pepsin`,
+`matspjälkning` och `labbrapport` träffar rätt post. JSON, JavaScript och hela
+testsviten är verifierade; 298 av 298 tester passerar. Den ursprungliga
+publiceringscommitten är `7db4d26fa1abc50cba3fcd5df5ff15cfc316a597`.
+
+workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
+event_id: EVT-0f7e4e24-de7e-4ac3-9c84-9d1a22645602. Signatur: gAIa.
