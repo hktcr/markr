@@ -411,3 +411,55 @@ publiceringscommitten är `7db4d26fa1abc50cba3fcd5df5ff15cfc316a597`.
 
 workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
 event_id: EVT-0f7e4e24-de7e-4ac3-9c84-9d1a22645602. Signatur: gAIa.
+
+
+## 2026-10-15 | Avgränsad gallring och arkivvisning
+
+Sju godkända poster (86, 192, 169, 217, 120, 119 och 135) får livscykel
+Arkiverad. De fyra redan arkiverade workshopposterna 222–225 är oförändrade.
+Aktiva bokmärken är nu förvalt visningsomfång. Ett märkt val visar alla
+poster eller endast arkivet, synkat mellan kompakt sökning och fullskärm.
+Arkiverade länkar får textmarkeringen Arkiverad och dämpad grågul ton.
+
+Alla 218 poster, deras ordning och alla övriga postfält bevaras. Aktiva vyn
+har 207 poster och arkivet 11. Dokumentadresser och avsnittslänkar är
+oförändrade. [Arkiveringsloggen](ARKIVERING_2026-10-15.md) beskriver beslut,
+skäl och återställning utan att skriva över senare ändringar.
+
+Verifiering: tidigare baslinje 298/298 och utökad testsvit 340/340.
+Webbläsarkontroller omfattar 1440×900, 390×844, 320×568 och 844×390,
+arkivfilter, fullskärm, tangentbord, bevarade länkmål och mobil layout.
+Arkivmarkeringens textkontrast är 7,69:1; grågul titel på mörk bakgrund
+minst 8,05:1 i de kontrollerade normala och markerade lägena.
+Historiska sökfacit bevaras; endast återställningen av tidigare livscykel
+läggs till för de sju posterna i historiska testcorpus.
+
+
+### Samordnat tillägg efter uttryckligt helfilsgodkännande
+
+Håkan godkände publicering av berörda hela MärkR-filer med tre korsord och
+kretsloppsanimationen, efter att tidigare korsordsarbete hade pausats.
+Godkännandet gäller denna samlade ändring; apparnas åtkomst ändras inte.
+Färsk main var fortfarande f2698f0 och saknade alla fyra länkarna.
+
+- 255: Matens väg, version 9, 48 ord om matspjälkning och stegvis hjälp; offentlig.
+- 256: Blodkrysset, version 4, 35 ord om blod, hjärta och blodkärl, häfte s. 14–18; privat med ägaråtkomst.
+- 257: Andningskrysset, version 1, 20 ord om lungor, andning och gasutbyte, häfte s. 19–21; privat med ägaråtkomst.
+- 258: Blodomloppet, animation av stora och lilla kretsloppet med klaffnamn, segelklaffar och fickklaffar; offentlig GitHub Pages-länk.
+
+Alla fyra är aktiva webbappar i Skola och undervisning, med kontexten
+Björnekullaskolan, projekten NO79 och HT26KROPP och perioden HT26. Samma
+länkar finns i webbappöversikten. Totalt finns nu 222 poster, varav 211
+aktiva och 11 arkiverade. Översiktens fyra gamla workshopkort ligger i en
+stängd arkivsektion med textstatus och grågul ton, med länkar och historik kvar.
+Korsordens fullständiga kvalitetsgranskning anges uttryckligen som återstående.
+
+Sites bekräftar de tre angivna versionerna och publicerad respektive privat
+åtkomst. Kretsloppslänken gav HTTP 200 och sidkoden innehöll båda klaffbegreppen.
+Den automatiska HTTP-läsningen av Matens väg gav 403 trots att Sites angav
+publicerad version 9 med offentlig åtkomst; faktisk spelkvalitet sluttestas
+inte i denna bokmärkesändring.
+
+Samlad slutkontroll före publicering: 363/363 tester och 71/71
+webbläsarkontroller passerar, inklusive tre sökfraser per nytillkommen länk.
+JSON, syntax, låst beroendeinstallation och diffkontroll är godkända.

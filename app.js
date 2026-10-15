@@ -46,6 +46,7 @@ let arkiv = { uppdaterad: '', bokmarken: [] };
 let anmarkningar = [];
 let anmarkningarSenare = '';
 let aktivaTaggar = [];
+let arkivlage = 'aktiva';
 let traffar = [];
 let valdIndex = -1;
 let visaAllaTraffar = false;
@@ -66,6 +67,8 @@ const el = {
   skal: document.getElementById('skal'),
   topp: document.querySelector('.topp'),
   sok: document.getElementById('sok'),
+  arkivval: document.getElementById('arkivval'),
+  fullArkivval: document.getElementById('full-arkivval'),
   sokfalt: document.getElementById('sokfalt'),
   filter: document.getElementById('aktiva-filter'),
   status: document.getElementById('status'),
@@ -260,6 +263,38 @@ async function laddaData() {
 
 /* ================= 3. Sökning ================= */
 
+function arArkiverad(bm) {
+  return vik(bm.livscykel) === 'arkiverad';
+}
+
+function synligaBokmarken() {
+  return arkiv.bokmarken.filter(bm => arkivlage === 'alla' ||
+    (arkivlage === 'arkiv' ? arArkiverad(bm) : !arArkiverad(bm)));
+}
+
+function sattArkivlage(varde) {
+  arkivlage = ['aktiva', 'alla', 'arkiv'].includes(varde) ? varde : 'aktiva';
+  el.arkivval.value = arkivlage;
+  el.fullArkivval.value = arkivlage;
+}
+
+function bytArkivlage(varde) {
+  sattArkivlage(varde);
+  byggHimmel();
+  if (lage === 'lista' && !fullskarm.oppen) visaLista(false);
+  else if (lage === 'senaste' && !fullskarm.oppen) visaSenaste();
+  else utforSokning();
+}
+
+function markeraArkiverad(element, bm) {
+  element.classList.toggle('arkiverad', arArkiverad(bm));
+  if (!arArkiverad(bm)) return;
+  const markering = document.createElement('span');
+  markering.className = 'arkivmarkering';
+  markering.textContent = 'Arkiverad';
+  element.append(' ', markering);
+}
+
 function poangForOrd(ord, bm) {
   let max = 0;
   if (bm.vTitel.startsWith(ord)) max = P_TITEL_BORJAR;
@@ -289,7 +324,7 @@ function laesFraga() {
 
 function utforSokning() {
   const fraga = laesFraga();
-  const aktiv = fraga.ord.length > 0 || fraga.taggar.length > 0;
+  const aktiv = fraga.ord.length > 0 || fraga.taggar.length > 0 || arkivlage !== 'aktiva';
   valdIndex = -1;
   visaAllaTraffar = false;
 
@@ -297,14 +332,14 @@ function utforSokning() {
     traffar = [];
     settLage('rymd');
     satStatus('');
-    el.sok.placeholder = 'Sök bland ' + arkiv.bokmarken.length + ' bokmärken';
+    el.sok.placeholder = 'Sök bland ' + synligaBokmarken().length + ' bokmärken';
     uppdateraHorisont();
     slutforSoktransaktion(fraga);
     return;
   }
 
   const kandidater = [];
-  for (const bm of arkiv.bokmarken) {
+  for (const bm of synligaBokmarken()) {
     if (fraga.taggar.length && !fraga.taggar.every(t => bm.vTaggar.includes(t))) continue;
 
     let summa = 0;
@@ -328,13 +363,14 @@ function utforSokning() {
 }
 
 function senasteLista() {
-  const harDatum = arkiv.bokmarken.some(b => b.tillagd);
+  const poster = synligaBokmarken();
+  const harDatum = poster.some(b => b.tillagd);
   if (harDatum) {
-    return arkiv.bokmarken.slice()
+    return poster.slice()
       .sort((a, b) => String(b.tillagd).localeCompare(String(a.tillagd)))
       .slice(0, ANTAL_SENASTE);
   }
-  return arkiv.bokmarken.slice(0, ANTAL_SENASTE);
+  return poster.slice(0, ANTAL_SENASTE);
 }
 
 function visaSenaste() {
@@ -345,7 +381,7 @@ function visaSenaste() {
   visaAllaTraffar = false;
   traffar = senasteLista();
   settLage('senaste');
-  const harDatum = arkiv.bokmarken.some(b => b.tillagd);
+  const harDatum = synligaBokmarken().some(b => b.tillagd);
   satStatus(harDatum
     ? 'Senast tillagda, ' + traffar.length + ' st'
     : 'Från början av arkivet, inget datumfält finns än');
@@ -416,7 +452,7 @@ function uppdateraHorisont() {
 
 function byggKategorier() {
   const antal = new Map();
-  for (const bm of arkiv.bokmarken) antal.set(bm.omrade, (antal.get(bm.omrade) || 0) + 1);
+  for (const bm of synligaBokmarken()) antal.set(bm.omrade, (antal.get(bm.omrade) || 0) + 1);
   return OMRADEN.map(o => ({
     namn: o.namn,
     beskrivning: o.beskrivning,
@@ -426,7 +462,7 @@ function byggKategorier() {
 
 function byggAmnesingangar() {
   return AMNESINGANGAR.map(a => ({ ...a,
-    antal: arkiv.bokmarken.filter(bm => bm.vTaggar.includes(vik(a.filter))).length
+    antal: synligaBokmarken().filter(bm => bm.vTaggar.includes(vik(a.filter))).length
   })).filter(a => a.antal > 0);
 }
 
@@ -484,7 +520,7 @@ function arDriveMapp(bm) {
 }
 
 function driveMappar() {
-  return arkiv.bokmarken.filter(arDriveMapp);
+  return synligaBokmarken().filter(arDriveMapp);
 }
 
 function ritaDriveNav() {
@@ -542,6 +578,7 @@ function ritaDriveNav() {
       const beskrivning = document.createElement('span');
       beskrivning.textContent = bm.beskrivning || 'Öppna arbetsmappen i Google Drive.';
       lank.append(titel, beskrivning);
+      markeraArkiverad(lank, bm);
       li.append(lank);
       const under = (barn.get(String(bm.id)) || []).map(post => byggMappnod(post, djup + 1)).filter(Boolean);
       if (under.length) {
@@ -668,6 +705,7 @@ function fyllLista(behallare, lista, ord, indexStart) {
     h3.className = 'titel';
     markeraIn(h3, bm.visningstitel, ord);
     a.append(h3);
+    markeraArkiverad(a, bm);
 
     const p = document.createElement('p');
     if (bm.beskrivning) {
@@ -792,6 +830,7 @@ function byggTrafflankar(rubriktext, poster, klassnamn) {
     lank.target = '_blank';
     lank.rel = 'noopener';
     lank.textContent = bm.visningstitel;
+    markeraArkiverad(lank, bm);
     li.append(lank);
     lista.append(li);
   }
@@ -814,7 +853,7 @@ function fyllTraffdetalj(panel, bm) {
   const mappsektion = byggTrafflankar('Mappgenvägar', relateradeMappar(bm), 'detalj-mappar');
   if (mappsektion) panel.append(mappsektion);
 
-  const ickeMappar = arkiv.bokmarken.filter(kandidat => kandidat.url === bm.url || !arDriveMapp(kandidat));
+  const ickeMappar = synligaBokmarken().filter(kandidat => kandidat.url === bm.url || !arDriveMapp(kandidat));
   const relationer = beraknaRelationer(ickeMappar, bm.url)
     .map(rel => rel.bm)
     .slice(0, ANTAL_DETALJ_RELATIONER);
@@ -829,6 +868,7 @@ function fyllTraffdetalj(panel, bm) {
   oppna.target = '_blank';
   oppna.rel = 'noopener';
   oppna.textContent = arDriveMapp(bm) ? 'Öppna mappen' : 'Öppna bokmärket';
+  markeraArkiverad(oppna, bm);
   const kopiera = document.createElement('button');
   kopiera.type = 'button';
   kopiera.className = 'detalj-handling';
@@ -981,6 +1021,7 @@ function renderaNatMappar(ankare) {
     lank.target = '_blank';
     lank.rel = 'noopener';
     lank.textContent = bm.visningstitel;
+    markeraArkiverad(lank, bm);
     li.append(lank);
     el.natMapplankar.append(li);
   }
@@ -994,6 +1035,7 @@ function renderaNatverk() {
 
   if (!ankare) {
     el.natAnkartitel.textContent = 'Inga träffar';
+    el.natAnkartitel.classList.remove('arkiverad');
     el.natSammanfattning.textContent = 'Skriv en ny fråga för att bygga Nordnätverket.';
     el.natTomt.hidden = false;
     el.natOppna.removeAttribute('href');
@@ -1005,6 +1047,7 @@ function renderaNatverk() {
   }
 
   el.natAnkartitel.textContent = ankare.visningstitel;
+  markeraArkiverad(el.natAnkartitel, ankare);
   el.natOppna.href = ankare.url;
   el.natKopiera.disabled = false;
   el.natVisaLista.disabled = false;
@@ -1032,6 +1075,7 @@ function renderaNatverk() {
     const titel = document.createElement('span');
     titel.className = 'nodtitel';
     titel.textContent = rel.bm.visningstitel;
+    markeraArkiverad(titel, rel.bm);
     const orsak = document.createElement('span');
     orsak.className = 'nodorsak';
     orsak.textContent = relationsOrsak(rel);
@@ -1152,7 +1196,7 @@ function visaAnkareILista() {
 
 function fangTabbIFullskarm(e) {
   if (e.key !== 'Tab') return;
-  const valjare = 'button:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
+  const valjare = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
   const fokusbara = Array.from(el.fullskarm.querySelectorAll(valjare)).filter(n => !n.closest('[hidden]'));
   if (!fokusbara.length) return;
   const forsta = fokusbara[0];
@@ -1201,6 +1245,8 @@ function taBortFilter(tagg) {
 function rensaAllt() {
   el.sok.value = '';
   aktivaTaggar = [];
+  sattArkivlage('aktiva');
+  byggHimmel();
   ritaFilter();
   utforSokning();
   aktivScrollYta().scrollTop = 0;
@@ -1266,7 +1312,7 @@ function byggHimmel() {
   const par = new Map();
   const omradenPerFacett = new Map();
   const amnesingangar = byggAmnesingangar();
-  for (const bm of arkiv.bokmarken) {
+  for (const bm of synligaBokmarken()) {
     const ingangar = [bm.omrade, ...amnesingangar
       .filter(a => bm.vTaggar.includes(vik(a.filter))).map(a => a.namn)];
     for (const facett of bm.natverksFacetter) {
@@ -1667,7 +1713,7 @@ el.fullskarm.addEventListener('keydown', e => {
 
 document.addEventListener('keydown', e => {
   const mal = e.target;
-  const iFalt = mal === el.sok || mal.tagName === 'INPUT' || mal.isContentEditable;
+  const iFalt = mal === el.sok || mal.tagName === 'INPUT' || mal.tagName === 'SELECT' || mal.isContentEditable;
   if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
     e.preventDefault();
     rensaAllt();
@@ -1685,6 +1731,8 @@ document.addEventListener('keydown', e => {
 });
 
 el.lankSenaste.addEventListener('click', visaSenaste);
+el.arkivval.addEventListener('change', () => bytArkivlage(el.arkivval.value));
+el.fullArkivval.addEventListener('change', () => bytArkivlage(el.fullArkivval.value));
 el.lankLista.addEventListener('click', () => visaLista(false));
 el.lankDrive.addEventListener('click', () => visaLista(true));
 el.fullOppna.addEventListener('click', oppnaFullskarm);

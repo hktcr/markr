@@ -8,6 +8,8 @@
   --papper-dim: #9b978e;
   --massing:    #c5a059;
   --massing-lj: #dcc08a;
+  --arkivtext:  #b9b48b;
+  --arkivbotten: #212119;
   --harfin:     rgba(242, 239, 233, 0.10);
   --harfin-2:   rgba(242, 239, 233, 0.18);
 
@@ -1831,4 +1833,51 @@ a.full-kontroll:not([href]) {
   #natverk-noder.stjarna button:focus-visible::before {
     background: Highlight;
   }
+}
+
+/* Arkivet har egen textmarkering; färgen bär aldrig status ensam. */
+.arkivval {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: min(var(--spalt), 34rem);
+  margin: 0.25rem auto 0;
+  pointer-events: auto;
+  color: var(--papper-dim);
+  font: 0.75rem var(--sans);
+}
+.arkivval select {
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--harfin-2);
+  border-radius: var(--r);
+  background: var(--sot-2);
+  color: var(--papper);
+  font: inherit;
+  cursor: pointer;
+}
+.arkiverad,
+.detalj-lankar a.arkiverad,
+.natverk-mappar a.arkiverad,
+.natverk-ankare h2.arkiverad,
+.arkiverad .titel,
+.arkiverad strong,
+#natverk-noder .nodtitel.arkiverad {
+  color: var(--arkivtext);
+}
+.rad.arkiverad { border-left: 2px solid var(--arkivtext); }
+.arkivmarkering,
+.drive-grupp a .arkivmarkering {
+  display: inline-block;
+  margin: 0.15rem 0.35rem 0.15rem 0;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  background: var(--arkivbotten);
+  color: var(--arkivtext);
+  font: 0.7rem/1.4 var(--sans);
+  letter-spacing: normal;
+  text-transform: none;
 }

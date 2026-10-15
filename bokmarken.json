@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-09-30",
+  "uppdaterad": "2026-10-15",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -2051,7 +2051,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Bokmärke",
@@ -2854,7 +2854,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Skola",
@@ -2889,7 +2889,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Produktivitet",
@@ -3261,7 +3261,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Produktivitet",
@@ -4079,7 +4079,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Bokmärke",
@@ -4556,7 +4556,7 @@
       "projekt": [],
       "amnen": [],
       "period": "",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Bokmärke",
@@ -5236,7 +5236,7 @@
       "projekt": [],
       "amnen": [],
       "period": "Augusti 2026",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Skola",
@@ -6829,6 +6829,154 @@
         "Protein",
         "Laboration",
         "Labbrapport"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 255,
+      "url": "https://matens-vag-pussel.hlgk.chatgpt.site/",
+      "titel": "Matens väg · korsord",
+      "beskrivning": "Offentligt pedagogiskt korsord om matspjälkning och matens väg genom kroppen. Version 9 innehåller 48 ord och stegvis hjälp. För begreppsträning och repetition i biologi på Björnekullaskolan, NO79 och arbetsområdet HT26KROPP höstterminen 2026. Fullständig kvalitetsgranskning återstår.",
+      "taggar": [
+        "Biologi",
+        "Matspjälkning",
+        "Korsord",
+        "Pedagogiska spel",
+        "Begreppsträning"
+      ],
+      "tillagd": "2026-10-15",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Matspjälkning",
+        "Korsord",
+        "Pedagogiska spel",
+        "Begreppsträning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 256,
+      "url": "https://blodkrysset.hlgk.chatgpt.site",
+      "titel": "Blodkrysset",
+      "beskrivning": "Privat pedagogiskt korsord med ägaråtkomst om blod, hjärta och blodkärl. Version 4 innehåller 35 ord och anknyter till häftets sidor 14–18. För begreppsträning och repetition av blodomloppet i biologi på Björnekullaskolan, NO79 och HT26KROPP höstterminen 2026. Fullständig kvalitetsgranskning återstår.",
+      "taggar": [
+        "Biologi",
+        "Blodomloppet",
+        "Blod",
+        "Hjärtat",
+        "Blodkärl",
+        "Korsord",
+        "Pedagogiska spel"
+      ],
+      "tillagd": "2026-10-15",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Blodomloppet",
+        "Blod",
+        "Hjärtat",
+        "Blodkärl",
+        "Korsord",
+        "Pedagogiska spel"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 257,
+      "url": "https://andningskrysset.hlgk.chatgpt.site",
+      "titel": "Andningskrysset",
+      "beskrivning": "Privat pedagogiskt korsord med ägaråtkomst om lungor, andning och gasutbyte. Version 1 innehåller 20 ord och anknyter till häftets sidor 19–21. För begreppsträning och repetition i biologi på Björnekullaskolan, NO79 och HT26KROPP höstterminen 2026. Fullständig kvalitetsgranskning återstår.",
+      "taggar": [
+        "Biologi",
+        "Lungor",
+        "Andning",
+        "Gasutbyte",
+        "Korsord",
+        "Pedagogiska spel"
+      ],
+      "tillagd": "2026-10-15",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Lungor",
+        "Andning",
+        "Gasutbyte",
+        "Korsord",
+        "Pedagogiska spel"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null
+    },
+    {
+      "id": 258,
+      "url": "https://hktcr.github.io/gaia-play/blodomloppet/index.html",
+      "titel": "Blodomloppet · stora och lilla kretsloppet",
+      "beskrivning": "Animation för undervisning om blodomloppet, stora och lilla kretsloppet och blodets väg genom hjärtat, lungorna och kroppen. Visar hjärtats klaffnamn samt begreppen segelklaffar och fickklaffar. För genomgång och repetition i biologi på Björnekullaskolan, NO79 och HT26KROPP höstterminen 2026.",
+      "taggar": [
+        "Biologi",
+        "Blodomloppet",
+        "Hjärtat",
+        "Lungor",
+        "Hjärtklaffar",
+        "Animation"
+      ],
+      "tillagd": "2026-10-15",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Blodomloppet",
+        "Hjärtat",
+        "Lungor",
+        "Hjärtklaffar",
+        "Animation"
       ],
       "period": "HT26",
       "livscykel": "Aktiv",

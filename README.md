@@ -113,6 +113,25 @@ Poäng per ord, högsta värdet räknas, summeras över orden:
 
 Konstanterna ligger överst i `app.js`. De är en bedömning, inte ett mätt resultat.
 
+### Aktiva bokmärken och arkiv
+
+Välj **Visa** under sökfältet: **Aktiva bokmärken** (standard),
+**Alla, inklusive arkiv** eller **Endast arkiv**. Tom sökning i arkivläget
+visar samtliga arkiverade poster; skriv sedan sökord eller välj facetter
+för att begränsa träffarna. Samma omfång används i senaste poster,
+områdesindex, Drivegenvägar, relaterade länkar och fullskärm. Escape från
+sökfältet återgår till den aktiva stjärnkartan; i fullskärm stänger första
+Escape lagret och bevarar sökningen.
+
+Poster med `livscykel: "Arkiverad"` visas i dämpad grågul ton och har alltid
+textmarkeringen **Arkiverad**, även i fullskärm och bland relaterade länkar.
+Arkivering ändrar inte själva dokumentet eller adressen. En arkivpost kan
+ha en äldre eller avpublicerad målsida; dess beskrivning och historik finns
+kvar. Se [arkiveringsloggen](ARKIVERING_2026-10-15.md) för omfång och
+återställning av de sju poster som arkiverades 2026-10-15.
+I webbappöversikten finns de fyra äldre workshopversionerna under den
+infällbara rubriken **Arkiverade presentationer**, stängd från början.
+
 ### Fullskärm och Nordnätverk
 
 Den kompakta träfflistan är fortsatt standard. När en sökning har träffar kan

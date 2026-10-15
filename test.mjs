@@ -307,11 +307,15 @@ const deltaFixture = JSON.parse(fs.readFileSync('fixtures/fotor-corpus-delta.jso
 const driveDeltaFixture = JSON.parse(fs.readFileSync('fixtures/drive-corpus-delta.json', 'utf8'));
 const sha256 = innehall => crypto.createHash('sha256').update(innehall).digest('hex');
 const currentData = JSON.parse(rawJson);
+const archiveDelta = JSON.parse(fs.readFileSync('fixtures/archive-delta.json', 'utf8'));
 const fargateljenId = 247;
 const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => ![254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+  bokmarken: currentData.bokmarken
+    .filter(bm => ![258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .map(bm => archiveDelta.previousLifecycle[bm.id]
+      ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
 const bildanalysId = 245;
 const preBildanalysData = {
@@ -565,8 +569,9 @@ kolla('inga konsolfel i Bildanalys-deltan',
 
 /* Enzymjakten is a new corpus delta, never part of frozen historical baselines. */
 const enzymeDom = await skapaKontraktsdom(JSON.stringify({
-  ...currentData,
-  bokmarken: currentData.bokmarken.filter(bm => bm.id !== 254)
+  ...preEnzymjaktenData,
+  bokmarken: [...preEnzymjaktenData.bokmarken,
+    currentData.bokmarken.find(bm => bm.id === enzymjaktenId)]
 }));
 const enzymeUrl = 'https://enzymjakten-3d.hlgk.chatgpt.site/';
 for (const query of ['enzymjakten', 'matspjälkning', 'enzymer', 'livets kemi', '#PEPSIN', '#NO79']) {
@@ -805,6 +810,145 @@ rKlick(r$('#full-stang'));
 kolla('stängning återför fokus till öppningsknappen', rw.document.activeElement === r$('#full-oppna'));
 kolla('inga konsolfel i kontraktsdom', kontrakt.kontraktsfel.length === 0,
   kontrakt.kontraktsfel.join(' | ').slice(0, 120));
+
+/* 12. Arkivomfång, återfinnbarhet och samma tillstånd i fullskärm. */
+const arkivDom = await skapaKontraktsdom(rawJson);
+const aw = arkivDom.tw;
+const a$ = s => aw.document.querySelector(s);
+const a$$ = s => [...aw.document.querySelectorAll(s)];
+const aKlick = selector => a$(selector).click();
+const aValj = (varde, selector = '#arkivval') => {
+  a$(selector).value = varde;
+  a$(selector).dispatchEvent(new aw.Event('change', { bubbles: true }));
+};
+const arkiveradeId = [86, 119, 120, 135, 169, 192, 217, 222, 223, 224, 225];
+const arkiverade = currentData.bokmarken.filter(bm => arkiveradeId.includes(bm.id));
+const aktiva = currentData.bokmarken.filter(bm => bm.livscykel !== 'Arkiverad');
+kolla('arkivdeltan omfattar exakt sju godkända statusbyten',
+  JSON.stringify(Object.keys(archiveDelta.previousLifecycle).map(Number).sort((a,b) => a-b)) ===
+  JSON.stringify([86,119,120,135,169,192,217]));
+kolla('elva arkiverade poster finns kvar med stabila id:n',
+  arkiverade.length === 11 && arkiverade.every(bm => bm.livscykel === 'Arkiverad'));
+kolla('aktiva bokmärken är standard och räknas i sökfältet',
+  a$('#arkivval').value === 'aktiva' && a$('#sok').placeholder === 'Sök bland ' + aktiva.length + ' bokmärken');
+for (const bm of arkiverade) {
+  kolla('arkiverad post saknas i standardsökning: #' + bm.id,
+    !korCorpusFraga(aw, bm.titel).alla.includes(new URL(bm.url).href));
+}
+korCorpusFraga(aw, '');
+aValj('arkiv');
+const arkivUrls = arkiverade.map(bm => new URL(bm.url).href).sort();
+kolla('tom arkivsökning visar alla elva och inga aktiva',
+  JSON.stringify(a$$('#traffar a.rad').map(a => a.href).sort()) === JSON.stringify(arkivUrls));
+kolla('varje arkivträff har textmarkering och färgklass',
+  a$$('#traffar a.rad.arkiverad').length === 11 &&
+  a$$('#traffar a.rad .arkivmarkering').every(n => n.textContent === 'Arkiverad'));
+for (const [query, ids] of [['uppstartsdagar', [217]], ['lektorsanteckningar', [120]], ['mekanik', [119,135]]]) {
+  const urls = korCorpusFraga(aw, query).alla;
+  kolla('arkivets dokument återfinns: ' + query,
+    ids.every(id => urls.includes(currentData.bokmarken.find(bm => bm.id === id).url)));
+}
+for (const bm of arkiverade) {
+  kolla('arkivträff bevarar hela adressen: #' + bm.id,
+    korCorpusFraga(aw, bm.titel).alla.includes(new URL(bm.url).href));
+}
+korCorpusFraga(aw, 'mekanik');
+aKlick('#full-oppna');
+kolla('fullskärm ärver arkivval och synliga arkivmarkeringar',
+  a$('#full-arkivval').value === 'arkiv' && a$$('#full-traffar .arkivmarkering').length === 2);
+aKlick('#full-natknapp');
+kolla('nätverkets arkiverade ankare har tydlig textstatus',
+  a$('#natverk-ankartitel .arkivmarkering')?.textContent === 'Arkiverad');
+aValj('aktiva', '#full-arkivval');
+kolla('omfångsbyte i fullskärm synkar och tar bort dolt ankare',
+  a$('#arkivval').value === 'aktiva' &&
+  !aw.__MARKR_TEST__.fullskarmsState().snapshotUrls.some(url => arkivUrls.includes(url)) &&
+  !arkivUrls.includes(aw.__MARKR_TEST__.fullskarmsState().ankareUrl));
+aKlick('#full-stang');
+aValj('alla');
+const allaGoogle = korCorpusFraga(aw, 'google').alla;
+aValj('aktiva');
+const aktivaGoogle = korCorpusFraga(aw, 'google').alla;
+kolla('arkivfilter bevarar de aktiva träffarnas rangordning',
+  JSON.stringify(aktivaGoogle) === JSON.stringify(allaGoogle.filter(url => !arkivUrls.includes(url))));
+aKlick('#lank-senaste');
+kolla('senast tillagda döljer arkivet i standardläge',
+  a$$('#traffar a.rad').every(a => !arkivUrls.includes(a.href)));
+aValj('arkiv');
+kolla('senast tillagda kan växlas till endast arkiv',
+  a$$('#traffar a.rad').length === 11 && a$$('#traffar a.rad').every(a => arkivUrls.includes(a.href)));
+aValj('aktiva');
+aKlick('#lank-lista');
+kolla('områdesindexets antal räknar bara aktiva poster',
+  a$$('#kategorilista .indexrad').slice(0,8).reduce((n, rad) => n + Number(rad.querySelector('.antal').textContent), 0) === aktiva.length);
+aValj('arkiv');
+korCorpusFraga(aw, 'mekanik');
+a$('#sok').dispatchEvent(new aw.KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
+kolla('Escape återgår till aktiva bokmärken och himlen',
+  a$('#arkivval').value === 'aktiva' && a$('#skal').classList.contains('rymd'));
+kolla('inga konsolfel i arkivflödet', arkivDom.kontraktsfel.length === 0);
+aw.close();
+
+/* Arkivstatus får inte läcka genom relaterade länkar och Drivegenvägar. */
+const arkivFixture = { uppdaterad: '2026-10-15', bokmarken: [
+  {id: 1, titel: 'Aktivt ankare', url: 'https://fixture.test/active', projekt: ['Gemensamt']},
+  {id: 2, titel: 'Äldre dokument', url: 'https://fixture.test/old#heading', projekt: ['Gemensamt'], livscykel: 'Arkiverad'},
+  {id: 3, titel: 'Äldre mapp', url: 'https://drive.google.com/drive/folders/old', projekt: ['Gemensamt'], livscykel: 'Arkiverad'}
+] };
+const genvagsDom = await skapaKontraktsdom(JSON.stringify(arkivFixture));
+const gw = genvagsDom.tw;
+korCorpusFraga(gw, 'ankare');
+gw.document.querySelector('#traffar .traff-expandera').click();
+kolla('aktiva detaljvyn döljer arkiverade relationer och mappar',
+  gw.document.querySelectorAll('.detalj-relationer a, .detalj-mappar a').length === 0);
+const gVal = gw.document.querySelector('#arkivval');
+gVal.value = 'alla';
+gVal.dispatchEvent(new gw.Event('change', { bubbles: true }));
+gw.document.querySelector('#traffar .traff-expandera').click();
+kolla('arkiverade genvägar får textstatus när alla visas',
+  gw.document.querySelectorAll('.detalj-relationer .arkivmarkering, .detalj-mappar .arkivmarkering').length === 2);
+gw.document.querySelector('#lank-drive').click();
+kolla('arkiverad mapp markeras även i Driveindexet',
+  gw.document.querySelector('#drive-grupper .arkivmarkering')?.textContent === 'Arkiverad');
+gw.close();
+
+/* 13. Uttryckligt godkända korsord och kretsloppsanimation. */
+const additions = [
+  {id:255, url:'https://matens-vag-pussel.hlgk.chatgpt.site/', queries:['matens väg','matspjälkning korsord','stegvis hjälp']},
+  {id:256, url:'https://blodkrysset.hlgk.chatgpt.site', queries:['blodkrysset','blodkärl korsord','35 ord']},
+  {id:257, url:'https://andningskrysset.hlgk.chatgpt.site', queries:['andningskrysset','gasutbyte korsord','20 ord']},
+  {id:258, url:'https://hktcr.github.io/gaia-play/blodomloppet/index.html', queries:['blodomloppet animation','segelklaffar','fickklaffar']}
+];
+const additionsDom = await skapaKontraktsdom(rawJson);
+const beforeAdditionsDom = await skapaKontraktsdom(JSON.stringify({...currentData, bokmarken:currentData.bokmarken.filter(bm=>!additions.some(n=>n.id===bm.id))}));
+const additionUrls = additions.map(bm=>new URL(bm.url).href);
+const siteDoc = new JSDOM(sitesHtml).window.document;
+for (const addition of additions) {
+  const record = currentData.bokmarken.find(bm=>bm.id===addition.id);
+  kolla('ny post har unik identitet och rätt facetter: #' + addition.id,
+    currentData.bokmarken.filter(bm=>new URL(bm.url).href===new URL(addition.url).href).length === 1 &&
+    record?.url===addition.url && record?.omrade==='Skola och undervisning' &&
+    record?.kontexter.includes('Björnekullaskolan') && record?.projekt.includes('NO79') &&
+    record?.projekt.includes('HT26KROPP') && record?.period==='HT26' && record?.livscykel==='Aktiv');
+  const cards=[...siteDoc.querySelectorAll('a.sitekort')].filter(a=>a.getAttribute('href')===addition.url);
+  kolla('ny post finns en gång i webbappöversikten: #' + addition.id,
+    cards.length===1 && !cards[0].closest('details'));
+  for (const query of addition.queries) {
+    const before=korCorpusFraga(beforeAdditionsDom.tw,query).alla;
+    const after=korCorpusFraga(additionsDom.tw,query).alla;
+    kolla('ny post återfinns och äldre ordning bevaras: ' + query,
+      after.includes(new URL(addition.url).href) &&
+      JSON.stringify(after.filter(url=>!additionUrls.includes(url)))===JSON.stringify(before));
+  }
+}
+kolla('korsordens kvalitetsgranskning markeras som återstående',
+  currentData.bokmarken.filter(bm=>[255,256,257].includes(bm.id)).every(bm=>bm.beskrivning.includes('Fullständig kvalitetsgranskning återstår')));
+kolla('privata korsord behåller tydlig ägaråtkomst i beskrivningen',
+  currentData.bokmarken.filter(bm=>[256,257].includes(bm.id)).every(bm=>bm.beskrivning.includes('ägaråtkomst')));
+kolla('arkiverade workshopkort är dolda som standard i sajtöversikten',
+  siteDoc.querySelectorAll('details.arkiv-siter:not([open]) a.arkiverad .arkivmarkering').length===4 &&
+  ![...siteDoc.querySelectorAll('section a.sitekort')].some(a=>/ai-workshop-(vux|torsdag)/.test(a.href)));
+additionsDom.tw.close();beforeAdditionsDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
