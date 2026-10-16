@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-15",
+  "uppdaterad": "2026-10-16",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6983,6 +6983,40 @@
       "favorit": false,
       "legacyTaggar": [],
       "mappForalderId": null
+    },
+    {
+      "id": 259,
+      "url": "https://birds-britannica.hlgk.chatgpt.site",
+      "titel": "Birds Britannica · privat nätverk och läsrum",
+      "beskrivning": "",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-16"
+    },
+    {
+      "id": 260,
+      "url": "https://skof-organisation.hlgk.chatgpt.site",
+      "titel": "SkOF · organisation, personer och roller",
+      "beskrivning": "",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-16"
     }
   ],
   "senasteGallring": {
