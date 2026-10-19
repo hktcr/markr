@@ -463,3 +463,25 @@ inte i denna bokmärkesändring.
 Samlad slutkontroll före publicering: 363/363 tester och 71/71
 webbläsarkontroller passerar, inklusive tre sökfraser per nytillkommen länk.
 JSON, syntax, låst beroendeinstallation och diffkontroll är godkända.
+
+
+## 2026-10-19 | Sökbarhet för två privata naturgränssnitt
+
+Post 259, Birds Britannica, och post 260, SkOF:s organisationskarta,
+registrerades den 16 oktober i commit
+`caf852af0d3f2a19de7683724b5f72b25557c157`. Båda länkarna var aktiva och
+fanns i webbappöversikten, men deras beskrivningar var tomma och ändringen
+saknade post i projektkrönikan.
+
+Veckounderhållet kompletterade endast verifierade uppgifter från de två
+privata Sites-objektens metadata. Birds Britannica beskrivs som ett sökbart
+bokarkiv och läsrum med fulltext, artvägar och markerade textosäkerheter.
+SkOF-gränssnittet beskrivs som en interaktiv karta över organisation,
+personer, grupper och roller med källbelägg. Åtkomst, URL:er, område, typ,
+livscykel och övriga facetter ändrades inte.
+
+Sökproven `birds britannica`, `bokarkiv` och `fulltext` samt `skof`,
+`interaktiv karta` och `personer roller` ska träffa respektive post utan att
+ändra äldre träffars ordning. Regressionsskyddet läggs i den reproducerbara
+testsviten. Rättelsen följer MARKR-SOK-001 och återför den betydelsefulla
+ändringen till projektkrönikan.

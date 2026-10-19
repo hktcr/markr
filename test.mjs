@@ -950,6 +950,44 @@ kolla('arkiverade workshopkort är dolda som standard i sajtöversikten',
   ![...siteDoc.querySelectorAll('section a.sitekort')].some(a=>/ai-workshop-(vux|torsdag)/.test(a.href)));
 additionsDom.tw.close();beforeAdditionsDom.tw.close();
 
+/* 14. De två privata naturgränssnitten följer MARKR-SOK-001. */
+const naturtillagg = [
+  {
+    id:259,
+    url:'https://birds-britannica.hlgk.chatgpt.site',
+    queries:['birds britannica','bokarkiv','fulltext']
+  },
+  {
+    id:260,
+    url:'https://skof-organisation.hlgk.chatgpt.site',
+    queries:['skof','interaktiv karta','personer roller']
+  }
+];
+const naturDom = await skapaKontraktsdom(rawJson);
+const foreNaturDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData,
+  bokmarken:currentData.bokmarken.filter(bm => !naturtillagg.some(n => n.id === bm.id))
+}));
+const naturUrls = naturtillagg.map(bm => new URL(bm.url).href);
+for (const tillagg of naturtillagg) {
+  const post = currentData.bokmarken.find(bm => bm.id === tillagg.id);
+  kolla('privat naturpost har källgrundad sökbeskrivning: #' + tillagg.id,
+    post?.beskrivning.length > 80 && post?.omrade === 'Natur och fältarbete' &&
+    post?.typ === 'Webbapp' && post?.livscykel === 'Aktiv');
+  for (const query of tillagg.queries) {
+    const fore = korCorpusFraga(foreNaturDom.tw, query).alla;
+    const efter = korCorpusFraga(naturDom.tw, query).alla;
+    kolla('privat naturpost återfinns och äldre ordning bevaras: ' + query,
+      efter.includes(new URL(tillagg.url).href) &&
+      JSON.stringify(efter.filter(url => !naturUrls.includes(url))) === JSON.stringify(fore));
+  }
+}
+kolla('privata naturposter finns en gång var i webbappöversikten',
+  naturtillagg.every(tillagg =>
+    [...siteDoc.querySelectorAll('a.sitekort')]
+      .filter(a => a.getAttribute('href') === tillagg.url).length === 1));
+naturDom.tw.close();foreNaturDom.tw.close();
+
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');

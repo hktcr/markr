@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-16",
+  "uppdaterad": "2026-10-19",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -6988,7 +6988,7 @@
       "id": 259,
       "url": "https://birds-britannica.hlgk.chatgpt.site",
       "titel": "Birds Britannica · privat nätverk och läsrum",
-      "beskrivning": "",
+      "beskrivning": "Privat sökbart bokarkiv och läsrum för Birds Britannica med fulltext, artvägar och tydligt markerade textosäkerheter.",
       "omrade": "Natur och fältarbete",
       "typ": "Webbapp",
       "kontexter": [],
@@ -7005,7 +7005,7 @@
       "id": 260,
       "url": "https://skof-organisation.hlgk.chatgpt.site",
       "titel": "SkOF · organisation, personer och roller",
-      "beskrivning": "",
+      "beskrivning": "Privat interaktiv karta över SkOF:s organisation, personer, grupper och roller med källbelägg.",
       "omrade": "Natur och fältarbete",
       "typ": "Webbapp",
       "kontexter": [],
