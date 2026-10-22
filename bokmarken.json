@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-19",
+  "uppdaterad": "2026-10-22",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -3591,7 +3591,7 @@
     {
       "url": "https://hktcr.github.io/nyhetskartan/",
       "titel": "Nyheter",
-      "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
+      "beskrivning": "Interaktiv världskarta med nyheter, AI-assisterad analys och synliga källor. Nyheter visas som geografiska markörer med klassificering och gAIa-syntes.",
       "taggar": [
         "gAIa",
         "Eget Projekt",
@@ -4986,7 +4986,7 @@
     {
       "url": "https://vavr-skrivmiljo.hlgk.chatgpt.site",
       "titel": "VävR",
-      "beskrivning": "Lokalt skrivverktyg för fokuserat skrivande och strukturerad redigering. Stycken blir noder i en interaktiv väv som visar rubrikhierarki, textordning och lexikala kopplingar. Har strukturvy, dokumentmål, skrivtimer, Markdown och offlineinstallation.",
+      "beskrivning": "Privat skrivmiljö för korta litterära naturdagböcker med bibliotek, lugnt skrivrum, frivillig bearbetning och 27 ljudteman. Dokument kan sparas och synkroniseras. Version 121 är publicerad; molnåterställning och fysisk mobil- och ljudkontroll återstår att verifiera.",
       "taggar": [
         "gAIa",
         "Eget Projekt",
@@ -5377,7 +5377,7 @@
     {
       "url": "https://hktcr.github.io/ljudr-analysverkstad/",
       "titel": "LjudR Analysverkstad",
-      "beskrivning": "Lokal och integritetsbevarande WAV-verkstad för analys och varsam bearbetning av fältinspelningar, soundscapes, intervjuer och poddmaster. Mäter bland annat LUFS, LRA, True Peak, PLR, stereobalans och filintegritet; visar separata L/R-vågformer och tekniska markörer; erbjuder trimning, linjära fades och konstant global gain utan automatisk nivåutjämning, kompressor eller limiter. Kan exportera sample-payload-identiska trimutdrag, redigerad WAV-master, rapporter samt ett ljudfritt JSON-underlag för kvalificerad reflektion i gAIa/VEP. All ljudbearbetning sker lokalt i webbläsaren och verktyget fungerar offline som PWA. Version 1.0.0-rc.6 är en offentlig valideringskandidat; stabil 1.0 inväntar fysisk verifiering på iPad Pro.",
+      "beskrivning": "Lokal och integritetsbevarande WAV-verkstad för analys och varsam bearbetning av fältinspelningar, soundscapes, intervjuer och poddmaster. Mäter bland annat loudness, dynamik, toppnivåer, stereobalans och filintegritet. Stödjer trimning, toningar, uttrycklig global gain och synliga stereolänkade lokala toppkurvor utan automatisk nivåändring, kompressor eller limiter. Exporterar trimutdrag, redigerad WAV-master, rapporter och ljudfritt JSON-underlag för gAIa och VEP. Ljudbearbetningen sker lokalt i webbläsaren. Version 1.0.0-rc.18 är en offentlig valideringskandidat, inte en produktionsverifierad 1.0; fysisk iPad-verifiering återstår.",
       "taggar": [
         "gAIa",
         "Eget Projekt",
@@ -5696,7 +5696,7 @@
     {
       "url": "https://skrivrum.hlgk.chatgpt.site",
       "titel": "Ordarium | Elevsida",
-      "beskrivning": "Öppen skrivyta där elever ansluter med projektkod, skriver eller klistrar in text, får eventuell lärarinstruktion och lämnar in med mottagningskvitto. Texten sparas lokalt under arbetet.",
+      "beskrivning": "Avslutat och arkiverat projekt enligt Håkans beslut den 9 oktober 2026. Sajten kan fortfarande vara tillgänglig; avslutet innebär inte ett säkerhets- eller driftgodkännande. Tidigare beskrivning: Öppen skrivyta där elever ansluter med projektkod, skriver eller klistrar in text, får eventuell lärarinstruktion och lämnar in med mottagningskvitto. Texten sparas lokalt under arbetet.",
       "taggar": [
         "Skola",
         "Undervisning",
@@ -5717,7 +5717,7 @@
       ],
       "amnen": [],
       "period": "HT26",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Skola",
@@ -5732,7 +5732,7 @@
     {
       "url": "https://skrivrum.hlgk.chatgpt.site/larare",
       "titel": "Ordarium | Lärarsida",
-      "beskrivning": "Inloggningsskyddad lärarsida för att skapa projekt och delprojekt, skicka skrivinstruktioner, följa inlämningar samt kopiera enskilda eller samlade texter som Markdown.",
+      "beskrivning": "Avslutat och arkiverat projekt enligt Håkans beslut den 9 oktober 2026. Sajten kan fortfarande vara tillgänglig; avslutet innebär inte ett säkerhets- eller driftgodkännande. Tidigare beskrivning: Inloggningsskyddad lärarsida för att skapa projekt och delprojekt, skicka skrivinstruktioner, följa inlämningar samt kopiera enskilda eller samlade texter som Markdown.",
       "taggar": [
         "Skola",
         "Undervisning",
@@ -5753,7 +5753,7 @@
       ],
       "amnen": [],
       "period": "HT26",
-      "livscykel": "Aktiv",
+      "livscykel": "Arkiverad",
       "favorit": false,
       "legacyTaggar": [
         "Skola",
@@ -6875,7 +6875,7 @@
       "id": 256,
       "url": "https://blodkrysset.hlgk.chatgpt.site",
       "titel": "Blodkrysset",
-      "beskrivning": "Privat pedagogiskt korsord med ägaråtkomst om blod, hjärta och blodkärl. Version 4 innehåller 35 ord och anknyter till häftets sidor 14–18. För begreppsträning och repetition av blodomloppet i biologi på Björnekullaskolan, NO79 och HT26KROPP höstterminen 2026. Fullständig kvalitetsgranskning återstår.",
+      "beskrivning": "Offentligt pedagogiskt korsord om blod, hjärta och blodkärl för begreppsträning och repetition i biologi på Björnekullaskolan, NO79 och HT26KROPP höstterminen 2026. Fullständig kvalitetsgranskning återstår.",
       "taggar": [
         "Biologi",
         "Blodomloppet",

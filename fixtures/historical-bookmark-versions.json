@@ -323,6 +323,238 @@
         "Bokmärke",
         "Verktyg"
       ]
+    },
+    {
+      "url": "https://hktcr.github.io/nyhetskartan/",
+      "titel": "Nyheter",
+      "beskrivning": "Del av gAIas ekosystem eller Håkans egna utvecklingsprojekt. Data och verktyg för natur, fågelskådning och ekologi.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi"
+      ],
+      "tillagd": "2026-07-29",
+      "id": 149,
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartor"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Natur",
+        "Ekologi",
+        "Fåglar",
+        "Kartografi"
+      ]
+    },
+    {
+      "url": "https://vavr-skrivmiljo.hlgk.chatgpt.site",
+      "titel": "VävR",
+      "beskrivning": "Lokalt skrivverktyg för fokuserat skrivande och strukturerad redigering. Stycken blir noder i en interaktiv väv som visar rubrikhierarki, textordning och lexikala kopplingar. Har strukturvy, dokumentmål, skrivtimer, Markdown och offlineinstallation.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Produktivitet",
+        "Dokument"
+      ],
+      "tillagd": "2026-07-30",
+      "id": 211,
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "VävR"
+      ],
+      "amnen": [],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Produktivitet",
+        "Dokument"
+      ]
+    },
+    {
+      "url": "https://hktcr.github.io/ljudr-analysverkstad/",
+      "titel": "LjudR Analysverkstad",
+      "beskrivning": "Lokal och integritetsbevarande WAV-verkstad för analys och varsam bearbetning av fältinspelningar, soundscapes, intervjuer och poddmaster. Mäter bland annat LUFS, LRA, True Peak, PLR, stereobalans och filintegritet; visar separata L/R-vågformer och tekniska markörer; erbjuder trimning, linjära fades och konstant global gain utan automatisk nivåutjämning, kompressor eller limiter. Kan exportera sample-payload-identiska trimutdrag, redigerad WAV-master, rapporter samt ett ljudfritt JSON-underlag för kvalificerad reflektion i gAIa/VEP. All ljudbearbetning sker lokalt i webbläsaren och verktyget fungerar offline som PWA. Version 1.0.0-rc.6 är en offentlig valideringskandidat; stabil 1.0 inväntar fysisk verifiering på iPad Pro.",
+      "taggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Ljud",
+        "Ljudanalys",
+        "Fältinspelning",
+        "Soundscape",
+        "Ljudlandskap",
+        "WAV",
+        "32-bit float",
+        "96 kHz",
+        "LUFS",
+        "EBU R128",
+        "True Peak",
+        "LRA",
+        "PLR",
+        "Mastering",
+        "Podcast",
+        "Integritet",
+        "Lokal bearbetning",
+        "Offline",
+        "PWA",
+        "iPad",
+        "VEP"
+      ],
+      "tillagd": "2026-08-15",
+      "id": 221,
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "LjudR",
+        "Twenty Minutes Here"
+      ],
+      "amnen": [
+        "Ljud",
+        "Ljudanalys",
+        "Fältinspelning",
+        "Soundscape",
+        "Ljudlandskap",
+        "WAV",
+        "LUFS",
+        "Mastering",
+        "Podcast",
+        "Integritet"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "gAIa",
+        "Eget Projekt",
+        "Utveckling",
+        "Webbapp",
+        "Ljud",
+        "Ljudanalys",
+        "Fältinspelning",
+        "Soundscape",
+        "Ljudlandskap",
+        "WAV",
+        "32-bit float",
+        "96 kHz",
+        "LUFS",
+        "EBU R128",
+        "True Peak",
+        "LRA",
+        "PLR",
+        "Mastering",
+        "Podcast",
+        "Integritet",
+        "Lokal bearbetning",
+        "Offline",
+        "PWA",
+        "iPad",
+        "VEP"
+      ]
+    },
+    {
+      "url": "https://skrivrum.hlgk.chatgpt.site",
+      "titel": "Ordarium | Elevsida",
+      "beskrivning": "Öppen skrivyta där elever ansluter med projektkod, skriver eller klistrar in text, får eventuell lärarinstruktion och lämnar in med mottagningskvitto. Texten sparas lokalt under arbetet.",
+      "taggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "tillagd": "2026-08-20",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Ordarium"
+      ],
+      "amnen": [],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "id": 226
+    },
+    {
+      "url": "https://skrivrum.hlgk.chatgpt.site/larare",
+      "titel": "Ordarium | Lärarsida",
+      "beskrivning": "Inloggningsskyddad lärarsida för att skapa projekt och delprojekt, skicka skrivinstruktioner, följa inlämningar samt kopiera enskilda eller samlade texter som Markdown.",
+      "taggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "tillagd": "2026-08-20",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa",
+        "Ordarium"
+      ],
+      "amnen": [],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Skola",
+        "Undervisning",
+        "EdTech",
+        "Verktyg",
+        "gAIa",
+        "Eget Projekt"
+      ],
+      "id": 227
     }
   ]
 }

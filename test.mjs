@@ -821,14 +821,14 @@ const aValj = (varde, selector = '#arkivval') => {
   a$(selector).value = varde;
   a$(selector).dispatchEvent(new aw.Event('change', { bubbles: true }));
 };
-const arkiveradeId = [86, 119, 120, 135, 169, 192, 217, 222, 223, 224, 225];
+const arkiveradeId = [86, 119, 120, 135, 169, 192, 217, 222, 223, 224, 225, 226, 227];
 const arkiverade = currentData.bokmarken.filter(bm => arkiveradeId.includes(bm.id));
 const aktiva = currentData.bokmarken.filter(bm => bm.livscykel !== 'Arkiverad');
 kolla('arkivdeltan omfattar exakt sju godkända statusbyten',
   JSON.stringify(Object.keys(archiveDelta.previousLifecycle).map(Number).sort((a,b) => a-b)) ===
   JSON.stringify([86,119,120,135,169,192,217]));
-kolla('elva arkiverade poster finns kvar med stabila id:n',
-  arkiverade.length === 11 && arkiverade.every(bm => bm.livscykel === 'Arkiverad'));
+kolla('tretton arkiverade poster finns kvar med stabila id:n',
+  arkiverade.length === 13 && arkiverade.every(bm => bm.livscykel === 'Arkiverad'));
 kolla('aktiva bokmärken är standard och räknas i sökfältet',
   a$('#arkivval').value === 'aktiva' && a$('#sok').placeholder === 'Sök bland ' + aktiva.length + ' bokmärken');
 for (const bm of arkiverade) {
@@ -838,10 +838,10 @@ for (const bm of arkiverade) {
 korCorpusFraga(aw, '');
 aValj('arkiv');
 const arkivUrls = arkiverade.map(bm => new URL(bm.url).href).sort();
-kolla('tom arkivsökning visar alla elva och inga aktiva',
+kolla('tom arkivsökning visar alla tretton och inga aktiva',
   JSON.stringify(a$$('#traffar a.rad').map(a => a.href).sort()) === JSON.stringify(arkivUrls));
 kolla('varje arkivträff har textmarkering och färgklass',
-  a$$('#traffar a.rad.arkiverad').length === 11 &&
+  a$$('#traffar a.rad.arkiverad').length === 13 &&
   a$$('#traffar a.rad .arkivmarkering').every(n => n.textContent === 'Arkiverad'));
 for (const [query, ids] of [['uppstartsdagar', [217]], ['lektorsanteckningar', [120]], ['mekanik', [119,135]]]) {
   const urls = korCorpusFraga(aw, query).alla;
@@ -876,7 +876,7 @@ kolla('senast tillagda döljer arkivet i standardläge',
   a$$('#traffar a.rad').every(a => !arkivUrls.includes(a.href)));
 aValj('arkiv');
 kolla('senast tillagda kan växlas till endast arkiv',
-  a$$('#traffar a.rad').length === 11 && a$$('#traffar a.rad').every(a => arkivUrls.includes(a.href)));
+  a$$('#traffar a.rad').length === 13 && a$$('#traffar a.rad').every(a => arkivUrls.includes(a.href)));
 aValj('aktiva');
 aKlick('#lank-lista');
 kolla('områdesindexets antal räknar bara aktiva poster',
@@ -915,7 +915,7 @@ gw.close();
 /* 13. Uttryckligt godkända korsord och kretsloppsanimation. */
 const additions = [
   {id:255, url:'https://matens-vag-pussel.hlgk.chatgpt.site/', queries:['matens väg','matspjälkning korsord','stegvis hjälp']},
-  {id:256, url:'https://blodkrysset.hlgk.chatgpt.site', queries:['blodkrysset','blodkärl korsord','35 ord']},
+  {id:256, url:'https://blodkrysset.hlgk.chatgpt.site', queries:['blodkrysset','blodkärl korsord','begreppsträning blod']},
   {id:257, url:'https://andningskrysset.hlgk.chatgpt.site', queries:['andningskrysset','gasutbyte korsord','20 ord']},
   {id:258, url:'https://hktcr.github.io/gaia-play/blodomloppet/index.html', queries:['blodomloppet animation','segelklaffar','fickklaffar']}
 ];
@@ -943,8 +943,16 @@ for (const addition of additions) {
 }
 kolla('korsordens kvalitetsgranskning markeras som återstående',
   currentData.bokmarken.filter(bm=>[255,256,257].includes(bm.id)).every(bm=>bm.beskrivning.includes('Fullständig kvalitetsgranskning återstår')));
-kolla('privata korsord behåller tydlig ägaråtkomst i beskrivningen',
-  currentData.bokmarken.filter(bm=>[256,257].includes(bm.id)).every(bm=>bm.beskrivning.includes('ägaråtkomst')));
+/* Beskrivningsrättningen 2026-10-22 följer Blodkryssets verifierade offentliga åtkomst. */
+const blodkrysset = currentData.bokmarken.find(bm=>bm.id===256);
+const blodkryssetKort = siteDoc.querySelector('a.sitekort[href="https://blodkrysset.hlgk.chatgpt.site"]');
+kolla('Blodkryssets beskrivning och sajtkort visar offentlig åtkomst',
+  blodkrysset?.beskrivning.startsWith('Offentligt pedagogiskt korsord') &&
+  !/privat|ägaråtkomst/i.test(blodkrysset.beskrivning) &&
+  blodkryssetKort?.querySelector('p')?.textContent === blodkrysset.beskrivning &&
+  blodkryssetKort?.querySelector('.statusmarke')?.textContent === 'Aktiv, offentlig');
+kolla('Andningskrysset behåller tydlig ägaråtkomst i beskrivningen',
+  currentData.bokmarken.find(bm=>bm.id===257)?.beskrivning.includes('ägaråtkomst'));
 kolla('arkiverade workshopkort är dolda som standard i sajtöversikten',
   siteDoc.querySelectorAll('details.arkiv-siter:not([open]) a.arkiverad .arkivmarkering').length===4 &&
   ![...siteDoc.querySelectorAll('section a.sitekort')].some(a=>/ai-workshop-(vux|torsdag)/.test(a.href)));
