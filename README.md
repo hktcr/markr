@@ -253,6 +253,36 @@ Ett saknat verktyg, exempelvis `gh`, betyder endast att just den metoden inte
 är tillgänglig. Det får inte beskrivas som att publicering är omöjlig innan den
 etablerade anslutna vägen har kontrollerats.
 
+### Planera och godkänn hela ändringspaketet
+
+Innan någon skrivning eller fråga om godkännande ska den som utför arbetet:
+
+1. Läsa aktuell `main` och den publicerade datan. Kontrollera ägare,
+   offentlighet, stabila id:n, URL-dubbletter och samtidiga ändringar.
+2. Lista hela det minsta nödvändiga ändringspaketet. En ny bokmärkespost
+   kan kräva både `bokmarken.json` och justerade regressionstester, exempelvis
+   aktuella antal och avgränsning av historiska corpus. Historiska facit ska
+   inte skrivas om för att dölja ett nytt fel.
+3. Skilja på nödvändiga filer och frivilliga utökningar. Ett kort i
+   `sites.html` är en separat utökning om uppdraget bara gäller bokmärkesposten.
+   Låt den filen vara orörd när den inte ingår.
+4. Kontrollera mandat för varje planerad extern skrivning innan paketet
+   skickas. Vid behov, be om ett samlat konkret godkännande för berörda
+   filer och ändringar, inte flera successiva frågor om redan kända behov.
+5. Bevara tidigare uttryckliga godkännanden för samma åtgärd och omfattning.
+   Redovisa att en helfilsskrivning tekniskt återger befintligt innehåll.
+   Kontrollera särskilt att äldre offentliga poster förblir oförändrade och
+   att inga nya privata länkar eller uppgifter följer med.
+6. Efter ett stopp: kontrollera utfallet innan någon upprepning. Försök inte
+   igen genom en annan skrivväg. Ett nytt försök förutsätter relevant ny
+   evidens eller tillåtelse; kvarstående stopp ska beskrivas exakt.
+
+Detta är en arbetsrutin, inte ett generellt publiceringsmedgivande eller ett
+undantag från åtkomst- och säkerhetskontroller. Ändringar utanför det
+godkända paketet kräver egen bedömning. Kör hela testsviten mot slutpaketet,
+publicera atomärt när alla nödvändiga steg är tillåtna och återläs både
+repot och de tre verkliga sökfrågorna på den publicerade sidan.
+
 ## Tre gestalter för samma nätverk
 
 Verksamhetsområden och facetter visas på tre sätt, med besläktade former

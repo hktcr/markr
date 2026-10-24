@@ -118,7 +118,7 @@ kolla('noderna sprids, ingen kollaps', minAvstand > 20, 'min ' + minAvstand.toFi
 
 /* 2. Nodklick */
 for (const [namn, filter, antal] of [
-  ['Fotografi och bildskapande', 'Fotografi', 12],
+  ['Fotografi och bildskapande', 'Fotografi', 13],
   ['Ljud och fältinspelning', 'Ljud', 4]
 ]) {
   const nod = noder.find(n => n.textContent === namn);
@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -996,7 +996,25 @@ kolla('privata naturposter finns en gång var i webbappöversikten',
       .filter(a => a.getAttribute('href') === tillagg.url).length === 1));
 naturDom.tw.close();foreNaturDom.tw.close();
 
+/* 15. SharpFrame följer MARKR-SOK-001 utan att ersätta Bildanalys. */
+const sharpFrameUrl = 'https://hktcr.github.io/Bildanalys/sharpframe/';
+const sharpFrameEntry = currentData.bokmarken.find(bm => bm.id === 261);
+kolla('SharpFrame är en unik direktlänk med ljudbegränsning',
+  currentData.bokmarken.filter(bm => new URL(bm.url).href === sharpFrameUrl).length === 1 &&
+  sharpFrameEntry?.beskrivning.includes('utan ljud') && sharpFrameEntry?.typ === 'Webbapp');
+kolla('Bildanalys huvudpost bevaras', currentData.bokmarken.some(bm => bm.id === 245 && bm.url === 'https://hktcr.github.io/Bildanalys/'));
+const sharpDom = await skapaKontraktsdom(rawJson);
+const beforeSharpDom = await skapaKontraktsdom(JSON.stringify({...currentData, bokmarken:currentData.bokmarken.filter(bm => bm.id !== 261)}));
+for (const query of ['SharpFrame', 'fågelfilm', 'filmstopp']) {
+  const before = korCorpusFraga(beforeSharpDom.tw, query).alla;
+  const after = korCorpusFraga(sharpDom.tw, query).alla;
+  kolla('SharpFrame hittas, äldre ordning bevaras: ' + query,
+    after.includes(sharpFrameUrl) && JSON.stringify(after.filter(url => url !== sharpFrameUrl)) === JSON.stringify(before));
+}
+sharpDom.tw.close();beforeSharpDom.tw.close();
+
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
 process.exit(antalFel ? 1 : 0);
+

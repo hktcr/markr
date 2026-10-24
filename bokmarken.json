@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-22",
+  "uppdaterad": "2026-10-24",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7017,6 +7017,32 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-10-16"
+    },
+    {
+      "id": 261,
+      "url": "https://hktcr.github.io/Bildanalys/sharpframe/",
+      "titel": "SharpFrame · skarpa stillbilder och filmstopp",
+      "beskrivning": "SharpFrame hittar skarpa stillbilder ur video och låter dig skapa en ny film med flera inbromsningar, valbara stillbildspauser och uppstarter. För fågelfilm där viktiga kännetecken ska synas tydligt. All bearbetning sker lokalt i webbläsaren. Export till WebM/VP8 utan ljud; originalfilen bevaras.",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa",
+        "Bildanalys",
+        "SharpFrame"
+      ],
+      "amnen": [
+        "Fotografi",
+        "Video",
+        "Fåglar",
+        "Bildanalys"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-24"
     }
   ],
   "senasteGallring": {
@@ -7025,3 +7051,4 @@
     "arkiv": "arkiv/gallrade-bokmarken-2026-08-10.json"
   }
 }
+
