@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-24",
+  "uppdaterad": "2026-10-25",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7043,6 +7043,30 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-10-24"
+    },
+    {
+      "id": 262,
+      "url": "https://nattlinjen-prolog-r4.hlgk.chatgpt.site/",
+      "titel": "Nattlinjen · En lykta utan station",
+      "beskrivning": "Spelbar arbetsversion av ett filmiskt matematikäventyr med stegvis hjälp och sparad progression. Spelet är under utveckling och granskning; scener och spelmoment omarbetas.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "Nattlinjen"
+      ],
+      "amnen": [
+        "Matematik",
+        "Pedagogiska spel",
+        "Matematikträning",
+        "Äventyrsspel"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-25"
     }
   ],
   "senasteGallring": {

@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1012,6 +1012,33 @@ for (const query of ['SharpFrame', 'fågelfilm', 'filmstopp']) {
     after.includes(sharpFrameUrl) && JSON.stringify(after.filter(url => url !== sharpFrameUrl)) === JSON.stringify(before));
 }
 sharpDom.tw.close();beforeSharpDom.tw.close();
+
+/* 16. Nattlinjen länkar till spelet och märks tydligt som arbetsversion. */
+const nattlinjenUrl = 'https://nattlinjen-prolog-r4.hlgk.chatgpt.site/';
+const nattlinjenEntry = currentData.bokmarken.find(bm => bm.id === 262);
+kolla('Nattlinjen har en unik aktiv spellänk med rätt facetter',
+  currentData.bokmarken.filter(bm => new URL(bm.url).href === nattlinjenUrl).length === 1 &&
+  nattlinjenEntry?.titel === 'Nattlinjen · En lykta utan station' &&
+  nattlinjenEntry?.typ === 'Webbapp' && nattlinjenEntry?.livscykel === 'Aktiv' &&
+  nattlinjenEntry?.omrade === 'Skola och undervisning' &&
+  nattlinjenEntry?.projekt.includes('Nattlinjen') && nattlinjenEntry?.amnen.includes('Matematik'));
+kolla('Nattlinjen visar aktuell arbetsstatus utan inaktuell privat- eller färdigstämpel',
+  nattlinjenEntry?.beskrivning.includes('Spelbar arbetsversion') &&
+  nattlinjenEntry?.beskrivning.includes('under utveckling och granskning') &&
+  nattlinjenEntry?.beskrivning.includes('scener och spelmoment omarbetas') &&
+  !/privat|B5|färdiggranskad|ägaråtkomst/i.test(nattlinjenEntry?.beskrivning || ''));
+const nattlinjenDom = await skapaKontraktsdom(rawJson);
+const foreNattlinjenDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 262)
+}));
+for (const query of ['Nattlinjen', 'matematik', 'stegvis hjälp']) {
+  const fore = korCorpusFraga(foreNattlinjenDom.tw, query).alla;
+  const efter = korCorpusFraga(nattlinjenDom.tw, query).alla;
+  kolla('Nattlinjen hittas, äldre ordning bevaras: ' + query,
+    efter.includes(nattlinjenUrl) &&
+    JSON.stringify(efter.filter(url => url !== nattlinjenUrl)) === JSON.stringify(fore));
+}
+nattlinjenDom.tw.close();foreNattlinjenDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
