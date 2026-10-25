@@ -1014,7 +1014,7 @@ for (const query of ['SharpFrame', 'fågelfilm', 'filmstopp']) {
 sharpDom.tw.close();beforeSharpDom.tw.close();
 
 /* 16. Nattlinjen länkar till spelet och märks tydligt som arbetsversion. */
-const nattlinjenUrl = 'https://nattlinjen-prolog-r4.hlgk.chatgpt.site/';
+const nattlinjenUrl = 'https://hktcr.github.io/nattlinjen/';
 const nattlinjenEntry = currentData.bokmarken.find(bm => bm.id === 262);
 kolla('Nattlinjen har en unik aktiv spellänk med rätt facetter',
   currentData.bokmarken.filter(bm => new URL(bm.url).href === nattlinjenUrl).length === 1 &&
