@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 209 aktiva bokmärken. De 32 poster som gallrades 2026-08-10 finns i
+innehåller 213 aktiva bokmärken och 13 arkiverade poster. De 32 poster som gallrades 2026-08-10 finns i
 ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 184 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 387 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -59,6 +59,29 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-10-26 | Källrättelser, SharpFrame och Nattlinjen dokumenterade
+
+Veckokontrollen dokumenterade de betydelsefulla MärkR-ändringar som hade
+publicerats efter föregående kontroll men saknades i projektkrönikan. Den 22
+oktober rättades källbundna beskrivningar för Nyheter, VävR, LjudR och
+Blodkrysset. Ordariums två workshopposter arkiverades och motsvarande
+sajtkort markerades som borttagna. Livscykelkanon är fortsatt exakt `Aktiv`
+och `Arkiverad`.
+
+Den 24 oktober registrerades SharpFrame med stabilt id 261 och direktlänk som
+aktiv webbapp för att skapa filmstopp ur fågelfilm. Posten anger formatgränsen
+WebM/VP8 utan ljud och bevarar Bildanalys som separat huvudpost. Den 25
+oktober registrerades Nattlinjen med stabilt id 262 som aktiv arbetsversion
+och pekades därefter till den befintliga offentliga GitHub Pages-adressen
+https://hktcr.github.io/nattlinjen/.
+
+Efter ändringarna innehåller MärkR 226 poster: 213 aktiva och 13 arkiverade.
+JSON-, syntax-, facett-, livscykel- och sökregressionerna passerar 387 av 387
+kontroller. Källcommits: `6a38a71095775dc55a87ee84b84b2a5910cbe4d1`,
+`acd8193f597a30250140401f0fbdd6b33bf7013c`,
+`ccf61467c1649afd1d7f478fb4c2d7b7255c8ae3` och
+`538baa2052d8864f09ddb59ae56f21f25870de5d`.
 
 ### 2026-09-08 | Bildanalys blev sökbar i MärkR
 
