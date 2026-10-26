@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-25",
+  "uppdaterad": "2026-10-26",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7067,6 +7067,31 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-10-25"
+    },
+    {
+      "id": 263,
+      "url": "https://hktcr.github.io/birds_Astorp-preview/prototyper/",
+      "titel": "Åstorps fåglar – prototyper",
+      "beskrivning": "Samlad ingång till de nya sidorna under utveckling. Visar vad som går att prova och vilka delar som ännu saknar underlag. Separat offentlig arbetsversion, inte den ordinarie webbplatsen.",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbplats",
+      "kontexter": [
+        "Åstorps kommun"
+      ],
+      "projekt": [
+        "Fågelåret i Åstorp"
+      ],
+      "amnen": [
+        "Fåglar",
+        "Åstorp",
+        "Prototyper"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-26"
     }
   ],
   "senasteGallring": {

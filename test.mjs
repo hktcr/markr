@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1039,6 +1039,29 @@ for (const query of ['Nattlinjen', 'matematik', 'stegvis hjälp']) {
     JSON.stringify(efter.filter(url => url !== nattlinjenUrl)) === JSON.stringify(fore));
 }
 nattlinjenDom.tw.close();foreNattlinjenDom.tw.close();
+
+/* 17. Åstorps fåglars prototypindex länkar till den separata offentliga arbetsversionen. */
+const birdPrototypeUrl = 'https://hktcr.github.io/birds_Astorp-preview/prototyper/';
+const birdPrototypeEntry = currentData.bokmarken.find(bm => bm.id === 263);
+kolla('Fågelprototyperna har en unik direktlänk med rätt facetter',
+  currentData.bokmarken.filter(bm => new URL(bm.url).href === birdPrototypeUrl).length === 1 &&
+  birdPrototypeEntry?.titel === 'Åstorps fåglar – prototyper' &&
+  birdPrototypeEntry?.omrade === 'Natur och fältarbete' && birdPrototypeEntry?.typ === 'Webbplats' &&
+  birdPrototypeEntry?.livscykel === 'Aktiv' && birdPrototypeEntry?.projekt.includes('Fågelåret i Åstorp'));
+kolla('Fågelprototyperna anger offentlig arbetsversion och saknat underlag',
+  birdPrototypeEntry?.beskrivning === 'Samlad ingång till de nya sidorna under utveckling. Visar vad som går att prova och vilka delar som ännu saknar underlag. Separat offentlig arbetsversion, inte den ordinarie webbplatsen.');
+const birdPrototypeDom = await skapaKontraktsdom(rawJson);
+const beforeBirdPrototypeDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 263)
+}));
+for (const query of ['Åstorps fåglar', 'prototyper', 'nya sidor']) {
+  const before = korCorpusFraga(beforeBirdPrototypeDom.tw, query).alla;
+  const after = korCorpusFraga(birdPrototypeDom.tw, query).alla;
+  kolla('Fågelprototyperna hittas, äldre ordning bevaras: ' + query,
+    after.includes(birdPrototypeUrl) &&
+    JSON.stringify(after.filter(url => url !== birdPrototypeUrl)) === JSON.stringify(before));
+}
+birdPrototypeDom.tw.close();beforeBirdPrototypeDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
