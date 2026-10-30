@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-26",
+  "uppdaterad": "2026-10-30",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7092,6 +7092,30 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-10-26"
+    },
+    {
+      "id": 264,
+      "url": "https://hktcr.github.io/morgonbrief/",
+      "titel": "Morgonbrief · världen, vetenskap och AI",
+      "beskrivning": "Svensk interaktiv nyhetsöversikt om världen, vetenskap och AI. Korta sammanfattningar, läsrutor för fördjupning, ämnesfilter och sökning. Synliga källänkar, publiceringstider och markeringar av tidsosäkerhet. För nyhetsöverblick och morgonläsning; faktisk utgåva och aktualitet visas på sidan.",
+      "omrade": "Allmän kunskap och referens",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "Morgonbrief"
+      ],
+      "amnen": [
+        "Nyheter",
+        "Vetenskap",
+        "AI",
+        "Omvärldsbevakning"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-10-30"
     }
   ],
   "senasteGallring": {

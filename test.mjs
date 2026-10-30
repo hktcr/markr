@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1062,6 +1062,35 @@ for (const query of ['Åstorps fåglar', 'prototyper', 'nya sidor']) {
     JSON.stringify(after.filter(url => url !== birdPrototypeUrl)) === JSON.stringify(before));
 }
 birdPrototypeDom.tw.close();beforeBirdPrototypeDom.tw.close();
+
+/* 18. Morgonbrief är en egen direktlänk med källgrundad sökbeskrivning. */
+const morgonbriefUrl = 'https://hktcr.github.io/morgonbrief/';
+const morgonbriefEntry = currentData.bokmarken.find(bm => bm.id === 264);
+kolla('Morgonbrief har en unik aktiv direktlänk med rätt facetter',
+  currentData.bokmarken.filter(bm => new URL(bm.url).href === morgonbriefUrl).length === 1 &&
+  morgonbriefEntry?.titel === 'Morgonbrief · världen, vetenskap och AI' &&
+  morgonbriefEntry?.omrade === 'Allmän kunskap och referens' &&
+  morgonbriefEntry?.typ === 'Webbapp' && morgonbriefEntry?.livscykel === 'Aktiv' &&
+  morgonbriefEntry?.projekt.includes('Morgonbrief') && morgonbriefEntry?.amnen.includes('Vetenskap'));
+kolla('Morgonbrief beskriver källor och aktualitet utan leveransgaranti',
+  morgonbriefEntry?.beskrivning.includes('källänkar') &&
+  morgonbriefEntry?.beskrivning.includes('tidsosäkerhet') &&
+  morgonbriefEntry?.beskrivning.includes('faktisk utgåva och aktualitet') &&
+  !/06[.:]00|varje morgon|uppdateras dagligen/i.test(morgonbriefEntry?.beskrivning || ''));
+const morgonbriefDom = await skapaKontraktsdom(rawJson);
+const beforeMorgonbriefDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 264)
+}));
+for (const query of ['Morgonbrief', 'vetenskap', 'morgonläsning']) {
+  const before = korCorpusFraga(beforeMorgonbriefDom.tw, query).alla;
+  const after = korCorpusFraga(morgonbriefDom.tw, query).alla;
+  kolla('Morgonbrief hittas, äldre ordning bevaras: ' + query,
+    after.filter(url => url === morgonbriefUrl).length === 1 &&
+    JSON.stringify(after.filter(url => url !== morgonbriefUrl)) === JSON.stringify(before));
+}
+kolla('inga konsolfel i Morgonbrief-deltan',
+  morgonbriefDom.kontraktsfel.length === 0 && beforeMorgonbriefDom.kontraktsfel.length === 0);
+morgonbriefDom.tw.close();beforeMorgonbriefDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
