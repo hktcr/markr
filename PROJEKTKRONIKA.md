@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 213 aktiva bokmärken och 13 arkiverade poster. De 32 poster som gallrades 2026-08-10 finns i
-ett återställningsbart arkiv med gallringsorsaker.
+innehåller 215 aktiva bokmärken och 13 arkiverade poster. De 32 poster som
+gallrades 2026-08-10 finns i ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 387 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 398 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -59,6 +59,26 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-11-02 | Åstorps fåglar-prototyper och Morgonbrief dokumenterade
+
+Veckokontrollen dokumenterade två betydelsefulla MärkR-tillägg som hade
+publicerats efter föregående kontroll men saknades i projektkrönikan. Den 26
+oktober registrerades den separata offentliga arbetsversionen för Åstorps
+fåglar-prototyperna med stabilt id 263. Posten beskriver att sidorna är under
+utveckling och att delar fortfarande kan sakna underlag; den skiljs därmed
+tydligt från den ordinarie webbplatsen.
+
+Den 30 oktober registrerades Morgonbrief med stabilt id 264 som aktiv webbapp
+för svensk nyhetsöverblick om världen, vetenskap och AI. Beskrivningen anger
+källänkar, publiceringstider och markeringar av tidsosäkerhet utan att utlova
+en viss utgåva eller aktualitet. Båda direktlänkarna öppnades med HTTP 200 och
+de riktade sökproven bevarar äldre träffars ordning.
+
+Efter tilläggen innehåller MärkR 228 poster: 215 aktiva och 13 arkiverade.
+JSON-, syntax-, facett-, livscykel- och sökregressionerna passerar 398 av 398
+kontroller. Källcommits: `c9190d475a7111e6489dfdca57a4167920c33dd0`
+och `4a71c6f73b039ed29a537b151ea18361adf3ede3`.
 
 ### 2026-10-26 | Källrättelser, SharpFrame och Nattlinjen dokumenterade
 
