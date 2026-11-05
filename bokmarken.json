@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-10-30",
+  "uppdaterad": "2026-11-05",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7116,6 +7116,39 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-10-30"
+    },
+    {
+      "id": 265,
+      "url": "https://hktcr.github.io/gaia-play/hostskogens-hemligheter/",
+      "titel": "Kroppens korsord",
+      "beskrivning": "Interaktivt höstkorsord för repetition i biologi: 67 begrepp om matens väg, matspjälkning, näring, blodet och blodomloppet, lungor och andning. En extra ledtråd och sidhänvisning till häftet. När hela krysset är rätt öppnas Kroppens transportuppdrag med syre, glukos och koldioxid, en gemensam avslutning och frivilliga frasgåtor. Ingen inloggning; framstegen sparas i samma webbläsare.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "NO79",
+        "HT26KROPP"
+      ],
+      "amnen": [
+        "Biologi",
+        "Kroppen",
+        "Matspjälkning",
+        "Näring",
+        "Blodomloppet",
+        "Andning",
+        "Cellandning",
+        "Korsord",
+        "Repetition",
+        "Pedagogiska spel"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-05"
     }
   ],
   "senasteGallring": {
@@ -7124,4 +7157,5 @@
     "arkiv": "arkiv/gallrade-bokmarken-2026-08-10.json"
   }
 }
+
 

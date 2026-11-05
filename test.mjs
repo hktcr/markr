@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1092,8 +1092,23 @@ kolla('inga konsolfel i Morgonbrief-deltan',
   morgonbriefDom.kontraktsfel.length === 0 && beforeMorgonbriefDom.kontraktsfel.length === 0);
 morgonbriefDom.tw.close();beforeMorgonbriefDom.tw.close();
 
+/* Kroppens korsord: ny post utan förändrade tidigare träffar. */
+const hostUrl = 'https://hktcr.github.io/gaia-play/hostskogens-hemligheter/';
+const hostEntry = currentData.bokmarken.find(bm => bm.id === 265);
+kolla('Kroppens korsord har unik aktiv direktpost', currentData.bokmarken.filter(bm=>bm.url===hostUrl).length===1 && hostEntry?.livscykel==='Aktiv' && hostEntry?.projekt.includes('HT26KROPP'));
+const hostDom = await skapaKontraktsdom(rawJson);
+const beforeHostDom = await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(bm=>bm.id!==265)}));
+for(const query of ['Kroppens korsord','blodomloppet','repetition']) {
+ const before=korCorpusFraga(beforeHostDom.tw,query).alla;
+ const after=korCorpusFraga(hostDom.tw,query).alla;
+ kolla('Höstskogens sökning och äldre ordning: '+query,after.filter(url=>url===hostUrl).length===1 && JSON.stringify(after.filter(url=>url!==hostUrl))===JSON.stringify(before));
+}
+kolla('inga konsolfel i Höstskogens delta',hostDom.kontraktsfel.length===0 && beforeHostDom.kontraktsfel.length===0);
+hostDom.tw.close();beforeHostDom.tw.close();
+
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
 process.exit(antalFel ? 1 : 0);
+
 
