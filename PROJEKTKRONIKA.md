@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 215 aktiva bokmärken och 13 arkiverade poster. De 32 poster som
+innehåller 216 aktiva bokmärken och 13 arkiverade poster. De 32 poster som
 gallrades 2026-08-10 finns i ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 398 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 403 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -59,6 +59,21 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-11-09 | Kroppens korsord dokumenterat
+
+Veckokontrollen dokumenterade ett betydelsefullt MärkR-tillägg som hade
+publicerats den 5 november men saknades i projektkrönikan. Kroppens korsord
+registrerades med stabilt id 265 som aktiv webbapp för repetition av 67
+biologibegrepp om matens väg, matspjälkning, näring, blod, blodomlopp, lungor
+och andning. Posten beskriver ledtrådar, hänvisningar till utskriftshäftet,
+lokalt sparade framsteg och att Kroppens transportuppdrag låses upp när
+korsordet är färdigt. Direktlänken öppnades och de riktade sökproven för
+`Kroppens korsord`, `blodomloppet` och `repetition` gav den avsedda träffen.
+
+Efter tillägget innehåller MärkR 229 poster: 216 aktiva och 13 arkiverade.
+JSON-, syntax-, facett-, livscykel- och sökregressionerna passerar 403 av 403
+kontroller. Källcommit: `5ee4a9021c65f9995cfc4fd4478e4f13f68e1343`.
 
 ### 2026-11-02 | Åstorps fåglar-prototyper och Morgonbrief dokumenterade
 
