@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1105,6 +1105,36 @@ for(const query of ['Kroppens korsord','blodomloppet','repetition']) {
 }
 kolla('inga konsolfel i Höstskogens delta',hostDom.kontraktsfel.length===0 && beforeHostDom.kontraktsfel.length===0);
 hostDom.tw.close();beforeHostDom.tw.close();
+
+/* AI-mötet: egen direktpost, sökbar på namn, ämne och användning. */
+const aiMoteUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/';
+const aiMoteEntry = currentData.bokmarken.find(bm => bm.id === 266);
+kolla('AI-mötet har en unik aktiv direktpost med rätt facetter',
+  currentData.bokmarken.filter(bm => bm.url === aiMoteUrl).length === 1 &&
+  aiMoteEntry?.titel === 'AI i undervisningen · mötesunderlag 11 november 2026' &&
+  aiMoteEntry?.omrade === 'Skola och undervisning' &&
+  aiMoteEntry?.typ === 'Webbplats' && aiMoteEntry?.livscykel === 'Aktiv' &&
+  aiMoteEntry?.projekt.includes('gAIa') && aiMoteEntry?.amnen.includes('Lärande'));
+kolla('AI-mötets beskrivning anger urval, källor och begränsningar',
+  aiMoteEntry?.beskrivning.includes('18 studier och rapporter') &&
+  aiMoteEntry?.beskrivning.includes('LearnLM') &&
+  aiMoteEntry?.beskrivning.includes('begränsningar') &&
+  aiMoteEntry?.beskrivning.includes('kursplaneremiss') &&
+  aiMoteEntry?.beskrivning.includes('inte en systematisk forskningsöversikt'));
+const aiMoteDom = await skapaKontraktsdom(rawJson);
+const beforeAiMoteDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 266)
+}));
+for (const query of ['LearnLM', 'poängkompression', 'mötesunderlag']) {
+  const before = korCorpusFraga(beforeAiMoteDom.tw, query).alla;
+  const after = korCorpusFraga(aiMoteDom.tw, query).alla;
+  kolla('AI-mötets sökning och äldre ordning: ' + query,
+    after.filter(url => url === aiMoteUrl).length === 1 &&
+    JSON.stringify(after.filter(url => url !== aiMoteUrl)) === JSON.stringify(before));
+}
+kolla('inga konsolfel i AI-mötets delta',
+  aiMoteDom.kontraktsfel.length === 0 && beforeAiMoteDom.kontraktsfel.length === 0);
+aiMoteDom.tw.close(); beforeAiMoteDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;

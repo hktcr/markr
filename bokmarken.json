@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-05",
+  "uppdaterad": "2026-11-10",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7149,6 +7149,32 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-05"
+    },
+    {
+      "id": 266,
+      "url": "https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/",
+      "titel": "AI i undervisningen · mötesunderlag 11 november 2026",
+      "beskrivning": "Underlag för kollegiets AI-möte den 11 november 2026 med 18 studier och rapporter om generativ AI, elevers lärande, bedömning, poängkompression och återkoppling. Innehåller LearnLM-studierna, källänkar, studiernas begränsningar och utdrag om AI ur Skolverkets kursplaneremiss. Ett riktat urval, inte en systematisk forskningsöversikt.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "AI",
+        "Generativ AI",
+        "Lärande",
+        "Forskning",
+        "Källkritik",
+        "Undervisning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-10"
     }
   ],
   "senasteGallring": {
