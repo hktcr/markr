@@ -543,3 +543,12 @@ Sökproven `birds britannica`, `bokarkiv` och `fulltext` samt `skof`,
 ändra äldre träffars ordning. Regressionsskyddet läggs i den reproducerbara
 testsviten. Rättelsen följer MARKR-SOK-001 och återför den betydelsefulla
 ändringen till projektkrönikan.
+
+
+## 2026-11-10 | Nautilus läsindex registrerat
+
+På Håkans uttryckliga uppdrag registreras den nya ägarprivata Siten som post 267 i bokmarken.json och i aktiva sites.html. Hela posten visades före skrivning. Beskrivningen anger fritextsökning, datumfilter, introduktioner och ordmatchat ämnesnätverk samt metadataosäkerheter och privat åtkomst. Inget fulltextarkiv eller automatisk webbuppdatering utlovas. Äldre InfraNodus-post bevaras. Webbversion 1 har native succeeded-kvitto, commit cfdafa64b351e460300d7b0ddf7fd112f623f9f9. Mobilprov återstår i appens eget spår.
+
+Sökprov: Nautilus, vetenskapstidskriften och artikelindex. Historiska facit bevaras och nya posten undantas från frysta corpus. Alla tidigare poster ska vara identiska. Resultat och livekvitto förs till huvudkrönikan efter publicering.
+
+workstream_id: WS-86238bff-6a44-454f-a1a8-968c297b8ebf; event_id: EVT-ba1e6e5c-228a-4134-9cdc-06d8110775d0. [Läsindex](https://nautilus-lasindex.hlgk.chatgpt.site) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view) ↔ [Sites-MASTER](https://drive.google.com/file/d/1HeGrqRM4CX8knrLja7KT8qpmn-eJbjGR/view). Signatur gAIa.

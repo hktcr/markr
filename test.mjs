@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1135,6 +1135,21 @@ for (const query of ['LearnLM', 'poängkompression', 'mötesunderlag']) {
 kolla('inga konsolfel i AI-mötets delta',
   aiMoteDom.kontraktsfel.length === 0 && beforeAiMoteDom.kontraktsfel.length === 0);
 aiMoteDom.tw.close(); beforeAiMoteDom.tw.close();
+
+/* Nautilus: ny direktpost med bevarad äldre träffordning. */
+const nautilusUrl='https://nautilus-lasindex.hlgk.chatgpt.site';
+const nautilusEntry=currentData.bokmarken.find(bm=>bm.id===267);
+kolla('Nautilus har unik aktiv direktpost',currentData.bokmarken.filter(bm=>bm.url===nautilusUrl).length===1 && nautilusEntry?.livscykel==='Aktiv');
+kolla('Nautilus anger privat åtkomst och ordmatchade samband',nautilusEntry?.beskrivning.includes('ägarens ChatGPT-konto') && nautilusEntry?.beskrivning.includes('ordträffar') && nautilusEntry?.beskrivning.includes('overifierade'));
+kolla('Nautilus finns i aktiva sajtöversikten',new JSDOM(sitesHtml).window.document.querySelector('#aktiva + .sitegrid a[href="'+nautilusUrl+'"]')?.textContent.includes('Aktiv, privat'));
+const nautilusDom=await skapaKontraktsdom(rawJson);
+const beforeNautilusDom=await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(bm=>bm.id!==267)}));
+for(const query of ['Nautilus','vetenskapstidskriften','artikelindex']){
+ const before=korCorpusFraga(beforeNautilusDom.tw,query).alla,after=korCorpusFraga(nautilusDom.tw,query).alla;
+ kolla('Nautilus sökning och äldre ordning: '+query,after.filter(url=>url===new URL(nautilusUrl).href).length===1 && JSON.stringify(after.filter(url=>url!==new URL(nautilusUrl).href))===JSON.stringify(before));
+}
+kolla('inga konsolfel i Nautilus delta',nautilusDom.kontraktsfel.length===0 && beforeNautilusDom.kontraktsfel.length===0);
+nautilusDom.tw.close();beforeNautilusDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
