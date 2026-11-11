@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1180,9 +1180,22 @@ kolla('inga konsolfel i kompressionspresentationens delta',
   aiPresentationDom.kontraktsfel.length === 0 && beforeAiPresentationDom.kontraktsfel.length === 0);
 aiPresentationDom.tw.close(); beforeAiPresentationDom.tw.close();
 
+const promptUrl='https://promptr.hlgk.chatgpt.site/';
+const promptEntry=currentData.bokmarken.find(bm=>bm.id===269);
+kolla('PromptR har unik aktiv post',new URL(promptEntry?.url).href===promptUrl && promptEntry.livscykel==='Aktiv' && currentData.bokmarken.filter(bm=>new URL(bm.url).href===promptUrl).length===1);
+const promptDom=await skapaKontraktsdom(rawJson);
+const beforePromptDom=await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(bm=>bm.id!==269)}));
+for(const query of ['PromptR','prompt','textdelning','kopiera','korsord']){
+ const before=korCorpusFraga(beforePromptDom.tw,query).alla,after=korCorpusFraga(promptDom.tw,query).alla;
+ kolla('PromptR sökning och äldre ordning: '+query,after.filter(url=>url===promptUrl).length===1 && JSON.stringify(after.filter(url=>url!==promptUrl))===JSON.stringify(before));
+}
+kolla('inga konsolfel i PromptR delta',promptDom.kontraktsfel.length===0 && beforePromptDom.kontraktsfel.length===0);
+promptDom.tw.close();beforePromptDom.tw.close();
+
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
 process.exit(antalFel ? 1 : 0);
+
 
 

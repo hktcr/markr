@@ -7225,6 +7225,32 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-11"
+    },
+    {
+      "id": 269,
+      "url": "https://promptr.hlgk.chatgpt.site",
+      "titel": "PromptR · Dela texter och prompter",
+      "beskrivning": "Öppen prompttavla för att snabbt dela text med kollegor och allmänheten. Besökare öppnar en länk och kopierar hela texten utan konto. Ägaren administrerar via ChatGPT-inloggning: skriver, sparar privata utkast, publicerar och avpublicerar. Innehåller korsordsprompt för undervisning. Administration: https://promptr.hlgk.chatgpt.site/admin",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "AI",
+        "Prompt",
+        "Textdelning",
+        "Kopiera",
+        "Undervisning",
+        "Korsord"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-11"
     }
   ],
   "senasteGallring": {
