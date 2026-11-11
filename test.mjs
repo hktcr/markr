@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1216,6 +1216,15 @@ const vb=versionDom.tw.document.querySelector('.detalj-versioner');
 kolla('Äldre version och rätt PDF bevaras tillsammans i samma post',vb.querySelectorAll('li').length===1 && vb.querySelectorAll('li a').length===2 && vb.querySelector('li a').href==='https://example.org/v1/');
 kolla('Versionsnotering renderas som text och osäkra URL:er tas bort',vb.textContent.includes('<script>bad()</script>') && !vb.querySelector('script') && !Array.from(vb.querySelectorAll('a')).some(a=>/^(javascript|data):/.test(a.href)));
 buddyDom.tw.close();beforeBuddyDom.tw.close();versionDom.tw.close();
+
+const nautilusOriginalUrl = 'https://nautil.us/';
+const nautilusOriginalDom = await skapaKontraktsdom(rawJson);
+for (const query of ['Nautilus Magazine', 'vetenskapsjournalistik', 'Nautilus prenumeration']) {
+  const matches = korCorpusFraga(nautilusOriginalDom.tw, query).alla;
+  kolla('Nautilus originalsajt: ' + query, matches.filter(url => url === nautilusOriginalUrl).length === 1);
+}
+kolla('Nautilus läsindex finns kvar', korCorpusFraga(nautilusOriginalDom.tw, 'Nautilus läsindex').alla.includes('https://nautilus-lasindex.hlgk.chatgpt.site/'));
+nautilusOriginalDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;

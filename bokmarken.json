@@ -7290,6 +7290,29 @@
         "historikUrl": "https://github.com/hktcr/gaia-tools/commits/main/forskningsbilder/ai-studiekompis/",
         "loggUrl": "https://github.com/hktcr/gaia-tools/blob/main/forskningsbilder/ai-studiekompis/LOGG.md"
       }
+    },
+    {
+      "id": 271,
+      "url": "https://nautil.us/",
+      "titel": "Nautilus Magazine",
+      "beskrivning": "Vetenskapstidskriftens egen webbplats för att läsa och hitta nya artiklar om bland annat biologi, ekologi och evolution. Här finns också inloggning och prenumeration.",
+      "omrade": "Forskning och akademi",
+      "typ": "Webbplats",
+      "kontexter": [],
+      "projekt": [
+        "Nautilus"
+      ],
+      "amnen": [
+        "Vetenskap",
+        "Vetenskapsjournalistik",
+        "Tidskrifter"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-11"
     }
   ],
   "senasteGallring": {
