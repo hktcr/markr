@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-10",
+  "uppdaterad": "2026-11-11",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7201,6 +7201,30 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-10"
+    },
+    {
+      "id": 268,
+      "url": "https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/responsive-r9/",
+      "titel": "Kompression i skrivbedömning · AI-möte 11 november 2026",
+      "beskrivning": "En interaktiv presentationsbild om kompression i skrivbedömning, med 12 fiktiva uppsatser. Reviderad layout. Backup av föregående version: https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/backup-r9-63ccd4c/",
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "AI",
+        "Bedömning",
+        "Kompression",
+        "Utbildning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-11"
     }
   ],
   "senasteGallring": {

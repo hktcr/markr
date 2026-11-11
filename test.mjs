@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1150,6 +1150,35 @@ for(const query of ['Nautilus','vetenskapstidskriften','artikelindex']){
 }
 kolla('inga konsolfel i Nautilus delta',nautilusDom.kontraktsfel.length===0 && beforeNautilusDom.kontraktsfel.length===0);
 nautilusDom.tw.close();beforeNautilusDom.tw.close();
+
+/* Kompression i skrivbedömning: egen direktpost och bevarad tidigare version. */
+const aiPresentationUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/responsive-r9/';
+const aiPresentationBackupUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/backup-r9-63ccd4c/';
+const aiPresentationEntry = currentData.bokmarken.find(bm => bm.id === 268);
+kolla('Kompressionspresentationen har en unik aktiv direktpost med rätt facetter',
+  currentData.bokmarken.filter(bm => bm.url === aiPresentationUrl).length === 1 &&
+  aiPresentationEntry?.titel === 'Kompression i skrivbedömning · AI-möte 11 november 2026' &&
+  aiPresentationEntry?.omrade === 'Skola och undervisning' &&
+  aiPresentationEntry?.typ === 'Presentation' && aiPresentationEntry?.livscykel === 'Aktiv' &&
+  JSON.stringify(aiPresentationEntry?.projekt) === JSON.stringify(['gAIa']) &&
+  JSON.stringify(aiPresentationEntry?.amnen) === JSON.stringify(['AI', 'Bedömning', 'Kompression', 'Utbildning']) &&
+  aiPresentationEntry?.period === 'HT26' && aiPresentationEntry?.tillagd === '2026-11-11');
+kolla('Kompressionspresentationen beskriver en bild, tolv fiktiva uppsatser och backup-URL',
+  aiPresentationEntry?.beskrivning === 'En interaktiv presentationsbild om kompression i skrivbedömning, med 12 fiktiva uppsatser. Reviderad layout. Backup av föregående version: ' + aiPresentationBackupUrl);
+const aiPresentationDom = await skapaKontraktsdom(rawJson);
+const beforeAiPresentationDom = await skapaKontraktsdom(JSON.stringify({
+  ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 268)
+}));
+for (const query of ['kompression', 'bedömning', 'presentation']) {
+  const before = korCorpusFraga(beforeAiPresentationDom.tw, query).alla;
+  const after = korCorpusFraga(aiPresentationDom.tw, query).alla;
+  kolla('Kompressionspresentationens sökning och äldre ordning: ' + query,
+    after.filter(url => url === aiPresentationUrl).length === 1 &&
+    JSON.stringify(after.filter(url => url !== aiPresentationUrl)) === JSON.stringify(before));
+}
+kolla('inga konsolfel i kompressionspresentationens delta',
+  aiPresentationDom.kontraktsfel.length === 0 && beforeAiPresentationDom.kontraktsfel.length === 0);
+aiPresentationDom.tw.close(); beforeAiPresentationDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
