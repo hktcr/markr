@@ -202,6 +202,7 @@ function normalisera(ra) {
       titel: titel,
       visningstitel: stadaTitel(titel),
       beskrivning: beskrivning,
+      versioner: normaliseraVersioner(post.versioner),
       taggar: taggar,
       legacyTaggar: legacyTaggar,
       omrade: omrade,
@@ -839,6 +840,8 @@ function byggTrafflankar(rubriktext, poster, klassnamn) {
 }
 
 function fyllTraffdetalj(panel, bm) {
+  const versionssektion = byggVersioner(bm.versioner);
+  if (versionssektion) panel.append(versionssektion);
   const facetter = document.createElement('div');
   facetter.className = 'detalj-facetter';
   laggTillDetaljFacetter(facetter, 'Område', bm.omrade);
@@ -882,6 +885,61 @@ function fyllTraffdetalj(panel, bm) {
   });
   handlingar.append(oppna, kopiera);
   panel.append(handlingar);
+}
+
+function sakerVersionsUrl(value) {
+  if (typeof value !== 'string') return '';
+  try {
+    const u = new URL(value);
+    return ['https:', 'http:'].includes(u.protocol) ? u.href : '';
+  } catch { return ''; }
+}
+
+function normaliseraVersioner(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const tidigare = Array.isArray(value.tidigare) ? value.tidigare.flatMap(v => {
+    if (!v || !v.version) return [];
+    const url = sakerVersionsUrl(v.url), reservUrl = sakerVersionsUrl(v.reservUrl);
+    if (!url && !reservUrl) return [];
+    return [{ version: String(v.version), datum: String(v.datum || ''), notering: String(v.notering || ''), url, reservUrl }];
+  }) : [];
+  return { aktuell: String(value.aktuell || ''), notering: String(value.notering || ''), tidigare,
+    historikUrl: sakerVersionsUrl(value.historikUrl), loggUrl: sakerVersionsUrl(value.loggUrl) };
+}
+
+function byggVersioner(data) {
+  if (!data) return null;
+  const box = document.createElement('details');
+  box.className = 'detalj-versioner';
+  const summary = document.createElement('summary');
+  summary.textContent = 'Tidigare versioner / säkerhetskopior';
+  box.append(summary);
+  const p = document.createElement('p');
+  p.textContent = data.aktuell ? 'Aktuell version: ' + data.aktuell + '.' : 'Bokmärkets huvudlänk öppnar aktuell version.';
+  box.append(p);
+  if (data.notering) { const n = document.createElement('p'); n.textContent = data.notering; box.append(n); }
+  const addLink = (parent, text, url) => {
+    if (!url) return;
+    const a = document.createElement('a'); a.textContent = text; a.href = url; a.target = '_blank'; a.rel = 'noopener'; parent.append(a);
+  };
+  if (data.tidigare.length) {
+    const list = document.createElement('ul');
+    data.tidigare.forEach(v => {
+      const li = document.createElement('li');
+      const title = document.createElement('strong'); title.textContent = 'Version ' + v.version + (v.datum ? ' · ' + v.datum : ''); li.append(title);
+      if (v.notering) { const n = document.createElement('p'); n.textContent = v.notering; li.append(n); }
+      addLink(li, 'Öppna tidigare version', v.url);
+      if (v.url && v.reservUrl) li.append(document.createTextNode(' · '));
+      addLink(li, 'Reserv-PDF', v.reservUrl); list.append(li);
+    });
+    box.append(list);
+  } else { const n = document.createElement('p'); n.textContent = 'Inga tidigare bevarade visningsversioner är länkade här.'; box.append(n); }
+  const links = document.createElement('p');
+  addLink(links, 'Presentationslogg', data.loggUrl);
+  if (data.loggUrl && data.historikUrl) links.append(document.createTextNode(' · '));
+  addLink(links, 'Källhistorik (för återställning)', data.historikUrl);
+  if (links.childNodes.length) box.append(links);
+  return box;
 }
 
 function markeraIn(nod, text, ord) {
@@ -1786,3 +1844,4 @@ if (window.visualViewport && typeof window.visualViewport.addEventListener === '
 }
 laddaData();
 if (finPekare) el.sok.focus();
+

@@ -313,7 +313,7 @@ const enzymjaktenId = 246;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1162,8 +1162,10 @@ kolla('Kompressionspresentationen har en unik aktiv direktpost med rätt facette
   JSON.stringify(aiPresentationEntry?.projekt) === JSON.stringify(['gAIa']) &&
   JSON.stringify(aiPresentationEntry?.amnen) === JSON.stringify(['AI', 'Bedömning', 'Kompression', 'Utbildning']) &&
   aiPresentationEntry?.period === 'HT26' && aiPresentationEntry?.tillagd === '2026-11-11');
-kolla('Kompressionspresentationen beskriver endast version 3 utan borttagna reservlänkar',
-  aiPresentationEntry?.beskrivning === "Version 3 av presentationsbilden om poängkompression i skrivbedömning. 12 fiktiva uppsatser, omdömen i ord, konstruerade exempelpoäng och följdfrågor om vanliga examinationer. Innehåller Zhang och Yang om motiveringar och slutpoäng.");
+kolla('Kompressionspresentationen bevarar version 3 och förtydligandets status',
+  aiPresentationEntry?.beskrivning.includes('Version 3') && aiPresentationEntry?.beskrivning.includes('sammanvägningen') &&
+  aiPresentationEntry?.versioner.aktuell === '3' && aiPresentationEntry?.versioner.tidigare.length === 0 &&
+  aiPresentationEntry?.versioner.notering.includes('inte som öppningsbara'));
 const aiPresentationDom = await skapaKontraktsdom(rawJson);
 const beforeAiPresentationDom = await skapaKontraktsdom(JSON.stringify({
   ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 268)
@@ -1191,10 +1193,35 @@ for(const query of ['PromptR','prompt','textdelning','kopiera','korsord']){
 kolla('inga konsolfel i PromptR delta',promptDom.kontraktsfel.length===0 && beforePromptDom.kontraktsfel.length===0);
 promptDom.tw.close();beforePromptDom.tw.close();
 
+/* Forskningsbild och versioner: ingen tillverkad gammal release i produktionsdata. */
+const buddyUrl='https://hktcr.github.io/gaia-tools/forskningsbilder/ai-studiekompis/';
+const buddyEntry=currentData.bokmarken.find(b=>b.id===270);
+kolla('Studiekompis har stabil aktuelladress och första version utan falsk historik',buddyEntry?.url===buddyUrl && buddyEntry?.versioner.aktuell==='1.0.0' && buddyEntry?.versioner.tidigare.length===0);
+const buddyDom=await skapaKontraktsdom(rawJson);
+const beforeBuddyDom=await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(b=>b.id!==270)}));
+for(const query of ['studiekompis','Bastani','självständigt lärande','study buddies']){
+ const before=korCorpusFraga(beforeBuddyDom.tw,query).alla,after=korCorpusFraga(buddyDom.tw,query).alla;
+ kolla('Studiekompis sökning och bevarad äldre ordning: '+query,after.filter(url=>url===buddyUrl).length===1 && JSON.stringify(after.filter(url=>url!==buddyUrl))===JSON.stringify(before));
+}
+korCorpusFraga(buddyDom.tw,'studiekompis');
+const bd=buddyDom.tw.document;bd.querySelector('.traff-expandera').click();
+const history=bd.querySelector('.detalj-versioner');
+kolla('Versioner finns i infälld detaljpanel',!!history && !history.open && history.querySelector('summary').textContent.includes('Tidigare versioner'));
+kolla('Första versionen visar uttrycklig frånvaro av tidigare visningsversioner',history.textContent.includes('Inga tidigare bevarade') && !history.querySelector('ul'));
+kolla('Aktuell länk och logglänk hålls separata',bd.querySelector('#traffar a.rad').href===buddyUrl && history.querySelector('a').href===buddyEntry.versioner.loggUrl);
+/* Syntetiskt kontrakt, aldrig skrivet till produktionsdata. */
+const versionFixture={...buddyEntry,versioner:{aktuell:'2',tidigare:[{version:'1',datum:'2026-11-11',url:'https://example.org/v1/',reservUrl:'https://example.org/v1/reserv.pdf',notering:'<script>bad()</script>'},{version:'bad',url:'javascript:alert(1)'}],historikUrl:'data:text/html,bad'}};
+const versionDom=await skapaKontraktsdom(JSON.stringify({bokmarken:[versionFixture]}));korCorpusFraga(versionDom.tw,'studiekompis');versionDom.tw.document.querySelector('.traff-expandera').click();
+const vb=versionDom.tw.document.querySelector('.detalj-versioner');
+kolla('Äldre version och rätt PDF bevaras tillsammans i samma post',vb.querySelectorAll('li').length===1 && vb.querySelectorAll('li a').length===2 && vb.querySelector('li a').href==='https://example.org/v1/');
+kolla('Versionsnotering renderas som text och osäkra URL:er tas bort',vb.textContent.includes('<script>bad()</script>') && !vb.querySelector('script') && !Array.from(vb.querySelectorAll('a')).some(a=>/^(javascript|data):/.test(a.href)));
+buddyDom.tw.close();beforeBuddyDom.tw.close();versionDom.tw.close();
+
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
 process.exit(antalFel ? 1 : 0);
+
 
 
 

@@ -304,3 +304,14 @@ stjärnkartans, inte neonens: ett astronomiskt instrument i mässing mot natthim
 Serif i titlarna, systemets sans i brödtext, monospace i maskintext. Inget i
 gränssnittet kräver hover, alla träffytor är minst 44 px, fokusmarkeringen är
 synlig och `prefers-reduced-motion` stänger av all rörelse.
+
+
+## Aktuell utgåva och tidigare versioner
+
+Beslut 2026-11-11, CHG-f69f2366-b601-48e2-adec-7d2b221a9e2e.
+
+En resurs behåller samma post-id. `url` öppnar den avsiktligt valda aktuella versionen, helst genom en stabil aktuelladress. Versionsnummer får aldrig automatiskt avgöra vilken experimentversion som ska visas.
+
+Det valfria objektet `versioner` har `aktuell`, `tidigare` (lista), `notering`, `loggUrl` och `kallhistorikUrl`. Varje äldre post har `version`, `datum`, `url`, `reservUrl` och `notering`. I informationspanelen visas **Tidigare versioner / säkerhetskopior**, infällt från början. En ny utgåva kräver bevarad, provad föregående visningsversion och matchande PDF innan huvudpekaren flyttas. Källhistorik märks separat som återställningsunderlag. Ingen historik fabriceras när direkt öppningsbara äldre versioner saknas. Ägarbeslut om gallring gäller fortsatt.
+
+[Forskningsbildens metod](https://github.com/hktcr/gaia-tools/blob/main/forskningsbilder/METOD.md) och [poängkompressionens erfarenhetslogg](https://github.com/hktcr/gaia-tools/blob/main/moten/ai-2026-11-11/presentation/LOGG.md) ger bakgrund.

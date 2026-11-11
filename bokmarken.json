@@ -7206,7 +7206,7 @@
       "id": 268,
       "url": "https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/version-3/",
       "titel": "Kompression i skrivbedömning · AI-möte 11 november 2026",
-      "beskrivning": "Version 3 av presentationsbilden om poängkompression i skrivbedömning. 12 fiktiva uppsatser, omdömen i ord, konstruerade exempelpoäng och följdfrågor om vanliga examinationer. Innehåller Zhang och Yang om motiveringar och slutpoäng.",
+      "beskrivning": "Version 3 av presentationsbilden om poängkompression i skrivbedömning. 12 fiktiva uppsatser, omdömen i ord, konstruerade exempelpoäng och följdfrågor om examinationer. Innehåller Zhang och Yang om motiveringar och slutpoäng. Inför återanvändning behöver sammanvägningen förtydligas; se presentationsloggen. Tidigare versioner och säkerhetskopior visas i detaljpanelen när sådana finns.",
       "omrade": "Skola och undervisning",
       "typ": "Presentation",
       "kontexter": [],
@@ -7224,7 +7224,14 @@
       "favorit": false,
       "legacyTaggar": [],
       "mappForalderId": null,
-      "tillagd": "2026-11-11"
+      "tillagd": "2026-11-11",
+      "versioner": {
+        "aktuell": "3",
+        "tidigare": [],
+        "notering": "Endast version 3 bevarades som publicerad presentation enligt beslut 11 november 2026. Övriga versioner finns i källhistoriken, inte som öppningsbara presentationer. Ny version 5 är ännu inte byggd.",
+        "historikUrl": "https://github.com/hktcr/gaia-tools/tree/69332822f34d561ead3abfb8a6d429aeb94f4f89/moten/ai-2026-11-11/presentation",
+        "loggUrl": "https://github.com/hktcr/gaia-tools/blob/main/moten/ai-2026-11-11/presentation/LOGG.md"
+      }
     },
     {
       "id": 269,
@@ -7251,6 +7258,38 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-11"
+    },
+    {
+      "id": 270,
+      "url": "https://hktcr.github.io/gaia-tools/forskningsbilder/ai-studiekompis/",
+      "titel": "AI som studiekompis · Vad klarar eleven själv?",
+      "beskrivning": "Interaktiv forskningsbild om AI-chatbottar, study buddies och digitala tutorer för elever. Fem studier om övningsresultat, självständigt lärande, pedagogiskt utformat stöd, lärarledda program och faktisk användning. Bastani, Fütterer, De Simone, Oreopoulos och Low samt Kestin. Stegvis resultatvisning, klickbara källsammanfattningar, slutsatser och reserv-PDF. Riktat forskningsurval, inte en metaanalys.",
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "AI",
+        "Lärande",
+        "Studiekompis",
+        "Chatbottar",
+        "Utbildning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-11",
+      "versioner": {
+        "aktuell": "1.0.0",
+        "tidigare": [],
+        "notering": "Första versionen. Huvudlänken följer aktuell utgåva. Inga tidigare visningsversioner finns ännu.",
+        "historikUrl": "https://github.com/hktcr/gaia-tools/commits/main/forskningsbilder/ai-studiekompis/",
+        "loggUrl": "https://github.com/hktcr/gaia-tools/blob/main/forskningsbilder/ai-studiekompis/LOGG.md"
+      }
     }
   ],
   "senasteGallring": {

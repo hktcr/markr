@@ -1881,3 +1881,12 @@ a.full-kontroll:not([href]) {
   letter-spacing: normal;
   text-transform: none;
 }
+
+/* Versionshistorik hör till en resurs, inte till sökresultatets huvudlänk. */
+.detalj-versioner { margin: 0 0 18px; padding: 12px 14px; border: 1px solid currentColor; border-radius: 8px; font-size: 14px; line-height: 1.5; }
+.detalj-versioner summary { cursor: pointer; min-height: 32px; font-weight: 600; }
+.detalj-versioner summary:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+.detalj-versioner p { margin: 8px 0; }
+.detalj-versioner ul { padding-left: 20px; }
+.detalj-versioner li { margin: 12px 0; }
+.detalj-versioner a { color: inherit; text-decoration: underline; }

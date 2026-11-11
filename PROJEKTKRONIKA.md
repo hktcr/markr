@@ -552,3 +552,14 @@ På Håkans uttryckliga uppdrag registreras den nya ägarprivata Siten som post 
 Sökprov: Nautilus, vetenskapstidskriften och artikelindex. Historiska facit bevaras och nya posten undantas från frysta corpus. Alla tidigare poster ska vara identiska. Resultat och livekvitto förs till huvudkrönikan efter publicering.
 
 workstream_id: WS-86238bff-6a44-454f-a1a8-968c297b8ebf; event_id: EVT-ba1e6e5c-228a-4134-9cdc-06d8110775d0. [Läsindex](https://nautilus-lasindex.hlgk.chatgpt.site) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view) ↔ [Sites-MASTER](https://drive.google.com/file/d/1HeGrqRM4CX8knrLja7KT8qpmn-eJbjGR/view). Signatur gAIa.
+
+
+## 2026-11-11 | Forskningsbilder och versioner
+
+workstream_id: WS-c2698ab2-9031-478e-b06b-a87d0d725320. event_id: EVT-905c2d75-544d-4c4e-92b8-751c86b6e79a. change_set_id: CHG-f69f2366-b601-48e2-adec-7d2b221a9e2e.
+
+På Håkans uppdrag införs en infälld versionspanel i sökträffarnas information. Huvudlänken öppnar aktuell utgåva. Tidigare visningsversioner, deras PDF och källhistorik hålls isär. Inga falska reservlänkar skapas. Post 268 behåller version 3 och får erfarenhetslogg om att sammanvägningen måste förtydligas före ny användning. Tidigare gallringsbeslut respekteras. Ny post 270 registrerar AI som studiekompis med stabil aktuelladress. Övriga poster och frysta testfacit bevaras.
+
+Verifiering: 440/440 jsdom-regressioner, inklusive gamla sökordningar, nya sökord, detaljpanel, äldre version med matchande PDF samt säker textrendering och URL-validering. Syntetisk äldre version används endast i test, inte i produktionsdata. Verklig Chrome- och responsiv kontroll redovisas i huvudkrönikans slutkvitto. Lokal webbläsarstart och filvisning hindrades av körmiljön.
+
+[Forskningsbild](https://hktcr.github.io/gaia-tools/forskningsbilder/ai-studiekompis/) ↔ [metod](https://github.com/hktcr/gaia-tools/blob/main/forskningsbilder/METOD.md) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view).
