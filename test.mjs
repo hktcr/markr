@@ -1152,7 +1152,8 @@ kolla('inga konsolfel i Nautilus delta',nautilusDom.kontraktsfel.length===0 && b
 nautilusDom.tw.close();beforeNautilusDom.tw.close();
 
 /* Kompression i skrivbedömning: egen direktpost och bevarad tidigare version. */
-const aiPresentationUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/responsive-r9/';
+const aiPresentationUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/version-3/';
+const aiPresentationBackup2Url = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/responsive-r9/';
 const aiPresentationBackupUrl = 'https://hktcr.github.io/gaia-tools/moten/ai-2026-11-11/presentation/backup-r9-63ccd4c/';
 const aiPresentationEntry = currentData.bokmarken.find(bm => bm.id === 268);
 kolla('Kompressionspresentationen har en unik aktiv direktpost med rätt facetter',
@@ -1163,13 +1164,13 @@ kolla('Kompressionspresentationen har en unik aktiv direktpost med rätt facette
   JSON.stringify(aiPresentationEntry?.projekt) === JSON.stringify(['gAIa']) &&
   JSON.stringify(aiPresentationEntry?.amnen) === JSON.stringify(['AI', 'Bedömning', 'Kompression', 'Utbildning']) &&
   aiPresentationEntry?.period === 'HT26' && aiPresentationEntry?.tillagd === '2026-11-11');
-kolla('Kompressionspresentationen beskriver en bild, tolv fiktiva uppsatser och backup-URL',
-  aiPresentationEntry?.beskrivning === 'En interaktiv presentationsbild om kompression i skrivbedömning, med 12 fiktiva uppsatser. Reviderad layout. Backup av föregående version: ' + aiPresentationBackupUrl);
+kolla('Kompressionspresentationen beskriver version 3, tolv fiktiva uppsatser och båda säkerhetskopiorna med tidsstämpel',
+  aiPresentationEntry?.beskrivning === 'Version 3 av presentationsbilden om poängkompression i skrivbedömning. 12 fiktiva uppsatser, omdömen i ord, konstruerade exempelpoäng och följdfrågor om vanliga examinationer. Innehåller Zhang och Yang om motiveringar och slutpoäng. Backup 2, bevarad 2026-11-11 kl. 14.05 CET: ' + aiPresentationBackup2Url + '. Backup 1: ' + aiPresentationBackupUrl);
 const aiPresentationDom = await skapaKontraktsdom(rawJson);
 const beforeAiPresentationDom = await skapaKontraktsdom(JSON.stringify({
   ...currentData, bokmarken: currentData.bokmarken.filter(bm => bm.id !== 268)
 }));
-for (const query of ['kompression', 'bedömning', 'presentation']) {
+for (const query of ['kompression', 'bedömning', 'presentation', 'Zhang']) {
   const before = korCorpusFraga(beforeAiPresentationDom.tw, query).alla;
   const after = korCorpusFraga(aiPresentationDom.tw, query).alla;
   kolla('Kompressionspresentationens sökning och äldre ordning: ' + query,
