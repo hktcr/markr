@@ -6,12 +6,12 @@ MärkR är Håkans statiska bokmärkesarkiv på GitHub Pages. Datan i
 `bokmarken.json` är den publicerade sökmotorns Single Source of Truth.
 Taxonomi version 2 använder åtta fasta verksamhetsområden och separata facetter
 för typ, kontext, projekt, ämne, period och livscykel. Den aktuella datan
-innehåller 216 aktiva bokmärken och 13 arkiverade poster. De 32 poster som
+innehåller 222 aktiva bokmärken och 13 arkiverade poster. De 32 poster som
 gallrades 2026-08-10 finns i ett återställningsbart arkiv med gallringsorsaker.
 
 Före Nordnätverksrevisionen var den verifierade produktionsrevisionen commit
 `87f32c39c44a6dcc7570866c4560dca94276d21c`. Den nya revisionen bevarar
-taxonomi version 2 och har en reproducerbar testmiljö med 403 kontroller.
+taxonomi version 2 och har en reproducerbar testmiljö med 444 kontroller.
 
 Den 20 augusti 2026 registrerades Bildanalys som aktiv, privat ChatGPT Site.
 Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
@@ -59,6 +59,26 @@ Siten bearbetar stillbilder lokalt och länkas från sidan `sites.html`.
    genom ansluten GitHubbehörighet, följd av återläsning och livekontroll.
 
 ## Sessionslogg
+
+### 2026-11-16 | Veckans mötes-, delnings- och Nautilusresurser dokumenterade
+
+Veckokontrollen samlade de sex betydelsefulla tillägg som publicerades efter
+föregående kontroll. Post 266 registrerar det källförsedda mötesunderlaget om
+AI i undervisningen. Post 267 registrerar det privata Nautilus-läsindexet.
+Post 268 länkar direkt till version 3 av presentationen om kompression i
+skrivbedömning, med en infälld versionspanel som håller aktuell presentation,
+historik och logg isär. Post 269 registrerar PromptR för öppen textdelning och
+ägaradministrerade utkast. Post 270 registrerar forskningsbilden om AI som
+studiekompis. Post 271 länkar till Nautilus Magazines egen webbplats och
+skiljer originaltidskriften från det privata läsindexet.
+
+Kontrollen fann att GitHub Pages fortfarande visade revisionen före post 271,
+trots att senaste `main` innehöll posten och dess regressionstest. Denna
+krönikerättelse startar därför en ny publicering av hela verifierade trädet.
+Efter tilläggen innehåller MärkR 235 poster: 222 aktiva och 13 arkiverade.
+JSON-, syntax-, facett-, livscykel- och sökregressionerna passerar 444 av 444
+kontroller. Källcommits: `5698bc0`, `1e7c6d2`, `fc67bb9`, `3416787`,
+`ca2a48f`, `6fd6383`, `1d58553` och `0113ca7`.
 
 ### 2026-11-09 | Kroppens korsord dokumenterat
 
