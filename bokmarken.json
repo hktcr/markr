@@ -7340,6 +7340,32 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-17"
+    },
+    {
+      "id": 273,
+      "url": "https://hktcr.github.io/gaia-tools/ellara-tusch/laddningar-och-urladdningar/?v=23e3bc0",
+      "titel": "Laddningar och urladdningar",
+      "beskrivning": "Nio klickbara presentationsbilder om statisk elektricitet, elektronöverföring, omfördelning och gnistor. Originalanimation samt fyra stillbildssteg att diskutera.",
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "amnen": [
+        "Fysik",
+        "Ellära",
+        "Statisk elektricitet",
+        "Laddning",
+        "Elektroner",
+        "Urladdning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-17"
     }
   ],
   "senasteGallring": {
