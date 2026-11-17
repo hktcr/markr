@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-11",
+  "uppdaterad": "2026-11-17",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7313,6 +7313,33 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-11"
+    },
+    {
+      "id": 272,
+      "url": "https://hktcr.github.io/gaia-tools/ellara-tusch/barnsten/?v=6bab24a",
+      "titel": "Bärnstenens långa resa",
+      "beskrivning": "Klickbar serie med elva helskärmsbilder om hur bärnsten bildas, Plinius den äldres beskrivning och vad som händer med elektroner vid statisk elektricitet och gnistor.",
+      "omrade": "Skola och undervisning",
+      "typ": "Presentation",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "amnen": [
+        "Fysik",
+        "Ellära",
+        "Elektricitet",
+        "Magnetism",
+        "Statisk elektricitet",
+        "Bärnsten",
+        "Naturvetenskapshistoria"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-17"
     }
   ],
   "senasteGallring": {
