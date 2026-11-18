@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-17",
+  "uppdaterad": "2026-11-18",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7366,6 +7366,52 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-17"
+    },
+    {
+      "url": "https://github.com/hktcr/Sims/blob/main/aska/illustration.svg",
+      "titel": "Så bildas en blixt | gAIa",
+      "beskrivning": "Illustration av hur laddningar skiljs åt i ett åskmoln, hur en blixtkanal sluts mellan moln och mark och hur den upphettade luften ger upphov till åska. Visar en vanlig blixt mellan moln och mark; blixtar kan också gå mellan moln eller uppåt från marken.",
+      "taggar": [
+        "Åska",
+        "Blixt",
+        "Väder",
+        "Elektricitet",
+        "Fysik",
+        "Ellära och magnetism",
+        "Undervisning",
+        "Illustration",
+        "Björnekullaskolan"
+      ],
+      "tillagd": "2026-11-18",
+      "id": 274,
+      "omrade": "Skola och undervisning",
+      "typ": "Illustration",
+      "kontexter": [
+        "Björnekullaskolan"
+      ],
+      "projekt": [
+        "gAIa"
+      ],
+      "amnen": [
+        "Åska",
+        "Blixtar",
+        "Väder",
+        "Elektricitet",
+        "Fysik"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [
+        "Åska",
+        "Blixt",
+        "Väder",
+        "Elektricitet",
+        "Fysik",
+        "Ellära och magnetism",
+        "Undervisning",
+        "Illustration"
+      ]
     }
   ],
   "senasteGallring": {
