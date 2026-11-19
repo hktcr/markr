@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-18",
+  "uppdaterad": "2026-11-19",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7412,6 +7412,29 @@
         "Undervisning",
         "Illustration"
       ]
+    },
+    {
+      "id": 275,
+      "url": "https://malmopanel-stodkort-19nov.hlgk.chatgpt.site/",
+      "titel": "Malmöpanelen · privata stödanteckningar",
+      "beskrivning": "Klickbart mobilstöd inför panelsamtalet om AI i skolan på Komvux Malmö den 19 november 2026, med nyckelord och talpunkter. Öppnas med ditt ChatGPT-konto.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [
+        "Komvux Malmö"
+      ],
+      "projekt": [],
+      "amnen": [
+        "AI",
+        "Digitalisering",
+        "Bedömning"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-19"
     }
   ],
   "senasteGallring": {

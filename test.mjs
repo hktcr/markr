@@ -310,10 +310,11 @@ const currentData = JSON.parse(rawJson);
 const archiveDelta = JSON.parse(fs.readFileSync('fixtures/archive-delta.json', 'utf8'));
 const fargateljenId = 247;
 const enzymjaktenId = 246;
+const malmopanelId = 275;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![malmopanelId, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -484,6 +485,15 @@ for (const [fraga, facit] of Object.entries(driveDeltaFixture.queries)) {
 }
 kolla('inga konsolfel i Drive-corpusbeviset',
   preDriveCorpusDom.kontraktsfel.length === 0 && currentCorpusDom.kontraktsfel.length === 0);
+
+/* Malmöpanelen söks i dagens data, inte i äldre corpus. */
+const malmopanelUrl = 'https://malmopanel-stodkort-19nov.hlgk.chatgpt.site/';
+const malmopanelDom = await skapaKontraktsdom(JSON.stringify(currentData));
+for (const fraga of ['Malmöpanelen', 'AI Komvux Malmö', 'mobilstöd talpunkter']) {
+  kolla('Malmöpanelens privata länk hittas: ' + fraga,
+    korCorpusFraga(malmopanelDom.tw, fraga).alla.filter(url => url === malmopanelUrl).length === 1);
+}
+malmopanelDom.tw.close();
 
 /* Måleriets atlas är en egen, senare delta och får inte skrivas in i äldre corpusbevis. */
 const preAtlasCorpusDom = await skapaKontraktsdom(JSON.stringify(preAtlasData));
