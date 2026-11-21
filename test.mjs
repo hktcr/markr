@@ -312,10 +312,11 @@ const fargateljenId = 247;
 const enzymjaktenId = 246;
 const malmopanelId = 275;
 const flocklabId = 276;
+const nodeNetworkId = 277;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![nodeNetworkId, flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1246,6 +1247,27 @@ for (const query of ['Nautilus Magazine', 'vetenskapsjournalistik', 'Nautilus pr
 }
 kolla('Nautilus läsindex finns kvar', korCorpusFraga(nautilusOriginalDom.tw, 'Nautilus läsindex').alla.includes('https://nautilus-lasindex.hlgk.chatgpt.site/'));
 nautilusOriginalDom.tw.close();
+
+const nodeNetworkUrl='https://hktcr.github.io/markr/nodnatverk/';
+const nodeNetworkEntry=currentData.bokmarken.find(b=>b.id===nodeNetworkId);
+kolla('Nodnätverket: exakt en aktiv offentlig systemkarta',nodeNetworkEntry?.url===nodeNetworkUrl &&
+  nodeNetworkEntry?.livscykel==='Aktiv' && nodeNetworkEntry.projekt.length===0 && nodeNetworkEntry.kontexter.length===0 && currentData.bokmarken.filter(b=>b.url===nodeNetworkUrl).length===1);
+const nodeNetworkDom=await skapaKontraktsdom(rawJson);
+const beforeNodeNetworkDom=await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(b=>b.id!==nodeNetworkId)}));
+for(const query of ['gAIa Nodnätverk','offentlig systemkarta','3D systemflöden']){
+ const before=korCorpusFraga(beforeNodeNetworkDom.tw,query).alla,after=korCorpusFraga(nodeNetworkDom.tw,query).alla;
+ kolla('Nodnätverket: rätt träff och bevarad äldre ordning '+query,after.filter(url=>url===nodeNetworkUrl).length===1 && JSON.stringify(after.filter(url=>url!==nodeNetworkUrl))===JSON.stringify(before));
+}
+korCorpusFraga(nodeNetworkDom.tw,'gAIa Nodnätverk');
+const publicCardDoc=nodeNetworkDom.tw.document;
+publicCardDoc.querySelector('[aria-controls="traffar-detalj-277"]')?.click();
+const publicCard=publicCardDoc.querySelector('#traffar-detalj-277');
+kolla('Nodnätverket: det publika kortet länkar bara till den publika kartan',
+  !!publicCard && !publicCard.hidden && publicCard.querySelectorAll('a').length===1 &&
+  [...publicCard.querySelectorAll('a')].every(a=>a.href===nodeNetworkUrl));
+
+kolla('Nodnätverket: inga konsolfel',nodeNetworkDom.kontraktsfel.length===0 && beforeNodeNetworkDom.kontraktsfel.length===0);
+nodeNetworkDom.tw.close();beforeNodeNetworkDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;

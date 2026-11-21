@@ -7457,6 +7457,27 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-21"
+    },
+    {
+      "id": 277,
+      "url": "https://hktcr.github.io/markr/nodnatverk/",
+      "titel": "gAIa Nodnätverk · offentlig systemkarta",
+      "beskrivning": "Interaktiv 3D-karta över gAIas generella systemflöden: frågor, pågående arbete, projekt, bevakning och dokumentation. Sök bland noderna eller utforska med zoom, rotation och filter. Den publika översikten visar hur delarna hänger ihop, utan privat aktivitet, exakta antal eller händelsekoder.",
+      "omrade": "Egna system och projekt",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "Nodnätverk",
+        "Systemöversikt",
+        "Visualisering"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-21"
     }
   ],
   "senasteGallring": {
