@@ -1249,25 +1249,15 @@ kolla('Nautilus läsindex finns kvar', korCorpusFraga(nautilusOriginalDom.tw, 'N
 nautilusOriginalDom.tw.close();
 
 const nodeNetworkUrl='https://hktcr.github.io/markr/nodnatverk/';
-const nodeNetworkEntry=currentData.bokmarken.find(b=>b.id===nodeNetworkId);
-kolla('Nodnätverket: exakt en aktiv offentlig systemkarta',nodeNetworkEntry?.url===nodeNetworkUrl &&
-  nodeNetworkEntry?.livscykel==='Aktiv' && nodeNetworkEntry.projekt.length===0 && nodeNetworkEntry.kontexter.length===0 && currentData.bokmarken.filter(b=>b.url===nodeNetworkUrl).length===1);
+kolla('Nodnätverket: avpublicerad karta saknas i MärkR:s register',
+  !currentData.bokmarken.some(b=>b.id===nodeNetworkId || b.url===nodeNetworkUrl));
 const nodeNetworkDom=await skapaKontraktsdom(rawJson);
-const beforeNodeNetworkDom=await skapaKontraktsdom(JSON.stringify({...currentData,bokmarken:currentData.bokmarken.filter(b=>b.id!==nodeNetworkId)}));
 for(const query of ['gAIa Nodnätverk','offentlig systemkarta','3D systemflöden']){
- const before=korCorpusFraga(beforeNodeNetworkDom.tw,query).alla,after=korCorpusFraga(nodeNetworkDom.tw,query).alla;
- kolla('Nodnätverket: rätt träff och bevarad äldre ordning '+query,after.filter(url=>url===nodeNetworkUrl).length===1 && JSON.stringify(after.filter(url=>url!==nodeNetworkUrl))===JSON.stringify(before));
+  kolla('Nodnätverket: avpublicerad karta saknas i sökresultat för '+query,
+    !korCorpusFraga(nodeNetworkDom.tw,query).alla.includes(nodeNetworkUrl));
 }
-korCorpusFraga(nodeNetworkDom.tw,'gAIa Nodnätverk');
-const publicCardDoc=nodeNetworkDom.tw.document;
-publicCardDoc.querySelector('[aria-controls="traffar-detalj-277"]')?.click();
-const publicCard=publicCardDoc.querySelector('#traffar-detalj-277');
-kolla('Nodnätverket: det publika kortet länkar bara till den publika kartan',
-  !!publicCard && !publicCard.hidden && publicCard.querySelectorAll('a').length===1 &&
-  [...publicCard.querySelectorAll('a')].every(a=>a.href===nodeNetworkUrl));
-
-kolla('Nodnätverket: inga konsolfel',nodeNetworkDom.kontraktsfel.length===0 && beforeNodeNetworkDom.kontraktsfel.length===0);
-nodeNetworkDom.tw.close();beforeNodeNetworkDom.tw.close();
+kolla('Nodnätverket: inga konsolfel',nodeNetworkDom.kontraktsfel.length===0);
+nodeNetworkDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
