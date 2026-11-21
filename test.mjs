@@ -311,10 +311,11 @@ const archiveDelta = JSON.parse(fs.readFileSync('fixtures/archive-delta.json', '
 const fargateljenId = 247;
 const enzymjaktenId = 246;
 const malmopanelId = 275;
+const flocklabId = 276;
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![malmopanelId, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -662,6 +663,16 @@ for (const fraga of ['pepsin', 'äggvita', 'matspjälkning', 'labbrapport', 'lab
     JSON.stringify(efter.filter(url => url !== pepsinUrl)) === JSON.stringify(fore));
 }
 kolla('inga konsolfel i Pepsin-deltan', prePepsinDom.kontraktsfel.length === 0 && pepsinDom.kontraktsfel.length === 0);
+
+// Den nya posten ska hittas i den faktiska sökmotorn, utan historisk corpusdrift.
+const flocklabUrl = 'https://hktcr.github.io/gaia-tools/flocklab/';
+const flocklabDom = await skapaKontraktsdom(rawJson);
+for (const fraga of ['Flocklabbet', 'beteendeekologi pilgrimsfalk', 'flockbeteende projektor']) {
+  kolla('Flocklabbet hittas: ' + fraga,
+    korCorpusFraga(flocklabDom.tw, fraga).alla.filter(url => url === flocklabUrl).length === 1);
+}
+kolla('Flocklabbet: inga konsolfel', flocklabDom.kontraktsfel.length === 0);
+flocklabDom.tw.close();
 prePepsinDom.tw.close();
 pepsinDom.tw.close();
 

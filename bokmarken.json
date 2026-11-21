@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-19",
+  "uppdaterad": "2026-11-21",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7435,6 +7435,28 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-19"
+    },
+    {
+      "id": 276,
+      "url": "https://hktcr.github.io/gaia-tools/flocklab/",
+      "titel": "Flocklabbet · fåglars flockbeteende",
+      "beskrivning": "Interaktiv simulering av fåglars flockbeteende för NO, biologi och beteendeekologi. Jämför slumpmässig flykt med två lokala regler: sök upp en annan fågel eller matcha dess riktning och fart. Välj närmaste eller slumpmässig granne, släpp in en pilgrimsfalk eller en hök och ändra flyktradien. Kan visas i helskärm på projektor och styras med pekskärm, mus och tangentbord.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "amnen": [
+        "Biologi",
+        "Beteendeekologi",
+        "Fåglar",
+        "Simulering"
+      ],
+      "period": "",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-21"
     }
   ],
   "senasteGallring": {
