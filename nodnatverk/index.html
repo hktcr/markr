@@ -1,1 +1,35 @@
-<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'"><meta name="referrer" content="no-referrer"><title>Nodnätverket · Systemkarta</title><link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script></head><body><a class="skip" href="#reservlista">Till nodlistan</a><header><a class="wordmark" href="./"><span class="emblem" aria-hidden="true">∗</span>Nodnätverket</a><span class="mode">OFFENTLIG SYSTEMKARTA</span></header><main><div class="intro"><div><p class="eyebrow">SYSTEMETS FLÖDEN</p><h1>Så hänger arbetet ihop.</h1><p class="lede">En karta över arbetssätt. Ingen aktuell driftstatus visas.</p></div><div class="fresh"><span class="small">OM ÖVERSIKTEN</span><strong>Fast systemkarta</strong><span>Inga personliga uppgifter.</span></div></div><div class="toolbar"><form id="search-form" role="search"><label for="search">Hitta ett flöde</label><input id="search" type="search" placeholder="Hitta ett flöde…" list="node-options" autocomplete="off"><datalist id="node-options"></datalist></form><button id="filter" aria-pressed="false">Arbetsflöden</button><p id="search-status" role="status"></p></div><section class="network" aria-label="Systemflöden i tre dimensioner"><canvas id="graph" tabindex="0" role="img" aria-label="Piltangenter roterar. Plus och minus zoomar. Home återställer. Noderna finns även i listan."></canvas><div id="nodes"></div><div class="center-caption" aria-hidden="true"><span>◎</span><small>ÖVERSIKT</small></div><div class="view-controls"><button id="reset" aria-label="Återställ vy">↺</button><button id="zoom-out" aria-label="Zooma ut">−</button><button id="zoom-in" aria-label="Zooma in">+</button></div><p class="gesture">Dra för att rotera · rulla för att zooma</p></section><div class="reading"><p>Linjerna visar möjliga samband mellan arbetssätt.</p><p>Ingen koppling till privata källor.</p></div><section class="detail" aria-labelledby="detail-title"><span class="detail-icon" id="detail-icon" aria-hidden="true">?</span><div><p class="small">VALT FLÖDE</p><h2 id="detail-title">Beslut</h2><p id="detail-description">Ställningstaganden som leder arbetet vidare.</p></div></section><section id="reservlista" tabindex="-1" aria-labelledby="list-title"><div class="list-heading"><h2 id="list-title">Alla flöden</h2><span>Samma karta i listform</span></div><ul id="list"></ul><noscript><p>Beslut, Arbete, Nästa steg, Paus, Bevakning, Projekt, Dokumentation och Resultat bildar kartan. JavaScript behövs för rotation och sökning.</p></noscript></section></main><footer>Den offentliga kartan beskriver arbetssätt och innehåller ingen personlig driftinformation.</footer></body></html>
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer"><title>Nodnätverket · Systemkarta</title>
+<link rel="stylesheet" href="style.css"><script type="module" src="app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#reservlista">Till nodlistan</a>
+<header><a class="wordmark" href="./"><span class="emblem" aria-hidden="true">∗</span>Nodnätverket</a><a class="back" href="../">MärkR</a></header>
+<main>
+<div class="intro"><div><p class="eyebrow">OFFENTLIG SYSTEMKARTA</p><h1>Så hänger arbetet ihop.</h1><p class="lede">Utforska flödena, från fråga till resultat.</p></div><p class="scope"><span class="scope-dot" aria-hidden="true"></span>Fast översikt<span>Ingen aktuell driftstatus.</span></p></div>
+<div class="toolbar">
+<form id="search-form" role="search"><label class="sr-only" for="search">Sök flöde eller beskrivning</label><div class="search-shell"><span aria-hidden="true">⌕</span><input id="search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-results" placeholder="Sök ett flöde…" autocomplete="off"><kbd aria-hidden="true">/</kbd></div><ul id="search-results" role="listbox" aria-label="Sökträffar" hidden></ul></form>
+<button id="filter" aria-pressed="false" aria-label="Framhäv aktiva exempel" aria-describedby="filter-hint"><span class="filter-dot" aria-hidden="true"></span>Aktiva</button><span id="filter-hint">Avser endast exempel</span>
+</div>
+<p id="search-status" class="status" role="status" aria-live="polite"></p>
+<section class="network" aria-label="Systemflöden i tre dimensioner">
+<div class="map-caption" aria-hidden="true">gAIa / SYSTEMFLÖDEN</div>
+<canvas id="graph" tabindex="0" role="img" aria-label="3D-karta. Piltangenter roterar. Plus och minus zoomar. Home återställer. Välj en namngiven nod eller använd nodlistan."></canvas>
+<div id="nodes"></div>
+<div class="view-controls" role="group" aria-label="Kartvy"><button id="rotate-left" aria-label="Rotera åt vänster">↶</button><button id="rotate-right" aria-label="Rotera åt höger">↷</button><span aria-hidden="true"></span><button id="zoom-out" aria-label="Zooma ut">−</button><button id="zoom-in" aria-label="Zooma in">+</button><button id="reset" aria-label="Återställ vy">⌂</button></div>
+</section>
+<div class="reading"><p>Dra åt sidan för att rotera. Rulla sidan som vanligt.</p><a href="#detail">Till valt flöde</a></div>
+<p id="selection-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+<section id="detail" class="detail" aria-labelledby="detail-title" tabindex="-1">
+<div class="detail-heading"><span id="detail-icon" class="detail-icon" aria-hidden="true">?</span><div><p class="eyebrow">VALT FLÖDE</p><h2 id="detail-title">Beslut</h2></div><span class="detail-kind">Systemets arbetssätt</span></div>
+<p id="detail-description">Ställningstaganden som leder arbetet vidare.</p>
+<div class="examples"><div class="examples-heading"><div><h3>Exempel att prova</h3><p>Påhittade ID:n, utan koppling till privata händelser.</p></div><button id="copy-all">Kopiera alla exempel-ID:n</button></div><ul id="example-list"></ul><p id="copy-status" class="status" role="status" aria-live="polite"></p><div id="copy-fallback" hidden><label for="copy-text">Kopiera den markerade exempeltexten manuellt</label><textarea id="copy-text" readonly rows="3"></textarea></div></div>
+</section>
+<section id="reservlista" tabindex="-1" aria-labelledby="list-title"><div class="list-heading"><h2 id="list-title">Alla flöden</h2><span>Samma val i karta och lista</span></div><ul id="list"></ul><noscript><p>Beslut, Arbete, Nästa steg, Paus, Bevakning, Projekt, Dokumentation och Resultat bildar kartan. JavaScript behövs för rotation, sökning och kopiering.</p></noscript></section>
+</main>
+<footer>Linjerna visar möjliga samband. Kartan och exemplen läser inga privata källor.</footer>
+</body></html>
