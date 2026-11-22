@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-21",
+  "uppdaterad": "2026-11-22",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7457,6 +7457,72 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-21"
+    },
+    {
+      "id": 278,
+      "url": "https://hktcr.github.io/gaia-play/vinterobservatoriet-2026/a1/",
+      "titel": "Vinterobservatoriet · NO-julkalender A1",
+      "beskrivning": "Interaktiv NO-julkalender för A1 i årskurs 8. Öppna dagens bildlucka, gissa tillsammans och visa sedan förklaringen.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "amnen": [
+        "Naturvetenskap",
+        "Julkalender"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-22"
+    },
+    {
+      "id": 279,
+      "url": "https://hktcr.github.io/gaia-play/vinterobservatoriet-2026/d1/",
+      "titel": "Vinterobservatoriet · NO-julkalender D1",
+      "beskrivning": "Interaktiv NO-julkalender för D1 i årskurs 8. Öppna dagens bildlucka, gissa tillsammans och visa sedan förklaringen.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "amnen": [
+        "Naturvetenskap",
+        "Julkalender"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-22"
+    },
+    {
+      "id": 280,
+      "url": "https://hktcr.github.io/gaia-play/vinterobservatoriet-2026/e1/",
+      "titel": "Vinterobservatoriet · NO-julkalender E1",
+      "beskrivning": "Interaktiv NO-julkalender för E1 i årskurs 8. Öppna dagens bildlucka, gissa tillsammans och visa sedan förklaringen.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "amnen": [
+        "Naturvetenskap",
+        "Julkalender"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-22"
     }
   ],
   "senasteGallring": {

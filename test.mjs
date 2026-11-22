@@ -313,10 +313,11 @@ const enzymjaktenId = 246;
 const malmopanelId = 275;
 const flocklabId = 276;
 const nodeNetworkId = 277;
+const vinterobservatorietIds = [278, 279, 280];
 const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
-    .filter(bm => ![nodeNetworkId, flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    .filter(bm => ![...vinterobservatorietIds, nodeNetworkId, flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1258,6 +1259,29 @@ for(const query of ['gAIa Nodnätverk','offentlig systemkarta','3D systemflöden
 }
 kolla('Nodnätverket: inga konsolfel',nodeNetworkDom.kontraktsfel.length===0);
 nodeNetworkDom.tw.close();
+
+/* Kalendern har tre klasslänkar och ingen lärarpost i det publika registret. */
+const vinterbas = 'https://hktcr.github.io/gaia-play/vinterobservatoriet-2026/';
+const vinterurl = ['a1', 'd1', 'e1'].map(klass => vinterbas + klass + '/');
+const vinterposter = currentData.bokmarken.filter(bm => bm.url.startsWith(vinterbas));
+kolla('Vinterobservatoriet har exakt tre aktiva publika klassbokmärken',
+  JSON.stringify(vinterposter.map(bm => bm.url)) === JSON.stringify(vinterurl) &&
+  JSON.stringify(vinterposter.map(bm => bm.id)) === JSON.stringify(vinterobservatorietIds) &&
+  vinterposter.every(bm => bm.omrade === 'Skola och undervisning' &&
+    bm.typ === 'Webbapp' && bm.projekt.includes('NO79') && bm.livscykel === 'Aktiv'));
+const vinterDom = await skapaKontraktsdom(rawJson);
+for (const fraga of ['Vinterobservatoriet', 'NO julkalender', 'NO79 julkalender']) {
+  const traffar = korCorpusFraga(vinterDom.tw, fraga).alla.filter(url => url.startsWith(vinterbas));
+  kolla('Vinterobservatoriets tre klassbokmärken hittas: ' + fraga,
+    traffar.length === 3 && vinterurl.every(url => traffar.includes(url)));
+}
+for (const klass of ['a1', 'd1', 'e1']) {
+  const traffar = korCorpusFraga(vinterDom.tw, 'Vinterobservatoriet ' + klass).alla.filter(url => url.startsWith(vinterbas));
+  kolla('Vinterobservatoriets klasslänk hittas direkt: ' + klass,
+    traffar.length === 1 && traffar[0] === vinterbas + klass + '/');
+}
+kolla('Vinterobservatoriet: inga konsolfel', vinterDom.kontraktsfel.length === 0);
+vinterDom.tw.close();
 
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
