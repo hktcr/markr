@@ -351,6 +351,30 @@ kolla('aktuell data har unika numeriska id:n och unika URL:er',
   aktuellaId.every(Number.isInteger) && new Set(aktuellaId).size === aktuellaId.length &&
   new Set(aktuellaUrl).size === aktuellaUrl.length);
 
+const kanoniskaOmraden = [
+  'Skola och undervisning',
+  'Kommun och utvecklingsarbete',
+  'Forskning och akademi',
+  'Egna system och projekt',
+  'Kommunikation och publicering',
+  'Natur och fältarbete',
+  'Privat och resor',
+  'Allmän kunskap och referens'
+];
+const kanoniskaTyper = new Set([
+  'Artikel', 'Dokument', 'Formulär', 'Kalender', 'Kalkylark', 'Kodarkiv',
+  'Kommunikationstjänst', 'Mapp och anteckningar', 'Presentation', 'Video',
+  'Webbapp', 'Webbplats'
+]);
+const kanoniskaLivscykler = new Set(['Aktiv', 'Arkiverad']);
+kolla('aktuell data följer exakt facettkanon för område, typ och livscykel',
+  JSON.stringify(currentData.omraden) === JSON.stringify(kanoniskaOmraden) &&
+  currentData.bokmarken.every(bm => kanoniskaOmraden.includes(bm.omrade) &&
+    kanoniskaTyper.has(bm.typ) && kanoniskaLivscykler.has(bm.livscykel)));
+kolla('ingen indirekt Drive-yta kallas Originalarkiv',
+  currentData.bokmarken.every(bm =>
+    bm.mappForalderId == null || !/originalarkiv/i.test(bm.titel)));
+
 const vantadeDriveId = new Set([
   249,
   deltaFixture.newBookmark.id,

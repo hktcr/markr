@@ -583,3 +583,29 @@ På Håkans uppdrag införs en infälld versionspanel i sökträffarnas informat
 Verifiering: 440/440 jsdom-regressioner, inklusive gamla sökordningar, nya sökord, detaljpanel, äldre version med matchande PDF samt säker textrendering och URL-validering. Syntetisk äldre version används endast i test, inte i produktionsdata. Verklig Chrome- och responsiv kontroll redovisas i huvudkrönikans slutkvitto. Lokal webbläsarstart och filvisning hindrades av körmiljön.
 
 [Forskningsbild](https://hktcr.github.io/gaia-tools/forskningsbilder/ai-studiekompis/) ↔ [metod](https://github.com/hktcr/gaia-tools/blob/main/forskningsbilder/METOD.md) ↔ [huvudkrönika](https://drive.google.com/file/d/1c5gcTDT82TCl3pneLupbvMvQ9ZfD1wRW/view).
+
+
+## 2026-11-23 | Veckounderhåll och facettkanon
+
+Veckounderhållet återför de betydelsefulla registerändringarna sedan föregående
+kvitto: Bärnstenens långa resa (272), Laddningar och urladdningar (273),
+blixtillustrationen (274), Malmöpanelens privata stödanteckningar (275),
+Flocklabbet (276) samt Vinterobservatoriets tre klasslänkar A1, D1 och E1
+(278–280). Den kortvariga nodnätverksposten 277 är avpublicerad och finns inte
+i det aktuella registret eller sökresultaten.
+
+Kontrollen fann ett deterministiskt taxonomifel i post 274: den nya typen
+`Illustration` låg utanför MärkR:s etablerade typkanon. Posten är en direktlänk
+till en SVG-fil och klassas därför om till den befintliga typen `Dokument`;
+URL, titel, beskrivning och övriga facetter bevaras. Testsviten låser nu de åtta
+verksamhetsområdena, de tolv etablerade typerna och livscyklerna Aktiv och
+Arkiverad samt förbjuder att en indirekt Drive-yta kallas Originalarkiv.
+
+FotoR-kedjan 235 → 236 → 234 återlästes i Drive. Analysinkorgen var tom, så
+ingen bildid- eller originalpekare behövde följas. Samtliga åtta aktiva
+mappgenvägar öppnades skrivskyddat. JSON, JavaScript och hela testsviten
+verifierades efter rättelsen.
+
+workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
+event_id: EVT-markr-veckounderhall-20261123. Evidens: färsk `main`,
+Drive-återläsning och reproducerbar testkörning. Signatur: gAIa.
