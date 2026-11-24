@@ -318,6 +318,9 @@ const preEnzymjaktenData = {
   ...currentData,
   bokmarken: currentData.bokmarken
     .filter(bm => ![...vinterobservatorietIds, nodeNetworkId, flocklabId, malmopanelId, 274, 273, 272, 271, 270, 269, 268, 267, 266, 265, 264, 263, 262, 261, 260, 259, 258, 257, 256, 255, 254, 253, 252, 251, 250, 249, 248, fargateljenId, enzymjaktenId].includes(bm.id))
+    // Explorations fick ny titel och beskrivning efter de låsta historiska corpusen.
+    .map(bm => bm.id === 67 && bm.url === 'https://hktcr.github.io/explorations/'
+      ? { ...bm, titel: 'Exploration', beskrivning: '' } : bm)
     .map(bm => archiveDelta.previousLifecycle[bm.id]
       ? { ...bm, livscykel: archiveDelta.previousLifecycle[bm.id] } : bm)
 };
@@ -1305,6 +1308,11 @@ for (const klass of ['a1', 'd1', 'e1']) {
     traffar.length === 1 && traffar[0] === vinterbas + klass + '/');
 }
 kolla('Vinterobservatoriet: inga konsolfel', vinterDom.kontraktsfel.length === 0);
+const explorationsUrl = 'https://hktcr.github.io/explorations/';
+for (const fraga of ['Explorations', 'Redaktionen', 'reportage']) {
+  kolla('Explorations hittas genom aktuell titel och beskrivning: ' + fraga,
+    korCorpusFraga(vinterDom.tw, fraga).alla.includes(explorationsUrl));
+}
 vinterDom.tw.close();
 
 console.log(resultat.join('\n'));
