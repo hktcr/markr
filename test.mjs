@@ -294,6 +294,7 @@ kolla('disclosureknappen är inte nästlad i träfflänken', !detaljKnapp.closes
 kolla('detaljpanelen byggs först vid öppning', detaljPanel.hidden && detaljPanel.children.length === 0);
 kolla('söklistan visar inte beskrivningar i träfflänkar före öppning',
   !$('#traffar a.rad .besk'));
+kolla('kompakta rader visar varken adress eller kategorietiketter', !$('#traffar .traffhuvud .meta'));
 detaljKnapp.focus();
 klick(detaljKnapp);
 kolla('detaljer öppnas med synkat aria-kontrakt',
@@ -307,6 +308,7 @@ kolla('full beskrivning är först i panelen utan att flytta träfflänken',
 kolla('FotoR-detaljen visar facetter och två relevanta mappgenvägar',
   Array.from(detaljPanel.querySelectorAll('.detalj-etikett')).some(n => n.textContent === 'Livscykel') &&
   detaljPanel.querySelectorAll('.detalj-mappar a').length === 2);
+kolla('utfälld rad visar hela adressen', detaljPanel.querySelector('.detalj-adress a')?.textContent === detaljTraffarFore[0]);
 klick(detaljKnapp);
 kolla('detaljer kan stängas utan att sökningen ändras',
   detaljPanel.hidden && sok.value === 'fotor' &&
@@ -814,7 +816,11 @@ kolla('inga duplicerade id:n har införts', (() => {
   return ids.length === new Set(ids).size;
 })());
 
-const fullFacett = r$('#full-traffar .tagg-liten');
+kolla('fullskärm visar samma kategorier som kompaktläget',
+  !r$('#full-kategorier').hidden && JSON.stringify(r$$('#full-kat-noder button').map(b => b.textContent)) ===
+  JSON.stringify(r$$('#soknat-noder button').map(b => b.textContent)));
+r$('#full-kategorier').open = true;
+const fullFacett = r$('#full-kat-noder button');
 rKlick(fullFacett);
 kolla('fullskärmsfilter behåller fokus på aktiv sökyta',
   rw.document.activeElement === rFullSok && r$('#full-filter .filter'));

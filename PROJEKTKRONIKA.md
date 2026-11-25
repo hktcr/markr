@@ -609,3 +609,5 @@ verifierades efter rättelsen.
 workstream_id: WS-c8d6982e-3021-5dc9-a78c-0c113f338e8a;
 event_id: EVT-markr-veckounderhall-20261123. Evidens: färsk `main`,
 Drive-återläsning och reproducerbar testkörning. Signatur: gAIa.
+
+- 2026-11-25: Söklistan visar bara den klickbara titeln och detaljpilen; hela adressen, ID och kategorierna ligger under pilen. Fullskärm använder samma kategorier och filter som vanlig sökning. Färgbandet växlar tydligare på träffar med flera kategorier; vid minskad rörelse visas alla färger statiskt.

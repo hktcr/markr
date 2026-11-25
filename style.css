@@ -415,23 +415,28 @@ body {
 #soknat-fler .katrad { grid-template-columns: 1fr; }
 .soknat-markor {
   position: absolute;
-  inset: 0.72rem auto 0.72rem 0;
-  width: 3px;
+  inset: 0.65rem auto 0.65rem 0;
+  z-index: 1;
+  width: 5px;
   border-radius: 2px;
   background-color: var(--farg-1);
   pointer-events: none;
 }
-.soknat-markor[data-farger="2"] { animation: soknat-tva 11s ease-in-out infinite; }
-.soknat-markor[data-farger="3"] { animation: soknat-tre 15s ease-in-out infinite; }
+.soknat-markor[data-farger="2"] { animation: soknat-tva 8s ease-in-out infinite; }
+.soknat-markor[data-farger="3"] { animation: soknat-tre 12s ease-in-out infinite; }
 @keyframes soknat-tva {
-  0%, 19%, 100% { background-color: var(--farg-1); }
-  48%, 69% { background-color: var(--farg-2); }
+  0%, 9%, 100% { background-color: var(--farg-1); }
+  42%, 60% { background-color: var(--farg-2); }
 }
 @keyframes soknat-tre {
   0%, 14%, 100% { background-color: var(--farg-1); }
   34%, 48% { background-color: var(--farg-2); }
   67%, 82% { background-color: var(--farg-3); }
 }
+.soknat-markor[data-farger="2"], .soknat-markor[data-farger="3"] {
+  box-shadow: 0 0 0.55rem -0.16rem var(--farg-1);
+}
+.traffhuvud:has(.soknat-markor) .rad::before { display: none; }
 @media (prefers-reduced-motion: reduce), print {
   .soknat-markor[data-farger] { animation: none; background: var(--fargalla); }
 }
@@ -803,6 +808,8 @@ body {
   background: rgba(19, 19, 23, 0.72);
 }
 
+.detalj-adress { margin: 0.5rem 0 0.85rem; }
+.detalj-adress a { color: var(--papper); overflow-wrap: anywhere; margin-right: 0.65rem; }
 .traffdetalj[hidden] { display: none; }
 
 .detalj-facetter {
@@ -1211,6 +1218,25 @@ mark {
 #full-filter:empty { display: none; }
 #full-filter .filter { min-height: 44px; }
 
+#full-kategorier { margin-top: 0.35rem; }
+#full-kategorier[hidden] { display: none; }
+#full-kat-rubrik {
+  width: fit-content;
+  padding: 0.45rem 0.15rem;
+  color: var(--massing-lj);
+  font: 0.75rem var(--mono);
+  cursor: pointer;
+}
+#full-kat-noder {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.2rem;
+  list-style: none;
+  max-height: min(30vh, 16rem);
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
 .full-vaxel {
   display: flex;
   align-items: stretch;

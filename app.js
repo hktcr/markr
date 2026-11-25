@@ -99,6 +99,9 @@ const el = {
   fullSok: document.getElementById('full-sok'),
   fullStatus: document.getElementById('full-status'),
   fullFilter: document.getElementById('full-filter'),
+  fullKategorier: document.getElementById('full-kategorier'),
+  fullKatRubrik: document.getElementById('full-kat-rubrik'),
+  fullKatNoder: document.getElementById('full-kat-noder'),
   fullStang: document.getElementById('full-stang'),
   fullListknapp: document.getElementById('full-listknapp'),
   fullNatknapp: document.getElementById('full-natknapp'),
@@ -629,7 +632,21 @@ function ritaRelaterade(aktivaVikta) {
   el.resultat.classList.toggle('har-soknat', noder.length > 0);
   el.soknatVaxel.textContent = 'Kategorier (' + noder.length + ')';
   if (!noder.length) el.soknatVaxel.setAttribute('aria-expanded', 'false');
-  el.soknatNoder.replaceChildren();
+  fyllSoknatNoder(el.soknatNoder, noder, aktivaVikta);
+  el.fullKategorier.hidden = noder.length === 0;
+  el.fullKatRubrik.textContent = 'Kategorier (' + noder.length + ')';
+  if (!noder.length) el.fullKategorier.open = false;
+  fyllSoknatNoder(el.fullKatNoder, fullskarm.oppen ? noder : [], aktivaVikta);
+  const taggar = Array.from(taggantal, ([namn, antal]) => ({ namn, antal }))
+    .filter(k => k.antal < traffar.length && !SOKNAT_INGANGAR.some(nod => nod.vikt === vik(k.namn)))
+    .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, 'sv'))
+    .slice(0, ANTAL_RELATERADE);
+  el.soknatFler.hidden = !taggar.length;
+  el.relateradeTaggar.replaceChildren(...taggar.map(k => stjarnKnapp(k.namn, k.antal)));
+}
+
+function fyllSoknatNoder(lista, noder, aktivaVikta) {
+  lista.replaceChildren();
   const max = noder.length ? noder[0][1] : 1;
   for (const [nod, antal] of noder) {
     const li = document.createElement('li');
@@ -652,14 +669,8 @@ function ritaRelaterade(aktivaVikta) {
     knapp.addEventListener('click', () => aktivaVikta.includes(nod.vikt)
       ? taBortFilter(aktivaTaggar.find(t => vik(t) === nod.vikt) || nod.filter) : laggTillFilter(nod.filter));
     li.append(knapp);
-    el.soknatNoder.append(li);
+    lista.append(li);
   }
-  const taggar = Array.from(taggantal, ([namn, antal]) => ({ namn, antal }))
-    .filter(k => k.antal < traffar.length && !SOKNAT_INGANGAR.some(nod => nod.vikt === vik(k.namn)))
-    .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, 'sv'))
-    .slice(0, ANTAL_RELATERADE);
-  el.soknatFler.hidden = !taggar.length;
-  el.relateradeTaggar.replaceChildren(...taggar.map(k => stjarnKnapp(k.namn, k.antal)));
 }
 
 el.soknatVaxel.addEventListener('click', () => {
@@ -758,44 +769,6 @@ function fyllLista(behallare, lista, ord, indexStart) {
     a.append(h3);
     markeraArkiverad(a, bm);
 
-    const meta = document.createElement('div');
-    meta.className = 'meta';
-    
-    if (bm.id) {
-      const idSpan = document.createElement('span');
-      idSpan.className = 'bm-id';
-      idSpan.textContent = '#' + bm.id;
-      idSpan.title = 'Unikt ID för detta bokmärke';
-      meta.append(idSpan);
-    }
-
-    const vard = document.createElement('span');
-    vard.className = 'vardnamn';
-    try { vard.textContent = new URL(bm.url).hostname.replace(/^www\./, ''); }
-    catch (e) { vard.textContent = bm.url; }
-    meta.append(vard);
-
-    const synligaTaggar = bm.taggar.slice(0, 4);
-    for (const t of synligaTaggar) {
-      const s = document.createElement('span');
-      s.className = 'tagg tagg-liten';
-      s.textContent = t;
-      s.addEventListener('click', ev => {
-        ev.preventDefault();
-        ev.stopPropagation();
-        laggTillFilter(t);
-      });
-      meta.append(s);
-    }
-    if (bm.taggar.length > 4) {
-      const fler = document.createElement('span');
-      fler.className = 'fler';
-      fler.textContent = '+' + (bm.taggar.length - 4);
-      fler.title = bm.taggar.slice(4).join(', ');
-      meta.append(fler);
-    }
-    a.append(meta);
-
     const detaljId = behallare.id + '-detalj-' + String(bm.id || (bas + i)).replace(/[^a-zA-Z0-9_-]/g, '');
     const detalj = document.createElement('section');
     detalj.id = detaljId;
@@ -824,11 +797,6 @@ function fyllLista(behallare, lista, ord, indexStart) {
     const markor = lage === 'sok' ? traffmarkor(bm) : null;
     if (markor) {
       huvud.append(markor);
-      const kategoritext = document.createElement('span');
-      kategoritext.className = 'visuellt-dold';
-      kategoritext.textContent = 'Kategorier: ' + markor.title;
-      a.append(kategoritext);
-      a.title = kategoritext.textContent;
     }
     huvud.append(a, expandera);
     li.append(huvud, detalj);
@@ -893,10 +861,30 @@ function fyllTraffdetalj(panel, bm, ord) {
   else p.textContent = 'Ingen beskrivning än';
   panel.append(p);
 
+  const adress = document.createElement('p');
+  adress.className = 'detalj-adress';
+  const etikett = document.createElement('span');
+  etikett.className = 'detalj-etikett';
+  etikett.textContent = 'Adress';
+  const lank = document.createElement('a');
+  lank.href = bm.url;
+  lank.target = '_blank';
+  lank.rel = 'noopener';
+  lank.textContent = bm.url;
+  adress.append(etikett, lank);
+  if (bm.id) {
+    const id = document.createElement('span');
+    id.className = 'bm-id';
+    id.textContent = '#' + bm.id;
+    adress.append(id);
+  }
+  panel.append(adress);
+
   const versionssektion = byggVersioner(bm.versioner);
   if (versionssektion) panel.append(versionssektion);
   const facetter = document.createElement('div');
   facetter.className = 'detalj-facetter';
+  laggTillDetaljFacetter(facetter, 'Kategorier', traffKategorier(bm).map(nod => nod.filter));
   laggTillDetaljFacetter(facetter, 'Område', bm.omrade);
   laggTillDetaljFacetter(facetter, 'Typ', bm.typ);
   laggTillDetaljFacetter(facetter, 'Kontext', bm.kontexter);
@@ -1272,7 +1260,10 @@ function oppnaFullskarm() {
   el.noder.setAttribute('inert', '');
   synkaSokfalt(el.sok.value);
   ritaFilter();
-  renderaFullskarm(laesFraga().ord);
+  const fraga = laesFraga();
+  el.fullKategorier.open = false;
+  ritaRelaterade(fraga.taggar);
+  renderaFullskarm(fraga.ord);
   sattFullVy('lista', false);
   el.fullSok.focus();
 }
@@ -1307,8 +1298,9 @@ function visaAnkareILista() {
 
 function fangTabbIFullskarm(e) {
   if (e.key !== 'Tab') return;
-  const valjare = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])';
-  const fokusbara = Array.from(el.fullskarm.querySelectorAll(valjare)).filter(n => !n.closest('[hidden]'));
+  const valjare = 'button:not([disabled]), input:not([disabled]), select:not([disabled]), a[href], summary, [tabindex]:not([tabindex="-1"])';
+  const fokusbara = Array.from(el.fullskarm.querySelectorAll(valjare)).filter(n => !n.closest('[hidden]') &&
+    (!n.closest('details:not([open])') || n.matches('summary')));
   if (!fokusbara.length) return;
   const forsta = fokusbara[0];
   const sista = fokusbara[fokusbara.length - 1];

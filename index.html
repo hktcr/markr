@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0b0b0d">
 <meta name="description" content="MärkR, Håkans bokmärkesarkiv med sökning.">
 <title>MärkR</title>
-<link rel="stylesheet" href="style.css?v=20261125-soknatverk">
+<link rel="stylesheet" href="style.css?v=20261125-sokdetaljer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="ikon-192.png">
 </head>
@@ -108,6 +108,10 @@
         <span id="full-status" role="status" aria-live="polite"></span>
       </div>
       <div id="full-filter" aria-label="Aktiva filter"></div>
+      <details id="full-kategorier" hidden>
+        <summary id="full-kat-rubrik">Kategorier</summary>
+        <ul id="full-kat-noder" aria-labelledby="full-kat-rubrik"></ul>
+      </details>
       <div class="arkivval">
         <label for="full-arkivval">Visa</label>
         <select id="full-arkivval">
@@ -168,6 +172,6 @@
 <div class="brodrost" id="brodrost" role="status" aria-live="polite"></div>
 
 <noscript><p style="padding:2rem">MärkR behöver JavaScript för att söka.</p></noscript>
-<script src="app.js?v=20261125-soknatverk"></script>
+<script src="app.js?v=20261125-sokdetaljer"></script>
 </body>
 </html>
