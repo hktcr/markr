@@ -708,16 +708,6 @@ function fyllLista(behallare, lista, ord, indexStart) {
     a.append(h3);
     markeraArkiverad(a, bm);
 
-    const p = document.createElement('p');
-    if (bm.beskrivning) {
-      p.className = 'besk';
-      markeraIn(p, bm.beskrivning, ord);
-    } else {
-      p.className = 'besk saknas';
-      p.textContent = 'Ingen beskrivning än';
-    }
-    a.append(p);
-
     const meta = document.createElement('div');
     meta.className = 'meta';
     
@@ -766,18 +756,16 @@ function fyllLista(behallare, lista, ord, indexStart) {
     const expandera = document.createElement('button');
     expandera.type = 'button';
     expandera.className = 'traff-expandera';
-    expandera.textContent = 'Detaljer';
     expandera.setAttribute('aria-expanded', 'false');
     expandera.setAttribute('aria-controls', detaljId);
     expandera.setAttribute('aria-label', 'Visa detaljer för ' + bm.visningstitel);
     expandera.addEventListener('click', () => {
       const oppna = expandera.getAttribute('aria-expanded') !== 'true';
       if (oppna && !detaljByggd) {
-        fyllTraffdetalj(detalj, bm);
+        fyllTraffdetalj(detalj, bm, ord);
         detaljByggd = true;
       }
       expandera.setAttribute('aria-expanded', String(oppna));
-      expandera.textContent = oppna ? 'Stäng' : 'Detaljer';
       expandera.setAttribute('aria-label', (oppna ? 'Dölj' : 'Visa') + ' detaljer för ' + bm.visningstitel);
       detalj.hidden = !oppna;
       li.classList.toggle('detaljer-oppna', oppna);
@@ -839,7 +827,13 @@ function byggTrafflankar(rubriktext, poster, klassnamn) {
   return sektion;
 }
 
-function fyllTraffdetalj(panel, bm) {
+function fyllTraffdetalj(panel, bm, ord) {
+  const p = document.createElement('p');
+  p.className = bm.beskrivning ? 'besk' : 'besk saknas';
+  if (bm.beskrivning) markeraIn(p, bm.beskrivning, ord);
+  else p.textContent = 'Ingen beskrivning än';
+  panel.append(p);
+
   const versionssektion = byggVersioner(bm.versioner);
   if (versionssektion) panel.append(versionssektion);
   const facetter = document.createElement('div');

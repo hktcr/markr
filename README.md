@@ -294,6 +294,7 @@ så att det syns att det är samma sak:
 | Bandet "I träffarna" | Mässingsprick plus monospace-etikett, samma språk i komprimerad form |
 | Områdesindexet | Kort i fast ordning med beskrivning och antal |
 
+Träffraderna visar titel och kompakt metadata. En mässingsfärgad pil fäller ut hela beskrivningen och befintliga detaljer, även i fullskärmslistan. Beskrivningarna ingår fortfarande i sökningen.
 Träffraderna visar högst fyra taggetiketter plus ett diskret `+n` med resten
 i `title`, så att raden aldrig växer till en taggmatta.
 

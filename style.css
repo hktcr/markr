@@ -653,32 +653,35 @@ body {
 }
 
 .traff-expandera {
-  align-self: end;
-  min-width: 72px;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 44px;
   min-height: 44px;
-  margin: 0.45rem 0.35rem 0.45rem 0;
-  padding: 0.45rem 0.55rem;
+  margin: 0 0.4rem 0 0;
+  padding: 0;
   border: 0;
-  border-left: 1px solid var(--harfin);
   background: transparent;
-  color: var(--papper-dim);
-  font: 0.66rem var(--mono);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  color: var(--massing);
+  border-radius: var(--r);
   cursor: pointer;
 }
 
+.traff-expandera:hover,
+.traff-expandera:focus-visible { color: var(--massing-lj); }
+
 .traff-expandera::after {
-  content: "⌄";
-  display: block;
-  margin-top: -0.15rem;
-  color: var(--massing);
-  font-size: 0.9rem;
-  line-height: 1;
+  content: "";
+  width: 0.48rem;
+  height: 0.48rem;
+  border: solid currentColor;
+  border-width: 1.5px 1.5px 0 0;
+  transform: rotate(45deg);
   transition: transform 0.15s ease;
 }
 
-.traff-expandera[aria-expanded="true"]::after { transform: rotate(180deg); }
+.traff-expandera[aria-expanded="true"]::after { transform: rotate(135deg); }
+.traffdetalj > .besk { margin: 0 0 0.8rem; }
 
 .traffdetalj {
   margin: 0 0.75rem 0.8rem;
@@ -934,17 +937,6 @@ mark {
   .drivenav-huvud { align-items: start; }
   .drivenav-huvud p { max-width: 24rem; }
 
-  .traffhuvud { grid-template-columns: minmax(0, 1fr) 58px; }
-  .traff-expandera {
-    min-width: 54px;
-    padding-inline: 0.2rem;
-    font-size: 0;
-  }
-  .traff-expandera::before {
-    content: "Mer";
-    font-size: 0.62rem;
-  }
-  .traff-expandera[aria-expanded="true"]::before { content: "Stäng"; }
   .traffdetalj { margin-inline: 0.35rem; padding-inline: 0.8rem; }
 
   /* På mobil ligger de relevanta taggarna ovanför sökfältet i en enda rullbar rad.

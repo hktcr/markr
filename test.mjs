@@ -274,12 +274,18 @@ const detaljKnapp = $('#traffar .traff-expandera');
 const detaljPanel = $('#' + detaljKnapp.getAttribute('aria-controls'));
 kolla('disclosureknappen är inte nästlad i träfflänken', !detaljKnapp.closest('a'));
 kolla('detaljpanelen byggs först vid öppning', detaljPanel.hidden && detaljPanel.children.length === 0);
+kolla('söklistan visar inte beskrivningar i träfflänkar före öppning',
+  !$('#traffar a.rad .besk'));
 detaljKnapp.focus();
 klick(detaljKnapp);
 kolla('detaljer öppnas med synkat aria-kontrakt',
   detaljKnapp.getAttribute('aria-expanded') === 'true' && !detaljPanel.hidden &&
   detaljKnapp.getAttribute('aria-label').startsWith('Dölj'));
 kolla('fokus stannar på disclosureknappen', w.document.activeElement === detaljKnapp);
+kolla('full beskrivning är först i panelen utan att flytta träfflänken',
+  detaljPanel.firstElementChild?.classList.contains('besk') &&
+  detaljPanel.firstElementChild.textContent.trim().length > 30 &&
+  detaljPanel.closest('.traffpost').querySelector('a.rad').href === detaljTraffarFore[0]);
 kolla('FotoR-detaljen visar facetter och två relevanta mappgenvägar',
   Array.from(detaljPanel.querySelectorAll('.detalj-etikett')).some(n => n.textContent === 'Livscykel') &&
   detaljPanel.querySelectorAll('.detalj-mappar a').length === 2);
