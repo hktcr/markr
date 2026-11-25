@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0b0b0d">
 <meta name="description" content="MärkR, Håkans bokmärkesarkiv med sökning.">
 <title>MärkR</title>
-<link rel="stylesheet" href="style.css?v=20261125-kompakta-traffar">
+<link rel="stylesheet" href="style.css?v=20261125-soknatverk">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="ikon-192.png">
 </head>
@@ -57,12 +57,21 @@
     </section>
 
     <section class="resultat" id="resultat" hidden>
-      <div class="relaterat" id="relaterat" hidden>
-        <h2 class="etikett" id="relaterat-rubrik">I träffarna</h2>
-        <div class="katrad" id="relaterade-taggar"></div>
+      <aside class="relaterat soknat" id="relaterat" hidden>
+        <button type="button" id="soknat-vaxel" class="soknat-vaxel" aria-expanded="false" aria-controls="soknat-panel">Kategorier</button>
+        <div id="soknat-panel">
+          <h2 class="etikett" id="relaterat-rubrik">Kategorier i träffarna</h2>
+          <ul class="soknat-noder" id="soknat-noder" aria-labelledby="relaterat-rubrik"></ul>
+          <details id="soknat-fler">
+            <summary>Fler taggfilter</summary>
+            <div class="katrad" id="relaterade-taggar"></div>
+          </details>
+        </div>
+      </aside>
+      <div class="soklista">
+        <ul class="traffar" id="traffar"></ul>
+        <button type="button" class="mer" id="visa-alla" hidden></button>
       </div>
-      <ul class="traffar" id="traffar"></ul>
-      <button type="button" class="mer" id="visa-alla" hidden></button>
     </section>
 
   </main>
@@ -110,7 +119,7 @@
     </div>
     <div class="full-vaxel" aria-label="Fullskärmsvy">
       <button type="button" class="full-kontroll" id="full-listknapp" aria-pressed="true">Lista</button>
-      <button type="button" class="full-kontroll" id="full-natknapp" aria-pressed="false">Nordnätverk</button>
+      <button type="button" class="full-kontroll" id="full-natknapp" aria-pressed="false">Nodnätverk</button>
     </div>
     <button type="button" class="full-kontroll" id="full-stang">Stäng</button>
   </header>
@@ -120,7 +129,7 @@
       <ul class="traffar" id="full-traffar"></ul>
     </section>
 
-    <section class="full-vy" id="full-natvy" hidden aria-label="Nordnätverket">
+    <section class="full-vy" id="full-natvy" hidden aria-label="Nodnätverket">
       <div class="natverk-huvud">
         <div class="natverk-yta" id="natverk-yta">
           <svg class="natverk-linjer" id="natverk-linjer" aria-hidden="true"
@@ -131,7 +140,7 @@
           <ol id="natverk-noder" class="relationer" aria-label="Dokumenterade relationer"></ol>
         </div>
         <aside class="natverk-panel" aria-labelledby="natverk-paneltitel">
-          <h2 id="natverk-paneltitel">Nordnätverket</h2>
+          <h2 id="natverk-paneltitel">Nodnätverket</h2>
           <div class="full-vaxel" aria-label="Gestalt för relationerna">
             <button type="button" class="full-kontroll" id="nat-relationer" aria-pressed="true">Relationer</button>
             <button type="button" class="full-kontroll" id="nat-stjarna" aria-pressed="false">Stjärnbild</button>
@@ -159,6 +168,6 @@
 <div class="brodrost" id="brodrost" role="status" aria-live="polite"></div>
 
 <noscript><p style="padding:2rem">MärkR behöver JavaScript för att söka.</p></noscript>
-<script src="app.js?v=20261125-kompakta-traffar"></script>
+<script src="app.js?v=20261125-soknatverk"></script>
 </body>
 </html>

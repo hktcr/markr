@@ -83,6 +83,9 @@ const el = {
   driveGrupper: document.getElementById('drive-grupper'),
   resultat: document.getElementById('resultat'),
   relaterat: document.getElementById('relaterat'),
+  soknatNoder: document.getElementById('soknat-noder'),
+  soknatVaxel: document.getElementById('soknat-vaxel'),
+  soknatFler: document.getElementById('soknat-fler'),
   relateradeTaggar: document.getElementById('relaterade-taggar'),
   traffar: document.getElementById('traffar'),
   visaAlla: document.getElementById('visa-alla'),
@@ -120,7 +123,6 @@ const el = {
 
 const finPekare = matchMedia('(pointer: fine)').matches;
 const lugnRorelse = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const mobilLayout = matchMedia('(max-width: 599px)');
 
 /* ================= 1. Normalisering ================= */
 
@@ -426,16 +428,6 @@ function settLage(nytt) {
   }
 }
 
-function placeraRelaterade() {
-  const paMobil = mobilLayout.matches;
-  const foralder = paMobil ? el.topp : el.resultat;
-  const ankare = paMobil ? el.sokfalt : el.traffar;
-
-  if (el.relaterat.parentElement !== foralder || el.relaterat.nextElementSibling !== ankare) {
-    foralder.insertBefore(el.relaterat, ankare);
-  }
-}
-
 function satStatus(text, arVarning) {
   el.status.textContent = text;
   el.status.classList.toggle('varning', !!arVarning);
@@ -605,30 +597,88 @@ function ritaDriveNav() {
   }
 }
 
-/* Taggarna som förekommer i den aktuella träffmängden, minus de redan aktiva.
-   Det här är nätverket i omformad gestalt: kartan över var man kan gå härnäst. */
+/* Samma kategorier som på stjärnhimlen, räknade i hela träffmängden.
+   En fast palett låter kategori och träffrad dela samma färg. */
+const SOKNAT_PALETT = ['#e0b163', '#73beb4', '#9cb8f0', '#c5a4e6', '#e28b9f',
+  '#a3c880', '#eea47a', '#d7ca78', '#87bbdf', '#d5a4bc'];
+const SOKNAT_INGANGAR = [
+  ...OMRADEN.map(o => ({ namn: o.namn, filter: o.namn, omrade: true })),
+  ...AMNESINGANGAR
+].map((nod, i) => ({ ...nod, farg: SOKNAT_PALETT[i], vikt: vik(nod.filter) }));
+
+function traffKategorier(bm) {
+  return SOKNAT_INGANGAR.filter(nod =>
+    nod.omrade ? vik(bm.omrade) === nod.vikt : bm.vTaggar.includes(nod.vikt));
+}
+
 function ritaRelaterade(aktivaVikta) {
-  const antal = new Map();
-  for (const bm of traffar) {
-    for (let i = 0; i < bm.taggar.length; i++) {
-      if (aktivaVikta.includes(bm.vTaggar[i])) continue;
-      antal.set(bm.taggar[i], (antal.get(bm.taggar[i]) || 0) + 1);
+  const nodantal = new Map();
+  const taggantal = new Map();
+  if (lage === 'sok') for (const bm of traffar) {
+    for (const nod of traffKategorier(bm)) {
+      nodantal.set(nod, (nodantal.get(nod) || 0) + 1);
+    }
+    for (const namn of bm.taggar) {
+      if (aktivaVikta.includes(vik(namn))) continue;
+      taggantal.set(namn, (taggantal.get(namn) || 0) + 1);
     }
   }
-  const lista = Array.from(antal, ([namn, n]) => ({ namn: namn, antal: n }))
-    .filter(k => k.antal < traffar.length || traffar.length === 1)
+  const noder = Array.from(nodantal).sort(([a, an], [b, bn]) =>
+    bn - an || a.namn.localeCompare(b.namn, 'sv'));
+  el.relaterat.hidden = noder.length === 0;
+  el.resultat.classList.toggle('har-soknat', noder.length > 0);
+  el.soknatVaxel.textContent = 'Kategorier (' + noder.length + ')';
+  if (!noder.length) el.soknatVaxel.setAttribute('aria-expanded', 'false');
+  el.soknatNoder.replaceChildren();
+  const max = noder.length ? noder[0][1] : 1;
+  for (const [nod, antal] of noder) {
+    const li = document.createElement('li');
+    const knapp = document.createElement('button');
+    knapp.type = 'button';
+    knapp.className = 'soknat-nod';
+    knapp.style.setProperty('--nodfarg', nod.farg);
+    knapp.style.setProperty('--nodstorlek', (7 + 12 * Math.sqrt(antal / max)).toFixed(1) + 'px');
+    knapp.setAttribute('aria-pressed', String(aktivaVikta.includes(nod.vikt)));
+    knapp.setAttribute('aria-label', nod.namn + ': ' + antal + (antal === 1 ? ' träff' : ' träffar'));
+    const prick = document.createElement('span');
+    prick.className = 'soknat-prick';
+    prick.setAttribute('aria-hidden', 'true');
+    const namn = document.createElement('span');
+    namn.textContent = nod.namn;
+    const n = document.createElement('span');
+    n.className = 'soknat-antal';
+    n.textContent = antal;
+    knapp.append(prick, namn, n);
+    knapp.addEventListener('click', () => aktivaVikta.includes(nod.vikt)
+      ? taBortFilter(aktivaTaggar.find(t => vik(t) === nod.vikt) || nod.filter) : laggTillFilter(nod.filter));
+    li.append(knapp);
+    el.soknatNoder.append(li);
+  }
+  const taggar = Array.from(taggantal, ([namn, antal]) => ({ namn, antal }))
+    .filter(k => k.antal < traffar.length && !SOKNAT_INGANGAR.some(nod => nod.vikt === vik(k.namn)))
     .sort((a, b) => b.antal - a.antal || a.namn.localeCompare(b.namn, 'sv'))
     .slice(0, ANTAL_RELATERADE);
+  el.soknatFler.hidden = !taggar.length;
+  el.relateradeTaggar.replaceChildren(...taggar.map(k => stjarnKnapp(k.namn, k.antal)));
+}
 
-  if (lista.length === 0 || traffar.length < 2) {
-    el.relaterat.hidden = true;
-    return;
-  }
-  el.relaterat.hidden = false;
-  el.relateradeTaggar.textContent = '';
-  for (const k of lista) {
-    el.relateradeTaggar.append(stjarnKnapp(k.namn, k.antal));
-  }
+el.soknatVaxel.addEventListener('click', () => {
+  el.soknatVaxel.setAttribute('aria-expanded',
+    String(el.soknatVaxel.getAttribute('aria-expanded') !== 'true'));
+});
+
+function traffmarkor(bm) {
+  const noder = traffKategorier(bm);
+  if (!noder.length) return null;
+  const markor = document.createElement('span');
+  markor.className = 'soknat-markor';
+  markor.dataset.farger = String(noder.length);
+  markor.setAttribute('aria-hidden', 'true');
+  markor.title = noder.map(nod => nod.namn).join(' · ');
+  noder.forEach((nod, i) => markor.style.setProperty('--farg-' + (i + 1), nod.farg));
+  const stopp = noder.map((nod, i) => nod.farg + ' ' + (i * 100 / noder.length) + '% ' + ((i + 1) * 100 / noder.length) + '%');
+  markor.style.setProperty('--fargalla', 'linear-gradient(to bottom, ' + stopp.join(', ') + ')');
+  return markor;
 }
 
 function stjarnKnapp(namn, antal) {
@@ -771,6 +821,15 @@ function fyllLista(behallare, lista, ord, indexStart) {
       li.classList.toggle('detaljer-oppna', oppna);
     });
 
+    const markor = lage === 'sok' ? traffmarkor(bm) : null;
+    if (markor) {
+      huvud.append(markor);
+      const kategoritext = document.createElement('span');
+      kategoritext.className = 'visuellt-dold';
+      kategoritext.textContent = 'Kategorier: ' + markor.title;
+      a.append(kategoritext);
+      a.title = kategoritext.textContent;
+    }
     huvud.append(a, expandera);
     li.append(huvud, detalj);
     frag.append(li);
@@ -1088,7 +1147,7 @@ function renderaNatverk() {
   if (!ankare) {
     el.natAnkartitel.textContent = 'Inga träffar';
     el.natAnkartitel.classList.remove('arkiverad');
-    el.natSammanfattning.textContent = 'Skriv en ny fråga för att bygga Nordnätverket.';
+    el.natSammanfattning.textContent = 'Skriv en ny fråga för att bygga Nodnätverket.';
     el.natTomt.hidden = false;
     el.natOppna.removeAttribute('href');
     el.natKopiera.disabled = true;
@@ -1654,7 +1713,6 @@ let resizeTimer = 0;
 addEventListener('resize', () => {
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(() => {
-    placeraRelaterade();
     dimensioneraHimmel();
     saStjarnor();
     byggHimmel();
@@ -1827,10 +1885,6 @@ Object.defineProperty(window, '__MARKR_TEST__', {
   })
 });
 
-placeraRelaterade();
-if (typeof mobilLayout.addEventListener === 'function') {
-  mobilLayout.addEventListener('change', placeraRelaterade);
-}
 if (window.visualViewport && typeof window.visualViewport.addEventListener === 'function') {
   window.visualViewport.addEventListener('resize', () => {
     if (fullskarm.oppen) uppdateraNatLayout();

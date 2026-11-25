@@ -28,7 +28,7 @@ i `aria-label` för skärmläsare. Ingenting i vyn upprepar något annat.
 | `index.html` | Struktur: sökfält, himmel, resultat och fullskärmslager |
 | `style.css` | Sot, papper och mässing. Alla färger som variabler i `:root` |
 | `gor-ikoner.py` | Ritar ikonerna deterministiskt. Auktoritativ källa vid tvivel |
-| `app.js` | Sökmotor, söktillstånd, träffdetaljer, Driveindex, fullskärm, Nordnätverk, canvas och tangentbord |
+| `app.js` | Sökmotor, söktillstånd, träffdetaljer, Driveindex, fullskärm, Nodnätverk, canvas och tangentbord |
 | `bokmarken.json` | Datan, Single Source of Truth |
 | `stada.mjs` | Granskar datafilen, föreslår rättad version, rör aldrig originalet |
 | `test.mjs` | Kör regressions-, corpus-, relations- och tillståndskontroller |
@@ -132,19 +132,19 @@ kvar. Se [arkiveringsloggen](ARKIVERING_2026-10-15.md) för omfång och
 I webbappöversikten finns de fyra äldre workshopversionerna under den
 infällbara rubriken **Arkiverade presentationer**, stängd från början.
 
-### Fullskärm och Nordnätverk
+### Fullskärm och Nodnätverk
 
 Den kompakta träfflistan är fortsatt standard. När en sökning har träffar kan
 den öppnas som ett CSS-baserat fullskärmslager med lägena Lista och
-Nordnätverk. Båda läser samma atomärt fastställda och redan rangordnade
+Nodnätverk. Båda läser samma atomärt fastställda och redan rangordnade
 `traffar`-snapshot.
 
-Nordnätverket använder ett separat URL-ankare. Relationer beräknas endast från
+Nodnätverket använder ett separat URL-ankare. Relationer beräknas endast från
 normaliserade och deduplicerade gemensamma värden i `projekt`, `kontexter` och
 `amnen`. Alla kandidater bedöms före taket tolv. Ordningen är gemensamma
 projekt, därefter kontexter, därefter ämnen och sist postens befintliga index i
 `traffar`. Samma semantiska nodkontroller visas som Stjärnbild eller Relationer.
-Det finns ingen fri fysik eller varaktig animationsloop i Nordnätverket.
+Det finns ingen fri fysik eller varaktig animationsloop i Nodnätverket.
 
 På trånga skärmar är Relationer förvalt. Stjärnbild används bara när den ryms.
 Bakgrunden är inert medan lagret är öppet. Escape stänger först fullskärmen och
@@ -164,7 +164,7 @@ Bakgrunden är inert medan lagret är öppet. Escape stänger först fullskärme
 | `Esc` | rensa och tillbaka till himlen |
 
 Klick på bokmärken öppnar en ny flik så att MärkR finns kvar. Det gäller även
-detaljvyer, Nordnätverk, Drive-genvägar och sajtlistan.
+detaljvyer, Nodnätverk, Drive-genvägar och sajtlistan.
 
 Träffraderna är riktiga `<a>`-element, så mittenklick, högerklick och
 skärmläsare fungerar som på vilken länk som helst.
@@ -179,7 +179,7 @@ gemensamt ämne. Enbart ett gemensamt ämne räcker inte.
 
 Länken "Drive" i horisontraden öppnar ett index över verifierade Drive-mappar,
 grupperade efter verksamhetsområde. Kända föräldrarelationer visas som ett
-mappträd. Samma relevansregler används för mappgenvägarna i Nordnätverkets
+mappträd. Samma relevansregler används för mappgenvägarna i Nodnätverkets
 sidopanel. Drive-mapparna är genvägar och blir aldrig grafnoder, så nätverkets
 urval, rangordning och tillstånd förblir oförändrade.
 
@@ -294,7 +294,7 @@ så att det syns att det är samma sak:
 | Bandet "I träffarna" | Mässingsprick plus monospace-etikett, samma språk i komprimerad form |
 | Områdesindexet | Kort i fast ordning med beskrivning och antal |
 
-Träffraderna visar titel och kompakt metadata. En mässingsfärgad pil fäller ut hela beskrivningen och befintliga detaljer, även i fullskärmslistan. Beskrivningarna ingår fortfarande i sökningen.
+Träffraderna visar titel och kompakt metadata. En mässingsfärgad pil fäller ut hela beskrivningen och befintliga detaljer, även i fullskärmslistan. Beskrivningarna ingår fortfarande i sökningen. Kategorinoderna räknas från hela träffmängden, ligger bredvid listan på breda skärmar och kan fällas ut i kompakt läge. Samma färger markerar träffarna. Reducerad rörelse visar färgerna samtidigt utan puls.
 Träffraderna visar högst fyra taggetiketter plus ett diskret `+n` med resten
 i `title`, så att raden aldrig växer till en taggmatta.
 

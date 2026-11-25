@@ -145,6 +145,19 @@ kolla('nodklick ger träffar', $$('#traffar .rad').length > 0, $$('#traffar .rad
 kolla('relaterade taggar visas i himlens formspråk', !$('#relaterat').hidden && $$('#relaterade-taggar .stjarnrad').length > 0,
   $$('#relaterade-taggar .stjarnrad').length + ' st');
 kolla('himlen dold vid sökning', $('#himmel').hasAttribute('data-dold'));
+kolla('kategorinätet innehåller namngivna noder med antal och storlek',
+  $$('#soknat-noder .soknat-nod').length > 0 &&
+  $$('#soknat-noder .soknat-nod').every(b => /träff/.test(b.getAttribute('aria-label')) &&
+    b.style.getPropertyValue('--nodfarg') && parseFloat(b.style.getPropertyValue('--nodstorlek')) >= 7));
+kolla('sökresultatets färg matchar minst en synlig kategorinod',
+  $$('#traffar .soknat-markor').length > 0 &&
+  $$('#traffar .soknat-markor').every(m => $$('#soknat-noder .soknat-nod').some(b =>
+    b.style.getPropertyValue('--nodfarg') === m.style.getPropertyValue('--farg-1'))));
+klick($('#soknat-vaxel'));
+kolla('kompakt nätverksknapp växlar utfällningsstatus',
+  $('#soknat-vaxel').getAttribute('aria-expanded') === 'true' &&
+  $('#soknat-vaxel').getAttribute('aria-controls') === 'soknat-panel');
+klick($('#soknat-vaxel'));
 
 /* Smalna av via relaterad tagg */
 const foreDrill = $$('#traffar .rad').length;
@@ -269,6 +282,11 @@ kolla('FotoR visas som verifierad mapphierarki i tre nivåer',
 tangent('Escape');
 
 skriv('fotor');
+const fotomarkor = $$('#traffar .traffpost').find(n => n.querySelector('.titel').textContent === 'FotoR')?.querySelector('.soknat-markor');
+kolla('FotoR visar både verksamhetsområde och fotografi med samma färger som nätet',
+  Number(fotomarkor?.dataset.farger) >= 2 && fotomarkor.title.includes('Fotografi') &&
+  ['--farg-1', '--farg-2'].every(k => $$('#soknat-noder .soknat-nod').some(n =>
+    n.style.getPropertyValue('--nodfarg') === fotomarkor.style.getPropertyValue(k))));
 const detaljTraffarFore = $$('#traffar a.rad').map(rad => rad.href);
 const detaljKnapp = $('#traffar .traff-expandera');
 const detaljPanel = $('#' + detaljKnapp.getAttribute('aria-controls'));
@@ -805,7 +823,7 @@ kolla('borttaget fullskärmsfilter behåller fokus på aktiv sökyta',
   rw.document.activeElement === rFullSok && r$('#full-filter').children.length === 0);
 
 rKlick(r$('#full-natknapp'));
-kolla('Nordnätverket använder separat URL-ankare',
+kolla('Nodnätverket använder separat URL-ankare',
   api.fullskarmsState().ankareUrl === 'https://fixture.test/anchor');
 kolla('DOM-relationerna följer samma relationsordning',
   JSON.stringify(r$$('#natverk-noder button').map(n => n.dataset.url)) === JSON.stringify(vantadRelationsordning));
@@ -822,7 +840,7 @@ await new Promise(r => setTimeout(r, 220));
 kolla('samma semantiska nodkontroller får stjärnlayout',
   r$('#natverk-noder').classList.contains('stjarna') &&
   r$$('#natverk-noder button').every((n, i) => n === semantiskaNoder[i]));
-kolla('Nordnätverket startar ingen RAF-loop', kontrakt.rafAnrop() === rafForeStjarna,
+kolla('Nodnätverket startar ingen RAF-loop', kontrakt.rafAnrop() === rafForeStjarna,
   rafForeStjarna + ' -> ' + kontrakt.rafAnrop());
 
 const nyttAnkareKnapp = r$$('#natverk-noder button').find(n => n.dataset.url.endsWith('/project-context'));

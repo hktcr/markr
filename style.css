@@ -351,7 +351,118 @@ body {
   color: var(--papper-dim);
 }
 
-.relaterat { margin-bottom: 1.9rem; }
+.soknat[hidden] { display: none; }
+.soknat { min-width: 0; }
+.soknat-vaxel {
+  display: none;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--harfin);
+  border-radius: var(--r);
+  background: transparent;
+  color: var(--massing-lj);
+  font: 0.76rem var(--mono);
+  cursor: pointer;
+}
+.soknat-vaxel::after { content: " ▸"; }
+.soknat-vaxel[aria-expanded="true"]::after { content: " ▾"; }
+.soknat-noder {
+  position: relative;
+  margin: 0 0 0.75rem;
+  padding: 0 0 0 0.6rem;
+  list-style: none;
+  border-left: 1px solid var(--harfin);
+}
+.soknat-noder li { position: relative; }
+.soknat-noder li::before {
+  position: absolute;
+  top: 50%;
+  left: -0.6rem;
+  width: 0.6rem;
+  border-top: 1px solid var(--harfin);
+  content: "";
+  pointer-events: none;
+}
+.soknat-nod {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.2rem 0.35rem;
+  border: 1px solid transparent;
+  border-radius: var(--r);
+  background: transparent;
+  color: var(--papper);
+  text-align: left;
+  overflow-wrap: anywhere;
+  font: 0.81rem/1.25 var(--sans);
+  cursor: pointer;
+}
+.soknat-nod:hover, .soknat-nod[aria-pressed="true"] { border-color: var(--nodfarg); }
+.soknat-prick {
+  width: var(--nodstorlek);
+  height: var(--nodstorlek);
+  justify-self: center;
+  border-radius: 50%;
+  background: var(--nodfarg);
+  box-shadow: 0 0 0.5rem color-mix(in srgb, var(--nodfarg) 42%, transparent);
+}
+.soknat-antal { color: var(--nodfarg); font: 0.73rem var(--mono); }
+#soknat-fler summary { color: var(--papper-dim); font: 0.76rem var(--mono); cursor: pointer; }
+#soknat-fler .katrad { grid-template-columns: 1fr; }
+.soknat-markor {
+  position: absolute;
+  inset: 0.72rem auto 0.72rem 0;
+  width: 3px;
+  border-radius: 2px;
+  background-color: var(--farg-1);
+  pointer-events: none;
+}
+.soknat-markor[data-farger="2"] { animation: soknat-tva 11s ease-in-out infinite; }
+.soknat-markor[data-farger="3"] { animation: soknat-tre 15s ease-in-out infinite; }
+@keyframes soknat-tva {
+  0%, 19%, 100% { background-color: var(--farg-1); }
+  48%, 69% { background-color: var(--farg-2); }
+}
+@keyframes soknat-tre {
+  0%, 14%, 100% { background-color: var(--farg-1); }
+  34%, 48% { background-color: var(--farg-2); }
+  67%, 82% { background-color: var(--farg-3); }
+}
+@media (prefers-reduced-motion: reduce), print {
+  .soknat-markor[data-farger] { animation: none; background: var(--fargalla); }
+}
+@media (min-width: 1000px) {
+  .resultat.har-soknat:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, var(--spalt)) minmax(14rem, 17rem);
+    justify-content: center;
+    align-items: start;
+    column-gap: clamp(1rem, 2.7vw, 3rem);
+  }
+  .resultat.har-soknat .soklista { grid-column: 1; grid-row: 1; min-width: 0; }
+  .resultat.har-soknat .soknat { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 999px) {
+  .soknat {
+    max-width: var(--spalt);
+    margin: -0.8rem auto 0.25rem;
+    text-align: right;
+  }
+  .soknat-vaxel { display: inline-block; }
+  .soknat-vaxel[aria-expanded="false"] + #soknat-panel { display: none; }
+  #soknat-panel {
+    margin-top: 0.35rem;
+    padding: 0.7rem;
+    border: 1px solid var(--harfin);
+    background: var(--sot-2);
+    border-radius: var(--r);
+    text-align: left;
+  }
+}
 
 .stjarnrad {
   display: inline-flex;
@@ -939,38 +1050,7 @@ mark {
 
   .traffdetalj { margin-inline: 0.35rem; padding-inline: 0.8rem; }
 
-  /* På mobil ligger de relevanta taggarna ovanför sökfältet i en enda rullbar rad.
-     Bokmärkena börjar då direkt under sökfältet i stället för efter ett högt taggmoln. */
-  .topp > .relaterat {
-    width: 100%;
-    max-width: min(var(--spalt), 34rem);
-    margin: 0 auto 0.45rem;
-    pointer-events: auto;
-  }
 
-  .topp > .relaterat .etikett {
-    margin-bottom: 0.1rem;
-  }
-
-  .topp > .relaterat .katrad {
-    flex-wrap: nowrap;
-    gap: 0 0.25rem;
-    overflow-x: auto;
-    padding-bottom: 0.2rem;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .topp > .relaterat .katrad::-webkit-scrollbar { display: none; }
-
-  .topp > .relaterat .stjarnrad {
-    flex: 0 0 auto;
-    min-height: 34px;
-    padding: 0 0.35rem;
-    font-size: 0.68rem;
-  }
-
-  .skal:not(.rymd) .innehall { padding-top: 0.75rem; }
 }
 
 @media (min-width: 600px) {
