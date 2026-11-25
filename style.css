@@ -133,6 +133,17 @@ body {
   transform: scale(1.15);
 }
 
+/* Tonar bara nodpricken: läsbarhet, fokus och klickyta förändras inte. */
+@media (prefers-reduced-motion: no-preference) {
+  #noder.framme:not([data-dold]) .nod:not(:hover):not(:focus-visible):not(.grann):not(.avlagsen) .prick {
+    animation: himmel-toning 14s ease-in-out var(--tonfas, 0s) infinite;
+  }
+}
+@keyframes himmel-toning {
+  0%, 100% { opacity: 0.58; }
+  45%, 62% { opacity: 1; }
+}
+
 .nod.grann .prick { box-shadow: 0 0 12px rgba(197, 160, 89, 0.55); }
 
 /* ---------- Skalet, två lägen ---------- */
@@ -1086,38 +1097,31 @@ mark {
 
 /* ---------- Fullskärmsobservatoriet ---------- */
 
-.fullskarm-oppna {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0 0.65rem;
-  border: 0;
-  border-left: 1px solid var(--harfin);
-  background: none;
+.sokinstrument {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) repeat(2,clamp(44px, 10vw, 50px));
+  gap: clamp(5px, 1.5vw, 9px);
+  align-items: start;
+  max-width: min(var(--spalt), 40.5rem);
+  margin-inline: auto;
+  pointer-events: auto;
+}
+.sokinstrument .sokfalt { width: 100%; max-width: none; min-height: clamp(44px, 10vw, 50px); }
+.sokgenvag {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
   color: var(--massing-lj);
-  font: 0.7rem var(--mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  background: rgba(19, 19, 23, 0.88);
+  border: 1px solid var(--harfin-2);
+  border-radius: var(--r);
   cursor: pointer;
-  transition: color 0.15s ease, background 0.15s ease;
 }
-
-.fullskarm-oppna[hidden] { display: none; }
-
-.fullskarm-oppna::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  margin-right: 0.5rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, var(--massing-lj), var(--massing) 68%);
-  box-shadow: 0 0 8px rgba(197, 160, 89, 0.55);
-}
-
-.fullskarm-oppna:hover { color: var(--papper); background: rgba(197, 160, 89, 0.06); }
+.sokgenvag:hover, .sokgenvag:focus-visible { color: var(--papper); border-color: var(--massing); }
+.sokgenvag:disabled { opacity: 0.55; cursor: default; }
+.sokgenvag svg { width: 22px; fill: none; stroke: currentColor; stroke-width: 1.45; stroke-linecap: round; stroke-linejoin: round; }
 
 .fullskarm {
   position: fixed;
@@ -1738,25 +1742,6 @@ a.full-kontroll:not([href]) {
 }
 
 @media (max-width: 599px) {
-  .fullskarm-oppna {
-    width: 44px;
-    padding: 0;
-    overflow: hidden;
-    font-size: 0;
-  }
-
-  .fullskarm-oppna::before { margin: 0; }
-
-  .fullskarm-oppna::before {
-    content: "↗";
-    width: auto;
-    height: auto;
-    border-radius: 0;
-    background: none;
-    box-shadow: none;
-    font: 1rem var(--mono);
-  }
-
   .full-instrument {
     gap: 0.5rem;
     padding: max(0.55rem, env(safe-area-inset-top))
@@ -1910,7 +1895,7 @@ a.full-kontroll:not([href]) {
     box-shadow: inset 0 -3px 0 Highlight;
   }
 
-  .fullskarm-oppna,
+  .sokgenvag,
   #natverk-noder .nodtitel,
   .natverk-panel h2,
   .natverk-ankare h2,
@@ -1918,7 +1903,6 @@ a.full-kontroll:not([href]) {
   .detalj-lankar a,
   .natverk-mappar a { color: LinkText; }
 
-  .fullskarm-oppna::before,
   .natverk-ankare::before,
   #natverk-noder.stjarna button::before {
     border: 1px solid ButtonText;

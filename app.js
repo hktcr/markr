@@ -95,6 +95,7 @@ const el = {
   noder: document.getElementById('noder'),
   horisontInfo: document.getElementById('horisont-info'),
   fullOppna: document.getElementById('full-oppna'),
+  katOppna: document.getElementById('kat-oppna'),
   fullskarm: document.getElementById('fullskarm'),
   fullSok: document.getElementById('full-sok'),
   fullStatus: document.getElementById('full-status'),
@@ -340,6 +341,7 @@ function utforSokning() {
     satStatus('');
     el.sok.placeholder = 'Sök bland ' + synligaBokmarken().length + ' bokmärken';
     uppdateraHorisont();
+    if (fullskarm.oppen) ritaRelaterade(fraga.taggar);
     slutforSoktransaktion(fraga);
     return;
   }
@@ -617,7 +619,8 @@ function traffKategorier(bm) {
 function ritaRelaterade(aktivaVikta) {
   const nodantal = new Map();
   const taggantal = new Map();
-  if (lage === 'sok') for (const bm of traffar) {
+  const start = fullskarm.oppen && lage !== 'sok';
+  for (const bm of lage === 'sok' ? traffar : start ? synligaBokmarken() : []) {
     for (const nod of traffKategorier(bm)) {
       nodantal.set(nod, (nodantal.get(nod) || 0) + 1);
     }
@@ -628,8 +631,8 @@ function ritaRelaterade(aktivaVikta) {
   }
   const noder = Array.from(nodantal).sort(([a, an], [b, bn]) =>
     bn - an || a.namn.localeCompare(b.namn, 'sv'));
-  el.relaterat.hidden = noder.length === 0;
-  el.resultat.classList.toggle('har-soknat', noder.length > 0);
+  el.relaterat.hidden = start || noder.length === 0;
+  el.resultat.classList.toggle('har-soknat', !start && noder.length > 0);
   el.soknatVaxel.textContent = 'Kategorier (' + noder.length + ')';
   if (!noder.length) el.soknatVaxel.setAttribute('aria-expanded', 'false');
   fyllSoknatNoder(el.soknatNoder, noder, aktivaVikta);
@@ -1086,7 +1089,7 @@ function synkaSokfalt(varde) {
 
 function slutforSoktransaktion(fraga) {
   synkaSokfalt(el.sok.value);
-  el.fullOppna.hidden = !(lage === 'sok' && traffar.length > 0);
+  el.fullOppna.disabled = el.katOppna.disabled = synligaBokmarken().length === 0;
   if (!fullskarm.oppen) return;
 
   fullskarm.snapshot = traffar;
@@ -1099,8 +1102,14 @@ function slutforSoktransaktion(fraga) {
 
 function renderaFullskarm(ord) {
   const snapshot = fullskarm.snapshot;
-  el.fullStatus.textContent = snapshot.length + (snapshot.length === 1 ? ' träff' : ' träffar');
+  el.fullStatus.textContent = lage === 'sok' ? snapshot.length + (snapshot.length === 1 ? ' träff' : ' träffar') : '';
   fyllLista(el.fullTraffar, snapshot, ord || [], 0);
+  if (!snapshot.length) {
+    const li = document.createElement('li');
+    li.className = 'tomt';
+    li.textContent = lage === 'sok' ? 'Inga bokmärken matchar.' : 'Sök i arkivet eller välj en kategori.';
+    el.fullTraffar.append(li);
+  }
   renderaNatverk();
 }
 
@@ -1244,13 +1253,14 @@ function sattFullVy(vy, flyttaFokus) {
   if (flyttaFokus) (lista ? el.fullListknapp : el.fullNatknapp).focus();
 }
 
-function oppnaFullskarm() {
-  if (fullskarm.oppen || traffar.length === 0 || lage !== 'sok') return;
+function oppnaFullskarm(oppnare, kategorier = false) {
+  if (fullskarm.oppen || oppnare.disabled) return;
   fullskarm.oppen = true;
-  fullskarm.oppnare = document.activeElement === el.fullOppna ? el.fullOppna : el.fullOppna;
-  fullskarm.snapshot = traffar;
-  const vald = aktuellTraff();
-  fullskarm.ankareUrl = vald ? vald.url : traffar[0].url;
+  fullskarm.oppnare = oppnare;
+  fullskarm.snapshot = lage === 'sok' ? traffar : [];
+  const vald = lage === 'sok' ? aktuellTraff() : null;
+  fullskarm.ankareUrl = vald?.url ?? fullskarm.snapshot[0]?.url ?? null;
+  fullskarm.relationer = beraknaRelationer(fullskarm.snapshot, fullskarm.ankareUrl);
   fullskarm.vy = 'lista';
   fullskarm.nodLayout = 'relationer';
   el.fullskarm.hidden = false;
@@ -1261,11 +1271,11 @@ function oppnaFullskarm() {
   synkaSokfalt(el.sok.value);
   ritaFilter();
   const fraga = laesFraga();
-  el.fullKategorier.open = false;
   ritaRelaterade(fraga.taggar);
+  el.fullKategorier.open = kategorier && !el.fullKategorier.hidden;
   renderaFullskarm(fraga.ord);
   sattFullVy('lista', false);
-  el.fullSok.focus();
+  (el.fullKategorier.open ? el.fullKatRubrik : el.fullSok).focus();
 }
 
 function stangFullskarm() {
@@ -1370,6 +1380,7 @@ const himmel = {
   alpha: 0,
   rafId: 0,
   driftT: 0,
+  senastMalt: -Infinity,
   hovIndex: -1,
   igang: false
 };
@@ -1466,6 +1477,7 @@ function ritaNodknappar() {
     knapp.className = 'nod';
     knapp.style.setProperty('--d', nod.d.toFixed(1) + 'px');
     knapp.style.setProperty('--fordrojning', Math.min(i * 35, 600) + 'ms');
+    knapp.style.setProperty('--tonfas', -(i * 29 % 113) / 10 + 's');
     knapp.setAttribute('aria-label', nod.namn + ', ' + nod.antal +
       (nod.antal === 1 ? ' bokmärke' : ' bokmärken'));
 
@@ -1623,16 +1635,9 @@ function simulera(steg) {
 }
 
 function placeraNoder() {
-  const drift = !lugnRorelse && finPekare && innerWidth >= 1000 && innerHeight >= 520;
   for (const nod of himmel.noder) {
     if (!nod.el) continue;
-    let x = nod.x;
-    let y = nod.y;
-    if (drift) {
-      x += Math.sin(himmel.driftT * 0.0004 + nod.fas) * 2.2;
-      y += Math.cos(himmel.driftT * 0.00031 + nod.fas * 1.7) * 2.2;
-    }
-    nod.el.style.transform = 'translate(' + (x).toFixed(1) + 'px,' + (y).toFixed(1) + 'px) translate(-50%,-50%)';
+    nod.el.style.transform = 'translate(' + nod.x.toFixed(1) + 'px,' + nod.y.toFixed(1) + 'px) translate(-50%,-50%)';
   }
 }
 
@@ -1651,14 +1656,16 @@ function ritaHimmel() {
   }
   ctx.globalAlpha = 1;
 
-  for (const kant of himmel.kanter) {
+  for (const [i, kant] of himmel.kanter.entries()) {
     const n1 = himmel.noder[kant.a];
     const n2 = himmel.noder[kant.b];
     const lyser = himmel.hovIndex === kant.a || himmel.hovIndex === kant.b;
     const dampad = himmel.hovIndex >= 0 && !lyser;
+    const fas = (himmel.driftT / 15000 + i * 0.381966) % 1;
+    const ton = lugnRorelse ? 0.5 : Math.pow((1 - Math.cos(fas * 2 * Math.PI)) / 2, 2);
     ctx.strokeStyle = lyser
       ? 'rgba(220, 192, 138, ' + (0.35 + 0.4 * kant.w) + ')'
-      : 'rgba(197, 160, 89, ' + (dampad ? 0.04 : 0.08 + 0.16 * kant.w) + ')';
+      : 'rgba(197, 160, 89, ' + (dampad ? 0.04 : 0.025 + (0.12 + 0.19 * kant.w) * ton) + ')';
     ctx.lineWidth = lyser ? 1.2 : 0.75;
     ctx.beginPath();
     ctx.moveTo(n1.x, n1.y);
@@ -1673,12 +1680,16 @@ function bildruta(tid) {
   himmel.driftT = tid || himmel.driftT + 16;
 
   const vaken = himmel.alpha > 0.004;
-  if (vaken) simulera(2);
-  placeraNoder();
-  ritaHimmel();
-
-  const drift = !lugnRorelse && finPekare && innerWidth >= 1000 && innerHeight >= 520;
-  if (vaken || drift) {
+  if (vaken) {
+    simulera(2);
+    placeraNoder();
+  }
+  const toning = !lugnRorelse && !fullskarm.oppen && !document.hidden;
+  if (vaken || (toning && himmel.driftT - himmel.senastMalt >= 80)) {
+    himmel.senastMalt = himmel.driftT;
+    ritaHimmel();
+  }
+  if (vaken || toning) {
     himmel.rafId = requestAnimationFrame(bildruta);
   } else {
     himmel.igang = false;
@@ -1700,6 +1711,13 @@ function vackSimulering() {
     himmel.rafId = requestAnimationFrame(bildruta);
   }
 }
+
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && lage === 'rymd' && !fullskarm.oppen && !lugnRorelse && !himmel.igang) {
+    himmel.igang = true;
+    himmel.rafId = requestAnimationFrame(bildruta);
+  }
+});
 
 let resizeTimer = 0;
 addEventListener('resize', () => {
@@ -1837,7 +1855,8 @@ el.arkivval.addEventListener('change', () => bytArkivlage(el.arkivval.value));
 el.fullArkivval.addEventListener('change', () => bytArkivlage(el.fullArkivval.value));
 el.lankLista.addEventListener('click', () => visaLista(false));
 el.lankDrive.addEventListener('click', () => visaLista(true));
-el.fullOppna.addEventListener('click', oppnaFullskarm);
+el.fullOppna.addEventListener('click', () => oppnaFullskarm(el.fullOppna));
+el.katOppna.addEventListener('click', () => oppnaFullskarm(el.katOppna, true));
 el.fullStang.addEventListener('click', stangFullskarm);
 el.fullListknapp.addEventListener('click', () => sattFullVy('lista', false));
 el.fullNatknapp.addEventListener('click', () => sattFullVy('natverk', false));

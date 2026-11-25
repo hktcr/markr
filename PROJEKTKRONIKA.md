@@ -611,3 +611,7 @@ event_id: EVT-markr-veckounderhall-20261123. Evidens: färsk `main`,
 Drive-återläsning och reproducerbar testkörning. Signatur: gAIa.
 
 - 2026-11-25: Söklistan visar bara den klickbara titeln och detaljpilen; hela adressen, ID och kategorierna ligger under pilen. Fullskärm använder samma kategorier och filter som vanlig sökning. Färgbandet växlar tydligare på träffar med flera kategorier; vid minskad rörelse visas alla färger statiskt.
+
+- 2026-11-25: Portalens sökfält fick två genvägar: fullskärm och kategoriurval. Båda kan öppnas utan föregående sökning och använder samma sökning och filter som tidigare.
+
+- Portalbakgrund: lugn toning av befintliga kopplingar och nodprickar, utan drift i färdig layout. Etiketter, klickytor och kategoridata är oförändrade. Minskad rörelse ger stillbild.

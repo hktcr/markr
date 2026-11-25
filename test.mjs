@@ -881,7 +881,7 @@ kolla('nollresultat tömmer snapshot och ankare men lämnar lagret användbart',
 rFullSok.dispatchEvent(new rw.KeyboardEvent('keydown', { key: 'Escape', bubbles: true, cancelable: true }));
 kolla('första Escape stänger endast fullskärmen',
   !api.fullskarmsState().oppen && rSok.value === 'zzzz-ingen-traff' &&
-  !r$('#skal').hasAttribute('inert') && rw.document.activeElement === rSok);
+  !r$('#skal').hasAttribute('inert') && rw.document.activeElement === r$('#full-oppna'));
 
 rSkriv(rSok, 'atlas');
 r$('#full-oppna').focus();
@@ -1345,6 +1345,21 @@ for (const fraga of ['Explorations', 'Redaktionen', 'reportage']) {
 }
 vinterDom.tw.close();
 
+tangent('Escape');
+kolla('båda sökgenvägarna är tillgängliga innan någon sökning', !$('#full-oppna').disabled && !$('#kat-oppna').disabled);
+klick($('#full-oppna'));
+kolla('fullskärm startar från tom portal med fokus i sökrutan', !$('#fullskarm').hidden &&
+  w.document.activeElement === $('#full-sok') && $('#full-traffar .tomt')?.textContent.includes('välj en kategori'));
+klick($('#full-stang'));
+klick($('#kat-oppna'));
+kolla('kategorigenvägen öppnar arkivets kategorier utan sökord', $('#full-kategorier').open &&
+  w.document.activeElement === $('#full-kat-rubrik') && $$('#full-kat-noder .soknat-nod').length > 1);
+klick($$('#full-kat-noder .soknat-nod')[0]);
+kolla('vald kategori ger direkt filtrerade bokmärken i fullskärm',
+  $('#full-filter .filter') && $$('#full-traffar .rad').length > 0);
+klick($('#full-stang'));
+kolla('stängning återför fokus till klickad kategorigenväg', w.document.activeElement === $('#kat-oppna'));
+tangent('Escape');
 console.log(resultat.join('\n'));
 const antalFel = resultat.filter(r => r.startsWith('FEL')).length;
 console.log('\n' + (resultat.length - antalFel) + '/' + resultat.length + ' godkända');
