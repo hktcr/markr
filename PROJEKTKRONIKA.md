@@ -615,3 +615,7 @@ Drive-återläsning och reproducerbar testkörning. Signatur: gAIa.
 - 2026-11-25: Portalens sökfält fick två genvägar: fullskärm och kategoriurval. Båda kan öppnas utan föregående sökning och använder samma sökning och filter som tidigare.
 
 - Portalbakgrund: lugn toning av befintliga kopplingar och nodprickar, utan drift i färdig layout. Etiketter, klickytor och kategoridata är oförändrade. Minskad rörelse ger stillbild.
+
+## 2026-11-26 | Två övningskryss i ellära och magnetism
+
+På uttrycklig beställning lades två offentliga, fristående NO-webbappar till i Skola och undervisning: Gnistkrysset (281, 38 ord) och El- och magnetismkrysset (282, 49 ord). Båda har direktlänk, egen beskrivning, ämnesfacetter och kort i siteregistret. Inga tidigare bokmärken ändrades. [Versionsbundet bygge och testrecept för båda kryssen](https://github.com/hktcr/gaia-play/tree/2764408dab25347fb8e5da715f24b443a7685eb5/gnistkrysset).

@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-22",
+  "uppdaterad": "2026-11-26",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -7523,6 +7523,63 @@
       "legacyTaggar": [],
       "mappForalderId": null,
       "tillagd": "2026-11-22"
+    },
+    {
+      "id": 281,
+      "url": "https://hktcr.github.io/gaia-play/gnistkrysset/",
+      "titel": "Gnistkrysset · ellära",
+      "beskrivning": "Interaktivt korsord för NO 7–9 med 38 ord om ellära: öppna och slutna kretsar, ström, spänning, resistans och kopplingsscheman. Skriv i rutorna eller i en svarsdialog med förifyllda bokstäver. Stegvis hjälp och sidhänvisningar till häftet Ellära och magnetism. Ingen inloggning; svaren sparas i webbläsaren.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-26",
+      "amnen": [
+        "Fysik",
+        "Ellära",
+        "Elektricitet",
+        "Elektriska kretsar",
+        "Korsord",
+        "Begreppsträning",
+        "Repetition",
+        "Pedagogiska spel"
+      ]
+    },
+    {
+      "id": 282,
+      "url": "https://hktcr.github.io/gaia-play/el-och-magnetism-krysset/",
+      "titel": "El- och magnetismkrysset",
+      "beskrivning": "Stort repetitionskorsord för NO 7–9 med 49 ord som knyter ihop ellära och magnetism. Från kretsar och strömriktning till magnetfält, elektromagneter, induktion, generatorer och elmotorer. Stegvis hjälp, sidhänvisningar och svarsdialog med förifyllda bokstäver. Ingen inloggning; svaren sparas i webbläsaren.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-26",
+      "amnen": [
+        "Fysik",
+        "Ellära",
+        "Magnetism",
+        "Elektromagneter",
+        "Induktion",
+        "Korsord",
+        "Begreppsträning",
+        "Repetition",
+        "Pedagogiska spel"
+      ]
     }
   ],
   "senasteGallring": {
