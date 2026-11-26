@@ -13,6 +13,34 @@
   ],
   "bokmarken": [
     {
+      "id": 283,
+      "url": "https://hktcr.github.io/gaia-play/spark-crossword/",
+      "titel": "Spark Crossword · ellära på engelska",
+      "beskrivning": "Engelskspråkigt NO-korsord med 38 ord om kretsar, ström, spänning och resistans. Ledtrådar och sidhänvisningar är kontrollerade mot det engelska elevhäftet. Ingen inloggning; ifyllda bokstäver sparas i webbläsaren.",
+      "omrade": "Skola och undervisning",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "NO79"
+      ],
+      "period": "HT26",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-26",
+      "amnen": [
+        "Fysik",
+        "Ellära",
+        "Elektricitet",
+        "Elektriska kretsar",
+        "Korsord",
+        "Begreppsträning",
+        "Repetition",
+        "Pedagogiska spel"
+      ]
+    },
+    {
       "url": "https://skolwebb.astorp.se/WE.Education.Spaces/Start?Actor=Actor_Professional&IDPMethod=saml&Domain=Astorp_BOU",
       "titel": "Edlevo Lärarinloggning",
       "beskrivning": "Skolplattform för registrering av närvaro, frånvaro med mera.",
