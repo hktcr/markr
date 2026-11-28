@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-11-26",
+  "uppdaterad": "2026-11-28",
   "taxonomiVersion": 2,
   "omraden": [
     "Skola och undervisning",
@@ -12,6 +12,31 @@
     "Allmän kunskap och referens"
   ],
   "bokmarken": [
+    {
+      "id": 284,
+      "url": "https://hktcr.github.io/gaia-tools/rakor/hoor-2026/",
+      "titel": "Råkbon i Åstorp · inventeringen 2026",
+      "beskrivning": "Presentationssida från vårens råkinventering: 1 328 registrerade bon. På kommunkartan delar zoomklustren upp sig i enskilda rutor och gemensamt redovisade rutgrupper. Fäll ut metoden för att läsa hur bona räknades och vad siffrorna inte visar.",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [
+        "Åstorpsfåglar"
+      ],
+      "period": "2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-28",
+      "amnen": [
+        "Fåglar",
+        "Råka",
+        "Inventering",
+        "Åstorp",
+        "Kartor"
+      ]
+    },
     {
       "id": 283,
       "url": "https://hktcr.github.io/gaia-play/spark-crossword/",
