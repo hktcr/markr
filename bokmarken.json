@@ -13,6 +13,29 @@
   ],
   "bokmarken": [
     {
+      "id": 286,
+      "url": "https://hktcr.github.io/gaia-tools/backsvala/hoor-2026/",
+      "titel": "Backsvala i Skåne · inventeringsbild",
+      "beskrivning": "Källbelagda inventeringsresultat från 1984 till 2026. Växla mellan rapporterade kolonier, bohål, skattade häckande par, grustaget vid Maglaby i Åstorp och Ven. Måtten och dataluckorna hålls isär.",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "period": "2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-28",
+      "amnen": [
+        "Fåglar",
+        "Backsvala",
+        "Inventering",
+        "Skåne",
+        "Åstorp"
+      ]
+    },
+    {
       "id": 285,
       "url": "https://hktcr.github.io/gaia-tools/kornsparv/hoor-2026/",
       "titel": "Kornsparv i Skåne · inventeringsbild",
