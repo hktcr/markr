@@ -13,6 +13,29 @@
   ],
   "bokmarken": [
     {
+      "id": 285,
+      "url": "https://hktcr.github.io/gaia-tools/kornsparv/hoor-2026/",
+      "titel": "Kornsparv i Skåne · inventeringsbild",
+      "beskrivning": "Interaktiv tidsserie för kornsparvens inventeringar. Växla mellan Österlens kärnområde, Skånetotal, äldre sydostuppgifter och statistik. Varje punkt visar vad som räknades och var källan finns; endast den jämförbara räkningen 2025–2026 binds ihop.",
+      "omrade": "Natur och fältarbete",
+      "typ": "Webbapp",
+      "kontexter": [],
+      "projekt": [],
+      "period": "2026",
+      "livscykel": "Aktiv",
+      "favorit": false,
+      "legacyTaggar": [],
+      "mappForalderId": null,
+      "tillagd": "2026-11-28",
+      "amnen": [
+        "Fåglar",
+        "Kornsparv",
+        "Inventering",
+        "Skåne",
+        "Statistik"
+      ]
+    },
+    {
       "id": 284,
       "url": "https://hktcr.github.io/gaia-tools/rakor/hoor-2026/",
       "titel": "Råkbon i Åstorp · inventeringen 2026",
